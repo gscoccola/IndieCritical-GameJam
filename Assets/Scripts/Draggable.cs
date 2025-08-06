@@ -6,7 +6,11 @@ using UnityEngine;
 public class Draggable : MonoBehaviour
 {
     public bool IsSelected;
+    public bool isFixed;
+
     [SerializeField] private bool _showIfSelected = true;
+    [SerializeField] private bool _freezeX;
+    [SerializeField] private bool _freezeY;
 
     private Camera _camera;
     private Vector3 _initialRelativePos;
@@ -18,13 +22,13 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (!IsSelected) return;
+        if (!IsSelected || isFixed) return;
         
         Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition) + _initialRelativePos;
 
         transform.position = new Vector3(
-            newPos.x,
-            newPos.y,
+            _freezeX ? transform.position.x : newPos.x,
+            _freezeY ? transform.position.y : newPos.y,
             0f
         );
     }

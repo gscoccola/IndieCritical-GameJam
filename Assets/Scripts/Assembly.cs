@@ -5,12 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Assembly : Singleton<Assembly>
 {
-    public Assembleable[] Assembleables;
+    public Assemblable[] Assembleables;
     public Array Connections;
 
     private void Start()
     {
-        Assembleables = FindObjectsByType<Assembleable>(FindObjectsSortMode.None);
+        Assembleables = FindObjectsByType<Assemblable>(FindObjectsSortMode.None);
         Connections = new bool[Assembleables.Length, Assembleables.Length];
         for (int i = 0; i < Connections.GetLength(0); i++) Connections.SetValue(true, i, i);
 
@@ -21,7 +21,7 @@ public class Assembly : Singleton<Assembly>
         PrintBoolArray(Connections);
     }
 
-    public void UpdateConnections(bool value, Assembleable i, Assembleable j)
+    public void UpdateConnections(bool value, Assemblable i, Assemblable j)
     {
         Connections.SetValue(value, Array.IndexOf(Assembleables, i), Array.IndexOf(Assembleables, j));
     }
