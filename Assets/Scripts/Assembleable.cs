@@ -8,10 +8,12 @@ public class Assembleable : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         currentCollisions.Add(col.gameObject);
+        Assembly.Instance.UpdateConnections(true, this, col.GetComponent<Assembleable>());
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
         currentCollisions.Remove(col.gameObject);
+        Assembly.Instance.UpdateConnections(false, this, col.GetComponent<Assembleable>());
     }
 }
