@@ -12,8 +12,8 @@ TagManager:
   - Water
   - UI
   - Assemblable
-  - 
-  - 
+  - Screw
+  - Cover
   - 
   - 
   - 
@@ -38,8 +38,17 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3954543565
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Covers
+    uniqueID: 3218482943
+    locked: 0
+  - name: Screws
+    uniqueID: 2288739689
     locked: 0
   m_RenderingLayers:
   - Default

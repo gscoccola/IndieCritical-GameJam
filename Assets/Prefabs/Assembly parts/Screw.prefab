@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1016785258400998493}
   - component: {fileID: 6763550321254480631}
   - component: {fileID: 4822473163528905542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Screw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   _timeToUnscrew: 3
+  _requiredType: 0
   IsFree: 0
 --- !u!114 &6187588722956287116
 MonoBehaviour:
@@ -64,7 +65,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentCollisions: []
+  CurrentCollisions: []
+  OnCollisionUpdate:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &9097577386898864579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,8 +81,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91116b155e5e7348a114106d785f7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSelected: 0
   isFixed: 0
+  isScrewed: 0
   _showIfSelected: 1
   _freezeX: 0
   _freezeY: 0
@@ -123,8 +127,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2006227607
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 1761786219, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
