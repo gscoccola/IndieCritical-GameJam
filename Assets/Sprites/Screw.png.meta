@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,9 +142,9 @@ TextureImporter:
       name: Screw_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 104
+        width: 105
         height: 95
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -156,6 +156,28 @@ TextureImporter:
       bones: []
       spriteID: 741ed28b361edff49b99214b6c311cf3
       internalID: 1761786219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screw_1
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 0
+        width: 233
+        height: 95
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b742821af0abee4cb7de727ca33e1a7
+      internalID: -723551537
       vertices: []
       indices: 
       edges: []
@@ -207,6 +229,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Screw_0: 1761786219
+      Screw_1: -723551537
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

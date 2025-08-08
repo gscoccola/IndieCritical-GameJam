@@ -52,7 +52,14 @@ MonoBehaviour:
   rotationSpeed: 100
   _timeToUnscrew: 3
   _requiredType: 0
+  _sprites:
+  - {fileID: 1761786219, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
+  - {fileID: -723551537, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
+  _requiredToolLayer:
+    serializedVersion: 2
+    m_Bits: 512
   IsFree: 0
+  _isRolling: 0
 --- !u!114 &6187588722956287116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,11 +88,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91116b155e5e7348a114106d785f7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFixed: 0
-  isScrewed: 0
+  IsFixed: 0
+  IsScrewed: 0
   _showIfSelected: 1
   _freezeX: 0
   _freezeY: 0
+  _Xlimit: 0
+  _Ylimit: 0
+  _centerOnMouse: 1
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1782794313969295999}
+        m_TargetAssemblyTypeName: Screwable, Assembly-CSharp
+        m_MethodName: SwitchToUpright
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1782794313969295999}
+        m_TargetAssemblyTypeName: Screwable, Assembly-CSharp
+        m_MethodName: StartRoll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &1016785258400998493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -127,8 +167,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2006227607
-  m_SortingLayer: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1761786219, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,7 +216,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Radius: 0.3
 --- !u!50 &4822473163528905542
 Rigidbody2D:
   serializedVersion: 5
