@@ -14,6 +14,7 @@ public class Draggable : MonoBehaviour
     [SerializeField] private bool _showIfSelected = true;
     [SerializeField] private bool _freezeX;
     [SerializeField] private bool _freezeY;
+    [SerializeField] private bool _irreversible;
     [SerializeField] private LimitType _Xlimit;
     [SerializeField] private LimitType _Ylimit;
     [SerializeField] private bool _centerOnMouse;
@@ -38,6 +39,8 @@ public class Draggable : MonoBehaviour
         
         Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition);
         if (!_centerOnMouse) newPos += _initialRelativePos;
+
+        if (_irreversible) _initialPos = transform.position;
 
         float newX = _Xlimit == LimitType.Min ? Mathf.Max(newPos.x, _initialPos.x) :
                      _Xlimit == LimitType.Max ? Mathf.Min(newPos.x, _initialPos.x) :

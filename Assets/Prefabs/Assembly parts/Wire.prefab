@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2053729450734526608}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Wire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3580651442988421831}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 8906416877115364115}
   - component: {fileID: 7155883753996552422}
   - component: {fileID: 7984406103448031245}
-  m_Layer: 6
+  m_Layer: 12
   m_Name: End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,10 +130,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ElectricAffinity: 2
+  _heightLayer: 2
+  _interactionTrigger: {fileID: 8906416877115364115}
+  _physicsCollider: {fileID: 0}
+  _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
   CurrentCollisions: []
   OnCollisionUpdate:
     m_PersistentCalls:
       m_Calls: []
+  _isElectrified: 0
 --- !u!212 &6238174999120681370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -219,7 +225,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

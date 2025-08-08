@@ -7,6 +7,7 @@ using System.Collections;
 public class Assembly : Singleton<Assembly>
 {
     public Assemblable[] Assembleables;
+    public Cover[] Covers;
     public Array Connections;
 
     //private bool _propagateStatusEffects = true;
@@ -22,6 +23,7 @@ public class Assembly : Singleton<Assembly>
     {
         base.Awake();
         Assembleables = FindObjectsByType<Assemblable>(FindObjectsSortMode.None);
+        Covers = FindObjectsByType<Cover>(FindObjectsSortMode.None);
         Connections = new bool[Assembleables.Length, Assembleables.Length];
         for (int i = 0; i < Connections.GetLength(0); i++) Connections.SetValue(true, i, i);
     }

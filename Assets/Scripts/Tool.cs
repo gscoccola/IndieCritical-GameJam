@@ -10,27 +10,14 @@ public class Tool : MonoBehaviour
 
     private Animator Animator => GetComponent<Animator>();
 
-    /*private void OnMouseDown()
-    {
-        ToolsManager.Instance.PickupTool(type);
-        Destroy(gameObject, 0.2f);
-    }*/
-
-    private void Start()
-    {
-        /*LayerMask.
-        Debug.Log(LayerMask.NameToLayer("ActiveSDHead"));
-        Debug.Log(_toolTypeMask.value);*/
-    }
-
     private void OnMouseDown()
     {
-        _toolHead.gameObject.layer = LayerMask.NameToLayer("ActiveSDHead");
+        _toolHead.SetActive(true);
     }
 
     private void OnMouseUp()
     {
-        _toolHead.gameObject.layer = LayerMask.NameToLayer("Default");
+        _toolHead.SetActive(false);
     }
 
     public void SetActive(bool isActive)
@@ -38,4 +25,9 @@ public class Tool : MonoBehaviour
         IsActive = isActive;
         Animator.SetBool("IsActive", isActive);
     }
+}
+
+public enum ToolType
+{
+    Scredriver,
 }

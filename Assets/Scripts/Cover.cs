@@ -14,18 +14,15 @@ public class Cover : MonoBehaviour
         _draggable = GetComponent<Draggable>();
     }
 
+    private void Update()
+    {
+        CheckIfLocked();
+    }
+
     public void CheckIfLocked()
     {
         _draggable.IsScrewed = _collider.IsTouchingLayers(LayerMask.GetMask("Screw")) 
             ?  true 
             :  false;
     }
-
-    /*{
-        if (_assemblable.CurrentCollisions.Count == 0)
-        {
-            _draggable.IsScrewed = false;
-        }
-
-    }*/
 }

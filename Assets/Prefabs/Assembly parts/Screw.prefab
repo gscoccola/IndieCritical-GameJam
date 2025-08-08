@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 1016785258400998493}
   - component: {fileID: 6763550321254480631}
   - component: {fileID: 4822473163528905542}
-  m_Layer: 7
+  - component: {fileID: 2313290872949271647}
+  m_Layer: 13
   m_Name: Screw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,6 +60,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   IsFree: 0
+  IsLoose: 0
   _isRolling: 0
 --- !u!114 &6187588722956287116
 MonoBehaviour:
@@ -72,11 +74,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ElectricAffinity: 0
+  _heightLayer: 0
+  _interactionTrigger: {fileID: 6763550321254480631}
+  _physicsCollider: {fileID: 2313290872949271647}
+  _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
   CurrentCollisions: []
   OnCollisionUpdate:
     m_PersistentCalls:
       m_Calls: []
-  ElectricAffinity: 0
   _isElectrified: 0
 --- !u!114 &9097577386898864579
 MonoBehaviour:
@@ -95,6 +101,7 @@ MonoBehaviour:
   _showIfSelected: 1
   _freezeX: 0
   _freezeY: 0
+  _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
   _centerOnMouse: 1
@@ -169,8 +176,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -2006227607
-  m_SortingLayer: 3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 1761786219, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -246,3 +253,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!70 &2313290872949271647
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.019864082}
+  m_Size: {x: 0.28529644, y: 0.28529644}
+  m_Direction: 0
