@@ -364,7 +364,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8ac6cd3e4d99a4498cc465f460d205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testClip: {fileID: 8300000, guid: 21c3ac81f87b0b84cadbbea120c31c6f, type: 3}
+  testClip: {fileID: 8300000, guid: 3608967dcd2efb94999a4f23d7029ca3, type: 3}
+  testClipEQed: {fileID: 8300000, guid: 73cb939778c4e9d45b39b698e75ff38b, type: 3}
 --- !u!4 &1075436694
 Transform:
   m_ObjectHideFlags: 0
