@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7121156852533162881}
   - component: {fileID: 5106643102205416913}
+  - component: {fileID: 3876605368559077572}
   - component: {fileID: 2089317346318997739}
   - component: {fileID: 4542480350896366178}
   - component: {fileID: 806557647651555045}
   - component: {fileID: 5894961875448625534}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Screwdriver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsFixed: 0
   IsScrewed: 0
-  _showIfSelected: 1
+  _showIfSelected: 0
   _freezeX: 0
   _freezeY: 0
   _Xlimit: 0
@@ -61,6 +62,22 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnDeSelected:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3876605368559077572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026378286400343925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCollisions: []
+  OnCollisionUpdate:
     m_PersistentCalls:
       m_Calls: []
 --- !u!212 &2089317346318997739
@@ -134,6 +151,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _toolHead: {fileID: 5051728661512469563}
+  IsActive: 0
 --- !u!61 &806557647651555045
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -164,7 +182,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

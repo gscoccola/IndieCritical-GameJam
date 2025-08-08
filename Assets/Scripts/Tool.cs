@@ -6,6 +6,10 @@ public class Tool : MonoBehaviour
     [SerializeField] private LayerMask _toolTypeMask;
     [SerializeField] private GameObject _toolHead;
 
+    public bool IsActive;
+
+    private Animator Animator => GetComponent<Animator>();
+
     /*private void OnMouseDown()
     {
         ToolsManager.Instance.PickupTool(type);
@@ -21,12 +25,17 @@ public class Tool : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log(_toolTypeMask.value.ToBinaryString());
         _toolHead.gameObject.layer = LayerMask.NameToLayer("ActiveSDHead");
     }
 
     private void OnMouseUp()
     {
         _toolHead.gameObject.layer = LayerMask.NameToLayer("Default");
+    }
+
+    public void SetActive(bool isActive)
+    {
+        IsActive = isActive;
+        Animator.SetBool("IsActive", isActive);
     }
 }

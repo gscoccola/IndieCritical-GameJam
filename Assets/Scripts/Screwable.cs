@@ -12,6 +12,7 @@ public class Screwable : MonoBehaviour
     [SerializeField] LayerMask _requiredToolLayer;
 
     public bool IsFree;
+    public bool IsLoose;
 
     private bool _isPressed;
     private float _timeLeft;
@@ -22,6 +23,7 @@ public class Screwable : MonoBehaviour
     private bool _isVibrating;
     public bool _isRolling;
     private float _rollTime;
+    private Tool _currentTool;
 
     private void Start()
     {
@@ -42,9 +44,15 @@ public class Screwable : MonoBehaviour
             
         else _rigidbody.angularVelocity = 0f;
 
-        if (IsFree) return;
-
-        _isPressed = _collider.IsTouchingLayers(_requiredToolLayer);
+        if (IsFree) 
+        {
+            if (_currentTool != null)
+            {
+                _currentTool.SetActive(false);
+                _currentTool = null;
+            }   
+            return; 
+        }
 
         if (_isVibrating)
         {
@@ -52,7 +60,7 @@ public class Screwable : MonoBehaviour
             return;
         }
 
-        if (_isPressed && ToolsManager.Instance.Tools[ToolType.Screwdriver] == true)
+        if (_isPressed)
         {
             _rigidbody.angularVelocity = rotationSpeed;
             _timeLeft -= Time.deltaTime;
@@ -63,7 +71,6 @@ public class Screwable : MonoBehaviour
         if (_timeLeft <= 0f)
         {
             IsFree = true;
-            gameObject.layer = LayerMask.NameToLayer("Assemblable");
             _draggable.IsFixed = false;
             _rigidbody.angularVelocity = 0f;
         }    
@@ -85,6 +92,8 @@ public class Screwable : MonoBehaviour
 
     private IEnumerator IRoll()
     {
+        IsLoose = true;
+        gameObject.layer = LayerMask.NameToLayer("Assemblable");
         _isRolling = true;
         _rollTime = 0f;
         _spriteRenderer.sprite = _sprites[1];
@@ -98,6 +107,28 @@ public class Screwable : MonoBehaviour
     {
         _spriteRenderer.sprite = _sprites[0];
         _isRolling = false;
+        IsLoose = true;
+        gameObject.layer = LayerMask.NameToLayer("Assemblable");
         GetComponent<CircleCollider2D>().offset = Vector2.zero;
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
+        {
+            _isPressed = true;
+            _currentTool = col.transform.parent.GetComponent<Tool>();
+            col.transform.parent.GetComponent<Tool>().SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
+        {
+            _isPressed = false;
+            _currentTool = null;
+            col.transform.parent.GetComponent<Tool>().SetActive(false);
+        }
     }
 }
