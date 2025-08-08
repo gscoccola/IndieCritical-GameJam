@@ -14,6 +14,7 @@ public class Assemblable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.GetComponent<Assemblable>() == null) return;
         CurrentCollisions.Add(col.gameObject);
         Assembly.Instance.UpdateConnections(true, this, col.GetComponent<Assemblable>());
         OnCollisionUpdate?.Invoke();
@@ -21,6 +22,7 @@ public class Assemblable : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
+        if (col.GetComponent<Assemblable>() == null) return;
         CurrentCollisions.Remove(col.gameObject);
         Assembly.Instance.UpdateConnections(false, this, col.GetComponent<Assemblable>());
         OnCollisionUpdate?.Invoke();

@@ -8,12 +8,12 @@ public class Assembly : Singleton<Assembly>
     public Assemblable[] Assembleables;
     public Array Connections;
 
-    private void Start()
+    protected override void Awake()
     {
+        base.Awake();
         Assembleables = FindObjectsByType<Assemblable>(FindObjectsSortMode.None);
         Connections = new bool[Assembleables.Length, Assembleables.Length];
         for (int i = 0; i < Connections.GetLength(0); i++) Connections.SetValue(true, i, i);
-
     }
 
     void OnPrintConnections(InputValue value)

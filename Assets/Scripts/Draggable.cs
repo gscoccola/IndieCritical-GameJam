@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 // This script allows a GameObject to be dragged around the screen with the mouse.
 // It exposes a public boolean field `IsSelected` to indicate whether the object is currently selected.
@@ -7,19 +8,23 @@ using UnityEngine;
 public class Draggable : MonoBehaviour
 {
     public bool IsSelected { get; private set; }
-    public bool isFixed;
-    public bool isScrewed;
+    public bool IsFixed;
+    public bool IsScrewed;
 
     [SerializeField] private bool _showIfSelected = true;
     [SerializeField] private bool _freezeX;
     [SerializeField] private bool _freezeY;
     [SerializeField] private LimitType _Xlimit;
     [SerializeField] private LimitType _Ylimit;
+    [SerializeField] private bool _centerOnMouse;
 
     private Camera _camera;
     private Vector3 _initialRelativePos;
     private bool _isVibrating;
     private Vector3 _initialPos;
+
+    public UnityEvent OnSelected;
+    public UnityEvent OnDeSelected;
 
     private void Awake()
     {
@@ -29,9 +34,10 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        if (!IsSelected || isFixed) return;
+        if (!IsSelected || IsFixed) return;
         
-        Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition) + _initialRelativePos;
+        Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        if (!_centerOnMouse) newPos += _initialRelativePos;
 
         float newX = _Xlimit == LimitType.Min ? Mathf.Max(newPos.x, _initialPos.x) :
                      _Xlimit == LimitType.Max ? Mathf.Min(newPos.x, _initialPos.x) :
@@ -51,15 +57,17 @@ public class Draggable : MonoBehaviour
     private void OnMouseUp()
     {
         OnMouseAction(false);
+        if (!IsFixed) OnDeSelected?.Invoke();
     }
 
     private void OnMouseDown()
     {
-        if (isScrewed)
+        if (IsScrewed)
         {
             StartCoroutine(IVibrate());
             return;
         }
+        if (!IsFixed) OnSelected?.Invoke();
         OnMouseAction(true);
         _initialRelativePos = transform.position - _camera.ScreenToWorldPoint(Input.mousePosition);
     }
