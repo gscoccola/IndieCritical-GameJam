@@ -1,25 +1,17 @@
 using UnityEngine;
-using FMODUnity;
-using FMOD.Studio;
 
 public class AudioTesting : MonoBehaviour
 {
 
-    [SerializeField] private EventReference testReference;
+    public AudioClip testClip;
+    private AudioSource audioSource;
 
-    private EventInstance testInstance;
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    { 
-        testInstance = RuntimeManager.CreateInstance(testReference);
-        testInstance.start();
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.loop = true;
+        audioSource.clip = testClip;
+        audioSource.Play();
     }
+
 }
