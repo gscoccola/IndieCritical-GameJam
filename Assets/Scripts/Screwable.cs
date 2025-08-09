@@ -124,9 +124,13 @@ public class Screwable : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
         {
             _isPressed = true;
-            OnBecomePressed?.Invoke();
             _currentTool = col.transform.parent.GetComponent<Tool>();
             col.transform.parent.GetComponent<Tool>().SetActive(true);
+
+            if (IsLoose) return; 
+            OnBecomePressed?.Invoke(); 
+
+
         }
     }
 
