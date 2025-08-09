@@ -1,3 +1,4 @@
+using UnityEngine.Events;
 using UnityEngine;
 
 public class Heart : MonoBehaviour, IPowerable
@@ -7,6 +8,8 @@ public class Heart : MonoBehaviour, IPowerable
     public bool IsPowered { get; private set; }
 
     private float initialScale;
+
+    public UnityEvent OnBecomePowered;
 
     private void Start()
     {
@@ -25,6 +28,7 @@ public class Heart : MonoBehaviour, IPowerable
     {
         if (!value || IsPowered|| statusEffect != StatusEffect.Electrified) return;
         IsPowered = true;
+        OnBecomePowered?.Invoke();
         _assemblable.StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Source;
     }
 }

@@ -77,7 +77,19 @@ MonoBehaviour:
         m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3302520444889952700}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3876605368559077572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ElectricAffinity: 1
+  BloodAffinity: 0
   _heightLayer: 0
   _interactionTrigger: {fileID: 101193497898521130}
   _physicsCollider: {fileID: 0}
@@ -100,6 +113,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _isElectrified: 0
+  _isBloodPowered: 0
 --- !u!212 &2089317346318997739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -171,6 +185,36 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _toolHead: {fileID: 5051728661512469563}
+  OnStartActive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3302520444889952700}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlayLoopingContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnStopActive:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3302520444889952700}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: StopLoopingContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   IsActive: 0
 --- !u!95 &5894961875448625534
 Animator:
@@ -261,16 +305,33 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 94dcd3f8f3bfd1144b43d29dd8ae24ab, type: 3}
     - {fileID: 8300000, guid: 61aeb930a2ec2a94782118042331a976, type: 3}
     soundSettings:
-      priority: 128
       loop: 0
-      volume: 1
       randomizeVolume: 0
-      volumeRandomRange: {x: 0, y: 0}
-      pitch: 1
+      volumeRange: {x: 1, y: 1}
       randomizePitch: 1
-      pitchRandomRange: {x: 0.8, y: 1.1}
-      spatialBlend: 1
-      spread: 0.42
+      pitchRange: {x: 0.8, y: 1.1}
+  - name: PutDownScrewdriver
+    audioClips:
+    - {fileID: 8300000, guid: 4672c2b2dab8f6a4c9f5df5ea05ce00f, type: 3}
+    soundSettings:
+      loop: 1
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+  - name: PutDownScrewdriver
+    audioClips:
+    - {fileID: 8300000, guid: 60638506b483e594aa09bfd9a2a8c4c6, type: 3}
+    - {fileID: 8300000, guid: d5720e8ddeca8ab4283d1b15dc29926e, type: 3}
+    - {fileID: 8300000, guid: d6506c48d05a84a45a67d6a9c96a91ea, type: 3}
+    - {fileID: 8300000, guid: 3367af5387e54874a96e8528d31b9a25, type: 3}
+    soundSettings:
+      loop: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
+  muteAll: 0
 --- !u!1 &5051728661512469563
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,12 +42,13 @@ public class RandomSoundContainer
     private void ApplySoundSettings(SoundSettings soundSettings, AudioSource audioSource)
     {
 
-        audioSource.priority = soundSettings.priority;
+        audioSource.priority = 128;
         audioSource.loop = soundSettings.loop;
         audioSource.volume = soundSettings.GetVolume();
         audioSource.pitch = soundSettings.GetPitch();
         audioSource.spatialBlend = 1;
         audioSource.spread = 110;
+        audioSource.minDistance = 10;
         audioSource.maxDistance = 30;
 
     }
@@ -65,33 +66,33 @@ public class SoundSettings
 
     [Header("General Settings")]
 
-    [Tooltip("Sets the prioroity of the AudioSource. The lower the number the higher the priority when Unity decides which sounds to play or cull.")]
-    [Range(0, 256)] public int priority = 128;
+    //[Tooltip("Sets the prioroity of the AudioSource. The lower the number the higher the priority when Unity decides which sounds to play or cull.")]
+    //[Range(0, 256)] public int priority = 128;
 
     [Tooltip("Set if the Sound should play again after playback.")]
     public bool loop;
 
     [Header("Volume Settings")]
 
-    [Tooltip("Set the volume to play the Sound at. This setting will be ignored on playback if Randomize Volume is true.")]
-    [Range(0.001f, 1)] public float volume = 1;
+    //[Tooltip("Set the volume to play the Sound at. This setting will be ignored on playback if Randomize Volume is true.")]
+    //[Range(0.001f, 1)] public float volume = 1;
 
     [Tooltip("Set if the Volume of this Sound should be randomized.")]
     public bool randomizeVolume;
 
     [Tooltip("Set the range of volume randomization for this Sound. X value is the minimum volume, and the Y value is the max. These settings will be ignored on playback if Randomize Volume is false.")]
-    public Vector2 volumeRandomRange = new Vector2(.8f, 1f);
+    public Vector2 volumeRange = new Vector2(1, 1);
 
     [Header("Pitch Settings")]
 
-    [Tooltip("Set the pitch to play the Sound at. This setting will be ignored on playback if Randomize Pitch is true.")]
-    [Range(0.001f, 3)] public float pitch = 1;
+    //[Tooltip("Set the pitch to play the Sound at. This setting will be ignored on playback if Randomize Pitch is true.")]
+    //[Range(0.001f, 3)] public float pitch = 1;
 
     [Tooltip("Set if the pitch of this Sound should be randomized.")]
     public bool randomizePitch;
 
     [Tooltip("Set the range of pitch randomization for this Sound. X value is the minimum pitch, and the Y value is the max. These settings will be ignored on playback if Randomize Pitch is false.")]
-    public Vector2 pitchRandomRange = new Vector2(.8f, 1.1f);
+    public Vector2 pitchRange = new Vector2(1, 1);
 
     //[Header("Misc Settings")]
 
@@ -110,12 +111,12 @@ public class SoundSettings
 
     public float GetVolume()
     {
-        return randomizeVolume ? Random.Range(volumeRandomRange.x, volumeRandomRange.y) : volume;
+        return randomizeVolume ? Random.Range(volumeRange.x, volumeRange.y) : volumeRange.x;
     }
 
     public float GetPitch()
     {
-        return randomizePitch ? Random.Range(pitchRandomRange.x, pitchRandomRange.y) : pitch;
+        return randomizePitch ? Random.Range(pitchRange.x, pitchRange.y) : pitchRange.x;
     }
 
 }
