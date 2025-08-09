@@ -6,6 +6,7 @@ public class Assemblable : MonoBehaviour
 {
 
     [SerializeField] StatusEffectAffinity ElectricAffinity;
+    [SerializeField] StatusEffectAffinity BloodAffinity;
     [SerializeField] HeightLayer _heightLayer = HeightLayer.AboveUpperCover;
 
     [SerializeField] Collider2D _interactionTrigger;
@@ -20,11 +21,13 @@ public class Assemblable : MonoBehaviour
     public Dictionary<StatusEffect, StatusEffectAffinity> StatusEffectAffinities = new ();
 
     public bool _isElectrified;
+    public bool _isBloodPowered;
 
 
     private void Update()
     {
         _isElectrified = CurrentStatusEffects[StatusEffect.Electrified];
+        _isBloodPowered = CurrentStatusEffects[StatusEffect.BloodPowered];
     }
 
     private void Awake()
@@ -53,6 +56,10 @@ public class Assemblable : MonoBehaviour
         {
             _heightLayer = HeightLayer.AboveUpperCover;
             transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer);
+           foreach (IActivable activable in GetComponents<IActivable>())
+            {
+                activable.SetActive(true);
+            }
         }
         else
         {
@@ -63,6 +70,7 @@ public class Assemblable : MonoBehaviour
     private void AffinityAndStatusSetup()
     {
         StatusEffectAffinities[StatusEffect.Electrified] = ElectricAffinity;
+        StatusEffectAffinities[StatusEffect.BloodPowered] = BloodAffinity;
         foreach (StatusEffect effect in System.Enum.GetValues(typeof(StatusEffect)))
             CurrentStatusEffects[effect] = false;
     }
@@ -108,25 +116,4 @@ public class Assemblable : MonoBehaviour
         if (CurrentStatusEffects[statusEffect] == value) return;
         CurrentStatusEffects[statusEffect] = value;
     }
-}
-
-public enum StatusEffect
-{
-    Electrified,
-}
-
-public enum StatusEffectAffinity
-{
-    Insulator,
-    Conductor,
-    Source,
-}
-
-public enum HeightLayer
-{
-    AboveUpperCover = 0,
-    UpperCover = 1,
-    Middle = 2,
-    LowerCover = 3,
-    BelowLowerCover = 4,
 }

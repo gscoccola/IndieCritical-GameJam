@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Wire : MonoBehaviour
+public class Wire : MonoBehaviour, IActivable
 {
-    [SerializeField] private Transform _wireOrigin;
+    [SerializeField] public Transform _wireOrigin;
     [SerializeField] private float _maxLength;
     [SerializeField] private float _lenghtAtRest;
     [SerializeField] private LimitType _Xlimit;
@@ -56,6 +56,14 @@ public class Wire : MonoBehaviour
     public void OnMouseDown()
     {
         _isSelected = true;
+    }
+
+    public void SetActive(bool value)
+    {
+        if (!value) return;
+        _lineRenderer.SetPosition(0, new Vector3(_wireOrigin.position.x, _wireOrigin.position.y, transform.position.z));
+        Vector3 wirePos = _wireOrigin.position;
+        _wireOrigin.position = new Vector3(wirePos.x, wirePos.y, transform.position.z);
     }
 }
 

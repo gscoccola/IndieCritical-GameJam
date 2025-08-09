@@ -1,7 +1,6 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class Heart : MonoBehaviour
+public class Heart : MonoBehaviour, IPowerable
 {
     private Assemblable _assemblable => GetComponent<Assemblable>();
 
@@ -16,15 +15,16 @@ public class Heart : MonoBehaviour
 
     private void Update()
     {
-        if (!IsPowered && _assemblable.CurrentStatusEffects[StatusEffect.Electrified])
-        {
-            IsPowered = true;
-            GetComponent<SpriteRenderer>().color = Color.red;
-        }
-
         if (IsPowered)
         {
             transform.localScale = (Mathf.PingPong(Time.time * 0.2f, 0.2f) * Vector3.one + Vector3.one) * initialScale;
         }
+    }
+
+    public void SetPowered(StatusEffect statusEffect, bool value)
+    {
+        if (!value || IsPowered|| statusEffect != StatusEffect.Electrified) return;
+        IsPowered = true;
+        _assemblable.StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Source;
     }
 }

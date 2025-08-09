@@ -132,6 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ElectricAffinity: 2
   _heightLayer: 2
+  _activables:
+  - rid: -2
+  - rid: -2
   _interactionTrigger: {fileID: 8906416877115364115}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -140,6 +143,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _isElectrified: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
 --- !u!212 &6238174999120681370
 SpriteRenderer:
   m_ObjectHideFlags: 0
