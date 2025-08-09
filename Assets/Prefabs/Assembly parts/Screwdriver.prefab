@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4542480350896366178}
   - component: {fileID: 5894961875448625534}
   - component: {fileID: 101193497898521130}
+  - component: {fileID: 3302520444889952700}
   m_Layer: 12
   m_Name: Screwdriver
   m_TagString: Untagged
@@ -61,7 +62,19 @@ MonoBehaviour:
   _centerOnMouse: 1
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3302520444889952700}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
       m_Calls: []
@@ -227,6 +240,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.9533334, y: 0.96}
   m_EdgeRadius: 0
+--- !u!114 &3302520444889952700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5026378286400343925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundsOnThisObject:
+  - name: PickUpScrewdriver
+    audioClips:
+    - {fileID: 8300000, guid: 59d67f47976e5e743aeb5d2169825d32, type: 3}
+    - {fileID: 8300000, guid: 2ceadda50468e574f9b99fc578686332, type: 3}
+    - {fileID: 8300000, guid: a4fac256ff05ff34d94bee24e4bfe0f1, type: 3}
+    - {fileID: 8300000, guid: 94dcd3f8f3bfd1144b43d29dd8ae24ab, type: 3}
+    - {fileID: 8300000, guid: 61aeb930a2ec2a94782118042331a976, type: 3}
+    soundSettings:
+      priority: 128
+      loop: 0
+      volume: 1
+      randomizeVolume: 0
+      volumeRandomRange: {x: 0, y: 0}
+      pitch: 1
+      randomizePitch: 1
+      pitchRandomRange: {x: 0.8, y: 1.1}
+      spatialBlend: 1
+      spread: 0.42
 --- !u!1 &5051728661512469563
 GameObject:
   m_ObjectHideFlags: 0

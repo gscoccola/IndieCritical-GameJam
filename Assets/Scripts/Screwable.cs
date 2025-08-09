@@ -25,6 +25,12 @@ public class Screwable : MonoBehaviour
     private float _rollTime;
     private Tool _currentTool;
 
+    public UnityEvent OnBecomePressed;
+    public UnityEvent OnBecomeUnPressed;
+    public UnityEvent OnBecomeFree;
+    public UnityEvent OnStartRolling;
+
+
     private void Start()
     {
         _timeLeft = _timeToUnscrew;
@@ -71,6 +77,7 @@ public class Screwable : MonoBehaviour
         if (_timeLeft <= 0f)
         {
             IsFree = true;
+            OnBecomeFree?.Invoke();
             _draggable.IsFixed = false;
             _rigidbody.angularVelocity = 0f;
         }    
@@ -117,6 +124,7 @@ public class Screwable : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
         {
             _isPressed = true;
+            OnBecomePressed?.Invoke();
             _currentTool = col.transform.parent.GetComponent<Tool>();
             col.transform.parent.GetComponent<Tool>().SetActive(true);
         }
@@ -127,6 +135,7 @@ public class Screwable : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
         {
             _isPressed = false;
+            OnBecomeUnPressed?.Invoke();
             _currentTool = null;
             col.transform.parent.GetComponent<Tool>().SetActive(false);
         }

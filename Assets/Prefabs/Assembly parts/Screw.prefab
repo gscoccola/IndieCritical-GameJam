@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6763550321254480631}
   - component: {fileID: 4822473163528905542}
   - component: {fileID: 2313290872949271647}
+  - component: {fileID: 2147621451470332080}
   m_Layer: 13
   m_Name: Screw
   m_TagString: Untagged
@@ -62,6 +63,30 @@ MonoBehaviour:
   IsFree: 0
   IsLoose: 0
   _isRolling: 0
+  OnBecomePressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnBecomeUnPressed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnBecomeFree:
+    m_PersistentCalls:
+      m_Calls: []
+  OnStartRolling:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6187588722956287116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +145,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2147621451470332080}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
       m_Calls:
@@ -131,6 +168,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2147621451470332080}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -290,3 +339,76 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.019864082}
   m_Size: {x: 0.28529644, y: 0.28529644}
   m_Direction: 0
+--- !u!114 &2147621451470332080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundsOnThisObject:
+  - name: ScrewsPickup
+    audioClips:
+    - {fileID: 8300000, guid: 33432d0d661837d44904b285ec252e71, type: 3}
+    - {fileID: 8300000, guid: 77e6375c6220a1444b956fc197facd2e, type: 3}
+    - {fileID: 8300000, guid: 6f37667a69861d248bd545cb188c1079, type: 3}
+    - {fileID: 8300000, guid: 635d6d028cdf7aa4884fdb2a0a608eb5, type: 3}
+    soundSettings:
+      priority: 128
+      loop: 0
+      volume: 1
+      randomizeVolume: 0
+      volumeRandomRange: {x: 0, y: 0}
+      pitch: 0
+      randomizePitch: 1
+      pitchRandomRange: {x: 0.8, y: 1.1}
+  - name: ScrewsPutDown
+    audioClips:
+    - {fileID: 8300000, guid: 920daef5e5464b54da0678a12b57d049, type: 3}
+    - {fileID: 8300000, guid: 1c1bcb6a9e2063d4a875c8d391042416, type: 3}
+    - {fileID: 8300000, guid: b8a9878306692704cb887b3e2cad3d70, type: 3}
+    - {fileID: 8300000, guid: 7f920ed41cf4fde439f1822dd84dc206, type: 3}
+    - {fileID: 8300000, guid: 848858992f8640a4dac780775b47517e, type: 3}
+    - {fileID: 8300000, guid: a17379c94f039054f88eb727e7ad6740, type: 3}
+    - {fileID: 8300000, guid: 2efb9d2a498ab184298f93184d8bc23f, type: 3}
+    - {fileID: 8300000, guid: 55c3ca9e5a6b9b24aacefd1097db0c94, type: 3}
+    - {fileID: 8300000, guid: 5c44f482608ab5d4989a9697121b22b8, type: 3}
+    - {fileID: 8300000, guid: a245cf713f6b38d4fa49025eee6df308, type: 3}
+    soundSettings:
+      priority: 128
+      loop: 0
+      volume: 1
+      randomizeVolume: 0
+      volumeRandomRange: {x: 0, y: 0}
+      pitch: 0
+      randomizePitch: 1
+      pitchRandomRange: {x: 0.8, y: 1.1}
+  - name: Unscrewed
+    audioClips:
+    - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
+    soundSettings:
+      priority: 128
+      loop: 0
+      volume: 1
+      randomizeVolume: 0
+      volumeRandomRange: {x: 0, y: 0}
+      pitch: 0
+      randomizePitch: 1
+      pitchRandomRange: {x: 0.8, y: 1.1}
+  - name: Unscrewing
+    audioClips:
+    - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
+    soundSettings:
+      priority: 128
+      loop: 1
+      volume: 1
+      randomizeVolume: 0
+      volumeRandomRange: {x: 0, y: 0}
+      pitch: 0
+      randomizePitch: 0
+      pitchRandomRange: {x: 0.8, y: 1.1}
