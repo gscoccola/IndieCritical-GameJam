@@ -1754,6 +1754,7 @@ MonoBehaviour:
   muteAll: 0
   soundsOnThisObject:
   - name: Touch
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: de22f79bfdd6abb478f3de21a1d541b0, type: 3}
     - {fileID: 8300000, guid: 40fa73abfa55bd6409b594a8591ba581, type: 3}
@@ -1762,24 +1763,29 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 254b2703e20931b4d84c5c5a10114101, type: 3}
     soundSettings:
       loop: 0
+      fadeOutTime: 0
       randomizeVolume: 1
       volumeRange: {x: 0.8, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
   - name: PowerOn
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: d55c969d5bb23ee4680e1661f59bb3b5, type: 3}
     soundSettings:
       loop: 0
+      fadeOutTime: 0
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
   - name: Drone
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: 95a930697421de7418023bc338857e00, type: 3}
     soundSettings:
       loop: 1
+      fadeOutTime: 0
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 0
@@ -1798,6 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartBeatingSounds:
     name: HeatBeatingSounds
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: 1469a993e6a170e4e90945d6cc7f383b, type: 3}
     - {fileID: 8300000, guid: 8d3f8284229dca24394dcbe00074abea, type: 3}
@@ -1808,6 +1815,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 1e6fc24e4a7e45e40b1c85c34c074617, type: 3}
     soundSettings:
       loop: 0
+      fadeOutTime: 0
       randomizeVolume: 0
       volumeRange: {x: 0.8, y: 1}
       randomizePitch: 1

@@ -99,6 +99,7 @@ public class Screwable : MonoBehaviour
 
     private IEnumerator IRoll()
     {
+        OnStartRolling?.Invoke();
         IsLoose = true;
         gameObject.layer = LayerMask.NameToLayer("Assemblable");
         _isRolling = true;
