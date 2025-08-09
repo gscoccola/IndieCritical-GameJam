@@ -92,7 +92,7 @@ public class Assemblable : MonoBehaviour
     {
         if (col.GetComponent<Assemblable>() == null) return;
         CurrentCollisions.Remove(col.gameObject);
-        //Assembly.Instance.UpdateConnections(false, this, col.GetComponent<Assemblable>());
+        Assembly.Instance.UpdateConnections(false, this, col.GetComponent<Assemblable>());
         OnCollisionUpdate?.Invoke();
     }
 
