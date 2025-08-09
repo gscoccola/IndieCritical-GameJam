@@ -126,7 +126,6 @@ public class Assembly : Singleton<Assembly>
                 {
                     if (statusEffect == StatusEffect.BloodPowered && VeinConnections[currentIndex, i] == null)
                     {
-                        Debug.Log(statusEffect + "  " + currentIndex.ToString() + "  " + i + "  " + VeinConnections[currentIndex, i]);
                         VeinConnections[currentIndex, i] = Instantiate(_veinConnectionPrefab, Vector3.zero, Quaternion.identity, transform)
                         .GetComponent<VeinConnection>();
                         VeinConnections[currentIndex, i].Setup(currentAssemblable, Assembleables[i]);
