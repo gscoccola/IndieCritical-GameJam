@@ -296,8 +296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  muteAll: 0
   soundsOnThisObject:
   - name: PickUpScrewdriver
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: 59d67f47976e5e743aeb5d2169825d32, type: 3}
     - {fileID: 8300000, guid: 2ceadda50468e574f9b99fc578686332, type: 3}
@@ -306,20 +308,26 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 61aeb930a2ec2a94782118042331a976, type: 3}
     soundSettings:
       loop: 0
+      fadeOutTime: 0.25
+      fadeInTime: 0
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
-  - name: PutDownScrewdriver
+  - name: ScrewScrewdriver
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: 4672c2b2dab8f6a4c9f5df5ea05ce00f, type: 3}
     soundSettings:
       loop: 1
+      fadeOutTime: 0.5
+      fadeInTime: 1
       randomizeVolume: 0
       volumeRange: {x: 1, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
   - name: PutDownScrewdriver
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: 60638506b483e594aa09bfd9a2a8c4c6, type: 3}
     - {fileID: 8300000, guid: d5720e8ddeca8ab4283d1b15dc29926e, type: 3}
@@ -327,11 +335,12 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 3367af5387e54874a96e8528d31b9a25, type: 3}
     soundSettings:
       loop: 0
+      fadeOutTime: 0.5
+      fadeInTime: 0
       randomizeVolume: 0
       volumeRange: {x: 1, y: 0}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
-  muteAll: 0
 --- !u!1 &5051728661512469563
 GameObject:
   m_ObjectHideFlags: 0

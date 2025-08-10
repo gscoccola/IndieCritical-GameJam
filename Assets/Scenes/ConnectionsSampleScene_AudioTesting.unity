@@ -1763,33 +1763,39 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 254b2703e20931b4d84c5c5a10114101, type: 3}
     soundSettings:
       loop: 0
+      fadeInTime: 0
       fadeOutTime: 0
       randomizeVolume: 1
-      volumeRange: {x: 0.8, y: 1}
+      volumeRange: {x: 0.5, y: 0.6}
       randomizePitch: 1
-      pitchRange: {x: 0.8, y: 1.1}
+      pitchRange: {x: 1.2, y: 1.5}
+    id: 0
   - name: PowerOn
     mute: 0
     audioClips:
     - {fileID: 8300000, guid: d55c969d5bb23ee4680e1661f59bb3b5, type: 3}
     soundSettings:
       loop: 0
+      fadeInTime: 0
       fadeOutTime: 0
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+    id: 0
   - name: Drone
     mute: 0
     audioClips:
     - {fileID: 8300000, guid: 95a930697421de7418023bc338857e00, type: 3}
     soundSettings:
       loop: 1
+      fadeInTime: 2
       fadeOutTime: 0
       randomizeVolume: 0
-      volumeRange: {x: 1, y: 1}
+      volumeRange: {x: 0.2, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+    id: 0
 --- !u!114 &8345559737491050144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1815,11 +1821,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 1e6fc24e4a7e45e40b1c85c34c074617, type: 3}
     soundSettings:
       loop: 0
+      fadeInTime: 2.5
       fadeOutTime: 0
       randomizeVolume: 0
       volumeRange: {x: 0.8, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
+    id: 0
   beatInterval_sec: 1
 --- !u!1001 &9153240388662450700
 PrefabInstance:
@@ -1829,18 +1837,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 283615871}
     m_Modifications:
-    - target: {fileID: 3302520444889952700, guid: e7c6f9af6141b0e4c849273d7566fb7e, type: 3}
-      propertyPath: muteAll
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3302520444889952700, guid: e7c6f9af6141b0e4c849273d7566fb7e, type: 3}
-      propertyPath: soundsOnThisObject.Array.data[1].name
-      value: ScrewScrewdriver
-      objectReference: {fileID: 0}
-    - target: {fileID: 4542480350896366178, guid: e7c6f9af6141b0e4c849273d7566fb7e, type: 3}
-      propertyPath: OnStartActive.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayLoopingContainer
-      objectReference: {fileID: 0}
     - target: {fileID: 5026378286400343925, guid: e7c6f9af6141b0e4c849273d7566fb7e, type: 3}
       propertyPath: m_Name
       value: Screwdriver

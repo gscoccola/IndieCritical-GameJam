@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class RandomSoundContainer
     [SerializeField] private AudioClip[] audioClips;
     public SoundSettings soundSettings;
     private bool shouldPlay = true;
+    [HideInInspector] public int id;
 
     public void PlayRandomSoundOnTarget(Transform target)
     {
@@ -22,6 +24,24 @@ public class RandomSoundContainer
 
         source.clip = clip;
         ApplySoundSettings(soundSettings, source);
+        source.Play();
+
+        Object.Destroy(source, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
+
+    }
+
+    public void PlayRandomSoundOnTarget(Transform target, float volumeOverride)
+    {
+        if (!shouldPlay || mute) return;
+
+        int randInt = Random.Range(0, audioClips.Length);
+
+        AudioSource source = target.AddComponent<AudioSource>();
+        AudioClip clip = audioClips[randInt];
+
+        source.clip = clip;
+        ApplySoundSettings(soundSettings, source);
+        source.volume = volumeOverride;
         source.Play();
 
         Object.Destroy(source, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
@@ -86,7 +106,7 @@ public class SoundSettings
 
     [Tooltip("Set if the Sound should play again after playback.")]
     public bool loop;
-    public float fadeOutTime = 0.5f;
+    public float fadeInTime = 0, fadeOutTime = 0.5f;
 
     [Header("Volume Settings")]
 
