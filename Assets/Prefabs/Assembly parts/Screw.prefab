@@ -120,9 +120,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2147621451470332080}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: SetShouldPlayOnSoundToFalse
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStartRolling:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2147621451470332080}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6187588722956287116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +416,7 @@ MonoBehaviour:
   muteAll: 0
   soundsOnThisObject:
   - name: ScrewsPickup
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: 33432d0d661837d44904b285ec252e71, type: 3}
     - {fileID: 8300000, guid: 77e6375c6220a1444b956fc197facd2e, type: 3}
@@ -404,6 +429,7 @@ MonoBehaviour:
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
   - name: ScrewsPutDown
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: 920daef5e5464b54da0678a12b57d049, type: 3}
     - {fileID: 8300000, guid: 1c1bcb6a9e2063d4a875c8d391042416, type: 3}
@@ -422,15 +448,17 @@ MonoBehaviour:
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
   - name: Unscrewed
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
     soundSettings:
       loop: 0
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
-      randomizePitch: 1
-      pitchRange: {x: 0.8, y: 1.1}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.4}
   - name: Unscrewing
+    mute: 0
     audioClips:
     - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
     soundSettings:
@@ -439,3 +467,16 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+  - name: Roll
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 778c712e2257aac40bf1539b980aee28, type: 3}
+    - {fileID: 8300000, guid: 00e0376fdd2b2854f81acbef315eceed, type: 3}
+    - {fileID: 8300000, guid: 517fb14e082c728429c4f00a0a777153, type: 3}
+    - {fileID: 8300000, guid: 1f89711a775685543bf557e3ab23b988, type: 3}
+    soundSettings:
+      loop: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 1}
+      randomizePitch: 1
+      pitchRange: {x: 2, y: 2.2}

@@ -79,6 +79,7 @@ GameObject:
   - component: {fileID: 8906416877115364115}
   - component: {fileID: 7155883753996552422}
   - component: {fileID: 7984406103448031245}
+  - component: {fileID: 8321669497902541764}
   m_Layer: 12
   m_Name: End
   m_TagString: Untagged
@@ -118,6 +119,7 @@ MonoBehaviour:
   _lenghtAtRest: 0.9
   _Xlimit: 2
   _Ylimit: 0
+  _uniqueSounds: {fileID: 8321669497902541764}
 --- !u!114 &988113293650334573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,10 +133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ElectricAffinity: 2
+  BloodAffinity: 0
   _heightLayer: 2
-  _activables:
-  - rid: -2
-  - rid: -2
   _interactionTrigger: {fileID: 8906416877115364115}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -143,11 +143,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   _isElectrified: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+  _isBloodPowered: 0
 --- !u!212 &6238174999120681370
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -373,3 +369,60 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &8321669497902541764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544905120526856310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: PickUp
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 8896ca9ad6721c649a158f00b07894c5, type: 3}
+    - {fileID: 8300000, guid: 801244f19abeab8438be311359994ad7, type: 3}
+    - {fileID: 8300000, guid: 2b110db990947214c9eb019d2f6d75c4, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0}
+      randomizePitch: 1
+      pitchRange: {x: 0.9, y: 1.2}
+    id: 0
+  - name: PutDown
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 61937789e2cffd945baf08a05ecbe743, type: 3}
+    - {fileID: 8300000, guid: 32c26b88e910bff44be0e62c5f1ea438, type: 3}
+    - {fileID: 8300000, guid: aa481cd7b7cbb8847af850c94e877749, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0}
+      randomizePitch: 1
+      pitchRange: {x: 0.9, y: 1.2}
+    id: 0
+  - name: Spark
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 3443335989bca2240a2cca8599fef0d2, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 3
+      fadeOutTime: 1
+      randomizeVolume: 0
+      volumeRange: {x: 0.5, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1.2, y: 1.2}
+    id: 0

@@ -13,6 +13,8 @@ public class Wire : MonoBehaviour, IActivable
     private Assemblable _assemblable => GetComponent<Assemblable>();
     private bool _isSoundOn;
 
+    [SerializeField] private Sounds _uniqueSounds;
+
     private void Start()
     {
         _camera = Camera.main;
@@ -20,6 +22,8 @@ public class Wire : MonoBehaviour, IActivable
         _lineRenderer = GetComponent<LineRenderer>();
         _lineRenderer.SetPosition(0, new Vector3(_wireOrigin.position.x, _wireOrigin.position.y, transform.position.z));
         _lineRenderer.SetPosition(1, transform.position);
+
+
     }
 
     public void OnMouseDrag()
@@ -62,12 +66,14 @@ public class Wire : MonoBehaviour, IActivable
     {
         _isSelected = false;
 
+        _uniqueSounds.PlaySoundContainer("PutDown");
         MoveToMousePos(_lenghtAtRest);
     }
 
     public void OnMouseDown()
     {
         _isSelected = true;
+        _uniqueSounds.PlaySoundContainer("PickUp");
     }
 
     public void SetActive(bool value)
@@ -76,6 +82,8 @@ public class Wire : MonoBehaviour, IActivable
         _lineRenderer.SetPosition(0, new Vector3(_wireOrigin.position.x, _wireOrigin.position.y, transform.position.z));
         Vector3 wirePos = _wireOrigin.position;
         _wireOrigin.position = new Vector3(wirePos.x, wirePos.y, transform.position.z);
+        _uniqueSounds.PlayLoopingContainer("Spark");
+
     }
 }
 
