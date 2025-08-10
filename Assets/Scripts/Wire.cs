@@ -10,6 +10,8 @@ public class Wire : MonoBehaviour, IActivable
     private LineRenderer _lineRenderer;
     private bool _isSelected;
     private Camera _camera;
+    private Assemblable _assemblable => GetComponent<Assemblable>();
+    private bool _isSoundOn;
 
     private void Start()
     {
@@ -24,6 +26,16 @@ public class Wire : MonoBehaviour, IActivable
     {
         if (!_isSelected) return;
         MoveToMousePos(_maxLength);
+    }
+
+    public void OnConnectionsUpdate()
+    {
+        _isSoundOn = false;
+        foreach (var collision in _assemblable.CurrentCollidingObjects)
+        {
+            if (collision.GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.Electrified] == StatusEffectAffinity.Conductor)
+                _isSoundOn = true;
+        }
     }
 
     private void MoveToMousePos(float lenght)

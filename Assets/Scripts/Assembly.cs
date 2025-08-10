@@ -25,6 +25,7 @@ public class Assembly : Singleton<Assembly>
     {
         base.Awake();
         Assembleables = FindObjectsByType<Assemblable>(FindObjectsSortMode.None);
+        for (int i = 0; i < Assembleables.GetLength(0); i++) Assembleables[i].AssemblyIndex = i;
         Covers = FindObjectsByType<Cover>(FindObjectsSortMode.None);
         Connections = new bool[Assembleables.Length, Assembleables.Length];
         VeinConnections = new VeinConnection[Assembleables.Length, Assembleables.Length];

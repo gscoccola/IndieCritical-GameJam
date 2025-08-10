@@ -13,21 +13,22 @@ public class Assemblable : MonoBehaviour
     [SerializeField] Collider2D _physicsCollider;
     [SerializeField] GameObject _coverCheckerPrefab;
 
-    public List<GameObject> CurrentCollisions = new List<GameObject>();
+    public List<GameObject> CurrentCollidingObjects = new List<GameObject>();
     public UnityEvent  OnCollisionUpdate;
     public Dictionary<StatusEffect, bool> CurrentStatusEffects = new();
+    public int AssemblyIndex;
 
-    
     public Dictionary<StatusEffect, StatusEffectAffinity> StatusEffectAffinities = new ();
 
     public bool _isElectrified;
     public bool _isBloodPowered;
-
+    public bool IsUncovered;
 
     private void Update()
     {
         _isElectrified = CurrentStatusEffects[StatusEffect.Electrified];
         _isBloodPowered = CurrentStatusEffects[StatusEffect.BloodPowered];
+        IsUncovered = _heightLayer == HeightLayer.AboveUpperCover;
     }
 
     private void Awake()
@@ -83,7 +84,7 @@ public class Assemblable : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.GetComponent<Assemblable>() == null) return;
-        CurrentCollisions.Add(col.gameObject);
+        CurrentCollidingObjects.Add(col.gameObject);
         Assembly.Instance.UpdateConnections(true, this, col.GetComponent<Assemblable>());
         OnCollisionUpdate?.Invoke();
     }
@@ -91,7 +92,7 @@ public class Assemblable : MonoBehaviour
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.GetComponent<Assemblable>() == null) return;
-        CurrentCollisions.Remove(col.gameObject);
+        CurrentCollidingObjects.Remove(col.gameObject);
         Assembly.Instance.UpdateConnections(false, this, col.GetComponent<Assemblable>());
         OnCollisionUpdate?.Invoke();
     }
@@ -105,7 +106,7 @@ public class Assemblable : MonoBehaviour
         {
             if (col != null && col.GetComponent<Assemblable>() != null)
             {
-                CurrentCollisions.Add(col.gameObject);
+                CurrentCollidingObjects.Add(col.gameObject);
                 Assembly.Instance.UpdateConnections(true, this, col.GetComponent<Assemblable>());
             }
         }
