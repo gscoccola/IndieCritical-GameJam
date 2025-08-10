@@ -23,7 +23,7 @@ public class VelocityVolumeController : MonoBehaviour
     [SerializeField] private float bufferSmoothDown;
     private float buffer = 0f, bufferAmt, _diff = 0, curVolume = 0;
     private bool justLouder = false;
-    public Slider debugSlider;
+    //public Slider debugSlider;
 
     public void StartVelocityControlledSound()
     {
@@ -62,8 +62,8 @@ public class VelocityVolumeController : MonoBehaviour
 
         }
 
-        _audioSource.volume -= Time.deltaTime;
-        debugSlider.value -= Time.deltaTime;
+        if (_audioSource != null) _audioSource.volume -= Time.deltaTime;
+        //debugSlider.value -= Time.deltaTime;
     }
 
 
@@ -105,7 +105,7 @@ public class VelocityVolumeController : MonoBehaviour
             bufferAmt *= bufferSmoothDown;
 
         }
-        debugSlider.value = buffer;
+        //debugSlider.value = buffer;
         return buffer;
     }
 

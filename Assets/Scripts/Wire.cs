@@ -41,8 +41,7 @@ public class Wire : MonoBehaviour, IActivable
             if (collision.GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.Electrified] == StatusEffectAffinity.Conductor)
                 _isSoundOn = false;
         }
-        if (_isSoundOn) _uniqueSounds.PlayLoopingContainer("Spark");
-        else _uniqueSounds.StopLoopingContainer("Spark");
+        if (!_isSoundOn) _uniqueSounds.StopLoopingContainer("Spark");
     }
 
     private void MoveToMousePos(float lenght)

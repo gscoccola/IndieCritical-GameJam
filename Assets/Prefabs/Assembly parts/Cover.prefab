@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 3272512817453774065}
   - component: {fileID: 703002745233878479}
   - component: {fileID: 6248743531716558905}
+  - component: {fileID: 7819231607921823888}
+  - component: {fileID: 6647666147492841816}
   m_Layer: 11
   m_Name: Cover
   m_TagString: Untagged
@@ -62,11 +64,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ElectricAffinity: 0
+  BloodAffinity: 0
   _heightLayer: 1
   _interactionTrigger: {fileID: 6248743531716558905}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
-  CurrentCollisions: []
+  CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
       m_Calls:
@@ -82,7 +85,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  AssemblyIndex: 0
   _isElectrified: 0
+  _isBloodPowered: 0
+  IsUncovered: 0
 --- !u!114 &2995166651489334948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,10 +112,34 @@ MonoBehaviour:
   _centerOnMouse: 0
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7819231607921823888}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StartVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7819231607921823888}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StopVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &3272512817453774065
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,3 +268,79 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7819231607921823888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4164219470669223421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a542995930d254c9d2ba26fe5e1979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds: {fileID: 6647666147492841816}
+  _loopContainerID: 2
+  _startContainerID: 0
+  _stopContainerID: 1
+  _volumeMulti: 20
+  _minVolume: 0
+  _maxVolume: 0.7
+  bufferAmtBase: 0.05
+  bufferSmoothUp: 1
+  bufferSmoothDown: 1.1
+--- !u!114 &6647666147492841816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4164219470669223421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: StartSlide
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: febf7ac7d1960d743a8b4f81eaf7d867, type: 3}
+    - {fileID: 8300000, guid: 6340bb3e6d214a04a8407d720e59db60, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.9, y: 1}
+      randomizePitch: 1
+      pitchRange: {x: 0.9, y: 1.1}
+    id: 0
+  - name: StopSlide
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 038c3e33624319147b9e456af0a32ea0, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 1}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
+    id: 0
+  - name: SlideLoop
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 248a1d39ee8d34b4fab0009b888641eb, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 0.5
+      fadeOutTime: 0.25
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 1}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+    id: 0
