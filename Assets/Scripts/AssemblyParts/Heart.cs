@@ -18,16 +18,13 @@ public class Heart : MonoBehaviour, IPowerable
 
     private void Update()
     {
-        if (IsPowered)
-        {
-            transform.localScale = (Mathf.PingPong(Time.time * 0.2f, 0.2f) * Vector3.one + Vector3.one) * initialScale;
-        }
     }
 
     public void SetPowered(StatusEffect statusEffect, bool value)
     {
         if (!value || IsPowered|| statusEffect != StatusEffect.Electrified) return;
         IsPowered = true;
+        GetComponent<Animator>().SetBool("IsPumping", true);
         OnBecomePowered?.Invoke();
         _assemblable.StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Source;
     }

@@ -52,7 +52,7 @@ public class VelocityVolumeController : MonoBehaviour
                 _sounds.PlayLoopingContainer(_loopContainerID, out _audioSource);
                 _sounds.PlaySoundContainer(_startContainerID);
             }
-            print(_diff);
+            //print(_diff);
             //_audioSource.volume = GetVolume(diff);
             if (_diff > 0.041f) _audioSource.volume = GetVolume(_diff); 
             //debugSlider.value = GetVolume(_diff);
