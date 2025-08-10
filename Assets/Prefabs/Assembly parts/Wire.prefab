@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 6292102833568975620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -96,7 +96,7 @@ Transform:
   m_GameObject: {fileID: 7544905120526856310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.53, y: 0, z: 0}
+  m_LocalPosition: {x: -0.53, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -138,12 +138,26 @@ MonoBehaviour:
   _interactionTrigger: {fileID: 8906416877115364115}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
-  CurrentCollisions: []
+  CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7062688873569709802}
+        m_TargetAssemblyTypeName: Wire, Assembly-CSharp
+        m_MethodName: OnConnectionsUpdate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  AssemblyIndex: 0
   _isElectrified: 0
   _isBloodPowered: 0
+  IsUncovered: 0
 --- !u!212 &6238174999120681370
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -74,6 +74,11 @@ public class Sounds : MonoBehaviour
 
     }
 
+    public void StopLoopingContainer(string containerName)
+    {
+        StopLoopingContainer(GetSoundContainerByName(containerName));
+    }
+
     public void StopLoopingContainer(int soundID)
     {
 
