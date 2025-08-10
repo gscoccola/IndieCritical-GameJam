@@ -58,9 +58,39 @@ public class Sounds : MonoBehaviour
         if (containerToPlay.soundSettings.loop != true || loopingAudioSources.ContainsKey(containerToPlay.name)) return;
 
         containerToPlay.PlayLoopingSoundOnTarget(out AudioSource loopingAudioSource, transform);
-        loopingAudioSource.volume = 0;
             
         if (loopingAudioSource != null)            
+        {
+            loopingAudioSources.Add(containerToPlay.name, loopingAudioSource);
+
+            if (containerToPlay.soundSettings.fadeInTime > 0)
+            {
+                StartCoroutine(IFadeInLoopingSound(containerToPlay.soundSettings.GetVolume(), containerToPlay.soundSettings.fadeInTime, loopingAudioSource));
+            }
+
+        }
+
+    }
+
+    public void PlayLoopingContainer(int soundID, out AudioSource source) //for velocity controll 
+    {
+        if (muteAll) {
+            source = null;
+            return; 
+        }
+
+        RandomSoundContainer containerToPlay = soundsOnThisObject[soundID];
+
+        if (containerToPlay.soundSettings.loop != true || loopingAudioSources.ContainsKey(containerToPlay.name))
+        {
+            source = null;
+            return;
+        }
+
+        containerToPlay.PlayLoopingSoundOnTarget(out AudioSource loopingAudioSource, transform);
+        source = loopingAudioSource;
+
+        if (loopingAudioSource != null)
         {
             loopingAudioSources.Add(containerToPlay.name, loopingAudioSource);
 
@@ -119,6 +149,7 @@ public class Sounds : MonoBehaviour
 
     private IEnumerator IFadeInLoopingSound(float targetVolume, float duration, AudioSource source)
     {
+        source.volume = 0;
         float timeElapsed = 0;
 
         while (timeElapsed < duration)
