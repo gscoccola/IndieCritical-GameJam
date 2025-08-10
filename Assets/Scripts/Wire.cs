@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 public class Wire : MonoBehaviour, IActivable
@@ -12,10 +11,10 @@ public class Wire : MonoBehaviour, IActivable
     private bool _isSelected;
     private Camera _camera;
     private Assemblable _assemblable => GetComponent<Assemblable>();
-    private bool _areSparksOn;
-    private ParticleSystem _sparkParticleSystem => GetComponent<ParticleSystem>();
+    private bool _isSoundOn;
 
     [SerializeField] private Sounds _uniqueSounds;
+    [SerializeField] GameObject _sparkPrefab;
 
     private void Start()
     {
@@ -36,14 +35,13 @@ public class Wire : MonoBehaviour, IActivable
 
     public void OnConnectionsUpdate()
     {
-        _areSparksOn = true;
+        _isSoundOn = true;
         foreach (var collision in _assemblable.CurrentCollidingObjects)
         {
             if (collision.GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.Electrified] == StatusEffectAffinity.Conductor)
-                _areSparksOn = false;
+                _isSoundOn = false;
         }
-        SetSparks(_areSparksOn);
-
+        if (!_isSoundOn) _uniqueSounds.StopLoopingContainer("Spark");
     }
 
     private void MoveToMousePos(float lenght)
@@ -87,21 +85,8 @@ public class Wire : MonoBehaviour, IActivable
         Vector3 wirePos = _wireOrigin.position;
         _wireOrigin.position = new Vector3(wirePos.x, wirePos.y, transform.position.z);
         _uniqueSounds.PlayLoopingContainer("Spark");
-        _areSparksOn = true;
+        _isSoundOn = true;
 
-    }
-
-    private void SetSparks(bool value)
-    {
-        if (value)
-        {
-            _uniqueSounds.PlayLoopingContainer("Spark");
-            _sparkParticleSystem.Play();
-            return;
-        }
-
-        _uniqueSounds.StopLoopingContainer("Spark");
-        _sparkParticleSystem.Stop();
     }
 }
 
