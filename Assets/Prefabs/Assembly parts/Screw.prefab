@@ -165,12 +165,14 @@ MonoBehaviour:
   _interactionTrigger: {fileID: 6763550321254480631}
   _physicsCollider: {fileID: 2313290872949271647}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
-  CurrentCollisions: []
+  CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
       m_Calls: []
+  AssemblyIndex: 0
   _isElectrified: 0
   _isBloodPowered: 0
+  IsUncovered: 0
 --- !u!114 &9097577386898864579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,10 +426,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 635d6d028cdf7aa4884fdb2a0a608eb5, type: 3}
     soundSettings:
       loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0.5
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
+    id: 0
   - name: ScrewsPutDown
     mute: 0
     audioClips:
@@ -443,30 +448,40 @@ MonoBehaviour:
     - {fileID: 8300000, guid: a245cf713f6b38d4fa49025eee6df308, type: 3}
     soundSettings:
       loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0.5
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
+    id: 0
   - name: Unscrewed
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
+    - {fileID: 8300000, guid: 7b090c2090a06ae4da075b054b9e57a9, type: 3}
+    - {fileID: 8300000, guid: ba6296b0a45302448bde4314018d18f2, type: 3}
     soundSettings:
       loop: 0
-      randomizeVolume: 0
-      volumeRange: {x: 1, y: 1}
-      randomizePitch: 0
-      pitchRange: {x: 1, y: 1.4}
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.9, y: 1}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
+    id: 0
   - name: Unscrewing
     mute: 0
     audioClips:
     - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
     soundSettings:
       loop: 1
+      fadeInTime: 0
+      fadeOutTime: 0.5
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+    id: 0
   - name: Roll
     mute: 0
     audioClips:
@@ -476,7 +491,10 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 1f89711a775685543bf557e3ab23b988, type: 3}
     soundSettings:
       loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0.5
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 1
       pitchRange: {x: 2, y: 2.2}
+    id: 0
