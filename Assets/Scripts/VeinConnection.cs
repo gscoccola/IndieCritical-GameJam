@@ -15,7 +15,11 @@ public class VeinConnection : MonoBehaviour
 
     private void Update()
     {
-        _lineRenderer.SetPosition(0, _origin.transform.position);
-        _lineRenderer.SetPosition(1, _destination.transform.position);
+        _lineRenderer.SetPosition(0, ShiftBelow(_origin.transform.position));
+        _lineRenderer.SetPosition(1, ShiftBelow(_destination.transform.position));
+    }
+
+    private Vector3 ShiftBelow(Vector3 vector)
+    {         return new Vector3(vector.x, vector.y, vector.z + 0.1f);
     }
 }

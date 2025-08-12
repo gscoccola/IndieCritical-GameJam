@@ -14,15 +14,15 @@ public class Tool : MonoBehaviour
 
     private Animator Animator => GetComponent<Animator>();
 
-    private void OnMouseDown()
+
+    public void Ready()
     {
         _toolHead.SetActive(true);
     }
 
-    private void OnMouseUp()
+    public void UnReady()
     {
         _toolHead.SetActive(false);
-        
     }
 
     public void SetActive(bool isActive)

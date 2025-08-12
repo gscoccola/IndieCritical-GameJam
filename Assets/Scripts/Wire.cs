@@ -15,7 +15,6 @@ public class Wire : MonoBehaviour, IActivable
     private ParticleSystem _sparkParticles => GetComponent<ParticleSystem>();
 
     [SerializeField] private Sounds _uniqueSounds;
-    [SerializeField] GameObject _sparkPrefab;
 
     private void Start()
     {

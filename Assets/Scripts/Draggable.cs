@@ -7,17 +7,17 @@ using UnityEngine.Events;
 
 public class Draggable : MonoBehaviour
 {
+    public bool IsSelectable = true;
     public bool IsSelected { get; private set; }
     public bool IsFixed;
     public bool IsScrewed;
 
-    [SerializeField] private bool _showIfSelected = true;
     [SerializeField] private bool _freezeX;
     [SerializeField] private bool _freezeY;
     [SerializeField] private bool _irreversible;
     [SerializeField] private LimitType _Xlimit;
     [SerializeField] private LimitType _Ylimit;
-    [SerializeField] private bool _centerOnMouse;
+    //[SerializeField] private bool _centerOnMouse;
 
     private Camera _camera;
     private Vector3 _initialRelativePos;
@@ -26,19 +26,23 @@ public class Draggable : MonoBehaviour
 
     public UnityEvent OnSelected;
     public UnityEvent OnDeSelected;
+    public UnityEvent OnJiggle;
 
     private void Awake()
     {
         _camera = FindAnyObjectByType<Camera>();
         _initialPos = transform.position;
+        IsSelectable = true;
     }
 
     private void OnMouseDrag()
     {
-        if (!IsSelected || IsFixed) return;
+        if (!IsSelected || IsFixed || !IsSelectable) return;
         
         Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition);
-        if (!_centerOnMouse) newPos += _initialRelativePos;
+        newPos += _initialRelativePos;
+        /*if (!_centerOnMouse) newPos += _initialRelativePos;
+        /*else newPos += GetComponent<Collider2D>().offset.x * Vector3.right;*/
 
         if (_irreversible) _initialPos = transform.position;
 
@@ -65,12 +69,14 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!IsSelectable) return;
+        if (IsFixed) { OnJiggle?.Invoke(); return; }
         if (IsScrewed)
         {
             StartCoroutine(IVibrate());
             return;
         }
-        if (!IsFixed) OnSelected?.Invoke();
+        OnSelected?.Invoke();
         OnMouseAction(true);
         _initialRelativePos = transform.position - _camera.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -78,7 +84,6 @@ public class Draggable : MonoBehaviour
     private void OnMouseAction(bool mouseDown)
     {
         IsSelected = mouseDown;
-        if (_showIfSelected) GetComponent<SpriteRenderer>().color = IsSelected ? new Color (0.8f, 0.8f, 0.8f , 0.8f) : Color.white;
     }
 
     private IEnumerator IVibrate()

@@ -2,14 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Draggable))]
-public class Screwable : MonoBehaviour
+public class Screw : MonoBehaviour
 {
     [SerializeField] float rotationSpeed = 100f;
     [SerializeField] float _timeToUnscrew = 3f;
     [SerializeField] ToolType _requiredType;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] LayerMask _requiredToolLayer;
+    [SerializeField] Draggable _draggable;
 
     public bool IsFree;
     public bool IsLoose;
@@ -17,7 +17,6 @@ public class Screwable : MonoBehaviour
     private bool _isPressed;
     private float _timeLeft;
     private Rigidbody2D _rigidbody;
-    private Draggable _draggable;
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider => GetComponent<Collider2D>();
     private bool _isVibrating;
@@ -35,7 +34,6 @@ public class Screwable : MonoBehaviour
     {
         _timeLeft = _timeToUnscrew;
         _rigidbody = GetComponent<Rigidbody2D>();
-        _draggable = GetComponent<Draggable>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _draggable.IsFixed = true;
     }
@@ -62,7 +60,7 @@ public class Screwable : MonoBehaviour
 
         if (_isVibrating)
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, Mathf.PingPong(Time.time * 100f, 10f));
+            _rigidbody.angularVelocity = 200f - Mathf.PingPong(Time.time * 4000f, 400f);
             return;
         }
 
@@ -83,7 +81,8 @@ public class Screwable : MonoBehaviour
         }    
     }
 
-    private void OnMouseDown()
+    
+    public void Vibrate()
     {
         StartCoroutine(IVibrate());
     }
@@ -91,7 +90,7 @@ public class Screwable : MonoBehaviour
     private IEnumerator IVibrate()
     {
         _isVibrating = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.5f);
         _isVibrating = false;
     }
 
@@ -106,7 +105,7 @@ public class Screwable : MonoBehaviour
         _rollTime = 0f;
         _spriteRenderer.sprite = _sprites[1];
         transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-        GetComponent<CircleCollider2D>().offset = new Vector2(-0.71f, 0f);
+        //GetComponent<CircleCollider2D>().offset = new Vector2(-0.71f, 0f);
         yield return new WaitForSeconds(2.3f);
         _isRolling = false;
     }
@@ -141,6 +140,7 @@ public class Screwable : MonoBehaviour
         {
             _isPressed = false;
             OnBecomeUnPressed?.Invoke();
+            if (_currentTool != null) _currentTool.SetActive(false);
             _currentTool = null;
             col.transform.parent.GetComponent<Tool>().SetActive(false);
         }

@@ -7,7 +7,7 @@ public class RandomWalk : MonoBehaviour
     [SerializeField] private float _acceleration = 5f;
 
     private Rigidbody2D _rb => GetComponent<Rigidbody2D>();
-    private Draggable _draggable => GetComponent<Draggable>();
+    private Draggable _draggable;
     private Assemblable _assemblable => GetComponent<Assemblable>();
     private Vector3 _speedTarget;
     public bool _isUncovered;
@@ -16,6 +16,7 @@ public class RandomWalk : MonoBehaviour
     {
         _speedTarget = Random.insideUnitCircle.normalized * _speed;
         StartCoroutine(IChangeDirection());
+        _draggable = GetComponent<Draggable>();
     }
 
     private void Update()
