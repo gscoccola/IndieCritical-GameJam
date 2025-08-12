@@ -2,14 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Draggable))]
-public class Screwable : MonoBehaviour
+public class Screw : MonoBehaviour
 {
     [SerializeField] float rotationSpeed = 100f;
     [SerializeField] float _timeToUnscrew = 3f;
     [SerializeField] ToolType _requiredType;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] LayerMask _requiredToolLayer;
+    [SerializeField] Draggable _draggable;
 
     public bool IsFree;
     public bool IsLoose;
@@ -17,7 +17,6 @@ public class Screwable : MonoBehaviour
     private bool _isPressed;
     private float _timeLeft;
     private Rigidbody2D _rigidbody;
-    private Draggable _draggable;
     private SpriteRenderer _spriteRenderer;
     private Collider2D _collider => GetComponent<Collider2D>();
     private bool _isVibrating;
@@ -35,7 +34,6 @@ public class Screwable : MonoBehaviour
     {
         _timeLeft = _timeToUnscrew;
         _rigidbody = GetComponent<Rigidbody2D>();
-        _draggable = GetComponent<Draggable>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _draggable.IsFixed = true;
     }
@@ -83,7 +81,8 @@ public class Screwable : MonoBehaviour
         }    
     }
 
-    private void OnMouseDown()
+    
+    public void Vibrate()
     {
         StartCoroutine(IVibrate());
     }
@@ -141,6 +140,7 @@ public class Screwable : MonoBehaviour
         {
             _isPressed = false;
             OnBecomeUnPressed?.Invoke();
+            if (_currentTool != null) _currentTool.SetActive(false);
             _currentTool = null;
             col.transform.parent.GetComponent<Tool>().SetActive(false);
         }

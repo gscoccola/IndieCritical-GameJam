@@ -10,7 +10,7 @@ public class Assemblable : MonoBehaviour
     [SerializeField] HeightLayer _heightLayer = HeightLayer.AboveUpperCover;
 
     [SerializeField] Collider2D _interactionTrigger;
-    [SerializeField] Collider2D _physicsCollider;
+    //[SerializeField] Collider2D _physicsCollider;
     [SerializeField] GameObject _coverCheckerPrefab;
 
     public List<GameObject> CurrentCollidingObjects = new List<GameObject>();
@@ -40,7 +40,8 @@ public class Assemblable : MonoBehaviour
 
     private void InitialHeightLayerSetup()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer);
+        float ordenInLayer = transform.position.z - (int)_heightLayer;
+        transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer + ordenInLayer);
         if (GetComponent<Cover>() != null) return;
         if (_heightLayer != HeightLayer.AboveUpperCover)
         {
@@ -52,11 +53,13 @@ public class Assemblable : MonoBehaviour
     {
         if (_interactionTrigger.enabled == value) return;
         _interactionTrigger.enabled = value;
-        if (_physicsCollider != null) _physicsCollider.enabled = value;
+        //if (_physicsCollider != null) _physicsCollider.enabled = value;
         if (value)
         {
+            float ordenInLayer = transform.position.z - (int)_heightLayer ;
             _heightLayer = HeightLayer.AboveUpperCover;
-            transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer);
+            
+            transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer + ordenInLayer);
            foreach (IActivable activable in GetComponents<IActivable>())
             {
                 activable.SetActive(true);

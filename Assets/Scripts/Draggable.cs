@@ -7,22 +7,23 @@ using UnityEngine.Events;
 
 public class Draggable : MonoBehaviour
 {
+    public bool IsSelectable = true;
     public bool IsSelected { get; private set; }
     public bool IsFixed;
     public bool IsScrewed;
 
-    [SerializeField] private bool _showIfSelected = true;
     [SerializeField] private bool _freezeX;
     [SerializeField] private bool _freezeY;
     [SerializeField] private bool _irreversible;
     [SerializeField] private LimitType _Xlimit;
     [SerializeField] private LimitType _Ylimit;
-    [SerializeField] private bool _centerOnMouse;
+    //[SerializeField] private bool _centerOnMouse;
 
     private Camera _camera;
     private Vector3 _initialRelativePos;
     private bool _isVibrating;
     private Vector3 _initialPos;
+    private Transform _parent;
 
     public UnityEvent OnSelected;
     public UnityEvent OnDeSelected;
@@ -30,17 +31,21 @@ public class Draggable : MonoBehaviour
     private void Awake()
     {
         _camera = FindAnyObjectByType<Camera>();
-        _initialPos = transform.position;
+        _parent = transform.parent;
+        _initialPos = _parent.position;
+        IsSelectable = true;
     }
 
     private void OnMouseDrag()
     {
-        if (!IsSelected || IsFixed) return;
+        if (!IsSelected || IsFixed || !IsSelectable) return;
         
         Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition);
-        if (!_centerOnMouse) newPos += _initialRelativePos;
+        newPos += _initialRelativePos;
+        /*if (!_centerOnMouse) newPos += _initialRelativePos;
+        /*else newPos += GetComponent<Collider2D>().offset.x * Vector3.right;*/
 
-        if (_irreversible) _initialPos = transform.position;
+        if (_irreversible) _initialPos = _parent.position;
 
         float newX = _Xlimit == LimitType.Min ? Mathf.Max(newPos.x, _initialPos.x) :
                      _Xlimit == LimitType.Max ? Mathf.Min(newPos.x, _initialPos.x) :
@@ -50,10 +55,10 @@ public class Draggable : MonoBehaviour
                      _Ylimit == LimitType.Max ? Mathf.Min(newPos.y, _initialPos.y) :
                      newPos.y;
 
-        transform.position = new Vector3(
-            _freezeX ? transform.position.x : newX,
-            _freezeY ? transform.position.y : newY,
-            transform.position.z
+        _parent.position = new Vector3(
+            _freezeX ? _parent.position.x : newX,
+            _freezeY ? _parent.position.y : newY,
+            _parent.position.z
         );
     }
 
@@ -65,6 +70,7 @@ public class Draggable : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (!IsSelectable) return;
         if (IsScrewed)
         {
             StartCoroutine(IVibrate());
@@ -72,20 +78,19 @@ public class Draggable : MonoBehaviour
         }
         if (!IsFixed) OnSelected?.Invoke();
         OnMouseAction(true);
-        _initialRelativePos = transform.position - _camera.ScreenToWorldPoint(Input.mousePosition);
+        _initialRelativePos = _parent.position - _camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void OnMouseAction(bool mouseDown)
     {
         IsSelected = mouseDown;
-        if (_showIfSelected) GetComponent<SpriteRenderer>().color = IsSelected ? new Color (0.8f, 0.8f, 0.8f , 0.8f) : Color.white;
     }
 
     private IEnumerator IVibrate()
     {
         _isVibrating = true;
         yield return new WaitForSeconds(0.3f);
-        transform.position = _initialPos;
+        _parent.position = _initialPos;
         _isVibrating = false;
     }
 
@@ -99,7 +104,7 @@ public class Draggable : MonoBehaviour
         Vector3 vibration = Vector3.zero;
         if (_freezeX) vibration.y = Mathf.PingPong(Time.time * 3f, 0.05f);
         if (_freezeY) vibration.x = Mathf.PingPong(Time.time * 3f, 0.05f);
-        transform.position = _initialPos + vibration;
+        _parent.position = _initialPos + vibration;
     }
 }
 
