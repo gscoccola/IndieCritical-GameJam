@@ -10,7 +10,7 @@ public class Assemblable : MonoBehaviour
     [SerializeField] HeightLayer _heightLayer = HeightLayer.AboveUpperCover;
 
     [SerializeField] Collider2D _interactionTrigger;
-    //[SerializeField] Collider2D _physicsCollider;
+    [SerializeField] Collider2D _physicsCollider;
     [SerializeField] GameObject _coverCheckerPrefab;
 
     public List<GameObject> CurrentCollidingObjects = new List<GameObject>();
@@ -53,7 +53,7 @@ public class Assemblable : MonoBehaviour
     {
         if (_interactionTrigger.enabled == value) return;
         _interactionTrigger.enabled = value;
-        //if (_physicsCollider != null) _physicsCollider.enabled = value;
+        if (_physicsCollider != null) _physicsCollider.enabled = value;
         if (value)
         {
             float ordenInLayer = transform.position.z - (int)_heightLayer ;

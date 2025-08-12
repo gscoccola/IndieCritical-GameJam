@@ -23,16 +23,15 @@ public class Draggable : MonoBehaviour
     private Vector3 _initialRelativePos;
     private bool _isVibrating;
     private Vector3 _initialPos;
-    private Transform _parent;
 
     public UnityEvent OnSelected;
     public UnityEvent OnDeSelected;
+    public UnityEvent OnJiggle;
 
     private void Awake()
     {
         _camera = FindAnyObjectByType<Camera>();
-        _parent = transform.parent;
-        _initialPos = _parent.position;
+        _initialPos = transform.position;
         IsSelectable = true;
     }
 
@@ -45,7 +44,7 @@ public class Draggable : MonoBehaviour
         /*if (!_centerOnMouse) newPos += _initialRelativePos;
         /*else newPos += GetComponent<Collider2D>().offset.x * Vector3.right;*/
 
-        if (_irreversible) _initialPos = _parent.position;
+        if (_irreversible) _initialPos = transform.position;
 
         float newX = _Xlimit == LimitType.Min ? Mathf.Max(newPos.x, _initialPos.x) :
                      _Xlimit == LimitType.Max ? Mathf.Min(newPos.x, _initialPos.x) :
@@ -55,10 +54,10 @@ public class Draggable : MonoBehaviour
                      _Ylimit == LimitType.Max ? Mathf.Min(newPos.y, _initialPos.y) :
                      newPos.y;
 
-        _parent.position = new Vector3(
-            _freezeX ? _parent.position.x : newX,
-            _freezeY ? _parent.position.y : newY,
-            _parent.position.z
+        transform.position = new Vector3(
+            _freezeX ? transform.position.x : newX,
+            _freezeY ? transform.position.y : newY,
+            transform.position.z
         );
     }
 
@@ -71,14 +70,15 @@ public class Draggable : MonoBehaviour
     private void OnMouseDown()
     {
         if (!IsSelectable) return;
+        if (IsFixed) { OnJiggle?.Invoke(); return; }
         if (IsScrewed)
         {
             StartCoroutine(IVibrate());
             return;
         }
-        if (!IsFixed) OnSelected?.Invoke();
+        OnSelected?.Invoke();
         OnMouseAction(true);
-        _initialRelativePos = _parent.position - _camera.ScreenToWorldPoint(Input.mousePosition);
+        _initialRelativePos = transform.position - _camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void OnMouseAction(bool mouseDown)
@@ -90,7 +90,7 @@ public class Draggable : MonoBehaviour
     {
         _isVibrating = true;
         yield return new WaitForSeconds(0.3f);
-        _parent.position = _initialPos;
+        transform.position = _initialPos;
         _isVibrating = false;
     }
 
@@ -104,7 +104,7 @@ public class Draggable : MonoBehaviour
         Vector3 vibration = Vector3.zero;
         if (_freezeX) vibration.y = Mathf.PingPong(Time.time * 3f, 0.05f);
         if (_freezeY) vibration.x = Mathf.PingPong(Time.time * 3f, 0.05f);
-        _parent.position = _initialPos + vibration;
+        transform.position = _initialPos + vibration;
     }
 }
 

@@ -1,16 +1,14 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Draggable))]
-[RequireComponent(typeof(Assemblable))]
 public class Cover : MonoBehaviour
 {
     private Draggable _draggable;
-    private Assemblable _assemblable;
+    //private Assemblable _assemblable;
     private Collider2D _collider => GetComponent<Collider2D>();
 
     private void Start()
     {
-        _assemblable = GetComponent<Assemblable>();
+        //_assemblable = GetComponent<Assemblable>();
         _draggable = GetComponent<Draggable>();
     }
 

@@ -2614,17 +2614,18 @@ MonoBehaviour:
   IsSelectable: 1
   IsFixed: 0
   IsScrewed: 0
-  _showIfSelected: 1
   _freezeX: 1
   _freezeY: 0
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 2
-  _centerOnMouse: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls: []
   OnDeSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJiggle:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &2614347221091364570
@@ -2740,7 +2741,7 @@ MonoBehaviour:
   BloodAffinity: 1
   _heightLayer: 2
   _interactionTrigger: {fileID: 325570238771931835}
-  _physicsCollider: {fileID: 7620109854521740913}
+  _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
