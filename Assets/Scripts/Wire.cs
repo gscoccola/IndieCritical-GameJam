@@ -99,7 +99,7 @@ public class Wire : MonoBehaviour, IActivable
             _sparkParticles.Stop();
             return;
         }
-        _uniqueSounds.PlayLoopingContainer("Spark");
+        //_uniqueSounds.PlayLoopingContainer("Spark");
         _sparkParticles.Play();
     }
 }

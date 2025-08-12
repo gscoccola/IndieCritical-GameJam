@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 8365391530870580117}
   - component: {fileID: 1782794313969295999}
   - component: {fileID: 6187588722956287116}
-  - component: {fileID: 7894370524883884015}
+  - component: {fileID: 9097577386898864579}
   - component: {fileID: 1016785258400998493}
   - component: {fileID: 6763550321254480631}
+  - component: {fileID: 4822473163528905542}
+  - component: {fileID: 2313290872949271647}
   - component: {fileID: 2147621451470332080}
-  - component: {fileID: 6531915074251430000}
-  - component: {fileID: 4748423890779216727}
   m_Layer: 13
   m_Name: Screw
   m_TagString: Untagged
@@ -55,12 +55,11 @@ MonoBehaviour:
   _timeToUnscrew: 3
   _requiredType: 0
   _sprites:
-  - {fileID: 2531822210571077860, guid: 4b5e39beb8152b246abdad9940b4e97e, type: 3}
-  - {fileID: 2548146454673832504, guid: 4b5e39beb8152b246abdad9940b4e97e, type: 3}
+  - {fileID: 1761786219, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
+  - {fileID: -723551537, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
   _requiredToolLayer:
     serializedVersion: 2
     m_Bits: 512
-  _draggable: {fileID: 7894370524883884015}
   IsFree: 0
   IsLoose: 0
   _isRolling: 0
@@ -164,7 +163,7 @@ MonoBehaviour:
   BloodAffinity: 0
   _heightLayer: 0
   _interactionTrigger: {fileID: 6763550321254480631}
-  _physicsCollider: {fileID: 4748423890779216727}
+  _physicsCollider: {fileID: 2313290872949271647}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
@@ -174,7 +173,7 @@ MonoBehaviour:
   _isElectrified: 0
   _isBloodPowered: 0
   IsUncovered: 0
---- !u!114 &7894370524883884015
+--- !u!114 &9097577386898864579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,14 +185,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91116b155e5e7348a114106d785f7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsSelectable: 1
   IsFixed: 0
   IsScrewed: 0
+  _showIfSelected: 1
   _freezeX: 0
   _freezeY: 0
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
+  _centerOnMouse: 1
   OnSelected:
     m_PersistentCalls:
       m_Calls:
@@ -248,21 +248,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnJiggle:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1782794313969295999}
-        m_TargetAssemblyTypeName: Screw, Assembly-CSharp
-        m_MethodName: Vibrate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!212 &1016785258400998493
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -307,12 +292,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2531822210571077860, guid: 4b5e39beb8152b246abdad9940b4e97e, type: 3}
+  m_Sprite: {fileID: 1761786219, guid: e5318a67002e26148b4a05ba7a75634b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.46875, y: 0.5}
+  m_Size: {x: 0.40625, y: 0.37109375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -354,6 +339,70 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.3
+--- !u!50 &4822473163528905542
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &2313290872949271647
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.019864082}
+  m_Size: {x: 0.28529644, y: 0.28529644}
+  m_Direction: 0
 --- !u!114 &2147621451470332080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,15 +458,16 @@ MonoBehaviour:
   - name: Unscrewed
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
+    - {fileID: 8300000, guid: 7b090c2090a06ae4da075b054b9e57a9, type: 3}
+    - {fileID: 8300000, guid: ba6296b0a45302448bde4314018d18f2, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
-      fadeOutTime: 0.5
-      randomizeVolume: 0
-      volumeRange: {x: 1, y: 1}
-      randomizePitch: 0
-      pitchRange: {x: 1, y: 1.4}
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.9, y: 1}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
     id: 0
   - name: Unscrewing
     mute: 0
@@ -448,66 +498,3 @@ MonoBehaviour:
       randomizePitch: 1
       pitchRange: {x: 2, y: 2.2}
     id: 0
---- !u!50 &6531915074251430000
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447328978677670704}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!58 &4748423890779216727
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447328978677670704}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.21875

@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 4312043671354269356}
   - component: {fileID: 8156860741802386023}
   - component: {fileID: 2884019646479236063}
+  - component: {fileID: 8137445084266682113}
+  - component: {fileID: 3158010761305962350}
   m_Layer: 12
   m_Name: Heart
   m_TagString: Untagged
@@ -32,7 +34,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1978895774094764874}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.46, y: 1.69, z: 2}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
@@ -79,7 +81,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnBecomePowered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8137445084266682113}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8137445084266682113}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlayLoopingContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3158010761305962350}
+        m_TargetAssemblyTypeName: HeartBeatingSound, Assembly-CSharp
+        m_MethodName: StartBeating
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5856375252696415485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,7 +141,19 @@ MonoBehaviour:
   _centerOnMouse: 0
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8137445084266682113}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 0
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
       m_Calls: []
@@ -294,3 +344,93 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8137445084266682113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978895774094764874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: Touch
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: de22f79bfdd6abb478f3de21a1d541b0, type: 3}
+    - {fileID: 8300000, guid: 40fa73abfa55bd6409b594a8591ba581, type: 3}
+    - {fileID: 8300000, guid: 9486ec3d6e6a6d2438206465a0788abf, type: 3}
+    - {fileID: 8300000, guid: b6a00e9937943a846895b62d7f7796b0, type: 3}
+    - {fileID: 8300000, guid: 254b2703e20931b4d84c5c5a10114101, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.5, y: 0.6}
+      randomizePitch: 1
+      pitchRange: {x: 1.2, y: 1.5}
+    id: 0
+  - name: PowerOn
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: d55c969d5bb23ee4680e1661f59bb3b5, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 1}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+    id: 0
+  - name: Drone
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 95a930697421de7418023bc338857e00, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 2
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 0.2, y: 1}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+    id: 0
+--- !u!114 &3158010761305962350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1978895774094764874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb568a6d3a19d7442b17e793edf9a797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartBeatingSounds:
+    name: HeatBeatingSounds
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 1469a993e6a170e4e90945d6cc7f383b, type: 3}
+    - {fileID: 8300000, guid: 8d3f8284229dca24394dcbe00074abea, type: 3}
+    - {fileID: 8300000, guid: bf694542f91ae474293542bc42eb1fab, type: 3}
+    - {fileID: 8300000, guid: aa5ea3756854ab44ca18bdfd1f66934d, type: 3}
+    - {fileID: 8300000, guid: 68b2da7c027513a4194fac2b7162be3e, type: 3}
+    - {fileID: 8300000, guid: b6ef7c409823d1d45bc3f745e4ac0ddd, type: 3}
+    - {fileID: 8300000, guid: 1e6fc24e4a7e45e40b1c85c34c074617, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 2.5
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 0.8, y: 1}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
+    id: 0
+  beatInterval_sec: 1
