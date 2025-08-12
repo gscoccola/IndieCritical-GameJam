@@ -67,7 +67,7 @@ public class Assemblable : MonoBehaviour
         }
         else
         {
-            Instantiate(_coverCheckerPrefab, transform.position, Quaternion.identity, transform);
+            if (_coverCheckerPrefab != null) Instantiate(_coverCheckerPrefab, transform.position, Quaternion.identity, transform);
         }
     }
 

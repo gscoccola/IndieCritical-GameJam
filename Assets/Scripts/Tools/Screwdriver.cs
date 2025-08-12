@@ -2,9 +2,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Tool : MonoBehaviour
+public class Screwdriver : MonoBehaviour
 {
-    [SerializeField] private LayerMask _toolTypeMask;
     [SerializeField] private GameObject _toolHead;
 
     public UnityEvent OnStartActive;
@@ -30,7 +29,7 @@ public class Tool : MonoBehaviour
         IsActive = isActive;
         Animator.SetBool("IsActive", isActive);
 
-        if (isActive == true) OnStartActive?.Invoke();
+        if (isActive) OnStartActive?.Invoke();
         else OnStopActive?.Invoke();
 
     }

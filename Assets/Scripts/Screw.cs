@@ -9,7 +9,7 @@ public class Screw : MonoBehaviour
     [SerializeField] ToolType _requiredType;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] LayerMask _requiredToolLayer;
-    [SerializeField] Draggable _draggable;
+    private Draggable _draggable;
 
     public bool IsFree;
     public bool IsLoose;
@@ -22,7 +22,7 @@ public class Screw : MonoBehaviour
     private bool _isVibrating;
     public bool _isRolling;
     private float _rollTime;
-    private Tool _currentTool;
+    private Screwdriver _currentTool;
 
     public UnityEvent OnBecomePressed;
     public UnityEvent OnBecomeUnPressed;
@@ -35,6 +35,7 @@ public class Screw : MonoBehaviour
         _timeLeft = _timeToUnscrew;
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _draggable = GetComponent<Draggable>();
         _draggable.IsFixed = true;
     }
 
@@ -124,8 +125,8 @@ public class Screw : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
         {
             _isPressed = true;
-            _currentTool = col.transform.parent.GetComponent<Tool>();
-            col.transform.parent.GetComponent<Tool>().SetActive(true);
+            _currentTool = col.transform.parent.GetComponent<Screwdriver>();
+            col.transform.parent.GetComponent<Screwdriver>().SetActive(true);
 
             if (IsLoose) return; 
             OnBecomePressed?.Invoke(); 
@@ -142,7 +143,7 @@ public class Screw : MonoBehaviour
             OnBecomeUnPressed?.Invoke();
             if (_currentTool != null) _currentTool.SetActive(false);
             _currentTool = null;
-            col.transform.parent.GetComponent<Tool>().SetActive(false);
+            col.transform.parent.GetComponent<Screwdriver>().SetActive(false);
         }
     }
 }

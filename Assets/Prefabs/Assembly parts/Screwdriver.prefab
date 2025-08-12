@@ -114,7 +114,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7121156852533162881}
-  - component: {fileID: 3876605368559077572}
   - component: {fileID: 2089317346318997739}
   - component: {fileID: 4542480350896366178}
   - component: {fileID: 5894961875448625534}
@@ -145,32 +144,6 @@ Transform:
   - {fileID: 7659742403376167233}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 135.81}
---- !u!114 &3876605368559077572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5026378286400343925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ElectricAffinity: 0
-  BloodAffinity: 0
-  _heightLayer: 0
-  _interactionTrigger: {fileID: 101193497898521130}
-  _physicsCollider: {fileID: 0}
-  _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
-  CurrentCollidingObjects: []
-  OnCollisionUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  AssemblyIndex: 0
-  _isElectrified: 0
-  _isBloodPowered: 0
-  IsUncovered: 0
 --- !u!212 &2089317346318997739
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -238,9 +211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184ff245742074146902f03374a86818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _toolTypeMask:
-    serializedVersion: 2
-    m_Bits: 512
   _toolHead: {fileID: 5051728661512469563}
   OnStartActive:
     m_PersistentCalls:
