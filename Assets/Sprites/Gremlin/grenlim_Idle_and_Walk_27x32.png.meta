@@ -120,7 +120,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -179,7 +179,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -199,9 +199,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_1
       rect:
         serializedVersion: 2
-        x: 27
+        x: 28
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -221,9 +221,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_2
       rect:
         serializedVersion: 2
-        x: 54
+        x: 56
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -243,9 +243,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_3
       rect:
         serializedVersion: 2
-        x: 81
+        x: 84
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -265,9 +265,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_4
       rect:
         serializedVersion: 2
-        x: 108
+        x: 112
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -287,9 +287,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_5
       rect:
         serializedVersion: 2
-        x: 135
+        x: 140
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -309,9 +309,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_6
       rect:
         serializedVersion: 2
-        x: 162
+        x: 168
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -331,9 +331,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_7
       rect:
         serializedVersion: 2
-        x: 189
+        x: 196
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -353,9 +353,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_8
       rect:
         serializedVersion: 2
-        x: 216
+        x: 224
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -375,9 +375,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_9
       rect:
         serializedVersion: 2
-        x: 243
+        x: 252
         y: 32
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -399,7 +399,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -419,9 +419,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_11
       rect:
         serializedVersion: 2
-        x: 27
+        x: 28
         y: 0
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -441,9 +441,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_12
       rect:
         serializedVersion: 2
-        x: 54
+        x: 56
         y: 0
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -463,9 +463,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_13
       rect:
         serializedVersion: 2
-        x: 81
+        x: 84
         y: 0
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -485,9 +485,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_14
       rect:
         serializedVersion: 2
-        x: 108
+        x: 112
         y: 0
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -507,9 +507,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_15
       rect:
         serializedVersion: 2
-        x: 135
+        x: 140
         y: 0
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -529,9 +529,9 @@ TextureImporter:
       name: grenlim_Idle_and_Walk_27x32_16
       rect:
         serializedVersion: 2
-        x: 162
+        x: 168
         y: 0
-        width: 27
+        width: 28
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}

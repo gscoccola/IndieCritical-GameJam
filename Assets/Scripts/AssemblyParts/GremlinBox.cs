@@ -17,7 +17,8 @@ public class GremlinBox : MonoBehaviour
     private Animator _animator;
 
 
-
+    private float _trustTimer;
+    private float _trustTime = 3f;
 
     private float _newRelDis;
     
@@ -42,11 +43,12 @@ public class GremlinBox : MonoBehaviour
         _hasMusic = _musicCollider.IsTouchingLayers(_layerMask);
         _displacement = _background.position.y -_cover.position.y;
         _autoReturnTimer -= Time.deltaTime;
+        _trustTimer -= Time.deltaTime;
 
         if (_boxState == BoxState.Open)
         {
-            _newRelDis = Mathf.MoveTowards(_newRelDis, _maxDisplacement * 2f, Time.deltaTime * _returnSpeed);
-            _cover.position = transform.position - _newRelDis * Vector3.up;
+            _newRelDis = Mathf.MoveTowards(_newRelDis, 1.3f, Time.deltaTime * _returnSpeed);
+            _cover.position = new Vector3(transform.position.x, transform.position.y - _newRelDis, _cover.position.z);
         }
 
         if (_boxState == BoxState.HeadOut && !_hasMusic)
@@ -59,7 +61,7 @@ public class GremlinBox : MonoBehaviour
         if (_boxState == BoxState.Returning)
         {
             _newRelDis = Mathf.MoveTowards(_newRelDis, 0, Time.deltaTime * _returnSpeed);
-            _cover.position = transform.position - _newRelDis * Vector3.up;
+            _cover.position = new Vector3(transform.position.x, transform.position.y - _newRelDis, _cover.position.z);
             if (_displacement < 0.05f)
             {
                 _boxState = BoxState.Closed;
@@ -72,9 +74,9 @@ public class GremlinBox : MonoBehaviour
         if (_boxState == BoxState.Opening)
         {
             _coverDraggable.IsSelectable = false;
-            _newRelDis = Mathf.MoveTowards(_newRelDis, _maxDisplacement, Time.deltaTime * _returnSpeed);
-            _cover.position = transform.position - _newRelDis * Vector3.up;
-            if (_displacement > _maxDisplacement - 0.05f)
+            _newRelDis = Mathf.MoveTowards(_newRelDis, _maxDisplacement *2f, Time.deltaTime * _returnSpeed);
+            _cover.position = new Vector3(transform.position.x, transform.position.y - _newRelDis, _cover.position.z);
+            if (_displacement > _maxDisplacement * 1.5f - 0.05f)
             {
                 _animator.SetBool("IsHandIn", false);
                 _boxState = BoxState.HeadOut;
@@ -92,9 +94,10 @@ public class GremlinBox : MonoBehaviour
             return;
         }
 
-        if (_boxState == BoxState.Closed && _hasMusic)
+        if (_boxState == BoxState.Closed && _hasMusic && _trustTimer < 0f)
         {
             _boxState = BoxState.Opening;
+            _animator.SetBool("IsHandIn", true);
         }
 
         if (_boxState == BoxState.Ajar && _displacement > _maxDisplacement )
@@ -143,16 +146,10 @@ public class GremlinBox : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
         _boxState = BoxState.HandOut;
+        _trustTimer = _trustTime;
         StartCoroutine(IHandOut());
     }
 
-    private IEnumerator IOpen()
-    {
-        _boxState = BoxState.Opening;
-        _animator.SetBool("IsHandIn", true);
-        yield return new WaitForSeconds(0.3f);
-        StartCoroutine(IHandOut());
-    }
 
     public void OnHit()
     {
@@ -172,4 +169,5 @@ public enum BoxState
     Returning,
     Opening,
     Open,
+    Cooldown,
 }

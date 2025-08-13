@@ -13,6 +13,9 @@ public class Gremlin : MonoBehaviour
     public bool _isUncovered;
     public bool _isStunned;
     public bool _isSelected;
+    private GremlinBox _box;
+    private Vector3 _lastPos;
+    private Animator _animator;
 
     private void Start()
     {
@@ -20,13 +23,17 @@ public class Gremlin : MonoBehaviour
         _speedTarget = Random.insideUnitCircle.normalized * _speed;
         StartCoroutine(IChangeDirection());
         _draggable = GetComponent<Draggable>();
-        _draggable.IsSelectable = false;
+        _box = FindAnyObjectByType<GremlinBox>();
+        _draggable.IsFixed = true;
+        _animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (_isUncovered && !_isSelected && !_isStunned)
-        _rb.linearVelocity = Vector3.MoveTowards(_rb.linearVelocity, _speedTarget, _acceleration * Time.deltaTime);
+            _rb.linearVelocity = Vector3.MoveTowards(_rb.linearVelocity, _speedTarget, _acceleration * Time.deltaTime);
+        Debug.Log(Time.deltaTime + " " + (transform.position - _lastPos).magnitude + " " + _speed);
+        _lastPos = transform.position;
     }
 
     private IEnumerator IChangeDirection()
@@ -36,6 +43,7 @@ public class Gremlin : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(1f, 3f));
             _speedTarget = Random.insideUnitCircle.normalized * _speed;
             _speedTarget = new Vector3(_speedTarget.x, _speedTarget.y * 0.5f, _speedTarget.z);
+            transform.localScale = new Vector3(Mathf.Sign(-_speedTarget.x), 1f, 1f);
         }
     }
 
@@ -44,11 +52,11 @@ public class Gremlin : MonoBehaviour
         _draggable.IsSelectable = true;
         _isUncovered = true;
         _isStunned = true;
+        _draggable.IsFixed = false;
     }
 
     public void OnSelect()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
         _isStunned = false;
         _isSelected = true;
     }
@@ -56,5 +64,10 @@ public class Gremlin : MonoBehaviour
     public void OnDeselect()
     {
         _isSelected = false;
+    }
+
+    public void OnJiggle()
+    {
+        if (!_isUncovered) { _box.HeadHide(); return; }
     }
 }

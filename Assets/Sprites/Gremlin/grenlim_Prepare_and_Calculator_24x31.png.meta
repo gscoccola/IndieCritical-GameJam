@@ -188,7 +188,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,9 +208,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_1
       rect:
         serializedVersion: 2
-        x: 24
+        x: 25
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -230,9 +230,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_2
       rect:
         serializedVersion: 2
-        x: 48
+        x: 50
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -252,9 +252,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_3
       rect:
         serializedVersion: 2
-        x: 72
+        x: 75
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -274,9 +274,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_4
       rect:
         serializedVersion: 2
-        x: 96
+        x: 100
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -296,9 +296,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_5
       rect:
         serializedVersion: 2
-        x: 120
+        x: 125
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -318,9 +318,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_6
       rect:
         serializedVersion: 2
-        x: 144
+        x: 150
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -340,9 +340,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_7
       rect:
         serializedVersion: 2
-        x: 168
+        x: 175
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -362,9 +362,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_8
       rect:
         serializedVersion: 2
-        x: 192
+        x: 200
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -384,9 +384,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_9
       rect:
         serializedVersion: 2
-        x: 216
+        x: 225
         y: 31
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -408,7 +408,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -428,9 +428,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_11
       rect:
         serializedVersion: 2
-        x: 24
+        x: 25
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -450,9 +450,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_12
       rect:
         serializedVersion: 2
-        x: 48
+        x: 50
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -472,9 +472,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_13
       rect:
         serializedVersion: 2
-        x: 72
+        x: 75
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -494,9 +494,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_14
       rect:
         serializedVersion: 2
-        x: 96
+        x: 100
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -516,9 +516,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_15
       rect:
         serializedVersion: 2
-        x: 120
+        x: 125
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -538,9 +538,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_16
       rect:
         serializedVersion: 2
-        x: 144
+        x: 150
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -560,9 +560,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_17
       rect:
         serializedVersion: 2
-        x: 168
+        x: 175
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -582,9 +582,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_18
       rect:
         serializedVersion: 2
-        x: 192
+        x: 200
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -604,9 +604,9 @@ TextureImporter:
       name: grenlim_Prepare_and_Calculator_24x31_19
       rect:
         serializedVersion: 2
-        x: 216
+        x: 225
         y: 0
-        width: 24
+        width: 25
         height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
