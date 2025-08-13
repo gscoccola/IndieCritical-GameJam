@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 62a0da3f8b83718439d630a684eb21ba
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5522623780904280974
+    second: grenlim_Prepare_and_Calculator_24x31_0
+  - first:
+      213: 7145488826670583447
+    second: grenlim_Prepare_and_Calculator_24x31_1
+  - first:
+      213: 4184541788449720257
+    second: grenlim_Prepare_and_Calculator_24x31_2
+  - first:
+      213: -3536141090436018501
+    second: grenlim_Prepare_and_Calculator_24x31_3
+  - first:
+      213: -1558272739172076002
+    second: grenlim_Prepare_and_Calculator_24x31_4
+  - first:
+      213: 3430934414030084989
+    second: grenlim_Prepare_and_Calculator_24x31_5
+  - first:
+      213: 1503685360454715863
+    second: grenlim_Prepare_and_Calculator_24x31_6
+  - first:
+      213: 5366625531483567871
+    second: grenlim_Prepare_and_Calculator_24x31_7
+  - first:
+      213: 5031007559413561163
+    second: grenlim_Prepare_and_Calculator_24x31_8
+  - first:
+      213: -7681038718144105494
+    second: grenlim_Prepare_and_Calculator_24x31_9
+  - first:
+      213: -2784122204270057796
+    second: grenlim_Prepare_and_Calculator_24x31_10
+  - first:
+      213: 4298566547394455461
+    second: grenlim_Prepare_and_Calculator_24x31_11
+  - first:
+      213: 6193697911542649785
+    second: grenlim_Prepare_and_Calculator_24x31_12
+  - first:
+      213: -3003938380668298901
+    second: grenlim_Prepare_and_Calculator_24x31_13
+  - first:
+      213: 4205987226134356499
+    second: grenlim_Prepare_and_Calculator_24x31_14
+  - first:
+      213: 7033265346018224214
+    second: grenlim_Prepare_and_Calculator_24x31_15
+  - first:
+      213: -5181791085379056382
+    second: grenlim_Prepare_and_Calculator_24x31_16
+  - first:
+      213: 4686955552690737579
+    second: grenlim_Prepare_and_Calculator_24x31_17
+  - first:
+      213: -5493719028878443908
+    second: grenlim_Prepare_and_Calculator_24x31_18
+  - first:
+      213: 8049501793519764157
+    second: grenlim_Prepare_and_Calculator_24x31_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e83ace0911d44ac40800000000000000
+      internalID: 5522623780904280974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e093cba30e92360800000000000000
+      internalID: 7145488826670583447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7c250069a721a30800000000000000
+      internalID: 4184541788449720257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbe06ecd96a1deec0800000000000000
+      internalID: -3536141090436018501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1639762337ef5ae0800000000000000
+      internalID: -1558272739172076002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7b1de3fba02d9f20800000000000000
+      internalID: 3430934414030084989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9cbd35ed92ed410800000000000000
+      internalID: 1503685360454715863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff6be9ebc751a7a40800000000000000
+      internalID: 5366625531483567871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b47762948bab1d540800000000000000
+      internalID: 5031007559413561163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_9
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 31
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae3bff25bf7776590800000000000000
+      internalID: -7681038718144105494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb6a43b2b9fcc59d0800000000000000
+      internalID: -2784122204270057796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_11
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a7e2d4008397ab30800000000000000
+      internalID: 4298566547394455461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_12
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b314975f6f64f550800000000000000
+      internalID: 6193697911542649785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_13
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b699a1555fddf46d0800000000000000
+      internalID: -3003938380668298901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 312a19f091bae5a30800000000000000
+      internalID: 4205987226134356499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_15
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6582b70819d2b9160800000000000000
+      internalID: 7033265346018224214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_16
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d02bf46749618b0800000000000000
+      internalID: -5181791085379056382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_17
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba11d2c1e396b0140800000000000000
+      internalID: 4686955552690737579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_18
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a75e376a362c3b0800000000000000
+      internalID: -5493719028878443908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grenlim_Prepare_and_Calculator_24x31_19
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 0
+        width: 24
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db28d9dab3395bf60800000000000000
+      internalID: 8049501793519764157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4e0d9470aa13c824eadc0cd57d8671d2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      grenlim_Prepare_and_Calculator_24x31_0: 5522623780904280974
+      grenlim_Prepare_and_Calculator_24x31_1: 7145488826670583447
+      grenlim_Prepare_and_Calculator_24x31_10: -2784122204270057796
+      grenlim_Prepare_and_Calculator_24x31_11: 4298566547394455461
+      grenlim_Prepare_and_Calculator_24x31_12: 6193697911542649785
+      grenlim_Prepare_and_Calculator_24x31_13: -3003938380668298901
+      grenlim_Prepare_and_Calculator_24x31_14: 4205987226134356499
+      grenlim_Prepare_and_Calculator_24x31_15: 7033265346018224214
+      grenlim_Prepare_and_Calculator_24x31_16: -5181791085379056382
+      grenlim_Prepare_and_Calculator_24x31_17: 4686955552690737579
+      grenlim_Prepare_and_Calculator_24x31_18: -5493719028878443908
+      grenlim_Prepare_and_Calculator_24x31_19: 8049501793519764157
+      grenlim_Prepare_and_Calculator_24x31_2: 4184541788449720257
+      grenlim_Prepare_and_Calculator_24x31_3: -3536141090436018501
+      grenlim_Prepare_and_Calculator_24x31_4: -1558272739172076002
+      grenlim_Prepare_and_Calculator_24x31_5: 3430934414030084989
+      grenlim_Prepare_and_Calculator_24x31_6: 1503685360454715863
+      grenlim_Prepare_and_Calculator_24x31_7: 5366625531483567871
+      grenlim_Prepare_and_Calculator_24x31_8: 5031007559413561163
+      grenlim_Prepare_and_Calculator_24x31_9: -7681038718144105494
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

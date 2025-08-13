@@ -11,11 +11,6 @@ public class TapeRecorder : MonoBehaviour, IPowerable
         initialScale = transform.localScale.x;
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void SetPowered(StatusEffect statusEffect, bool value)
     {
 

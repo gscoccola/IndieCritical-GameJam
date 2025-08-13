@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: f96343953a96d2b4c84353ed5ff6071d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7769506687634305859
+    second: grenlim_Idle_and_Walk_27x32_0
+  - first:
+      213: 8345598397340268880
+    second: grenlim_Idle_and_Walk_27x32_1
+  - first:
+      213: -9145336043292443642
+    second: grenlim_Idle_and_Walk_27x32_2
+  - first:
+      213: -789581191070705487
+    second: grenlim_Idle_and_Walk_27x32_3
+  - first:
+      213: -2204688291345939165
+    second: grenlim_Idle_and_Walk_27x32_4
+  - first:
+      213: 4043712262386352299
+    second: grenlim_Idle_and_Walk_27x32_5
+  - first:
+      213: 445152056728534341
+    second: grenlim_Idle_and_Walk_27x32_6
+  - first:
+      213: 8024490316402657365
+    second: grenlim_Idle_and_Walk_27x32_7
+  - first:
+      213: -7383317453320308337
+    second: grenlim_Idle_and_Walk_27x32_8
+  - first:
+      213: 1465496014412066330
+    second: grenlim_Idle_and_Walk_27x32_9
+  - first:
+      213: 4805834339849285408
+    second: grenlim_Idle_and_Walk_27x32_10
+  - first:
+      213: 7863705047652356050
+    second: grenlim_Idle_and_Walk_27x32_11
+  - first:
+      213: -9016785077379728081
+    second: grenlim_Idle_and_Walk_27x32_12
+  - first:
+      213: 7580190168389661909
+    second: grenlim_Idle_and_Walk_27x32_13
+  - first:
+      213: -5042451988693861325
+    second: grenlim_Idle_and_Walk_27x32_14
+  - first:
+      213: 7594109870947260467
+    second: grenlim_Idle_and_Walk_27x32_15
+  - first:
+      213: -5268901475489542316
+    second: grenlim_Idle_and_Walk_27x32_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GremlinHand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb147890c5a4a2347937394501fade59
+      internalID: -1813334159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 3fb299363baf2454ca5d02ab6c5a9fc2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GremlinHand_0: -1813334159
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

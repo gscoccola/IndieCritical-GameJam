@@ -3,17 +3,18 @@ using UnityEngine;
 
 public class GremlinBox : MonoBehaviour
 {
-   
+    [SerializeField] Gremlin _Gremlin;
 
     [SerializeField] private Transform _cover;
     [SerializeField] private Transform _background;
     [SerializeField] LayerMask _layerMask;
     [SerializeField] Collider2D _musicCollider;
     [SerializeField] Target _target;
+    [SerializeField] float _handOffset;
     private Draggable _coverDraggable;
     private float _displacement;
-
-
+    private float _timeToReturn;
+    private Animator _animator;
 
 
 
@@ -30,13 +31,14 @@ public class GremlinBox : MonoBehaviour
 
     private void Start()
     {
+        _animator = _cover.GetComponent<Animator>();
+        _timeToReturn = _maxDisplacement / _returnSpeed;
         _boxState = BoxState.Closed;
         _coverDraggable = _cover.GetComponent<Draggable>();
     }
 
     private void Update()
     {
-        
         _hasMusic = _musicCollider.IsTouchingLayers(_layerMask);
         _displacement = _background.position.y -_cover.position.y;
         _autoReturnTimer -= Time.deltaTime;
@@ -74,6 +76,7 @@ public class GremlinBox : MonoBehaviour
             _cover.position = transform.position - _newRelDis * Vector3.up;
             if (_displacement > _maxDisplacement - 0.05f)
             {
+                _animator.SetBool("IsHandIn", false);
                 _boxState = BoxState.HeadOut;
                 _target.gameObject.SetActive(true);
                 _coverDraggable.IsSelectable = true;
@@ -111,8 +114,10 @@ public class GremlinBox : MonoBehaviour
     private IEnumerator ISlideBack()
     {
         _newRelDis = _background.position.y - _cover.position.y;
-        yield return new WaitForSeconds(0.3f);
+        
         _boxState = BoxState.Returning;
+        yield return new WaitForSeconds(_timeToReturn * 0.5f);
+        _animator.SetBool("IsHandIn", false);
         /*yield return new WaitForSeconds(_returnTime);
         _boxState = BoxState.Closed;
         _coverDraggable.IsSelectable = true;*/
@@ -121,13 +126,9 @@ public class GremlinBox : MonoBehaviour
     private IEnumerator IHandOut()
     {
         _coverDraggable.IsSelectable = false;
+        _animator.SetBool("IsHandIn", true);
         yield return new WaitForSeconds(0.3f);
         StartCoroutine(ISlideBack());
-    }
-
-    private IEnumerator IHeadOut()
-    {
-        yield return new WaitForSeconds(0.3f);
     }
 
     public void HeadHide()
@@ -145,9 +146,19 @@ public class GremlinBox : MonoBehaviour
         StartCoroutine(IHandOut());
     }
 
+    private IEnumerator IOpen()
+    {
+        _boxState = BoxState.Opening;
+        _animator.SetBool("IsHandIn", true);
+        yield return new WaitForSeconds(0.3f);
+        StartCoroutine(IHandOut());
+    }
+
     public void OnHit()
     {
         _boxState = BoxState.Open;
+        _target.gameObject.SetActive(false);
+        _Gremlin.SetActive();
     }
 
 }

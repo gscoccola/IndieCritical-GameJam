@@ -12,9 +12,9 @@ public class Hammer : MonoBehaviour
     public bool IsActive;
     public Target _currentTarget;
 
-    private Animator Animator => GetComponent<Animator>();
+    private Animator _animator => GetComponent<Animator>();
     //private bool _hitAvailable = true;
-    private float _hitCooldown = 2.5f;
+    private float _hitCooldown = 1f;
     private float _hitTimer;
 
     public void Ready()
@@ -33,7 +33,8 @@ public class Hammer : MonoBehaviour
         if ( !isActive)
         {
             StopAllCoroutines();
-            Animator.SetTrigger("Stop");
+            _animator.SetTrigger("Stop");
+            _animator.ResetTrigger("Hit");
             return;
         }
         
@@ -50,12 +51,15 @@ public class Hammer : MonoBehaviour
 
     private IEnumerator IHit()
     {
-        Animator.SetTrigger("Hit");
-        _hitTimer = _hitCooldown;
+        _animator.SetTrigger("Hit");
+        _animator.ResetTrigger("Stop");
+        
         OnStartActive?.Invoke();
         yield return new WaitForSeconds(1.5f);
         OnHit?.Invoke();
-        Animator.SetTrigger("Stop");
+        _animator.SetTrigger("Stop");
+        _animator.ResetTrigger("Hit");
         _currentTarget.OnHit?.Invoke();
+        _hitTimer = _hitCooldown;
     }
 }
