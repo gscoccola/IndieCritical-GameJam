@@ -109,7 +109,7 @@ public class Assembly : Singleton<Assembly>
             else
             {
                 assemblable.CurrentStatusEffects[statusEffect] = false;
-                assemblable.GetComponent<IPowerable>()?.SetPowered(statusEffect, false);
+                
             }
         }
         while (queue.Count > 0)
@@ -140,6 +140,11 @@ public class Assembly : Singleton<Assembly>
                 }
             }
             //if (connections == 1) Spark(currentAssemblable.transform.position);
+
+        }
+        for (int i = 0; i < Assembleables.Length; i++)
+        {
+            Assembleables[i].GetComponent<IPowerable>()?.SetPowered(statusEffect, Assembleables[i].CurrentStatusEffects[statusEffect]);
         }
     }
 }

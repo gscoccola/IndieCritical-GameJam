@@ -13,16 +13,16 @@ public class TapeRecorder : MonoBehaviour, IPowerable
 
     private void Update()
     {
-        if (IsPowered)
-        {
-            transform.localScale = (Mathf.PingPong(Time.time * 0.2f, 0.2f) * Vector3.one + Vector3.one) * initialScale;
-        }
+        
     }
 
     public void SetPowered(StatusEffect statusEffect, bool value)
     {
+
         if (statusEffect != StatusEffect.BloodPowered) return;
+        if (!value && IsPowered) Debug.Log("music stopped??");
         MusicPlayer.Instance.ToggleMuffle(value);
         IsPowered = value;
+        transform.GetChild(0).gameObject.SetActive(value);
     }
 }

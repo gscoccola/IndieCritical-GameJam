@@ -27,5 +27,6 @@ public class Heart : MonoBehaviour, IPowerable
         GetComponent<Animator>().SetBool("IsPumping", true);
         OnBecomePowered?.Invoke();
         transform.GetChild(0).GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Source;
+        GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.Electrified] = StatusEffectAffinity.Insulator;
     }
 }

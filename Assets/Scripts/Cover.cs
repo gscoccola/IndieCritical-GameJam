@@ -19,8 +19,6 @@ public class Cover : MonoBehaviour
 
     public void CheckIfLocked()
     {
-        _draggable.IsScrewed = _collider.IsTouchingLayers(LayerMask.GetMask("Screw")) 
-            ?  true 
-            :  false;
+        _draggable.IsScrewed = _collider.IsTouchingLayers(LayerMask.GetMask("Screw"));
     }
 }

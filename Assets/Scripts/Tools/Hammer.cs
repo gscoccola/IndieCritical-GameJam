@@ -10,6 +10,7 @@ public class Hammer : MonoBehaviour
     public UnityEvent OnHit;
 
     public bool IsActive;
+    public Target _currentTarget;
 
     private Animator Animator => GetComponent<Animator>();
     //private bool _hitAvailable = true;
@@ -32,6 +33,7 @@ public class Hammer : MonoBehaviour
         if ( !isActive)
         {
             StopAllCoroutines();
+            Animator.SetTrigger("Stop");
             return;
         }
         
@@ -53,5 +55,7 @@ public class Hammer : MonoBehaviour
         OnStartActive?.Invoke();
         yield return new WaitForSeconds(1.5f);
         OnHit?.Invoke();
+        Animator.SetTrigger("Stop");
+        _currentTarget.OnHit?.Invoke();
     }
 }
