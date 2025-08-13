@@ -32,7 +32,7 @@ public class Gremlin : MonoBehaviour
     {
         if (_isUncovered && !_isSelected && !_isStunned)
             _rb.linearVelocity = Vector3.MoveTowards(_rb.linearVelocity, _speedTarget, _acceleration * Time.deltaTime);
-        Debug.Log(Time.deltaTime + " " + (transform.position - _lastPos).magnitude + " " + _speed);
+        _animator.SetBool("IsWalking", (_lastPos - transform.position).magnitude > Time.deltaTime * 0.2f * _speed);
         _lastPos = transform.position;
     }
 
