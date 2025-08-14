@@ -13,6 +13,8 @@ public class Gremlin : MonoBehaviour
     public bool _isUncovered;
     public bool _isStunned;
     public bool _isSelected;
+    public bool _usingCalculator;
+    //private Calculator _calculator;
     private GremlinBox _box;
     private Vector3 _lastPos;
     private Animator _animator;
@@ -30,7 +32,9 @@ public class Gremlin : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isUncovered && !_isSelected && !_isStunned)
+        _animator.SetBool("IsCalculating", _usingCalculator);
+        if (_usingCalculator || _isSelected || _isStunned) _rb.linearVelocity = Vector2.zero;
+        else if (_isUncovered)
             _rb.linearVelocity = Vector3.MoveTowards(_rb.linearVelocity, _speedTarget, _acceleration * Time.deltaTime);
         _animator.SetBool("IsWalking", (_lastPos - transform.position).magnitude > Time.deltaTime * 0.2f * _speed);
         _lastPos = transform.position;
@@ -59,6 +63,7 @@ public class Gremlin : MonoBehaviour
     {
         _isStunned = false;
         _isSelected = true;
+        _usingCalculator = false;
     }
 
     public void OnDeselect()
@@ -69,5 +74,44 @@ public class Gremlin : MonoBehaviour
     public void OnJiggle()
     {
         if (!_isUncovered) { _box.HeadHide(); return; }
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Calculator"))
+        {
+            _usingCalculator = true;
+            ObjectivesManager.Instance.SetCPU(true);
+            /*_calculator = col.gameObject.GetComponent<Calculator>();*/
+            transform.position = new Vector3( col.transform.position.x, col.transform.position.y, transform.position.z);
+            StartCoroutine(IBeginCalculating());
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Button"))
+        {
+            col.GetComponent<Button>().OnActivate();
+        }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("Glass"))
+        {
+            _draggable.IsSelected = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.layer == LayerMask.NameToLayer("Calculator"))
+        {
+            _usingCalculator = false;
+            ObjectivesManager.Instance.SetCPU(false);
+            /*_calculator = null;*/
+        }
+    }
+
+
+
+    private IEnumerator IBeginCalculating()
+    {
+        _draggable.IsSelectable = false;
+        yield return new WaitForSecondsRealtime(0.5f);
+        _draggable.IsSelectable = true;
     }
 }

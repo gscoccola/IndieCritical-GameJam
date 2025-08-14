@@ -1,0 +1,47 @@
+using UnityEngine;
+
+public class ObjectivesManager : MonoBehaviour
+{
+    public static ObjectivesManager Instance;
+    public bool PowerOn;
+    public bool CPUOn;
+    public bool GPUOn;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    private void Start()
+    {
+        TextManager.Instance.SetText("NO POWER");
+    }
+
+    private void UpdateText()
+    {
+        TextManager.Instance.SetText("POWER ON \n CPU " + BoolToString(CPUOn) + "\n GPU " + BoolToString(GPUOn));
+    }
+
+    public void SetPower()
+    {
+        PowerOn = true;
+        UpdateText();
+    }
+
+    public void SetCPU(bool value)
+    {
+        CPUOn = value;
+        UpdateText();
+    }
+
+    public void SetGPU(bool value)
+    {
+        GPUOn = value;
+        UpdateText();
+    }
+
+    public string BoolToString(bool value)
+    {
+        return value ? "ON" : "OFF";
+    }
+}

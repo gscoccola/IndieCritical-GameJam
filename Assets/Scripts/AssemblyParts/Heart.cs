@@ -16,13 +16,11 @@ public class Heart : MonoBehaviour, IPowerable
         initialScale = transform.localScale.x;
     }
 
-    private void Update()
-    {
-    }
 
     public void SetPowered(StatusEffect statusEffect, bool value)
     {
         if (!value || IsPowered|| statusEffect != StatusEffect.Electrified) return;
+        ObjectivesManager.Instance.SetPower();
         IsPowered = true;
         GetComponent<Animator>().SetBool("IsPumping", true);
         OnBecomePowered?.Invoke();

@@ -19,12 +19,12 @@ TagManager:
   - Cover
   - Assemblable
   - Screw
-  - Walker
+  - Calculator
   - OnlyClicks
   - HammerHead
   - Music
-  - 
-  - 
+  - Button
+  - Glass
   - 
   - 
   - 
@@ -44,13 +44,13 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Particles
+  - name: 
     uniqueID: 102728821
     locked: 0
-  - name: Covers
+  - name: 
     uniqueID: 3218482943
     locked: 0
-  - name: Screws
+  - name: 
     uniqueID: 2288739689
     locked: 0
   m_RenderingLayers:

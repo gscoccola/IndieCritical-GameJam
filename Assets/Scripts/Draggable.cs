@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class Draggable : MonoBehaviour
 {
     public bool IsSelectable = true;
-    public bool IsSelected { get; private set; }
+    public bool IsSelected { get; set; }
     public bool IsFixed;
     public bool IsScrewed;
 
