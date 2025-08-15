@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4253892859820616680}
   - component: {fileID: 2988401641210810583}
   - component: {fileID: 6188332193750978859}
+  - component: {fileID: 7021980623706179111}
   m_Layer: 12
   m_Name: Gremlin
   m_TagString: Untagged
@@ -56,6 +57,7 @@ MonoBehaviour:
   _isUncovered: 0
   _isStunned: 0
   _isSelected: 0
+  _usingCalculator: 0
 --- !u!114 &7366961947043054971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +119,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7021980623706179111}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlayLoopingContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7021980623706179111}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
       m_Calls:
@@ -128,6 +154,30 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7021980623706179111}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: StopLoopingContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7021980623706179111}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -304,7 +354,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.84375, y: 1}
+    oldSize: {x: 0.875, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -334,3 +384,56 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7021980623706179111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7581134113315249652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: PickUp Loop
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 02bfff9a99ef52d49bc775fd610990da, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+    id: 0
+  - name: PickUp
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: cf4f13fed73893b4495271d8365b202f, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 0.1, y: 0.3}
+      randomizePitch: 1
+      pitchRange: {x: 0.9, y: 1.3}
+    id: 0
+  - name: PutDown
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 3d83dd55f080e8743929860b0a6082bc, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 0.1, y: 0.3}
+      randomizePitch: 1
+      pitchRange: {x: 0.9, y: 1.3}
+    id: 0

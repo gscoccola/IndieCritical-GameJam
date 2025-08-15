@@ -189,26 +189,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 283615871}
     m_Modifications:
-    - target: {fileID: 2147621451470332080, guid: ea463881dc429264a993449c51aec7db, type: 3}
-      propertyPath: soundsOnThisObject.Array.data[2].audioClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2147621451470332080, guid: ea463881dc429264a993449c51aec7db, type: 3}
-      propertyPath: 'soundsOnThisObject.Array.data[2].audioClips.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 7b090c2090a06ae4da075b054b9e57a9, type: 3}
-    - target: {fileID: 2147621451470332080, guid: ea463881dc429264a993449c51aec7db, type: 3}
-      propertyPath: 'soundsOnThisObject.Array.data[2].audioClips.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: ba6296b0a45302448bde4314018d18f2, type: 3}
-    - target: {fileID: 2147621451470332080, guid: ea463881dc429264a993449c51aec7db, type: 3}
-      propertyPath: 'soundsOnThisObject.Array.data[2].audioClips.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 7b090c2090a06ae4da075b054b9e57a9, type: 3}
-    - target: {fileID: 2147621451470332080, guid: ea463881dc429264a993449c51aec7db, type: 3}
-      propertyPath: 'soundsOnThisObject.Array.data[2].audioClips.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8300000, guid: ba6296b0a45302448bde4314018d18f2, type: 3}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_Name
       value: Screw

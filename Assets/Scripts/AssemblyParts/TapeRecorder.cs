@@ -15,7 +15,8 @@ public class TapeRecorder : MonoBehaviour, IPowerable
     {
 
         if (statusEffect != StatusEffect.BloodPowered) return;
-        MusicPlayer.Instance.ToggleMuffle(value);
+        //MusicPlayer.Instance.ToggleMuffle(value);
+        MusicPlayer.Instance.ToggleMusic(value);
         IsPowered = value;
         transform.GetChild(0).gameObject.SetActive(value);
     }
