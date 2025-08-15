@@ -36,7 +36,7 @@ public class Screw : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _draggable = GetComponent<Draggable>();
-        _draggable.IsFixed = true;
+        //_draggable.IsFixed = true;
     }
 
    private void Update()

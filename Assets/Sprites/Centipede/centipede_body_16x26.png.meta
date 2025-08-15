@@ -1,97 +1,10 @@
 fileFormatVersion: 2
-guid: 203db60105780b54484d79eaeebfd2ce
+guid: 49b1a0011d53e7f4fae28ee30b458d9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5448706467242800300
-    second: Bubby_0
-  - first:
-      213: 3923229657871336490
-    second: Bubby_1
-  - first:
-      213: -4167742370201444370
-    second: Bubby_2
-  - first:
-      213: -5391146883200888995
-    second: Bubby_3
-  - first:
-      213: -5953101293814810713
-    second: Bubby_4
-  - first:
-      213: 3983296634754504853
-    second: Bubby_5
-  - first:
-      213: -3895891285157793462
-    second: Bubby_6
-  - first:
-      213: 211164358639500867
-    second: Bubby_7
-  - first:
-      213: 5429838033072295156
-    second: Bubby_8
-  - first:
-      213: -6053445595651823806
-    second: Bubby_9
-  - first:
-      213: -4841797149439612231
-    second: Bubby_10
-  - first:
-      213: -8987729563615960469
-    second: Bubby_11
-  - first:
-      213: -3098850055224517566
-    second: Bubby_12
-  - first:
-      213: 3984915707938731310
-    second: Bubby_13
-  - first:
-      213: 8559626171597023743
-    second: Bubby_14
-  - first:
-      213: 7910172723258518934
-    second: Bubby_15
-  - first:
-      213: 4393679423330387594
-    second: Bubby_16
-  - first:
-      213: -4459081572163458610
-    second: Bubby_17
-  - first:
-      213: -6825025575488095972
-    second: Bubby_18
-  - first:
-      213: -4021855915161881704
-    second: Bubby_19
-  - first:
-      213: -7090994523545833280
-    second: Bubby_20
-  - first:
-      213: -5265680487537787790
-    second: Bubby_21
-  - first:
-      213: -1761100449503679104
-    second: Bubby_22
-  - first:
-      213: -3146561590562954073
-    second: Bubby_23
-  - first:
-      213: -5492694465657986750
-    second: Bubby_24
-  - first:
-      213: 228322505577355450
-    second: Bubby_25
-  - first:
-      213: -1654293496051863104
-    second: Bubby_26
-  - first:
-      213: 1590986467819241287
-    second: Bubby_27
-  - first:
-      213: 3991507009053157771
-    second: Bubby_28
-  - first:
-      213: 2684950562988462144
-    second: Bubby_29
+      213: 1647293116084685059
+    second: centipede_body_16x26_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -138,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -159,7 +72,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -213,321 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bubby_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 3220
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ca47169d9a1bd9b40800000000000000
-      internalID: 5448706467242800300
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2990
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a24c2b1769c127630800000000000000
-      internalID: 3923229657871336490
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_2
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2760
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eef5ccc55643926c0800000000000000
-      internalID: -4167742370201444370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2530
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d5f4bd6297cce25b0800000000000000
-      internalID: -5391146883200888995
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2300
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a7ff360ae5526da0800000000000000
-      internalID: -5953101293814810713
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2070
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5981d855f23874730800000000000000
-      internalID: 3983296634754504853
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1840
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4131a874830fe9c0800000000000000
-      internalID: -3895891285157793462
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1610
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34e3ee98dd43ee200800000000000000
-      internalID: 211164358639500867
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1380
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4fc0e2d2ce8aa5b40800000000000000
-      internalID: 5429838033072295156
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_9
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1150
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2472504ad47ddfba0800000000000000
-      internalID: -6053445595651823806
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 920
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ba2721452b7eccb0800000000000000
-      internalID: -4841797149439612231
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 690
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b62e467b49b254380800000000000000
-      internalID: -8987729563615960469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 460
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 24c942e0b4caef4d0800000000000000
-      internalID: -3098850055224517566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_13
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 230
-        width: 180
-        height: 230
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e25ff8f29b34d4730800000000000000
-      internalID: 3984915707938731310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Bubby_14
+      name: centipede_body_16x26_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 180
-        height: 230
+        width: 16
+        height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -536,8 +141,382 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ff96d28f6a6e9c670800000000000000
-      internalID: 8559626171597023743
+      spriteID: 3098c218c5c5cd610800000000000000
+      internalID: 1647293116084685059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad1082c08f9246046ac064aa0140979b
+      internalID: -34408092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f913fc1dd6c718c46a0c1b121e110693
+      internalID: 1208839841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e211a91451798a34899139001591eecf
+      internalID: -178362718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 888b8788f24a98546bdb5b14f993b63e
+      internalID: 2084931926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea8f4af5a9eeb44fafc2f1c49462758
+      internalID: -486844874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7c099ced8d47a24eb0a101424500974
+      internalID: 1708389355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b95255af5cb4644ca98f53d24ed936a
+      internalID: 326161973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41064bedeb3b9694d8c353e7d2a710a9
+      internalID: 1519923550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22da7f02df5c10c41b986c75f9029b2a
+      internalID: 309176893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 410b47d07d7eb69428b72ce4b5a86abf
+      internalID: 1264285418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac4f8610eaa231c4382533ace282642b
+      internalID: 1206718173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89ac527423f7b04f8bc81a2e89ef67f
+      internalID: -203855057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_13
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d1fcb69af9ba545a54eed14f610fb7
+      internalID: -914337587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_14
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5474f32a1783a524bb2d905b606c11e1
+      internalID: 2105202697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_15
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c64e8c42a3055647ba77ff72e7648bb
+      internalID: -718966547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_16
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58271c440efd5fc40a3a00a0ba02c8f3
+      internalID: 554565506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: centipede_body_16x26_17
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd93f8ff56fd6fc42b26d578202bf374
+      internalID: 117983262
       vertices: []
       indices: 
       edges: []
@@ -546,7 +525,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cd93ed182bf1bf04ca23652e0fb79930
+    spriteID: 723ca7358fc20ed4e83eee55fe896f46
     internalID: 0
     vertices: []
     indices: 
@@ -556,21 +535,24 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Bubby_0: 5448706467242800300
-      Bubby_1: 3923229657871336490
-      Bubby_10: -4841797149439612231
-      Bubby_11: -8987729563615960469
-      Bubby_12: -3098850055224517566
-      Bubby_13: 3984915707938731310
-      Bubby_14: 8559626171597023743
-      Bubby_2: -4167742370201444370
-      Bubby_3: -5391146883200888995
-      Bubby_4: -5953101293814810713
-      Bubby_5: 3983296634754504853
-      Bubby_6: -3895891285157793462
-      Bubby_7: 211164358639500867
-      Bubby_8: 5429838033072295156
-      Bubby_9: -6053445595651823806
+      centipede_body_16x26_0: 1647293116084685059
+      centipede_body_16x26_1: -34408092
+      centipede_body_16x26_10: 1264285418
+      centipede_body_16x26_11: 1206718173
+      centipede_body_16x26_12: -203855057
+      centipede_body_16x26_13: -914337587
+      centipede_body_16x26_14: 2105202697
+      centipede_body_16x26_15: -718966547
+      centipede_body_16x26_16: 554565506
+      centipede_body_16x26_17: 117983262
+      centipede_body_16x26_2: 1208839841
+      centipede_body_16x26_3: -178362718
+      centipede_body_16x26_4: 2084931926
+      centipede_body_16x26_5: -486844874
+      centipede_body_16x26_6: 1708389355
+      centipede_body_16x26_7: 326161973
+      centipede_body_16x26_8: 1519923550
+      centipede_body_16x26_9: 309176893
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
