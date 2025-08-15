@@ -94,7 +94,7 @@ public class Assemblable : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.GetComponent<Assemblable>() == null) return;
+        if (col.GetComponent<Assemblable>() == null || Assembly.Instance == null) return;
         CurrentCollidingObjects.Remove(col.gameObject);
         Assembly.Instance.UpdateConnections(false, this, col.GetComponent<Assemblable>());
         OnCollisionUpdate?.Invoke();

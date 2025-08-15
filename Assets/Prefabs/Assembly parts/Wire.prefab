@@ -97,13 +97,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7544905120526856310}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.47907484, w: 0.87777406}
   m_LocalPosition: {x: -0.53, y: -0.56, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2053729450734526608}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 57.25}
 --- !u!114 &7062688873569709802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,9 +402,9 @@ MonoBehaviour:
   - name: PickUp
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 8896ca9ad6721c649a158f00b07894c5, type: 3}
-    - {fileID: 8300000, guid: 801244f19abeab8438be311359994ad7, type: 3}
-    - {fileID: 8300000, guid: 2b110db990947214c9eb019d2f6d75c4, type: 3}
+    - {fileID: 8300000, guid: 3544cf7e82dfca64aa1a0f46589e4981, type: 3}
+    - {fileID: 8300000, guid: 7b2f78ddfa0cd7649aaeba0bd9698017, type: 3}
+    - {fileID: 8300000, guid: c120b494f5308b2409d195868f245e8c, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -417,9 +417,9 @@ MonoBehaviour:
   - name: PutDown
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 61937789e2cffd945baf08a05ecbe743, type: 3}
-    - {fileID: 8300000, guid: 32c26b88e910bff44be0e62c5f1ea438, type: 3}
-    - {fileID: 8300000, guid: aa481cd7b7cbb8847af850c94e877749, type: 3}
+    - {fileID: 8300000, guid: cd56a8098f6584146a836e9b519e0b2b, type: 3}
+    - {fileID: 8300000, guid: 266b312a60fd15c489d7b2be884e015b, type: 3}
+    - {fileID: 8300000, guid: 08c56b41a1b572641b0859137255f3d1, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   - name: Spark
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 3443335989bca2240a2cca8599fef0d2, type: 3}
+    - {fileID: 8300000, guid: 745b1b2734fe7f84bae2ba5ca25fc6ca, type: 3}
     soundSettings:
       loop: 1
       fadeInTime: 3

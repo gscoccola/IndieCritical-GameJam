@@ -317,24 +317,24 @@ MonoBehaviour:
   - name: Touch
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: de22f79bfdd6abb478f3de21a1d541b0, type: 3}
-    - {fileID: 8300000, guid: 40fa73abfa55bd6409b594a8591ba581, type: 3}
-    - {fileID: 8300000, guid: 9486ec3d6e6a6d2438206465a0788abf, type: 3}
-    - {fileID: 8300000, guid: b6a00e9937943a846895b62d7f7796b0, type: 3}
-    - {fileID: 8300000, guid: 254b2703e20931b4d84c5c5a10114101, type: 3}
+    - {fileID: 8300000, guid: 8909155c80e70b74a85be9b02ed01433, type: 3}
+    - {fileID: 8300000, guid: 5edfee799ff1942429c867129b261834, type: 3}
+    - {fileID: 8300000, guid: ff028c02b1d55014483f8737e4a3596b, type: 3}
+    - {fileID: 8300000, guid: 4b55d31510760054ea6845198a19fdd2, type: 3}
+    - {fileID: 8300000, guid: a14ee9997f776ed4abd778b07c3045b6, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
       fadeOutTime: 0
       randomizeVolume: 1
-      volumeRange: {x: 0.5, y: 0.6}
+      volumeRange: {x: 0.3, y: 0.4}
       randomizePitch: 1
       pitchRange: {x: 1.2, y: 1.5}
     id: 0
   - name: PowerOn
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: d55c969d5bb23ee4680e1661f59bb3b5, type: 3}
+    - {fileID: 8300000, guid: 986d9a997b7729d4b892053386289f68, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   - name: Drone
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 95a930697421de7418023bc338857e00, type: 3}
+    - {fileID: 8300000, guid: d073c2b1b2405334e89ab8696ee954d7, type: 3}
     soundSettings:
       loop: 1
       fadeInTime: 2
@@ -373,13 +373,13 @@ MonoBehaviour:
     name: HeatBeatingSounds
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 1469a993e6a170e4e90945d6cc7f383b, type: 3}
-    - {fileID: 8300000, guid: 8d3f8284229dca24394dcbe00074abea, type: 3}
-    - {fileID: 8300000, guid: bf694542f91ae474293542bc42eb1fab, type: 3}
-    - {fileID: 8300000, guid: aa5ea3756854ab44ca18bdfd1f66934d, type: 3}
-    - {fileID: 8300000, guid: 68b2da7c027513a4194fac2b7162be3e, type: 3}
-    - {fileID: 8300000, guid: b6ef7c409823d1d45bc3f745e4ac0ddd, type: 3}
-    - {fileID: 8300000, guid: 1e6fc24e4a7e45e40b1c85c34c074617, type: 3}
+    - {fileID: 8300000, guid: 1ac2ca9c88e4b9e4c92eb59738767b86, type: 3}
+    - {fileID: 8300000, guid: e213c4264f5b85847a48d05a76d20af2, type: 3}
+    - {fileID: 8300000, guid: 55fe9b5c85b54754ba0ad1c6587bc470, type: 3}
+    - {fileID: 8300000, guid: 66ea98f865be8db419e1e550c81beb0e, type: 3}
+    - {fileID: 8300000, guid: 85779f082893d824e8d909a300342f4e, type: 3}
+    - {fileID: 8300000, guid: f6cba4484b4c0e842ad5069bda37f1a4, type: 3}
+    - {fileID: 8300000, guid: aedc69f21f11b5645bbc67703fe69e38, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 2.5

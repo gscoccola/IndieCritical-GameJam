@@ -228,10 +228,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screw
       objectReference: {fileID: 0}
-    - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3
@@ -1011,6 +1007,8 @@ GameObject:
   - component: {fileID: 963538156}
   - component: {fileID: 963538159}
   - component: {fileID: 963538158}
+  - component: {fileID: 963538161}
+  - component: {fileID: 963538160}
   m_Layer: 19
   m_Name: Glass
   m_TagString: Untagged
@@ -1161,6 +1159,81 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.21, y: 1.21}
   m_EdgeRadius: 0
+--- !u!114 &963538160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963538155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: Touch
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 140c874719c9b064f8bf9e41449fe191, type: 3}
+    - {fileID: 8300000, guid: a76c8efcfc8942349b69e8947577df23, type: 3}
+    - {fileID: 8300000, guid: 293d67aa6ffbf2e499382a81812dfdd3, type: 3}
+    - {fileID: 8300000, guid: 9467c667b44bfee4eae5795d6b877a20, type: 3}
+    - {fileID: 8300000, guid: e89968e557bf84f4d809eacaef4e8a96, type: 3}
+    - {fileID: 8300000, guid: 646c6b951986587439a77d7cc22a91f8, type: 3}
+    - {fileID: 8300000, guid: 992dedbddc9823643a51ba6a9a1d9e53, type: 3}
+    - {fileID: 8300000, guid: 901a81cf1a9c8ff4cb4fe641db6eabbf, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.5, y: 0.6}
+      randomizePitch: 1
+      pitchRange: {x: 2, y: 2.5}
+    id: 0
+--- !u!114 &963538161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963538155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91116b155e5e7348a114106d785f7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSelectable: 0
+  IsFixed: 0
+  IsScrewed: 0
+  _freezeX: 1
+  _freezeY: 1
+  _irreversible: 0
+  _Xlimit: 0
+  _Ylimit: 0
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 963538160}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeSelected:
+    m_PersistentCalls:
+      m_Calls: []
+  OnJiggle:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1039934189
 GameObject:
   m_ObjectHideFlags: 0
@@ -2434,8 +2507,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1727409021}
   - component: {fileID: 1727409024}
-  - component: {fileID: 1727409022}
-  - component: {fileID: 1727409023}
   m_Layer: 0
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -2458,128 +2529,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1727409022
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727409020}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 325a729cdcc02fa4a891d532952dee35, type: 3}
-  m_Resource: {fileID: 8300000, guid: 325a729cdcc02fa4a891d532952dee35, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!169 &1727409023
-AudioLowPassFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1727409020}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_LowpassResonanceQ: 1
-  lowpassLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0.22727273
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1727409024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2592,6 +2541,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d33b8d08b0c13419d44776be535f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: 325a729cdcc02fa4a891d532952dee35, type: 3}
+  ambience: {fileID: 0}
+  opera: {fileID: 8300000, guid: 9c2b10993c3484246aa470627479305d, type: 3}
+  musicVolume: 0.8
+  operaVolume: 0.8
 --- !u!4 &1833810262 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2053729450734526608, guid: 7d135c57717970a43b15f52510309aab, type: 3}
@@ -3034,7 +2988,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3488,6 +3442,7 @@ GameObject:
   - component: {fileID: 6352314660390108652}
   - component: {fileID: 6352314660390108653}
   - component: {fileID: 6352314660390108654}
+  - component: {fileID: 6352314660390108655}
   m_Layer: 12
   m_Name: Cover
   m_TagString: Untagged
@@ -3561,14 +3516,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   muteAll: 0
   soundsOnThisObject:
-  - name: PickUpScrewdriver
+  - name: PickUpHammer
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 59d67f47976e5e743aeb5d2169825d32, type: 3}
-    - {fileID: 8300000, guid: 2ceadda50468e574f9b99fc578686332, type: 3}
-    - {fileID: 8300000, guid: a4fac256ff05ff34d94bee24e4bfe0f1, type: 3}
-    - {fileID: 8300000, guid: 94dcd3f8f3bfd1144b43d29dd8ae24ab, type: 3}
-    - {fileID: 8300000, guid: 61aeb930a2ec2a94782118042331a976, type: 3}
+    - {fileID: 8300000, guid: 1cac391bf0253064fa3ec9a586171cd6, type: 3}
+    - {fileID: 8300000, guid: cb39bdf4bf9eed541b7e288a0a58abbb, type: 3}
+    - {fileID: 8300000, guid: 724b6b94a8000564ca8f7100b63553bd, type: 3}
+    - {fileID: 8300000, guid: 7c0477c007488a9479fa5c26105ebebe, type: 3}
+    - {fileID: 8300000, guid: 5a7a0793b2ee8fa40b9b493685bc964c, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -3576,28 +3531,15 @@ MonoBehaviour:
       randomizeVolume: 0
       volumeRange: {x: 1, y: 1}
       randomizePitch: 1
-      pitchRange: {x: 0.8, y: 1.1}
-    id: 0
-  - name: ScrewScrewdriver
-    mute: 0
-    audioClips:
-    - {fileID: 8300000, guid: 4672c2b2dab8f6a4c9f5df5ea05ce00f, type: 3}
-    soundSettings:
-      loop: 1
-      fadeInTime: 1
-      fadeOutTime: 0.5
-      randomizeVolume: 0
-      volumeRange: {x: 1, y: 0}
-      randomizePitch: 0
-      pitchRange: {x: 1, y: 0}
+      pitchRange: {x: 0.6, y: 0.8}
     id: 0
   - name: PutDownScrewdriver
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 60638506b483e594aa09bfd9a2a8c4c6, type: 3}
-    - {fileID: 8300000, guid: d5720e8ddeca8ab4283d1b15dc29926e, type: 3}
-    - {fileID: 8300000, guid: d6506c48d05a84a45a67d6a9c96a91ea, type: 3}
-    - {fileID: 8300000, guid: 3367af5387e54874a96e8528d31b9a25, type: 3}
+    - {fileID: 8300000, guid: 25477e9b9e4af42489dfaf052c988045, type: 3}
+    - {fileID: 8300000, guid: 41fc67b45141a7445b00dcf7e21eb381, type: 3}
+    - {fileID: 8300000, guid: 7e467f79a1ecc2f46a58a394df463e81, type: 3}
+    - {fileID: 8300000, guid: 87f4e76162a199c4a8b5d8c296c351bb, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -3605,7 +3547,7 @@ MonoBehaviour:
       randomizeVolume: 0
       volumeRange: {x: 1, y: 0}
       randomizePitch: 1
-      pitchRange: {x: 0.8, y: 1.1}
+      pitchRange: {x: 0.6, y: 0.8}
     id: 0
 --- !u!1001 &5950485211903939285
 PrefabInstance:
@@ -3759,6 +3701,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6352314660390108655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315099995039295428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: SlideStart
+    mute: 0
+    audioClips: []
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 0, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 0, y: 0}
+    id: 0
 --- !u!4 &7165972157409671741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4407977336626820312, guid: 0072b60cc8734944bb67799266312194, type: 3}
@@ -3775,18 +3743,6 @@ PrefabInstance:
     - target: {fileID: 1838258630925359259, guid: 7d135c57717970a43b15f52510309aab, type: 3}
       propertyPath: m_Name
       value: Wire
-      objectReference: {fileID: 0}
-    - target: {fileID: 1952689646183982512, guid: 7d135c57717970a43b15f52510309aab, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.87777406
-      objectReference: {fileID: 0}
-    - target: {fileID: 1952689646183982512, guid: 7d135c57717970a43b15f52510309aab, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.47907484
-      objectReference: {fileID: 0}
-    - target: {fileID: 1952689646183982512, guid: 7d135c57717970a43b15f52510309aab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 57.25
       objectReference: {fileID: 0}
     - target: {fileID: 2053729450734526608, guid: 7d135c57717970a43b15f52510309aab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3955,10 +3911,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7082932182855404004, guid: d383be01feb50e843be2a97147e9b612, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 7581134113315249652, guid: d383be01feb50e843be2a97147e9b612, type: 3}
       propertyPath: m_Name
       value: Gremlin

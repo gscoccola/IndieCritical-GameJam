@@ -396,10 +396,10 @@ MonoBehaviour:
   - name: ScrewsPickup
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 33432d0d661837d44904b285ec252e71, type: 3}
-    - {fileID: 8300000, guid: 77e6375c6220a1444b956fc197facd2e, type: 3}
-    - {fileID: 8300000, guid: 6f37667a69861d248bd545cb188c1079, type: 3}
-    - {fileID: 8300000, guid: 635d6d028cdf7aa4884fdb2a0a608eb5, type: 3}
+    - {fileID: 8300000, guid: 8ded378240d360f4da96c0149b8ced74, type: 3}
+    - {fileID: 8300000, guid: 2fad3b8335e0e354bb040de7dfee2e7b, type: 3}
+    - {fileID: 8300000, guid: 3497f2bff6e46814b9f0fe6bd975489a, type: 3}
+    - {fileID: 8300000, guid: 85868998aa02cb144b923a3570f22679, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -412,16 +412,16 @@ MonoBehaviour:
   - name: ScrewsPutDown
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 920daef5e5464b54da0678a12b57d049, type: 3}
-    - {fileID: 8300000, guid: 1c1bcb6a9e2063d4a875c8d391042416, type: 3}
-    - {fileID: 8300000, guid: b8a9878306692704cb887b3e2cad3d70, type: 3}
-    - {fileID: 8300000, guid: 7f920ed41cf4fde439f1822dd84dc206, type: 3}
-    - {fileID: 8300000, guid: 848858992f8640a4dac780775b47517e, type: 3}
-    - {fileID: 8300000, guid: a17379c94f039054f88eb727e7ad6740, type: 3}
-    - {fileID: 8300000, guid: 2efb9d2a498ab184298f93184d8bc23f, type: 3}
-    - {fileID: 8300000, guid: 55c3ca9e5a6b9b24aacefd1097db0c94, type: 3}
-    - {fileID: 8300000, guid: 5c44f482608ab5d4989a9697121b22b8, type: 3}
-    - {fileID: 8300000, guid: a245cf713f6b38d4fa49025eee6df308, type: 3}
+    - {fileID: 8300000, guid: 878bddffa54f0834dbcca164c6dd4306, type: 3}
+    - {fileID: 8300000, guid: 04ca7f1cb92504643aca122025222eb8, type: 3}
+    - {fileID: 8300000, guid: c7652df0379ec654985bb3b2d508bd3a, type: 3}
+    - {fileID: 8300000, guid: d524e1ea0dbb1744f8d07367efee854a, type: 3}
+    - {fileID: 8300000, guid: c052bc257a4b6bb438a750544b42cdbb, type: 3}
+    - {fileID: 8300000, guid: 2c7721f078817da4c8bb8be4b942df47, type: 3}
+    - {fileID: 8300000, guid: e361f6dcd7f1d5842998965787cd5da2, type: 3}
+    - {fileID: 8300000, guid: 8c7fcf4c90c95be47accf9c9e896d0df, type: 3}
+    - {fileID: 8300000, guid: ab5c23ea853e2744cbcd0d1d153b8f4e, type: 3}
+    - {fileID: 8300000, guid: 92a954a9e4f7f5e4ea0004dffd986343, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -434,8 +434,7 @@ MonoBehaviour:
   - name: Unscrewed
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 7b090c2090a06ae4da075b054b9e57a9, type: 3}
-    - {fileID: 8300000, guid: ba6296b0a45302448bde4314018d18f2, type: 3}
+    - {fileID: 8300000, guid: e4ab1d1ada72de14ab87a1b35d4528b1, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -448,7 +447,7 @@ MonoBehaviour:
   - name: Unscrewing
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: e103296ed61e12b4db6f10cb3c00f084, type: 3}
+    - {fileID: 8300000, guid: 5f305b638db2e014186ab51cc0bf9e79, type: 3}
     soundSettings:
       loop: 1
       fadeInTime: 0
@@ -461,10 +460,10 @@ MonoBehaviour:
   - name: Roll
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 778c712e2257aac40bf1539b980aee28, type: 3}
-    - {fileID: 8300000, guid: 00e0376fdd2b2854f81acbef315eceed, type: 3}
-    - {fileID: 8300000, guid: 517fb14e082c728429c4f00a0a777153, type: 3}
-    - {fileID: 8300000, guid: 1f89711a775685543bf557e3ab23b988, type: 3}
+    - {fileID: 8300000, guid: 9f7107c27b2be964a9d61c8dadc83037, type: 3}
+    - {fileID: 8300000, guid: a08848da1bb7356428165d0c6ec8b940, type: 3}
+    - {fileID: 8300000, guid: 7577110a201307f40b3500b5c5c5a38d, type: 3}
+    - {fileID: 8300000, guid: 3993b6f9d17988941915bed7ce247032, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
