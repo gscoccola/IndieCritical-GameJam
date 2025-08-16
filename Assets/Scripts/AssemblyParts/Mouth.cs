@@ -19,13 +19,20 @@ public class Mouth : MonoBehaviour
             StartCoroutine(IGrow());
         }
 
+        if (col.gameObject.layer == LayerMask.NameToLayer("PhillipsScrewHead"))
+        {
+            col.gameObject.GetComponentInParent<Screwdriver>().SwitchHead();
+            StartCoroutine(IGrow());
+            StartCoroutine(IGrow());
+        }
+
     }
 
     private IEnumerator IGrow()
     {
         yield return new WaitForSeconds(0.2f);
         _centipede.AddSegment();
-        yield return new WaitForSeconds(0.2f);
-        _centipede.AddSegment();
+        /*yield return new WaitForSeconds(0.2f);
+        _centipede.AddSegment();*/
     }
 }

@@ -20,7 +20,7 @@ public class Centipede : MonoBehaviour
 
     private void Start()
     {
-        _rotationSpeed = - _speed;
+        _rotationSpeed = _speed;
         _lastBodySegment = _head;
         _segments.Add(_head);
         /*for (int i = 0; i < 10; i++)

@@ -10,14 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 8365391530870580117}
   - component: {fileID: 1782794313969295999}
-  - component: {fileID: 6187588722956287116}
   - component: {fileID: 9097577386898864579}
   - component: {fileID: 1016785258400998493}
   - component: {fileID: 6763550321254480631}
   - component: {fileID: 4822473163528905542}
   - component: {fileID: 2147621451470332080}
-  m_Layer: 13
-  m_Name: Screw
+  - component: {fileID: 814073403397744817}
+  - component: {fileID: 6500400045574373979}
+  m_Layer: 22
+  m_Name: ScrewFlat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,14 +52,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  _timeToUnscrew: 3
-  _requiredType: 0
+  _timeToUnscrew: 1.3
   _sprites:
   - {fileID: 2531822210571077860, guid: 4b5e39beb8152b246abdad9940b4e97e, type: 3}
   - {fileID: 2548146454673832504, guid: 4b5e39beb8152b246abdad9940b4e97e, type: 3}
   _requiredToolLayer:
     serializedVersion: 2
     m_Bits: 512
+  _sideCollider: {fileID: 814073403397744817}
   IsFree: 0
   IsLoose: 0
   _isRolling: 0
@@ -146,32 +147,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6187588722956287116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447328978677670704}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ElectricAffinity: 0
-  BloodAffinity: 0
-  _heightLayer: 0
-  _interactionTrigger: {fileID: 6763550321254480631}
-  _physicsCollider: {fileID: 0}
-  _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
-  CurrentCollidingObjects: []
-  OnCollisionUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  AssemblyIndex: 0
-  _isElectrified: 0
-  _isBloodPowered: 0
-  IsUncovered: 0
 --- !u!114 &9097577386898864579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsSelectable: 1
-  IsFixed: 0
+  IsFixed: 1
   IsScrewed: 0
   _freezeX: 0
   _freezeY: 0
@@ -473,3 +448,75 @@ MonoBehaviour:
       randomizePitch: 1
       pitchRange: {x: 2, y: 2.2}
     id: 0
+--- !u!61 &814073403397744817
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.0024812222}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4375, y: 0.4375}
+    newSize: {x: 0.4375, y: 0.4375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 0.75, y: 0.41564083}
+  m_EdgeRadius: 0
+--- !u!114 &6500400045574373979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ElectricAffinity: 0
+  BloodAffinity: 0
+  _heightLayer: 2
+  _interactionTrigger: {fileID: 6763550321254480631}
+  _physicsCollider: {fileID: 0}
+  _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
+  CurrentCollidingObjects: []
+  OnCollisionUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  AssemblyIndex: 0
+  _isElectrified: 0
+  _isBloodPowered: 0
+  IsUncovered: 0

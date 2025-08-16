@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Heart : MonoBehaviour, IPowerable
 {
-    private Assemblable _assemblable => GetComponent<Assemblable>();
+    private Assemblable _assemblable;
 
     public bool IsPowered { get; private set; }
 
@@ -13,6 +13,7 @@ public class Heart : MonoBehaviour, IPowerable
 
     private void Start()
     {
+        _assemblable = GetComponent<Assemblable>();
         initialScale = transform.localScale.x;
     }
 

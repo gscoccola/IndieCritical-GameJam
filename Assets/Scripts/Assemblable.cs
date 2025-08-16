@@ -7,7 +7,7 @@ public class Assemblable : MonoBehaviour
 
     [SerializeField] StatusEffectAffinity ElectricAffinity;
     [SerializeField] StatusEffectAffinity BloodAffinity;
-    [SerializeField] HeightLayer _heightLayer = HeightLayer.AboveUpperCover;
+    [SerializeField] public HeightLayer _heightLayer = HeightLayer.AboveUpperCover;
 
     [SerializeField] Collider2D _interactionTrigger;
     [SerializeField] Collider2D _physicsCollider;

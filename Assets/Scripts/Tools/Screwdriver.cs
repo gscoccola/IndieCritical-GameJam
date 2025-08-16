@@ -34,6 +34,13 @@ public class Screwdriver : MonoBehaviour
 
     }
 
+    public void SwitchHead()
+    {
+        Animator.SetTrigger("Eaten");
+        _toolHead.gameObject.layer = LayerMask.NameToLayer("FlatScrewHead");
+        _toolHead.transform.localPosition -= 0.39f * Vector3.right;
+    }
+
 
 }
 

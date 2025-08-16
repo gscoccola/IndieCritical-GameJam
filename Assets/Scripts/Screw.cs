@@ -5,10 +5,10 @@ using UnityEngine.Events;
 public class Screw : MonoBehaviour
 {
     [SerializeField] float rotationSpeed = 100f;
-    [SerializeField] float _timeToUnscrew = 3f;
-    [SerializeField] ToolType _requiredType;
+    [SerializeField] float _timeToUnscrew = 1.5f;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] LayerMask _requiredToolLayer;
+    [SerializeField] BoxCollider2D _sideCollider;
     private Draggable _draggable;
 
     public bool IsFree;
@@ -18,7 +18,6 @@ public class Screw : MonoBehaviour
     private float _timeLeft;
     private Rigidbody2D _rigidbody;
     private SpriteRenderer _spriteRenderer;
-    private Collider2D _collider => GetComponent<Collider2D>();
     private bool _isVibrating;
     public bool _isRolling;
     private float _rollTime;
@@ -32,11 +31,13 @@ public class Screw : MonoBehaviour
 
     private void Start()
     {
+        
         _timeLeft = _timeToUnscrew;
         _rigidbody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _draggable = GetComponent<Draggable>();
         //_draggable.IsFixed = true;
+        if (_isRolling) StartRoll();
     }
 
    private void Update()
@@ -107,6 +108,7 @@ public class Screw : MonoBehaviour
         _spriteRenderer.sprite = _sprites[1];
         transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
         //GetComponent<CircleCollider2D>().offset = new Vector2(-0.71f, 0f);
+        _sideCollider.enabled = true;
         yield return new WaitForSeconds(2.3f);
         _isRolling = false;
     }
@@ -118,11 +120,12 @@ public class Screw : MonoBehaviour
         IsLoose = true;
         gameObject.layer = LayerMask.NameToLayer("Assemblable");
         GetComponent<CircleCollider2D>().offset = Vector2.zero;
+        _sideCollider.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
+        if (((1 << col.gameObject.layer) & _requiredToolLayer) != 0)
         {
             _isPressed = true;
             _currentTool = col.transform.parent.GetComponent<Screwdriver>();
@@ -137,7 +140,7 @@ public class Screw : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.layer == LayerMask.NameToLayer("ActiveSDHead"))
+        if (((1 << col.gameObject.layer) & _requiredToolLayer) != 0)
         {
             _isPressed = false;
             OnBecomeUnPressed?.Invoke();
