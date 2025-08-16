@@ -9,18 +9,18 @@ public class VelocityVolumeController : MonoBehaviour
     [Header("Volume Control")]
     [SerializeField] private Sounds _sounds;
     [SerializeField] private int _loopContainerID, _startContainerID, _stopContainerID;
-    [SerializeField] private float _volumeMulti = 1, _minVolume = 0.1f, _maxVolume = 1f;
+    [SerializeField] private float _volumeMulti = 20, _minVolume = 0f, _maxVolume = 1f;
     private AudioSource _audioSource;
     private Vector2 _lastFramePosition;
     private bool _isPlaying, _hasMoved = false;
 
     [Header("Smoothing")]
     [Tooltip("The base speed the Display Slider changes")]
-    [SerializeField] private float bufferAmtBase;
+    [SerializeField] private float bufferAmtBase = 0.05f;
     [Tooltip("The speed at which the slider goes up. The higher the number the faster it reacts to changes")]
-    [SerializeField] private float bufferSmoothUp;
+    [SerializeField] private float bufferSmoothUp = 1;
     [Tooltip("The speed at which the slider goes down. The higher the number the faster it reacts to changes")]
-    [SerializeField] private float bufferSmoothDown;
+    [SerializeField] private float bufferSmoothDown = 1.1f;
     private float buffer = 0f, bufferAmt, _diff = 0, curVolume = 0;
     private bool justLouder = false;
     //public Slider debugSlider;

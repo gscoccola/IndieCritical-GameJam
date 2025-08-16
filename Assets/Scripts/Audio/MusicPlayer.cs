@@ -5,8 +5,8 @@ using UnityEngine;
 public class MusicPlayer : Singleton<MusicPlayer>
 {
     public AudioClip music, ambience, opera;
-    public float musicVolume, operaVolume;
-    private AudioSource musicSource, operaSource;
+    public float musicVolume, ambienceVolume, operaVolume;
+    private AudioSource musicSource, ambienceSource, operaSource;
     private bool shouldPlayOpera = false;
 
 
@@ -19,7 +19,14 @@ public class MusicPlayer : Singleton<MusicPlayer>
         musicSource.volume = musicVolume;
         musicSource.pitch = 1;
         musicSource.spatialBlend = 0;
-        musicSource.Play();
+
+        ambienceSource = this.AddComponent<AudioSource>();
+        ambienceSource.clip = ambience;
+        ambienceSource.loop = true;
+        ambienceSource.volume = ambienceVolume;
+        ambienceSource.pitch = 1;
+        ambienceSource.spatialBlend = 0;
+        ambienceSource.Play();
 
 
         operaSource = this.AddComponent<AudioSource>();
@@ -31,6 +38,11 @@ public class MusicPlayer : Singleton<MusicPlayer>
         operaSource.Play();
 
 
+    }
+
+    public void StartMusic()
+    {
+        if (!musicSource.isPlaying) musicSource.Play();
     }
 
     public void ToggleMusic (bool value)
@@ -53,12 +65,97 @@ public class MusicPlayer : Singleton<MusicPlayer>
 
     private void FadeToMusic()
     {
-        StartCoroutine(CrossfadeAudioSources(musicSource, musicVolume, operaSource, operaVolume, 1.5f));
+        StartCoroutine(IFadeInMusic());
     }
 
     private void FadeToOpera()
     {
-        StartCoroutine(CrossfadeAudioSources(operaSource, operaVolume, musicSource, musicVolume, 0.5f));
+        StartCoroutine(IFadeInOpera());
+    }
+
+    private IEnumerator IFadeInMusic()
+    {
+
+        if (musicSource == null || operaSource == null) yield break;
+
+        StartCoroutine(FadeInAudioSource(musicSource, musicVolume, 0.75f));
+        StartCoroutine(FadeOutAudioSource(operaSource, operaVolume, 0.5f));
+
+        StartCoroutine(LerpAudioSourcePitch(operaSource, 1, 0.5f, 1.5f, false));
+
+    }
+
+    private IEnumerator IFadeInOpera()
+    {
+        
+        if(musicSource == null || operaSource == null) yield break;
+
+        StartCoroutine(FadeInAudioSource(operaSource, operaVolume, 1.5f));
+        StartCoroutine(FadeOutAudioSource(musicSource, musicVolume, 1));
+
+        StartCoroutine(LerpAudioSourcePitch(operaSource, 0.5f, 1, 1.5f, true));
+
+    }
+
+    private IEnumerator LerpAudioSourcePitch(AudioSource source, float a, float b, float duration, bool up)
+    {
+        if (!source.isPlaying || source == null) yield break;
+
+        float timeElapsed = 0;
+
+        while (timeElapsed < duration)
+        {
+            if (source == null) break;
+            float lerpProgression = timeElapsed / duration;
+            lerpProgression = up ? lerpProgression * lerpProgression * lerpProgression : 1 - Mathf.Pow(1 - lerpProgression , 3);
+            float newPitch = Mathf.Lerp(a, b, lerpProgression);
+            source.pitch = newPitch;
+
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+    }
+
+    private IEnumerator FadeOutAudioSource(AudioSource sourceToFadeOut, float targetFadeOutVolume, float duration)
+    {
+        if (!sourceToFadeOut.isPlaying || sourceToFadeOut == null || sourceToFadeOut.volume == 0) yield break;
+
+        float timeElapsed = 0;
+
+        while (timeElapsed < duration)
+        {
+            if (sourceToFadeOut == null) break;
+
+            float fadeOutVolume = Mathf.Lerp(targetFadeOutVolume, 0, timeElapsed / duration);
+            sourceToFadeOut.volume = fadeOutVolume;
+
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+    }
+
+    private IEnumerator FadeInAudioSource(AudioSource sourceToFadeIn, float targetFadeInVolume, float duration)
+    {
+        float timeElapsed = 0;
+        sourceToFadeIn.volume = 0;
+
+        if (!sourceToFadeIn.isPlaying)
+        {
+            sourceToFadeIn.Play();
+        }
+
+        while (timeElapsed < duration)
+        {
+            if (sourceToFadeIn == null) break;
+            //fade in
+            float fadeInVolume = Mathf.Lerp(0, targetFadeInVolume, timeElapsed / duration);
+            sourceToFadeIn.volume = fadeInVolume;
+
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
     }
 
     private IEnumerator CrossfadeAudioSources(AudioSource sourceToFadeIn, float targetFadeInVolume, AudioSource sourceToFadeOut, float targetFadeOutVolume, float duration)

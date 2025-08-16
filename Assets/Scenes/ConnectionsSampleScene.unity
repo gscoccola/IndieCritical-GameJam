@@ -224,13 +224,45 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 283615871}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 583977610}
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: StartMusic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: OnBecomePressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_Name
       value: Screw
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -275,7 +307,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 583977610}
   m_SourcePrefab: {fileID: 100100000, guid: ea463881dc429264a993449c51aec7db, type: 3}
 --- !u!4 &243915576 stripped
 Transform:
@@ -510,6 +545,23 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!1 &583977602 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
+  m_PrefabInstance: {fileID: 243915575}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &583977610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583977602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e87d50c3826ee4ab1c53476a231fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2790,6 +2842,7 @@ GameObject:
   - component: {fileID: 1681324923}
   - component: {fileID: 1681324924}
   - component: {fileID: 1681324925}
+  - component: {fileID: 1681324926}
   m_Layer: 12
   m_Name: GremlinBox
   m_TagString: Untagged
@@ -2913,6 +2966,91 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1681324926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681324918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: GremlinNo
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: c857c9cd9bee74b4e85ffe5e1352fbd3, type: 3}
+    - {fileID: 8300000, guid: 3109a347d0922d44b98c401804adbed7, type: 3}
+    - {fileID: 8300000, guid: 5b3fc1c6f703d454291dcc9ab794cddc, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+    id: 0
+  - name: BoxSlide
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 248a1d39ee8d34b4fab0009b888641eb, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 0.4
+      fadeOutTime: 0.25
+      randomizeVolume: 0
+      volumeRange: {x: 0.7, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+    id: 0
+  - name: BoxSlideStart
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: febf7ac7d1960d743a8b4f81eaf7d867, type: 3}
+    - {fileID: 8300000, guid: 6340bb3e6d214a04a8407d720e59db60, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 1
+      pitchRange: {x: 1.8, y: 2}
+    id: 0
+  - name: BoxSlideStop
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 038c3e33624319147b9e456af0a32ea0, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 1
+      pitchRange: {x: 1.8, y: 2}
+    id: 0
+  - name: Touch
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 2cf73263308fa0f49b6882669c03c454, type: 3}
+    - {fileID: 8300000, guid: c35fd356cedb6634aadcca2ebf1811ec, type: 3}
+    - {fileID: 8300000, guid: 1f81a637e2163de4c85db6a63eee0c68, type: 3}
+    - {fileID: 8300000, guid: b7bb66021986ed04387847912182ae6e, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.5, y: 0.6}
+      randomizePitch: 1
+      pitchRange: {x: 1.4, y: 1.6}
+    id: 0
 --- !u!1 &1727409020
 GameObject:
   m_ObjectHideFlags: 0
@@ -2957,10 +3095,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d33b8d08b0c13419d44776be535f02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: 325a729cdcc02fa4a891d532952dee35, type: 3}
-  ambience: {fileID: 0}
+  music: {fileID: 8300000, guid: 9c4541bb571ebf842bedf26e5676c6bb, type: 3}
+  ambience: {fileID: 8300000, guid: 9efdae24b7f5d8d4f9c68eb71dd359e9, type: 3}
   opera: {fileID: 8300000, guid: 9c2b10993c3484246aa470627479305d, type: 3}
   musicVolume: 0.8
+  ambienceVolume: 0.75
   operaVolume: 0.8
 --- !u!4 &1833810262 stripped
 Transform:
@@ -3790,6 +3929,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1681324926}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
       m_Calls: []
@@ -4148,6 +4299,19 @@ MonoBehaviour:
       randomizePitch: 1
       pitchRange: {x: 0.6, y: 0.8}
     id: 0
+  - name: BoxHit
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 7bd35d3e6da86254baaf0ec447aa48f4, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 2}
+    id: 0
 --- !u!1001 &5950485211903939285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4309,23 +4473,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4315099995039295428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 54a542995930d254c9d2ba26fe5e1979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  muteAll: 0
-  soundsOnThisObject:
-  - name: SlideStart
-    mute: 0
-    audioClips: []
-    soundSettings:
-      loop: 0
-      fadeInTime: 0
-      fadeOutTime: 0
-      randomizeVolume: 0
-      volumeRange: {x: 0, y: 0}
-      randomizePitch: 0
-      pitchRange: {x: 0, y: 0}
-    id: 0
+  _sounds: {fileID: 1681324926}
+  _loopContainerID: 0
+  _startContainerID: 0
+  _stopContainerID: 0
+  _volumeMulti: 20
+  _minVolume: 0
+  _maxVolume: 0.7
+  bufferAmtBase: 0.05
+  bufferSmoothUp: 1
+  bufferSmoothDown: 1.1
 --- !u!4 &7165972157409671741 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4407977336626820312, guid: 0072b60cc8734944bb67799266312194, type: 3}
@@ -4583,7 +4743,19 @@ MonoBehaviour:
       m_Calls: []
   OnHit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5862973239971687405}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   IsActive: 0
   _currentTarget: {fileID: 0}
 --- !u!1001 &9153240388662450700

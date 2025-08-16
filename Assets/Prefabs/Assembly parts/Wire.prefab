@@ -438,7 +438,7 @@ MonoBehaviour:
       fadeInTime: 3
       fadeOutTime: 1
       randomizeVolume: 0
-      volumeRange: {x: 0.5, y: 0}
+      volumeRange: {x: 0.19, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1.2, y: 1.2}
     id: 0

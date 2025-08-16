@@ -15,6 +15,7 @@ public class GremlinBox : MonoBehaviour
     private float _displacement;
     private float _timeToReturn;
     private Animator _animator;
+    private Sounds _uniqueSounds;
 
 
     private float _trustTimer;
@@ -36,6 +37,7 @@ public class GremlinBox : MonoBehaviour
         _timeToReturn = _maxDisplacement / _returnSpeed;
         _boxState = BoxState.Closed;
         _coverDraggable = _cover.GetComponent<Draggable>();
+        _uniqueSounds = transform.GetComponent<Sounds>();
     }
 
     private void Update()
@@ -112,14 +114,19 @@ public class GremlinBox : MonoBehaviour
             StartCoroutine(ISlideBack());
         }
 
+
     }
 
     private IEnumerator ISlideBack()
     {
         _newRelDis = _background.position.y - _cover.position.y;
-        
+        //_uniqueSounds.PlaySoundContainer("BoxSlideStart");
+        _uniqueSounds.PlayLoopingContainer("BoxSlide");
+
         _boxState = BoxState.Returning;
         yield return new WaitForSeconds(_timeToReturn * 0.5f);
+        _uniqueSounds.StopLoopingContainer("BoxSlide");
+        _uniqueSounds.PlaySoundContainer("BoxSlideStop");
         _animator.SetBool("IsHandIn", false);
         /*yield return new WaitForSeconds(_returnTime);
         _boxState = BoxState.Closed;
@@ -132,6 +139,7 @@ public class GremlinBox : MonoBehaviour
         _animator.SetBool("IsHandIn", true);
         yield return new WaitForSeconds(0.3f);
         StartCoroutine(ISlideBack());
+        _uniqueSounds.PlaySoundContainer("GremlinNo");
     }
 
     public void HeadHide()
@@ -156,6 +164,7 @@ public class GremlinBox : MonoBehaviour
         _boxState = BoxState.Open;
         _target.gameObject.SetActive(false);
         _Gremlin.SetActive();
+        _uniqueSounds.PlaySoundContainer("BoxHit");
     }
 
 }
