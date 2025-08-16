@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4822473163528905542}
   - component: {fileID: 2147621451470332080}
   - component: {fileID: 814073403397744817}
+  - component: {fileID: 3137460520046182376}
   m_Layer: 13
   m_Name: ScrewPhillips
   m_TagString: Untagged
@@ -69,6 +70,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
         m_MethodName: PlayLoopingContainer
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3137460520046182376}
+        m_TargetAssemblyTypeName: StartMusic, Assembly-CSharp
+        m_MethodName: PlayMusic
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -493,3 +506,15 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.75, y: 0.41564083}
   m_EdgeRadius: 0
+--- !u!114 &3137460520046182376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e87d50c3826ee4ab1c53476a231fcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

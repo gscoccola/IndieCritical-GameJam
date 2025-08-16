@@ -81,7 +81,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         StartCoroutine(FadeInAudioSource(musicSource, musicVolume, 0.75f));
         StartCoroutine(FadeOutAudioSource(operaSource, operaVolume, 0.5f));
 
-        StartCoroutine(LerpAudioSourcePitch(operaSource, 1, 0.5f, 1.5f, false));
+        StartCoroutine(LerpAudioSourcePitch(operaSource, 1, 0.5f, 3f, false));
 
     }
 
@@ -93,7 +93,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         StartCoroutine(FadeInAudioSource(operaSource, operaVolume, 1.5f));
         StartCoroutine(FadeOutAudioSource(musicSource, musicVolume, 1));
 
-        StartCoroutine(LerpAudioSourcePitch(operaSource, 0.5f, 1, 1.5f, true));
+        StartCoroutine(LerpAudioSourcePitch(operaSource, 0.5f, 1, 3f, true));
 
     }
 

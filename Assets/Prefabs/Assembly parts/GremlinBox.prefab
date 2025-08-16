@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 8655191493066597013}
   - component: {fileID: 3424422633362293703}
   - component: {fileID: 5550204783779871207}
+  - component: {fileID: 3480130838060904754}
   m_Layer: 12
   m_Name: GremlinBox
   m_TagString: Untagged
@@ -328,6 +329,91 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3480130838060904754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3177476538157601306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: GremlinNo
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: c857c9cd9bee74b4e85ffe5e1352fbd3, type: 3}
+    - {fileID: 8300000, guid: 3109a347d0922d44b98c401804adbed7, type: 3}
+    - {fileID: 8300000, guid: 5b3fc1c6f703d454291dcc9ab794cddc, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+    id: 0
+  - name: BoxSlide
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 248a1d39ee8d34b4fab0009b888641eb, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 0.4
+      fadeOutTime: 0.25
+      randomizeVolume: 0
+      volumeRange: {x: 0.7, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+    id: 0
+  - name: BoxSlideStart
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: febf7ac7d1960d743a8b4f81eaf7d867, type: 3}
+    - {fileID: 8300000, guid: 6340bb3e6d214a04a8407d720e59db60, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 1
+      pitchRange: {x: 1.8, y: 2}
+    id: 0
+  - name: BoxSlideStop
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 038c3e33624319147b9e456af0a32ea0, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 1
+      pitchRange: {x: 1.8, y: 2}
+    id: 0
+  - name: Touch
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 2cf73263308fa0f49b6882669c03c454, type: 3}
+    - {fileID: 8300000, guid: c35fd356cedb6634aadcca2ebf1811ec, type: 3}
+    - {fileID: 8300000, guid: 1f81a637e2163de4c85db6a63eee0c68, type: 3}
+    - {fileID: 8300000, guid: b7bb66021986ed04387847912182ae6e, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 1
+      volumeRange: {x: 0.5, y: 0.6}
+      randomizePitch: 1
+      pitchRange: {x: 1.4, y: 1.6}
+    id: 0
 --- !u!1 &4011332015596331070
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +511,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3480130838060904754}
+        m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
+        m_MethodName: PlaySoundContainer
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Touch
           m_BoolArgument: 0
         m_CallState: 2
   OnDeSelected:
