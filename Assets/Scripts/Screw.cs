@@ -136,6 +136,10 @@ public class Screw : MonoBehaviour
 
 
         }
+        else if (col.gameObject.layer == LayerMask.NameToLayer("PhillipsScrewHead"))
+        {
+            Vibrate();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
