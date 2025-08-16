@@ -164,7 +164,7 @@ public class GremlinBox : MonoBehaviour
         _boxState = BoxState.Open;
         _target.gameObject.SetActive(false);
         _Gremlin.SetActive();
-        _uniqueSounds.PlaySoundContainer("BoxHit");
+        //_uniqueSounds.PlaySoundContainer("BoxHit");
     }
 
 }

@@ -2701,6 +2701,7 @@ GameObject:
   - component: {fileID: 1877631129}
   - component: {fileID: 1877631132}
   - component: {fileID: 1877631131}
+  - component: {fileID: 1877631134}
   - component: {fileID: 1877631133}
   - component: {fileID: 1877631130}
   m_Layer: 5
@@ -2806,6 +2807,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TMP: {fileID: 1920258721}
+  _uniqueSounds: {fileID: 1877631134}
+--- !u!114 &1877631134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877631128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: DisplayChange
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: bcf9f26766b7a714896edcccc1a355dd, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 0.3, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+    id: 0
 --- !u!1 &1920258719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3704,6 +3733,32 @@ MonoBehaviour:
     mute: 0
     audioClips:
     - {fileID: 8300000, guid: 7bd35d3e6da86254baaf0ec447aa48f4, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 2}
+    id: 0
+  - name: Windup
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 637e478e8ff09424ebcb423cf2acc813, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 2}
+    id: 0
+  - name: Swing
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 69dfc5b8fa4fc344c991d62642c2be03, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
