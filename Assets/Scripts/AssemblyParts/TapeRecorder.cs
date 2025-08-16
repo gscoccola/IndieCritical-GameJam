@@ -5,10 +5,12 @@ public class TapeRecorder : MonoBehaviour, IPowerable
     public bool IsPowered { get; private set; }
 
     private float initialScale;
+    private Animator _animator;
 
     private void Start()
     {
         initialScale = transform.localScale.x;
+        _animator = GetComponent<Animator>();
     }
 
     public void SetPowered(StatusEffect statusEffect, bool value)
