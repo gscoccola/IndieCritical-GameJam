@@ -4,8 +4,9 @@ using System;
 using UnityEngine.InputSystem;
 using System.Collections;
 
-public class Assembly : Singleton<Assembly>
+public class Assembly : MonoBehaviour
 {
+    public static Assembly Instance;
     public Assemblable[] Assembleables;
     public Cover[] Covers;
     public bool[,] Connections;
@@ -16,14 +17,15 @@ public class Assembly : Singleton<Assembly>
     [SerializeField] GameObject _sparkPrefab;
     [SerializeField] GameObject _veinConnectionPrefab;
 
+
     private void Start()
     {
         StartCoroutine(IPropagateStatusEffects());
     }
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
+        Instance = this;
         Assembleables = FindObjectsByType<Assemblable>(FindObjectsSortMode.None);
         for (int i = 0; i < Assembleables.GetLength(0); i++) Assembleables[i].AssemblyIndex = i;
         Covers = FindObjectsByType<Cover>(FindObjectsSortMode.None);

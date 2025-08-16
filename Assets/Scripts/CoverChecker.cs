@@ -7,7 +7,8 @@ public class CoverChecker : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.layer != LayerMask.NameToLayer("Cover")) return;
+        if (col.gameObject.layer != LayerMask.NameToLayer("Cover") /*|| col.transform.position.z > transform.position.z*/) return;
+        if ((int)_parentAssemblable._heightLayer - (int)col.GetComponent<Assemblable>()._heightLayer != 1) return;
         _parentAssemblable.SetActive(true);
         Destroy(this.gameObject, 0.1f);
     }

@@ -9,6 +9,7 @@ public class Centipede : MonoBehaviour
     [SerializeField] private GameObject _head;
     private GameObject _lastBodySegment;
     [SerializeField] private float _speed;
+    private float _rotationSpeed;
     private float _segmentDistance = 0.33f;
     public bool AddSegmentTrigger = false;
     private int _length = 1;
@@ -19,12 +20,13 @@ public class Centipede : MonoBehaviour
 
     private void Start()
     {
+        _rotationSpeed = _speed;
         _lastBodySegment = _head;
         _segments.Add(_head);
-        for (int i = 0; i < 10; i++)
+        /*for (int i = 0; i < 10; i++)
         {
             AddSegment();
-        }
+        }*/
     }
 
     private void Update()
@@ -44,7 +46,7 @@ public class Centipede : MonoBehaviour
         {
             foreach (var segment in _segments)
             {
-                segment.GetComponent<Rigidbody2D>().AddForce(-Time.deltaTime * _speed *
+                segment.GetComponent<Rigidbody2D>().AddForce(-Time.deltaTime * _rotationSpeed *
                     OrthogonalVector(segment.transform.position - _ourobourosCenter).normalized);
 
                 segment.GetComponent<Rigidbody2D>().AddForce(-Time.deltaTime * _speed *
@@ -57,7 +59,7 @@ public class Centipede : MonoBehaviour
     public void AddSegment()
     {
         GameObject newSegment = Instantiate(_centipedeSegmentPrefab,
-            _lastBodySegment.transform.position.Flatten() + _lastBodySegment.transform.right * _segmentDistance
+            _lastBodySegment.transform.position.Flatten() + _lastBodySegment.transform.right * _segmentDistance - 0.05f * _length * _lastBodySegment.transform.forward
             , _lastBodySegment.transform.rotation, transform);
         newSegment.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
         _lastBodySegment = newSegment;
@@ -67,7 +69,9 @@ public class Centipede : MonoBehaviour
 
     private void TriggerOurobouros()
     {
-        _ourobourosCenter = AveragePosition(_segments);
+        _head.GetComponent<Mouth>().enabled = false;
+        _ourobourosCenter = AveragePosition(_segments); 
+        if (_head.transform.position.y < _ourobourosCenter.y) _rotationSpeed *= -1f;
         foreach (var segment in _segments)
         {
             segment.GetComponent<ForceDraggable>().IsSelectable = false;

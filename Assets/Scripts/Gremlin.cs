@@ -36,7 +36,7 @@ public class Gremlin : MonoBehaviour
         if (_usingCalculator || _isSelected || _isStunned) _rb.linearVelocity = Vector2.zero;
         else if (_isUncovered)
             _rb.linearVelocity = Vector3.MoveTowards(_rb.linearVelocity, _speedTarget, _acceleration * Time.deltaTime);
-        _animator.SetBool("IsWalking", (_lastPos - transform.position).magnitude > Time.deltaTime * 0.2f * _speed);
+        if (!_isSelected) _animator.SetBool("IsWalking", (_lastPos - transform.position).magnitude > Time.deltaTime * 0.2f * _speed);
         _lastPos = transform.position;
     }
 
@@ -57,13 +57,17 @@ public class Gremlin : MonoBehaviour
         _isUncovered = true;
         _isStunned = true;
         _draggable.IsFixed = false;
+        _animator.SetBool("IsStunned", true);
     }
 
     public void OnSelect()
     {
+        if (_isStunned) transform.position -= 0.2f * Vector3.forward;
         _isStunned = false;
         _isSelected = true;
         _usingCalculator = false;
+        _animator.SetBool("IsStunned", false); 
+        _animator.SetBool("IsWalking", false); 
     }
 
     public void OnDeselect()
@@ -82,7 +86,7 @@ public class Gremlin : MonoBehaviour
         {
             _usingCalculator = true;
             ObjectivesManager.Instance.SetCPU(true);
-            /*_calculator = col.gameObject.GetComponent<Calculator>();*/
+            col.gameObject.GetComponent<Calculator>().SetPowered(true);
             transform.position = new Vector3( col.transform.position.x, col.transform.position.y, transform.position.z);
             StartCoroutine(IBeginCalculating());
         }
@@ -102,7 +106,7 @@ public class Gremlin : MonoBehaviour
         {
             _usingCalculator = false;
             ObjectivesManager.Instance.SetCPU(false);
-            /*_calculator = null;*/
+            col.gameObject.GetComponent<Calculator>().SetPowered(false);
         }
     }
 
