@@ -32,16 +32,26 @@ public class ObjectivesManager : MonoBehaviour
     {
         CPUOn = value;
         UpdateText();
+        CheckEnding();
     }
 
     public void SetGPU(bool value)
     {
         GPUOn = value;
         UpdateText();
+        CheckEnding();
     }
 
     public string BoolToString(bool value)
     {
         return value ? "ON" : "OFF";
+    }
+
+    private void CheckEnding()
+    {
+        if (CPUOn && GPUOn && PowerOn)
+        {
+            TextManager.Instance.SetText("Ending 1/2 \n Press R to restart");
+        }
     }
 }

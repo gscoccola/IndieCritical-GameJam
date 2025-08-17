@@ -32,10 +32,10 @@ public class Centipede : MonoBehaviour
         _lastBodySegment = _head;
         _segments.Add(_head);
         _sounds = transform.GetComponent<Sounds>();
-        for (int i = 0; i < 10; i++)
+        /*for (int i = 0; i < 10; i++)
         {
             AddSegment();
-        }
+        }*/
         _gpuComponent = _gpu.transform.GetChild(0).transform.GetComponent<GPU>();
     }
 
@@ -78,6 +78,7 @@ public class Centipede : MonoBehaviour
         GameObject newSegment = Instantiate(_centipedeSegmentPrefab,
             _lastBodySegment.transform.position.Flatten() + _lastBodySegment.transform.right * _segmentDistance - 0.05f * _length * _lastBodySegment.transform.forward
             , _lastBodySegment.transform.rotation, transform);
+        _head.transform.position = new Vector3(_head.transform.position.x, _head.transform.position.y, -0.9f);
         newSegment.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
         newSegment.GetComponent<VelocityVolumeController>().SetSounds(_sounds);
         _lastBodySegment = newSegment;
@@ -87,6 +88,7 @@ public class Centipede : MonoBehaviour
 
     private void TriggerOurobouros()
     {
+        TextManager.Instance.SetText("Ending 2/2 \n Press R to restart");
         _head.GetComponent<Mouth>().enabled = false;
         _ourobourosCenter = AveragePosition(_segments); 
         if (_head.transform.position.y < _ourobourosCenter.y) _rotationSpeed *= -1f;

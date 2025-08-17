@@ -50,9 +50,11 @@ MonoBehaviour:
   _centipedeSegmentPrefab: {fileID: 5263133755577031132, guid: d7eb420488828174b8844e6a47c1b2e9, type: 3}
   _head: {fileID: 8055952282550235676}
   _gpu: {fileID: 0}
-  _blenderForce: 0
+  _blenderForce: 2000
+  _lastBodySegment: {fileID: 0}
   _speed: 700
   AddSegmentTrigger: 0
+  _particleSystem: {fileID: 0}
 --- !u!114 &507616752637745790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439d882bf8f5e16448417b0be37c6875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particles: {fileID: 0}
 --- !u!50 &7874162542044142906
 Rigidbody2D:
   serializedVersion: 5

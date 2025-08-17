@@ -35,13 +35,14 @@ public class Sounds : MonoBehaviour
     public void PlaySoundContainer(int soundID)
     {
         if (muteAll) return;
+        if (soundsOnThisObject[soundID] == null) return;
         soundsOnThisObject[soundID].PlayRandomSoundOnTarget(transform);
     }
 
     public void PlaySoundContainer(string containerName)
     {
         if (muteAll) return;
-        soundsOnThisObject[GetSoundContainerByName(containerName)].PlayRandomSoundOnTarget(transform);
+        PlaySoundContainer(GetSoundContainerByName(containerName));
     }
 
     public void PlayLoopingContainer(string containerName)

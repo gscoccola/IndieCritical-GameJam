@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -340423731
-  m_SortingLayer: -1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -4698775446972505895, guid: 3fd4a3b095df54548b1de165b4a93b30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -336,6 +336,7 @@ MonoBehaviour:
       volumeRange: {x: 0.7, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
+      diagetic: 1
     id: 0
   - name: BoxSlideStart
     mute: 0
@@ -350,6 +351,7 @@ MonoBehaviour:
       volumeRange: {x: 0.6, y: 0.7}
       randomizePitch: 1
       pitchRange: {x: 1.8, y: 2}
+      diagetic: 1
     id: 0
   - name: BoxSlideStop
     mute: 0
@@ -363,6 +365,7 @@ MonoBehaviour:
       volumeRange: {x: 0.6, y: 0.7}
       randomizePitch: 1
       pitchRange: {x: 1.8, y: 2}
+      diagetic: 1
     id: 0
   - name: Touch
     mute: 0
@@ -379,6 +382,7 @@ MonoBehaviour:
       volumeRange: {x: 0.5, y: 0.6}
       randomizePitch: 1
       pitchRange: {x: 1.4, y: 1.6}
+      diagetic: 1
     id: 0
 --- !u!114 &5062856468564479912
 MonoBehaviour:
