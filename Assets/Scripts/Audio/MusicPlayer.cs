@@ -218,8 +218,8 @@ public class MusicPlayer : Singleton<MusicPlayer>
 
     public void SetBlender()
     {
-
-        if (!triggeredBlender) return;
+        print("yep");
+        if (triggeredBlender) return;
         triggeredBlender = true;
 
         significantAction.PlayRandomSoundOnTarget(transform);
@@ -234,7 +234,6 @@ public class MusicPlayer : Singleton<MusicPlayer>
         blenderSource.pitch = 1;
         blenderSource.spatialBlend = 0;
         blenderSource.Play();
-        blenderSource = this.AddComponent<AudioSource>();
 
         StartCoroutine(FadeInAudioSource(blenderSource, blenderVolume, 0.25f));
     }
