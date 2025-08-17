@@ -4,6 +4,7 @@ using System.Collections;
 public class Mouth : MonoBehaviour
 {
     private Centipede _centipede;
+    [SerializeField] GameObject _particles;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class Mouth : MonoBehaviour
 
     private IEnumerator IGrow(int number = 1)
     {
+        Instantiate(_particles, transform.position - 0.1f * Vector3.forward, Quaternion.identity);
         for (int i = 0; i < number; i++)
         {
             yield return new WaitForSeconds(0.4f);
