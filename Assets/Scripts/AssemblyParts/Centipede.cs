@@ -21,12 +21,14 @@ public class Centipede : MonoBehaviour
     private bool _eatingLastSegment;
 
     private List<GameObject> _segments = new List<GameObject>();
+    private Sounds _sounds;
 
     private void Start()
     {
         _rotationSpeed = _speed;
         _lastBodySegment = _head;
         _segments.Add(_head);
+        _sounds = transform.GetComponent<Sounds>();
         for (int i = 0; i < 10; i++)
         {
             AddSegment();
@@ -88,6 +90,8 @@ public class Centipede : MonoBehaviour
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
         }
         _isOurobouros = true;
+        _sounds.PlayLoopingContainer("Orobourus_Movement");
+        MusicPlayer.Instance.SetOrobourus();
         AddSegment();
         _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         _head.GetComponent<SpringJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();

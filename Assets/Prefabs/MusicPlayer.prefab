@@ -47,6 +47,8 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 9c4541bb571ebf842bedf26e5676c6bb, type: 3}
   ambience: {fileID: 8300000, guid: 9efdae24b7f5d8d4f9c68eb71dd359e9, type: 3}
   opera: {fileID: 8300000, guid: 9c2b10993c3484246aa470627479305d, type: 3}
+  orobourusAmbience: {fileID: 8300000, guid: 091c7df6208388445b894ca73f528dd3, type: 3}
   musicVolume: 0.8
   ambienceVolume: 0.75
   operaVolume: 0.8
+  orobourusAmbienceVolume: 1

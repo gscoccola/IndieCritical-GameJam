@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class MusicPlayer : Singleton<MusicPlayer>
 {
-    public AudioClip music, ambience, opera;
-    public float musicVolume, ambienceVolume, operaVolume;
-    private AudioSource musicSource, ambienceSource, operaSource;
+    public AudioClip music, ambience, opera, orobourusAmbience;
+    public float musicVolume, ambienceVolume, operaVolume, orobourusAmbienceVolume;
+    private AudioSource musicSource, ambienceSource, operaSource, orobourusAmbienceSource;
     private bool shouldPlayOpera = false;
 
 
@@ -188,4 +189,21 @@ public class MusicPlayer : Singleton<MusicPlayer>
         }
     }
 
+    public void SetOrobourus()
+    {
+
+        print("YEP");
+
+        FadeOutAudioSource(musicSource, musicVolume, 1);
+        FadeOutAudioSource(ambienceSource, ambienceVolume, 1);
+
+        orobourusAmbienceSource = this.AddComponent<AudioSource>();
+        orobourusAmbienceSource.clip = orobourusAmbience;
+        orobourusAmbienceSource.loop = true;
+        orobourusAmbienceSource.volume = orobourusAmbienceVolume;
+        orobourusAmbienceSource.pitch = 1;
+        orobourusAmbienceSource.spatialBlend = 0;
+
+        FadeInAudioSource(orobourusAmbienceSource, orobourusAmbienceVolume, 1);
+    }
 }

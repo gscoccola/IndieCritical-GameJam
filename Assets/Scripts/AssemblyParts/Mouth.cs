@@ -4,10 +4,12 @@ using System.Collections;
 public class Mouth : MonoBehaviour
 {
     private Centipede _centipede;
+    private Sounds _sounds;
 
     private void Start()
     {
         _centipede = GetComponentInParent<Centipede>();
+        _sounds = GetComponentInParent<Sounds>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -30,6 +32,8 @@ public class Mouth : MonoBehaviour
 
     private IEnumerator IGrow(int number = 1)
     {
+        _sounds.PlaySoundContainer("Eat");
+
         for (int i = 0; i < number; i++)
         {
             yield return new WaitForSeconds(0.4f);
