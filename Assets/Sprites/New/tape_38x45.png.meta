@@ -130,7 +130,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 47
         width: 38
         height: 46
       alignment: 0
@@ -151,8 +151,8 @@ TextureImporter:
       name: tape_38x45_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 0
+        x: 0
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -173,8 +173,8 @@ TextureImporter:
       name: tape_38x45_2
       rect:
         serializedVersion: 2
-        x: 76
-        y: 0
+        x: 38
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -195,8 +195,8 @@ TextureImporter:
       name: tape_38x45_3
       rect:
         serializedVersion: 2
-        x: 114
-        y: 0
+        x: 76
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -217,8 +217,8 @@ TextureImporter:
       name: tape_38x45_4
       rect:
         serializedVersion: 2
-        x: 152
-        y: 0
+        x: 114
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -239,8 +239,8 @@ TextureImporter:
       name: tape_38x45_5
       rect:
         serializedVersion: 2
-        x: 190
-        y: 0
+        x: 152
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -261,8 +261,8 @@ TextureImporter:
       name: tape_38x45_6
       rect:
         serializedVersion: 2
-        x: 228
-        y: 0
+        x: 190
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -283,8 +283,8 @@ TextureImporter:
       name: tape_38x45_7
       rect:
         serializedVersion: 2
-        x: 266
-        y: 0
+        x: 228
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -305,8 +305,8 @@ TextureImporter:
       name: tape_38x45_8
       rect:
         serializedVersion: 2
-        x: 304
-        y: 0
+        x: 266
+        y: 1
         width: 38
         height: 46
       alignment: 0
@@ -327,8 +327,8 @@ TextureImporter:
       name: tape_38x45_9
       rect:
         serializedVersion: 2
-        x: 342
-        y: 0
+        x: 304
+        y: 1
         width: 38
         height: 46
       alignment: 0

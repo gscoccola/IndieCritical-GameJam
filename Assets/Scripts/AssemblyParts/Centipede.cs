@@ -2,11 +2,14 @@ using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
 using UnityEngine;
+using System.Collections;
 
 public class Centipede : MonoBehaviour
 {
     [SerializeField] GameObject _centipedeSegmentPrefab;
     [SerializeField] private GameObject _head;
+    [SerializeField] private GameObject _gpu;
+    [SerializeField] private float _blenderForce;
     private GameObject _lastBodySegment;
     [SerializeField] private float _speed;
     private float _rotationSpeed;
@@ -15,6 +18,7 @@ public class Centipede : MonoBehaviour
     private int _length = 1;
     private bool _isOurobouros = false;
     private Vector3 _ourobourosCenter;
+    private bool _eatingLastSegment;
 
     private List<GameObject> _segments = new List<GameObject>();
 
@@ -23,10 +27,10 @@ public class Centipede : MonoBehaviour
         _rotationSpeed = _speed;
         _lastBodySegment = _head;
         _segments.Add(_head);
-        /*for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             AddSegment();
-        }*/
+        }
     }
 
     private void Update()
@@ -42,7 +46,7 @@ public class Centipede : MonoBehaviour
             TriggerOurobouros();
         }
 
-        if (_isOurobouros)
+        if (!_eatingLastSegment && _isOurobouros)
         {
             foreach (var segment in _segments)
             {
@@ -53,6 +57,13 @@ public class Centipede : MonoBehaviour
                         (segment.transform.position - _ourobourosCenter));
 
             }
+        }
+
+        else if (_eatingLastSegment)
+        {
+            if (_lastBodySegment == null) return;
+            _lastBodySegment.GetComponent<Rigidbody2D>().AddForce(Time.deltaTime * _blenderForce *
+                ((_gpu.transform.position - _lastBodySegment.transform.position).normalized));
         }
     }
 
@@ -78,17 +89,8 @@ public class Centipede : MonoBehaviour
         }
         _isOurobouros = true;
         AddSegment();
-        //_lastBodySegment.transform.rotation = _firstBodySegment.transform.rotation;
-        //_lastBodySegment.transform.position = _firstBodySegment.transform.position;
-
-        //_firstBodySegment.GetComponent<HingeJoint2D>().enabled = false;
-
-        /*_firstBodySegment.GetComponent<HingeJoint2D>().useLimits = false;
-        _firstBodySegment.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();*/
-
         _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         _head.GetComponent<SpringJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
-        //_head.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
     }
 
     private Vector3 AveragePosition(List<GameObject> objects)
@@ -104,6 +106,37 @@ public class Centipede : MonoBehaviour
     private Vector3 OrthogonalVector(Vector3 vector)
     {
         return new Vector3(-vector.y, vector.x, vector.z);
+    }
+
+    public void TriggerBlender()
+    {
+        StartCoroutine(ITriggerBlender());
+    }
+
+    private IEnumerator ITriggerBlender()
+    {
+        
+        yield return new WaitForSeconds(0.5f);
+        _eatingLastSegment = true;
+        _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        foreach (var segment in _segments)
+        {
+            segment.GetComponent<ForceDraggable>().IsSelectable = false;
+        }
+        yield return new WaitForSeconds(1.5f);
+        while (true)
+        {
+            yield return new WaitForSeconds(1.5f);
+            Destroy(_lastBodySegment);
+            _lastBodySegment = _segments[_segments.Count - 2];
+            _segments.RemoveAt(_segments.Count - 1);
+            if (_segments.Count == 0)
+            {
+                _eatingLastSegment = false;
+                break;
+            }
+        }
+        
     }
 }
 
