@@ -30,6 +30,11 @@ public class VelocityVolumeController : MonoBehaviour
         _isPlaying = true;
     }
 
+    public void SetSounds(Sounds sounds)
+    {
+        _sounds = sounds;
+    }
+
     public void StopVelocityControlledSound()
     {
         _isPlaying = false;
@@ -44,7 +49,10 @@ public class VelocityVolumeController : MonoBehaviour
 
         if (_isPlaying)
         {
-            _diff = _lastFramePosition.y - transform.position.y;
+            float _diffY = MathF.Abs(_lastFramePosition.y - transform.position.y);
+            float _diffX = MathF.Abs(_lastFramePosition.x - transform.position.x);
+
+            _diff = _diffY + _diffX;
 
             if (_diff != 0 && !_hasMoved) 
             {

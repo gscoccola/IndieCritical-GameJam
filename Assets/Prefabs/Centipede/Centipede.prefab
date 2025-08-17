@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2014878503098623720}
   - component: {fileID: 1083680012283478187}
   - component: {fileID: 507616752637745790}
+  - component: {fileID: 1651137684031514257}
   m_Layer: 0
   m_Name: Centipede
   m_TagString: Untagged
@@ -77,22 +78,10 @@ MonoBehaviour:
       fadeInTime: 0
       fadeOutTime: 0
       randomizeVolume: 0
-      volumeRange: {x: 1, y: 0}
+      volumeRange: {x: 0.5, y: 0}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
-    id: 0
-  - name: HeadExplode
-    mute: 0
-    audioClips:
-    - {fileID: 8300000, guid: b43001d30583ed94fbc77bbc09fcfcf2, type: 3}
-    soundSettings:
-      loop: 0
-      fadeInTime: 0
-      fadeOutTime: 0
-      randomizeVolume: 0
-      volumeRange: {x: 1, y: 0}
-      randomizePitch: 0
-      pitchRange: {x: 1, y: 1.1}
+      diagetic: 1
     id: 0
   - name: Idle
     mute: 0
@@ -112,6 +101,7 @@ MonoBehaviour:
       volumeRange: {x: 0.5, y: 0.6}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
+      diagetic: 1
     id: 0
   - name: Orobourus_Movement
     mute: 0
@@ -125,6 +115,83 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 0.6}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+      diagetic: 1
+    id: 0
+  - name: Movement
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 34f24264d3b837e47babe1f8eb3c3efc, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.6}
+      randomizePitch: 0
+      pitchRange: {x: 0.8, y: 1.1}
+      diagetic: 1
+    id: 0
+  - name: PickUp
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: cf4f13fed73893b4495271d8365b202f, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 1
+      volumeRange: {x: 0.1, y: 0.2}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
+      diagetic: 1
+    id: 0
+  - name: PutDown
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 3d83dd55f080e8743929860b0a6082bc, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 1
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
+      diagetic: 1
+    id: 0
+--- !u!114 &1651137684031514257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2638321245070674666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e433e95b0a1cc3d488a572d30d2f7a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomTimeRange: {x: 7, y: 20}
+  soundContainer:
+    name: IdleSounds
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: bb4dde6548f7b53429824be55c14d029, type: 3}
+    - {fileID: 8300000, guid: eda706b54b311d54fb9ccaa1e5295db8, type: 3}
+    - {fileID: 8300000, guid: 919bb00dd69e72d4484bd41a25aa5885, type: 3}
+    - {fileID: 8300000, guid: af2ab110384ff3e49938c4b5a0ea10bb, type: 3}
+    - {fileID: 8300000, guid: bea19e003086ec94c825b72c6673adb4, type: 3}
+    - {fileID: 8300000, guid: 497ded6fa1bd5194c93e34084b21b2e7, type: 3}
+    - {fileID: 8300000, guid: 2f41f5b14e0daae428b3de08a9729c97, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0.5
+      randomizeVolume: 1
+      volumeRange: {x: 0.5, y: 0.6}
+      randomizePitch: 1
+      pitchRange: {x: 1.7, y: 2}
+      diagetic: 1
     id: 0
 --- !u!1 &8055952282550235676
 GameObject:

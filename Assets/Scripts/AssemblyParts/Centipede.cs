@@ -75,6 +75,7 @@ public class Centipede : MonoBehaviour
             _lastBodySegment.transform.position.Flatten() + _lastBodySegment.transform.right * _segmentDistance - 0.05f * _length * _lastBodySegment.transform.forward
             , _lastBodySegment.transform.rotation, transform);
         newSegment.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
+        newSegment.GetComponent<VelocityVolumeController>().SetSounds(_sounds);
         _lastBodySegment = newSegment;
         _segments.Add(newSegment);
         _length++;
@@ -114,6 +115,7 @@ public class Centipede : MonoBehaviour
 
     public void TriggerBlender()
     {
+        MusicPlayer.Instance.SetBlender();
         StartCoroutine(ITriggerBlender());
     }
 
@@ -126,6 +128,7 @@ public class Centipede : MonoBehaviour
         foreach (var segment in _segments)
         {
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
+            Destroy(GetComponent<VelocityVolumeController>());
         }
         yield return new WaitForSeconds(1.5f);
         while (true)

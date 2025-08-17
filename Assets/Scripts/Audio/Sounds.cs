@@ -55,6 +55,8 @@ public class Sounds : MonoBehaviour
         if (muteAll) return;
         RandomSoundContainer containerToPlay = soundsOnThisObject[soundID];
 
+        if (containerToPlay == null) return;
+
         if (containerToPlay.soundSettings.loop != true || loopingAudioSources.ContainsKey(containerToPlay.name)) return;
 
         containerToPlay.PlayLoopingSoundOnTarget(out AudioSource loopingAudioSource, transform);
