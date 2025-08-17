@@ -22,17 +22,19 @@ public class Mouth : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("PhillipsScrewHead"))
         {
             col.gameObject.GetComponentInParent<Screwdriver>().SwitchHead();
-            StartCoroutine(IGrow());
-            StartCoroutine(IGrow());
+            col.gameObject.GetComponentInParent<Draggable>().IsSelected = false;
+            StartCoroutine(IGrow(2));
         }
 
     }
 
-    private IEnumerator IGrow()
+    private IEnumerator IGrow(int number = 1)
     {
-        yield return new WaitForSeconds(0.2f);
-        _centipede.AddSegment();
-        /*yield return new WaitForSeconds(0.2f);
-        _centipede.AddSegment();*/
+        for (int i = 0; i < number; i++)
+        {
+            yield return new WaitForSeconds(0.4f);
+            _centipede.AddSegment();
+        }
+
     }
 }

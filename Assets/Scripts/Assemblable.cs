@@ -56,7 +56,7 @@ public class Assemblable : MonoBehaviour
         if (_physicsCollider != null) _physicsCollider.enabled = value;
         if (value)
         {
-            float ordenInLayer = transform.position.z - (int)_heightLayer ;
+            float ordenInLayer = (transform.position.z - (int)_heightLayer) %1f ;
             _heightLayer = HeightLayer.AboveUpperCover;
             
             transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer + ordenInLayer);
