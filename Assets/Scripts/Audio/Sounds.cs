@@ -35,8 +35,12 @@ public class Sounds : MonoBehaviour
     public void PlaySoundContainer(int soundID)
     {
         if (muteAll) return;
-        if (soundsOnThisObject[soundID] == null) return;
-        soundsOnThisObject[soundID].PlayRandomSoundOnTarget(transform);
+        if (soundsOnThisObject[soundID] == null || soundID == -1) return;
+        try { if (transform != null) soundsOnThisObject[soundID].PlayRandomSoundOnTarget(transform); }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error playing sound with ID " + soundID + ": " + e.Message);
+        }
     }
 
     public void PlaySoundContainer(string containerName)
@@ -177,7 +181,7 @@ public class Sounds : MonoBehaviour
         {
             if (container.name == name) containerToReturn = container;
         }
-
+        if (containerToReturn == null ) return -1;
         return containerToReturn.id;
     }
 

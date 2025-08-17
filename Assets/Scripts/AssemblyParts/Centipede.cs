@@ -1,8 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
 using UnityEngine;
-using System.Collections;
+using static UnityEngine.GraphicsBuffer;
 
 public class Centipede : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class Centipede : MonoBehaviour
     private bool _eatingLastSegment;
     private bool _canOurobouros = true;
     [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private GameObject _target;
 
     private List<GameObject> _segments = new List<GameObject>();
     private Sounds _sounds;
@@ -32,10 +34,10 @@ public class Centipede : MonoBehaviour
         _lastBodySegment = _head;
         _segments.Add(_head);
         _sounds = transform.GetComponent<Sounds>();
-        /*for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             AddSegment();
-        }*/
+        }
         _gpuComponent = _gpu.transform.GetChild(0).transform.GetComponent<GPU>();
     }
 
@@ -149,9 +151,11 @@ public class Centipede : MonoBehaviour
             _lastBodySegment = _segments[_segments.Count - 1];
             if (_segments.Count == 2)
             {
+                _target.gameObject.SetActive(true);
+                MusicPlayer.Instance.StopBlender();
                 _gpuComponent.IsSpinning = false;
                 _gpuComponent._isFarming = false;
-                _head.transform.GetChild(0).gameObject.SetActive(true);
+               // _head.transform.GetChild(0).gameObject.SetActive(true);
                 _eatingLastSegment = false;
                 _particleSystem.Stop();
                 //_gpu.transform.GetChild(0).gameObject.SetActive(false);
@@ -183,6 +187,7 @@ public class Centipede : MonoBehaviour
         _particleSystem.Stop();
         _gpuComponent._isFarming = false;
         ObjectivesManager.Instance.SetGPU(true);
+        MusicPlayer.Instance.StopBlender();
     }
 }
 

@@ -43,6 +43,13 @@ public class MusicPlayer : Singleton<MusicPlayer>
 
     }
 
+    public void StopBlender()
+    {
+        StartCoroutine(FadeInAudioSource(musicSource, musicVolume, 1f));
+        StartCoroutine(FadeInAudioSource(ambienceSource, ambienceVolume, 1));
+        StartCoroutine(FadeOutAudioSource(blenderSource, blenderVolume, 0.25f));
+    }
+
     public void StartMusic()
     {
         if (!musicSource.isPlaying) musicSource.Play();
@@ -218,9 +225,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
 
     public void SetBlender()
     {
-        print("yep");
-        if (triggeredBlender) return;
-        triggeredBlender = true;
+     
 
         significantAction.PlayRandomSoundOnTarget(transform);
 
