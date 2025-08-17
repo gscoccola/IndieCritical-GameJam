@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5145409738494661467}
   - component: {fileID: 1765472797136543991}
   - component: {fileID: 3731596979359220487}
+  - component: {fileID: 7276591277865112855}
   m_Layer: 14
   m_Name: Calculator
   m_TagString: Untagged
@@ -197,3 +198,34 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0052496595, y: 0.005052845}
   m_Size: {x: 0.5874933, y: 0.5874933}
   m_Direction: 0
+--- !u!114 &7276591277865112855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041106136509945470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e433e95b0a1cc3d488a572d30d2f7a12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  randomTimeRange: {x: 0.8, y: 1.5}
+  soundContainer:
+    name: TypingSounds
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 92243bd9322281e4fbd65d20b6a85e86, type: 3}
+    - {fileID: 8300000, guid: 15ae103b99305ab46986a8c7078fc85c, type: 3}
+    - {fileID: 8300000, guid: f945e3a314eb29648824ea13e1e0b623, type: 3}
+    - {fileID: 8300000, guid: fbcb2d589c76b3c418ef1408a9955334, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0.5
+      randomizeVolume: 1
+      volumeRange: {x: 0.3, y: 0.5}
+      randomizePitch: 1
+      pitchRange: {x: 0.75, y: 1.2}
+      diagetic: 1
+    id: 0

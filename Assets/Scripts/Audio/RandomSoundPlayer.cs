@@ -14,6 +14,13 @@ public class RandomSoundPlayer : MonoBehaviour
         StartCoroutine(PlayRandomSounds());
     }
 
+    public void StopSounds()
+    {
+        shouldPlaySounds = false;
+        StopAllCoroutines();
+
+    }
+
     private IEnumerator PlayRandomSounds()
     {
         yield return new WaitForSeconds(Random.Range(randomTimeRange.x, randomTimeRange.y));

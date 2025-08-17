@@ -172,6 +172,7 @@ public class Centipede : MonoBehaviour
         _lastBodySegment = _head;
         _eatingLastSegment = true;
         _particleSystem.Play();
+        _sounds.PlaySoundContainer("HeadExplode");
         StartCoroutine(ILastBlood());
     }
 
