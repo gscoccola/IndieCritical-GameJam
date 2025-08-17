@@ -1,13 +1,16 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class MusicPlayer : Singleton<MusicPlayer>
 {
-    public AudioClip music, ambience, opera;
-    public float musicVolume, ambienceVolume, operaVolume;
-    private AudioSource musicSource, ambienceSource, operaSource;
-    private bool shouldPlayOpera = false;
+    public AudioClip music, ambience, opera, orobourusAmbience, blender;
+    public float musicVolume, ambienceVolume, operaVolume, orobourusAmbienceVolume, blenderVolume;
+    private AudioSource musicSource, ambienceSource, operaSource, orobourusAmbienceSource, blenderSource;
+    private bool shouldPlayOpera = false, triggeredBlender = false;
+
+    public RandomSoundContainer significantAction;
 
 
     private void Start()
@@ -43,6 +46,8 @@ public class MusicPlayer : Singleton<MusicPlayer>
     public void StartMusic()
     {
         if (!musicSource.isPlaying) musicSource.Play();
+        RandomSoundPlayer centipedeIdleSounds = GameObject.Find("Centipede").GetComponent<RandomSoundPlayer>();
+        centipedeIdleSounds.StartSounds();
     }
 
     public void ToggleMusic (bool value)
@@ -119,6 +124,9 @@ public class MusicPlayer : Singleton<MusicPlayer>
 
     private IEnumerator FadeOutAudioSource(AudioSource sourceToFadeOut, float targetFadeOutVolume, float duration)
     {
+
+        //print("Trying to fade out source ID" +  sourceToFadeOut.GetInstanceID());
+
         if (!sourceToFadeOut.isPlaying || sourceToFadeOut == null || sourceToFadeOut.volume == 0) yield break;
 
         float timeElapsed = 0;
@@ -138,6 +146,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
 
     private IEnumerator FadeInAudioSource(AudioSource sourceToFadeIn, float targetFadeInVolume, float duration)
     {
+        //print("Trying to fade in source ID" +  sourceToFadeIn.GetInstanceID());
         float timeElapsed = 0;
         sourceToFadeIn.volume = 0;
 
@@ -186,6 +195,47 @@ public class MusicPlayer : Singleton<MusicPlayer>
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+    }
+
+    public void SetOrobourus()
+    {
+
+        significantAction.PlayRandomSoundOnTarget(transform);
+
+        StartCoroutine(FadeOutAudioSource(musicSource, musicVolume, 1));
+        StartCoroutine(FadeOutAudioSource(ambienceSource, ambienceVolume, 1));
+
+        orobourusAmbienceSource = this.AddComponent<AudioSource>();
+        orobourusAmbienceSource.clip = orobourusAmbience;
+        orobourusAmbienceSource.loop = true;
+        orobourusAmbienceSource.volume = 0;
+        orobourusAmbienceSource.pitch = 1;
+        orobourusAmbienceSource.spatialBlend = 0;
+        orobourusAmbienceSource.Play();
+
+        StartCoroutine(FadeInAudioSource(orobourusAmbienceSource, orobourusAmbienceVolume, 1));
+    }
+
+    public void SetBlender()
+    {
+        print("yep");
+        if (triggeredBlender) return;
+        triggeredBlender = true;
+
+        significantAction.PlayRandomSoundOnTarget(transform);
+
+        StartCoroutine(FadeOutAudioSource(musicSource, musicVolume, 0.25f));
+        StartCoroutine(FadeOutAudioSource(ambienceSource, ambienceVolume, 1));
+
+        blenderSource = this.AddComponent<AudioSource>();
+        blenderSource.clip = blender;
+        blenderSource.loop = true;
+        blenderSource.volume = 0;
+        blenderSource.pitch = 1;
+        blenderSource.spatialBlend = 0;
+        blenderSource.Play();
+
+        StartCoroutine(FadeInAudioSource(blenderSource, blenderVolume, 0.25f));
     }
 
 }

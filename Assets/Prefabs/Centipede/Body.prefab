@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2083670555381837109}
   - component: {fileID: 8704877681854730981}
   - component: {fileID: 6142941365267450177}
+  - component: {fileID: 2910438600472425405}
   m_Layer: 21
   m_Name: Body
   m_TagString: Untagged
@@ -182,10 +183,34 @@ MonoBehaviour:
   _force: 40
   OnSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2910438600472425405}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StartVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2910438600472425405}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StopVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &8704877681854730981
 Rigidbody2D:
   serializedVersion: 5
@@ -235,3 +260,25 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2910438600472425405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5263133755577031132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a542995930d254c9d2ba26fe5e1979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds: {fileID: 0}
+  _loopContainerID: 3
+  _startContainerID: 4
+  _stopContainerID: 5
+  _volumeMulti: 20
+  _minVolume: 0
+  _maxVolume: 1
+  bufferAmtBase: 0.05
+  bufferSmoothUp: 1
+  bufferSmoothDown: 1.1

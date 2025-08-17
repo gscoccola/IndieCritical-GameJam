@@ -24,12 +24,14 @@ public class Centipede : MonoBehaviour
     [SerializeField] private ParticleSystem _particleSystem;
 
     private List<GameObject> _segments = new List<GameObject>();
+    private Sounds _sounds;
 
     private void Start()
     {
         _rotationSpeed = _speed;
         _lastBodySegment = _head;
         _segments.Add(_head);
+        _sounds = transform.GetComponent<Sounds>();
         for (int i = 0; i < 10; i++)
         {
             AddSegment();
@@ -77,6 +79,7 @@ public class Centipede : MonoBehaviour
             _lastBodySegment.transform.position.Flatten() + _lastBodySegment.transform.right * _segmentDistance - 0.05f * _length * _lastBodySegment.transform.forward
             , _lastBodySegment.transform.rotation, transform);
         newSegment.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
+        newSegment.GetComponent<VelocityVolumeController>().SetSounds(_sounds);
         _lastBodySegment = newSegment;
         _segments.Add(newSegment);
         _length++;
@@ -92,6 +95,8 @@ public class Centipede : MonoBehaviour
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
         }
         _isOurobouros = true;
+        _sounds.PlayLoopingContainer("Orobourus_Movement");
+        MusicPlayer.Instance.SetOrobourus();
         AddSegment();
         _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         _head.GetComponent<SpringJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
@@ -114,6 +119,7 @@ public class Centipede : MonoBehaviour
 
     public void TriggerBlender()
     {
+        MusicPlayer.Instance.SetBlender();
         StartCoroutine(ITriggerBlender());
     }
 
@@ -128,6 +134,7 @@ public class Centipede : MonoBehaviour
         foreach (var segment in _segments)
         {
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
+            Destroy(GetComponent<VelocityVolumeController>());
         }
         yield return new WaitForSeconds(1.5f);
         while (true)

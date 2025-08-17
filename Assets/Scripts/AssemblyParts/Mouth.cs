@@ -4,11 +4,13 @@ using System.Collections;
 public class Mouth : MonoBehaviour
 {
     private Centipede _centipede;
+    private Sounds _sounds;
     [SerializeField] GameObject _particles;
 
     private void Start()
     {
         _centipede = GetComponentInParent<Centipede>();
+        _sounds = GetComponentInParent<Sounds>();
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -31,6 +33,8 @@ public class Mouth : MonoBehaviour
 
     private IEnumerator IGrow(int number = 1)
     {
+        _sounds.PlaySoundContainer("Eat");
+
         Instantiate(_particles, transform.position - 0.1f * Vector3.forward, Quaternion.identity);
         for (int i = 0; i < number; i++)
         {
