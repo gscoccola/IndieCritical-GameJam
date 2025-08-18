@@ -51,7 +51,8 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (CPUOn && GPUOn && PowerOn)
         {
-            TextManager.Instance.SetText("Ending 1/2 \n Press R to restart");
+            TextManager.Instance.SetText("Ending 1/2: 'FIXED' \n didn't run crysis doe \n Press R to restart");
+
         }
     }
 }

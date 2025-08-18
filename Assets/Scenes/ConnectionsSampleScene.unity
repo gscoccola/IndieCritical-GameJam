@@ -217,8 +217,8 @@ Transform:
   m_GameObject: {fileID: 126826055}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23, y: -0.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.22, y: 0.31, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: -52}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1253995381}
@@ -286,13 +286,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1155570319}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_Name
       value: ScrewFlat (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -452,13 +456,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 283615871}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_Name
       value: ScrewPhillips
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -531,7 +539,7 @@ Transform:
   m_GameObject: {fileID: 486296956}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.98, y: 1.9, z: 1.18}
+  m_LocalPosition: {x: -2.23, y: 0.96, z: 1.1800003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -643,7 +651,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -762,13 +770,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1155570319}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_Name
       value: ScrewFlat (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1045,13 +1057,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 283615871}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_Name
       value: ScrewPhillips (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1106,13 +1122,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1155570319}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_Name
       value: ScrewFlat
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1945,13 +1965,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 283615871}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_Name
       value: ScrewPhillips (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2123,13 +2147,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1155570319}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_Name
       value: ScrewFlat (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2214,8 +2242,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.65, y: 0}
-  m_SizeDelta: {x: 5.5, y: 2.65}
+  m_AnchoredPosition: {x: 0.4813, y: 0.0649}
+  m_SizeDelta: {x: 5.8893, y: 3.7661}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877631130
 MonoBehaviour:
@@ -2379,7 +2407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Ending 1/2: ''Fixed'' \n didn''t run crysis doe \n Press R to restart'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2406,8 +2434,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.9
-  m_fontSizeBase: 0.9
+  m_fontSize: 0.6
+  m_fontSizeBase: 0.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2466,13 +2494,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 283615871}
     m_Modifications:
+    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
+      propertyPath: rotationSpeed
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_Name
       value: ScrewPhillips (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2712,6 +2744,10 @@ PrefabInstance:
       value: -66.4
       objectReference: {fileID: 0}
     - target: {fileID: 5581424557104731115, guid: 21df236ad1109b0469e877ba6f343c3e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5581424557104731115, guid: 21df236ad1109b0469e877ba6f343c3e, type: 3}
       propertyPath: soundsOnThisObject.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -2746,7 +2782,7 @@ PrefabInstance:
     - target: {fileID: 5581424557104731115, guid: 21df236ad1109b0469e877ba6f343c3e, type: 3}
       propertyPath: 'soundsOnThisObject.Array.data[3].audioClips.Array.data[0]'
       value: 
-      objectReference: {fileID: 8300000, guid: 637e478e8ff09424ebcb423cf2acc813, type: 3}
+      objectReference: {fileID: 8300000, guid: 5dae1e974844a9e4e81a294141ce14fb, type: 3}
     - target: {fileID: 5581424557104731115, guid: 21df236ad1109b0469e877ba6f343c3e, type: 3}
       propertyPath: 'soundsOnThisObject.Array.data[4].audioClips.Array.data[0]'
       value: 
@@ -3034,6 +3070,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2677826640244820492, guid: 11383ec22d499f54fab8da4896500013, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677826640244820492, guid: 11383ec22d499f54fab8da4896500013, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677826640244820492, guid: 11383ec22d499f54fab8da4896500013, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677826640244820492, guid: 11383ec22d499f54fab8da4896500013, type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677826640244820492, guid: 11383ec22d499f54fab8da4896500013, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677826640244820492, guid: 11383ec22d499f54fab8da4896500013, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1.8125
+      objectReference: {fileID: 0}
+    - target: {fileID: 2677826640244820492, guid: 11383ec22d499f54fab8da4896500013, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.8125
+      objectReference: {fileID: 0}
     - target: {fileID: 3378561891797360592, guid: 11383ec22d499f54fab8da4896500013, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3115,10 +3179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Centipede
       objectReference: {fileID: 0}
-    - target: {fileID: 4043787855325856949, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
-      propertyPath: _particles
-      value: 
-      objectReference: {fileID: 2635259085384821458, guid: 23f33e43d52e85a48b5c68575c6cc28f, type: 3}
+    - target: {fileID: 6990128330518721574, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3191,7 +3255,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2057601735408454943, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.45
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178656301493746649, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: m_SortingLayer
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4178656301493746649, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -340423731
       objectReference: {fileID: 0}
     - target: {fileID: 5046593476484029112, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
       propertyPath: m_Name
@@ -3207,7 +3279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7275269638628998164, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 7275269638628998164, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3236,6 +3308,10 @@ PrefabInstance:
     - target: {fileID: 7275269638628998164, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8023679491637558797, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3309,7 +3385,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 338367665735899292, guid: 026b06633e14b1340b979d4dddb87a6c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.355
+      value: -0.336
       objectReference: {fileID: 0}
     - target: {fileID: 411214014445929333, guid: 026b06633e14b1340b979d4dddb87a6c, type: 3}
       propertyPath: m_LocalPosition.x

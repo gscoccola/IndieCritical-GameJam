@@ -8,7 +8,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
     public AudioClip music, ambience, opera, orobourusAmbience, blender;
     public float musicVolume, ambienceVolume, operaVolume, orobourusAmbienceVolume, blenderVolume;
     private AudioSource musicSource, ambienceSource, operaSource, orobourusAmbienceSource, blenderSource;
-    private bool shouldPlayOpera = false, triggeredBlender = false;
+    private bool shouldPlayOpera = false /*, triggeredBlender = false*/;
 
     public RandomSoundContainer significantAction;
 

@@ -35,7 +35,7 @@ public class Sounds : MonoBehaviour
     public void PlaySoundContainer(int soundID)
     {
         if (muteAll) return;
-        if (soundsOnThisObject[soundID] == null || soundID == -1) return;
+        if (soundID == -1 || soundsOnThisObject[soundID] == null  ) return;
         try { if (transform != null) soundsOnThisObject[soundID].PlayRandomSoundOnTarget(transform); }
         catch (System.Exception e)
         {
