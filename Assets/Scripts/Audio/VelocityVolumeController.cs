@@ -9,7 +9,7 @@ public class VelocityVolumeController : MonoBehaviour
     [Header("Volume Control")]
     [SerializeField] private Sounds _sounds;
     [SerializeField] private int _loopContainerID, _startContainerID, _stopContainerID;
-    [SerializeField] private float _volumeMulti = 20, _minVolume = 0f, _maxVolume = 1f;
+    [SerializeField] private float _volumeMulti = 20/*, _minVolume = 0f, _maxVolume = 1f*/;
     private AudioSource _audioSource;
     private Vector2 _lastFramePosition;
     private bool _isPlaying, _hasMoved = false;
@@ -21,13 +21,18 @@ public class VelocityVolumeController : MonoBehaviour
     [SerializeField] private float bufferSmoothUp = 1;
     [Tooltip("The speed at which the slider goes down. The higher the number the faster it reacts to changes")]
     [SerializeField] private float bufferSmoothDown = 1.1f;
-    private float buffer = 0f, bufferAmt, _diff = 0, curVolume = 0;
+    private float buffer = 0f, bufferAmt, _diff = 0 /*, curVolume = 0*/;
     private bool justLouder = false;
     //public Slider debugSlider;
 
     public void StartVelocityControlledSound()
     {
         _isPlaying = true;
+    }
+
+    public void SetSounds(Sounds sounds)
+    {
+        _sounds = sounds;
     }
 
     public void StopVelocityControlledSound()
@@ -44,7 +49,10 @@ public class VelocityVolumeController : MonoBehaviour
 
         if (_isPlaying)
         {
-            _diff = _lastFramePosition.y - transform.position.y;
+            float _diffY = MathF.Abs(_lastFramePosition.y - transform.position.y);
+            float _diffX = MathF.Abs(_lastFramePosition.x - transform.position.x);
+
+            _diff = _diffY + _diffX;
 
             if (_diff != 0 && !_hasMoved) 
             {
@@ -54,7 +62,7 @@ public class VelocityVolumeController : MonoBehaviour
             }
             //print(_diff);
             //_audioSource.volume = GetVolume(diff);
-            if (_diff > 0.041f) _audioSource.volume = GetVolume(_diff); 
+            if (_diff > 0.041f || _audioSource != null) _audioSource.volume = GetVolume(_diff); 
             //debugSlider.value = GetVolume(_diff);
 
             _lastFramePosition = transform.position;

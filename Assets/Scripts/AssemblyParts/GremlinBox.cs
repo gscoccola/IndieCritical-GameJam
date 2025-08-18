@@ -29,7 +29,7 @@ public class GremlinBox : MonoBehaviour
     private float _autoReturnTimer;
     [SerializeField] float _maxDisplacement = 0.5f;
     [SerializeField] private float _returnSpeed = 0.5f;
-    private BoxState _boxState;
+    public BoxState _boxState;
 
     private void Start()
     {
@@ -66,7 +66,7 @@ public class GremlinBox : MonoBehaviour
         {
             _newRelDis = Mathf.MoveTowards(_newRelDis, 0, Time.deltaTime * _returnSpeed);
             _cover.position = new Vector3(_cover.position.x, transform.position.y - _newRelDis + 0.103f, _cover.position.z);
-            if (_displacement < 0f)
+            if (_displacement < 0.005f)
             {
                 _boxState = BoxState.Closed;
                 _coverDraggable.IsSelectable = true;

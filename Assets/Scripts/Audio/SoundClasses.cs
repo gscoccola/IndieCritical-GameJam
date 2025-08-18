@@ -15,6 +15,9 @@ public class RandomSoundContainer
 
     public void PlayRandomSoundOnTarget(Transform target)
     {
+
+        //Debug.Log("Trying to play " + name + " on " + target.name);
+
         if (!shouldPlay || mute) return;
 
         int randInt = Random.Range(0, audioClips.Length);
@@ -81,7 +84,7 @@ public class RandomSoundContainer
         audioSource.loop = soundSettings.loop;
         audioSource.volume = soundSettings.GetVolume();
         audioSource.pitch = soundSettings.GetPitch();
-        audioSource.spatialBlend = 1;
+        audioSource.spatialBlend = soundSettings.diagetic ? 1 : 0;
         audioSource.spread = 110;
         audioSource.minDistance = 10;
         audioSource.maxDistance = 30;
@@ -130,7 +133,8 @@ public class SoundSettings
     [Tooltip("Set the range of pitch randomization for this Sound. X value is the minimum pitch, and the Y value is the max. These settings will be ignored on playback if Randomize Pitch is false.")]
     public Vector2 pitchRange = new Vector2(1, 1);
 
-    //[Header("Misc Settings")]
+    [Header("Misc Settings")]
+    public bool diagetic = true;
 
     //[Tooltip("Set the Spacial Blend for this Sound. 0 = 2D playback, 1 = full 3D playback.")]
     //[Range(0, 1)] public float spatialBlend = 0.5f;

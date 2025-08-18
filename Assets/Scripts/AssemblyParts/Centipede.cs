@@ -1,16 +1,18 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using NUnit.Framework;
 using UnityEngine;
-using System.Collections;
+using static UnityEngine.GraphicsBuffer;
 
 public class Centipede : MonoBehaviour
 {
     [SerializeField] GameObject _centipedeSegmentPrefab;
     [SerializeField] private GameObject _head;
     [SerializeField] private GameObject _gpu;
+    private GPU _gpuComponent;
     [SerializeField] private float _blenderForce;
-    private GameObject _lastBodySegment;
+    public GameObject _lastBodySegment;
     [SerializeField] private float _speed;
     private float _rotationSpeed;
     private float _segmentDistance = 0.33f;
@@ -19,18 +21,24 @@ public class Centipede : MonoBehaviour
     private bool _isOurobouros = false;
     private Vector3 _ourobourosCenter;
     private bool _eatingLastSegment;
+    private bool _canOurobouros = true;
+    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private GameObject _target;
 
     private List<GameObject> _segments = new List<GameObject>();
+    private Sounds _sounds;
 
     private void Start()
     {
         _rotationSpeed = _speed;
         _lastBodySegment = _head;
         _segments.Add(_head);
-        for (int i = 0; i < 10; i++)
+        _sounds = transform.GetComponent<Sounds>();
+        /*for (int i = 0; i < 10; i++)
         {
             AddSegment();
-        }
+        }*/
+        _gpuComponent = _gpu.transform.GetChild(0).transform.GetComponent<GPU>();
     }
 
     private void Update()
@@ -41,12 +49,12 @@ public class Centipede : MonoBehaviour
             AddSegmentTrigger = false;
         }
 
-        if (!_isOurobouros && _length > 10 && _head.GetComponent<Collider2D>().IsTouching(_lastBodySegment.GetComponent<Collider2D>()))
+        if (_canOurobouros && !_isOurobouros && _length > 10 && _head.GetComponent<Collider2D>().IsTouching(_lastBodySegment.GetComponent<Collider2D>()))
         {
             TriggerOurobouros();
         }
 
-        if (!_eatingLastSegment && _isOurobouros)
+        if (_isOurobouros)
         {
             foreach (var segment in _segments)
             {
@@ -72,7 +80,9 @@ public class Centipede : MonoBehaviour
         GameObject newSegment = Instantiate(_centipedeSegmentPrefab,
             _lastBodySegment.transform.position.Flatten() + _lastBodySegment.transform.right * _segmentDistance - 0.05f * _length * _lastBodySegment.transform.forward
             , _lastBodySegment.transform.rotation, transform);
+        _head.transform.position = new Vector3(_head.transform.position.x, _head.transform.position.y, -0.9f);
         newSegment.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
+        newSegment.GetComponent<VelocityVolumeController>().SetSounds(_sounds);
         _lastBodySegment = newSegment;
         _segments.Add(newSegment);
         _length++;
@@ -80,6 +90,7 @@ public class Centipede : MonoBehaviour
 
     private void TriggerOurobouros()
     {
+        TextManager.Instance.SetText("Ending 2/2 'OUROBOUROS'\n infinite energy? \n Press R to restart");
         _head.GetComponent<Mouth>().enabled = false;
         _ourobourosCenter = AveragePosition(_segments); 
         if (_head.transform.position.y < _ourobourosCenter.y) _rotationSpeed *= -1f;
@@ -88,6 +99,8 @@ public class Centipede : MonoBehaviour
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
         }
         _isOurobouros = true;
+        _sounds.PlayLoopingContainer("Orobourus_Movement");
+        MusicPlayer.Instance.SetOrobourus();
         AddSegment();
         _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         _head.GetComponent<SpringJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
@@ -110,33 +123,71 @@ public class Centipede : MonoBehaviour
 
     public void TriggerBlender()
     {
+        MusicPlayer.Instance.SetBlender();
         StartCoroutine(ITriggerBlender());
     }
 
     private IEnumerator ITriggerBlender()
     {
-        
+        _canOurobouros = false;
+        _gpuComponent._isFarming = true;
+        _particleSystem.Play();
         yield return new WaitForSeconds(0.5f);
         _eatingLastSegment = true;
         _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         foreach (var segment in _segments)
         {
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
+            Destroy(GetComponent<VelocityVolumeController>());
         }
         yield return new WaitForSeconds(1.5f);
         while (true)
         {
+            _blenderForce -= 80f;
             yield return new WaitForSeconds(1.5f);
             Destroy(_lastBodySegment);
-            _lastBodySegment = _segments[_segments.Count - 2];
+            
             _segments.RemoveAt(_segments.Count - 1);
-            if (_segments.Count == 0)
+            _lastBodySegment = _segments[_segments.Count - 1];
+            if (_segments.Count == 2)
             {
+                _target.gameObject.SetActive(true);
+                MusicPlayer.Instance.StopBlender();
+                _gpuComponent.IsSpinning = false;
+                _gpuComponent._isFarming = false;
+               // _head.transform.GetChild(0).gameObject.SetActive(true);
                 _eatingLastSegment = false;
+                _particleSystem.Stop();
+                //_gpu.transform.GetChild(0).gameObject.SetActive(false);
                 break;
             }
-        }
-        
+            
+        } 
+    }
+
+    public void LastHit()
+    {
+        if (_eatingLastSegment) return;
+        _blenderForce = 200f;
+        _gpuComponent.IsSpinning = true;
+        _gpuComponent._isFarming = true;
+        Destroy(_lastBodySegment);
+        Destroy(_segments[_segments.Count - 1]);
+        _lastBodySegment = _head;
+        _eatingLastSegment = true;
+        _particleSystem.Play();
+        _sounds.PlaySoundContainer("HeadExplode");
+        StartCoroutine(ILastBlood());
+    }
+
+    private IEnumerator ILastBlood()
+    {
+        yield return new WaitForSeconds(1.5f);
+        _lastBodySegment.GetComponent<SpriteRenderer>().enabled = false;
+        _particleSystem.Stop();
+        _gpuComponent._isFarming = false;
+        ObjectivesManager.Instance.SetGPU(true);
+        MusicPlayer.Instance.StopBlender();
     }
 }
 

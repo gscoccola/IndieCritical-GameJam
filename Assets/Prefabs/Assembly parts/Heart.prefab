@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22aacb5faac298848b97ebf31493689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sparks: {fileID: 2635259085384821458, guid: f0386b5427d6f2347aa4f570af2985b2, type: 3}
   OnBecomePowered:
     m_PersistentCalls:
       m_Calls:
@@ -400,7 +401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6410805719304772224}
   - component: {fileID: 7076367094809128248}
-  - component: {fileID: 3751199481524774149}
+  - component: {fileID: 3339437430879059308}
   m_Layer: 12
   m_Name: Extension
   m_TagString: Untagged
@@ -438,7 +439,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 0
-  _interactionTrigger: {fileID: 3751199481524774149}
+  _interactionTrigger: {fileID: 3339437430879059308}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 0}
   CurrentCollidingObjects: []
@@ -449,8 +450,8 @@ MonoBehaviour:
   _isElectrified: 0
   _isBloodPowered: 0
   IsUncovered: 0
---- !u!58 &3751199481524774149
-CircleCollider2D:
+--- !u!70 &3339437430879059308
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -483,5 +484,6 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 3
+  m_Offset: {x: -1.75, y: -0.33}
+  m_Size: {x: 6.51, y: 4.2}
+  m_Direction: 1

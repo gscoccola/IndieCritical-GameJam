@@ -47,6 +47,25 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 9c4541bb571ebf842bedf26e5676c6bb, type: 3}
   ambience: {fileID: 8300000, guid: 9efdae24b7f5d8d4f9c68eb71dd359e9, type: 3}
   opera: {fileID: 8300000, guid: 9c2b10993c3484246aa470627479305d, type: 3}
+  orobourusAmbience: {fileID: 8300000, guid: 091c7df6208388445b894ca73f528dd3, type: 3}
+  blender: {fileID: 8300000, guid: 9a3dbc560517e6840a6f0694a2e7490b, type: 3}
   musicVolume: 0.8
   ambienceVolume: 0.75
   operaVolume: 0.8
+  orobourusAmbienceVolume: 1
+  blenderVolume: 0.7
+  significantAction:
+    name: SignificantAction
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 2d1505657c329974197e61cc8f94de5b, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 1}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1}
+      diagetic: 0
+    id: 0

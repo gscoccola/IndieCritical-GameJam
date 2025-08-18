@@ -339,6 +339,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.6, y: 0.8}
+      diagetic: 1
     id: 0
   - name: PutDownScrewdriver
     mute: 0
@@ -355,6 +356,49 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 0}
       randomizePitch: 1
       pitchRange: {x: 0.6, y: 0.8}
+      diagetic: 1
+    id: 0
+  - name: BoxHit
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 7bd35d3e6da86254baaf0ec447aa48f4, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 2}
+      diagetic: 0
+    id: 0
+  - name: Windup
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 5dae1e974844a9e4e81a294141ce14fb, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 2}
+      diagetic: 0
+    id: 0
+  - name: Swing
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 69dfc5b8fa4fc344c991d62642c2be03, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 2}
+      diagetic: 0
     id: 0
 --- !u!114 &7108984778714795597
 MonoBehaviour:
