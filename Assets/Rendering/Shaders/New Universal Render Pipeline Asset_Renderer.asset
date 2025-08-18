@@ -70,8 +70,8 @@ MonoBehaviour:
   settings:
     horizontalBlur: 0.64
     verticalBlur: 0.3
-    _Amplitude: 0.91
-    _Constant: 0.21
+    _Amplitude: 1
+    _Constant: 0
     _Threshold: 0
     _UseReferenceResolution: 1
     width: 640
