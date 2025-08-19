@@ -68,8 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    horizontalBlur: 0.64
-    verticalBlur: 0.3
+    horizontalBlur: 0
+    verticalBlur: 0
     _Amplitude: 1
     _Constant: 0
     _Threshold: 0
@@ -77,4 +77,4 @@ MonoBehaviour:
     width: 640
     height: 360
   crtShader: {fileID: 4800000, guid: fa27badeef9841f44a5b894324b0867e, type: 3}
-  renderPassEvent: 600
+  renderPassEvent: 550
