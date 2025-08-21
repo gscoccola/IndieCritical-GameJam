@@ -49,7 +49,7 @@ MonoBehaviour:
   _bloodySprite: {fileID: -7127193123590645955, guid: c641281489430814eb846e151cd6ccfb, type: 3}
   _bloodLevel: {fileID: 338367665735899292}
   _bloodSpeed: 0.1
-  IsSpinning: 1
+  IsSpinning: 0
   _isFarming: 0
 --- !u!58 &3841156676069548705
 CircleCollider2D:
@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 3381774062667296974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.37, y: -0.34, z: 0.1}
+  m_LocalPosition: {x: 0.37, y: -0.336, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -377,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7244203621750225030}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.27, y: -2.57, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -403,6 +403,7 @@ MonoBehaviour:
   ElectricAffinity: 1
   BloodAffinity: 1
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 1
   _interactionTrigger: {fileID: 9134242975510188427}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}

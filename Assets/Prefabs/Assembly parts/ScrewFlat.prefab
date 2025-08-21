@@ -60,6 +60,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   _sideCollider: {fileID: 814073403397744817}
+  _checkpointStartPos: {x: 0, y: 0, z: 0}
   IsFree: 0
   IsLoose: 0
   _isRolling: 0
@@ -514,6 +515,7 @@ MonoBehaviour:
   ElectricAffinity: 1
   BloodAffinity: 0
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 0
   _interactionTrigger: {fileID: 6763550321254480631}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}

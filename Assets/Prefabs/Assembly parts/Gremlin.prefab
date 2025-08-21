@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2988401641210810583}
   - component: {fileID: 6188332193750978859}
   - component: {fileID: 7021980623706179111}
-  m_Layer: 12
+  m_Layer: 24
   m_Name: Gremlin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,6 +73,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 1
   _interactionTrigger: {fileID: 4253892859820616680}
   _physicsCollider: {fileID: 2988401641210810583}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -410,6 +411,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
+      diagetic: 1
     id: 0
   - name: PickUp
     mute: 0
@@ -423,6 +425,7 @@ MonoBehaviour:
       volumeRange: {x: 0.1, y: 0.3}
       randomizePitch: 1
       pitchRange: {x: 0.9, y: 1.3}
+      diagetic: 1
     id: 0
   - name: PutDown
     mute: 0
@@ -436,4 +439,5 @@ MonoBehaviour:
       volumeRange: {x: 0.1, y: 0.3}
       randomizePitch: 1
       pitchRange: {x: 0.9, y: 1.3}
+      diagetic: 1
     id: 0
