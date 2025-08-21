@@ -62,7 +62,7 @@ public class VelocityVolumeController : MonoBehaviour
             }
             //print(_diff);
             //_audioSource.volume = GetVolume(diff);
-            if (_diff > 0.041f || _audioSource != null) _audioSource.volume = GetVolume(_diff); 
+            if (_diff > 0.041f && _audioSource != null) _audioSource.volume = GetVolume(_diff); 
             //debugSlider.value = GetVolume(_diff);
 
             _lastFramePosition = transform.position;

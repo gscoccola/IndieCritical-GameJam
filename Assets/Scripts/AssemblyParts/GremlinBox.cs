@@ -104,7 +104,7 @@ public class GremlinBox : MonoBehaviour
             _animator.SetBool("IsHandIn", true);
         }
 
-        if (_boxState == BoxState.Ajar && _displacement > _maxDisplacement )
+        if ((_boxState == BoxState.Ajar || _boxState == BoxState.Closed) && _displacement > _maxDisplacement )
         {
             _boxState = BoxState.HandOut;
             StartCoroutine(IHandOut());

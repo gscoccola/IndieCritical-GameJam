@@ -90,7 +90,7 @@ public class Centipede : MonoBehaviour
 
     private void TriggerOurobouros()
     {
-        TextManager.Instance.SetText("Ending 2/2 'OUROBOUROS'\n infinite energy? \n Press R to restart");
+        ObjectivesManager.Instance.TriggerEnding(Endings.Ourobouros);
         _head.GetComponent<Mouth>().enabled = false;
         _ourobourosCenter = AveragePosition(_segments); 
         if (_head.transform.position.y < _ourobourosCenter.y) _rotationSpeed *= -1f;

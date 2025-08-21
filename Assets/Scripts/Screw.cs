@@ -2,13 +2,14 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Screw : MonoBehaviour
+public class Screw : MonoBehaviour, IStateLoader
 {
     [SerializeField] float rotationSpeed = 100f;
     [SerializeField] float _timeToUnscrew = 1.5f;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] LayerMask _requiredToolLayer;
     [SerializeField] BoxCollider2D _sideCollider;
+    [SerializeField] Vector3 _checkpointStartPos;
     private Draggable _draggable;
 
     public bool IsFree;
@@ -152,5 +153,17 @@ public class Screw : MonoBehaviour
             _currentTool = null;
             col.transform.parent.GetComponent<Screwdriver>().SetActive(false);
         }
+    }
+
+    public void LoadState()
+    {
+        transform.position = _checkpointStartPos;
+        IsFree = true;
+        GetComponent<Draggable>().IsFixed = false;
+        GetComponent<Assemblable>().SetActive(true);
+        IsLoose = true;
+        gameObject.layer = LayerMask.NameToLayer("Assemblable");
+        GetComponent<SpriteRenderer>().sprite = _sprites[1];
+        transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
     }
 }

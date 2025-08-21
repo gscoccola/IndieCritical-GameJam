@@ -2,12 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Assemblable : MonoBehaviour
+public class Assemblable : MonoBehaviour, IStateLoader
 {
 
     [SerializeField] StatusEffectAffinity ElectricAffinity;
     [SerializeField] StatusEffectAffinity BloodAffinity;
     [SerializeField] public HeightLayer _heightLayer = HeightLayer.AboveUpperCover;
+    [SerializeField] bool _isUncoveredOnCheckpoint;
 
     [SerializeField] Collider2D _interactionTrigger;
     [SerializeField] Collider2D _physicsCollider;
@@ -34,7 +35,7 @@ public class Assemblable : MonoBehaviour
     private void Awake()
     {
         AffinityAndStatusSetup();
-        InitialHeightLayerSetup();
+        
 
     }
 
@@ -81,6 +82,7 @@ public class Assemblable : MonoBehaviour
 
     private void Start()
     {
+        InitialHeightLayerSetup();
         InitialCollisionsCheck();
     }
 
@@ -119,5 +121,12 @@ public class Assemblable : MonoBehaviour
     {
         if (CurrentStatusEffects[statusEffect] == value) return;
         CurrentStatusEffects[statusEffect] = value;
+    }
+
+    public void LoadState()
+    {
+        if (!_isUncoveredOnCheckpoint) return;
+        _heightLayer = HeightLayer.AboveUpperCover;
+        SetActive(true);
     }
 }

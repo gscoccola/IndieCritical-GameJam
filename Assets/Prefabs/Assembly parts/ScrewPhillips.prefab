@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2147621451470332080}
   - component: {fileID: 814073403397744817}
   - component: {fileID: 3137460520046182376}
+  - component: {fileID: 5524174673103755593}
   m_Layer: 13
   m_Name: ScrewPhillips
   m_TagString: Untagged
@@ -503,7 +504,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.46875, y: 0.5}
+    oldSize: {x: 0.4375, y: 0.4375}
     newSize: {x: 0.4375, y: 0.4375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -523,3 +524,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9e87d50c3826ee4ab1c53476a231fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5524174673103755593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ElectricAffinity: 1
+  BloodAffinity: 0
+  _heightLayer: 0
+  _interactionTrigger: {fileID: 6763550321254480631}
+  _physicsCollider: {fileID: 0}
+  _coverCheckerPrefab: {fileID: 0}
+  CurrentCollidingObjects: []
+  OnCollisionUpdate:
+    m_PersistentCalls:
+      m_Calls: []
+  AssemblyIndex: 0
+  _isElectrified: 0
+  _isBloodPowered: 0
+  IsUncovered: 0

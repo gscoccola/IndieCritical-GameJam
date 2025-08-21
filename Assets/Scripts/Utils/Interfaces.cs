@@ -9,3 +9,8 @@ public interface IPowerable
 {
     void SetPowered(StatusEffect statusEffect, bool value);
 }
+
+public interface IStateLoader
+{
+    void LoadState();
+}

@@ -5,6 +5,11 @@ public class CoverChecker : MonoBehaviour
     private Assemblable _parentAssemblable => transform.parent.GetComponent<Assemblable>();
     public bool IsCovered;
 
+    /*private void Start()
+    {
+        GetComponent<Collider2D>().IsTouching ;
+    }*/
+
     void OnTriggerExit2D(Collider2D col)
     {
         if (col.gameObject.layer != LayerMask.NameToLayer("Cover") /*|| col.transform.position.z > transform.position.z*/) return;

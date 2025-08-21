@@ -511,7 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElectricAffinity: 0
+  ElectricAffinity: 1
   BloodAffinity: 0
   _heightLayer: 2
   _interactionTrigger: {fileID: 6763550321254480631}

@@ -51,8 +51,28 @@ public class ObjectivesManager : MonoBehaviour
     {
         if (CPUOn && GPUOn && PowerOn)
         {
-            TextManager.Instance.SetText("Ending 1/2: 'FIXED' \n didn't run crysis doe \n Press R to restart");
-
+            TriggerEnding(Endings.Fixed);
         }
     }
+
+    public void TriggerEnding(Endings ending)
+    {
+        switch (ending)
+        {
+            case Endings.Fixed:
+                TextManager.Instance.SetText("Ending 1/2: 'FIXED' \n Press R to restart");
+                break;
+            case Endings.Ourobouros:
+                TextManager.Instance.SetText("Ending 2/2: 'OUROBOUROS' \n Press R to restart");
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+public enum Endings
+{
+    Fixed,
+    Ourobouros,
 }

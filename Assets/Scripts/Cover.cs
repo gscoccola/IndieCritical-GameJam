@@ -1,11 +1,12 @@
 using UnityEngine;
 
-public class Cover : MonoBehaviour
+public class Cover : MonoBehaviour, IStateLoader
 {
     private Draggable _draggable;
     //private Assemblable _assemblable;
     private Collider2D _collider;
     [SerializeField] LayerMask _screwLayer;
+    [SerializeField] Vector3 _checkpointDisplacement;
 
     private void Start()
     {
@@ -22,5 +23,10 @@ public class Cover : MonoBehaviour
     public void CheckIfLocked()
     {
         _draggable.IsScrewed = _collider.IsTouchingLayers(_screwLayer);
+    }
+
+    public void LoadState()
+    {
+        transform.position += _checkpointDisplacement;
     }
 }
