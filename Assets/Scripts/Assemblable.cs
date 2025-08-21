@@ -14,6 +14,8 @@ public class Assemblable : MonoBehaviour, IStateLoader
     [SerializeField] Collider2D _physicsCollider;
     [SerializeField] GameObject _coverCheckerPrefab;
 
+    private GameObject _coverChecker;
+
     public List<GameObject> CurrentCollidingObjects = new List<GameObject>();
     public UnityEvent  OnCollisionUpdate;
     public Dictionary<StatusEffect, bool> CurrentStatusEffects = new();
@@ -68,7 +70,7 @@ public class Assemblable : MonoBehaviour, IStateLoader
         }
         else
         {
-            if (_coverCheckerPrefab != null) Instantiate(_coverCheckerPrefab, transform.position, Quaternion.identity, transform);
+            if (_coverCheckerPrefab != null) _coverChecker = Instantiate(_coverCheckerPrefab, transform.position, Quaternion.identity, transform);
         }
     }
 

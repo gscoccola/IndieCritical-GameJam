@@ -5,7 +5,7 @@ using NUnit.Framework;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class Centipede : MonoBehaviour
+public class Centipede : MonoBehaviour, IStateLoader
 {
     [SerializeField] GameObject _centipedeSegmentPrefab;
     [SerializeField] private GameObject _head;
@@ -28,16 +28,12 @@ public class Centipede : MonoBehaviour
     private List<GameObject> _segments = new List<GameObject>();
     private Sounds _sounds;
 
-    private void Start()
+    private void Awake()
     {
         _rotationSpeed = _speed;
         _lastBodySegment = _head;
         _segments.Add(_head);
         _sounds = transform.GetComponent<Sounds>();
-        /*for (int i = 0; i < 10; i++)
-        {
-            AddSegment();
-        }*/
         _gpuComponent = _gpu.transform.GetChild(0).transform.GetComponent<GPU>();
     }
 
@@ -188,6 +184,12 @@ public class Centipede : MonoBehaviour
         _gpuComponent._isFarming = false;
         ObjectivesManager.Instance.SetGPU(true);
         MusicPlayer.Instance.StopBlender();
+    }
+
+    public void LoadState()
+    {
+        AddSegment();
+        AddSegment();
     }
 }
 

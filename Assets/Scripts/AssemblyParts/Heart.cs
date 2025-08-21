@@ -1,21 +1,18 @@
 using UnityEngine.Events;
 using UnityEngine;
 
-public class Heart : MonoBehaviour, IPowerable
+public class Heart : MonoBehaviour, IPowerable, IActivable
 {
     private Assemblable _assemblable;
     [SerializeField] GameObject _sparks;
 
     public bool IsPowered { get; private set; }
 
-    private float initialScale;
-
     public UnityEvent OnBecomePowered;
 
     private void Start()
     {
         _assemblable = GetComponent<Assemblable>();
-        initialScale = transform.localScale.x;
     }
 
 
@@ -29,5 +26,13 @@ public class Heart : MonoBehaviour, IPowerable
         OnBecomePowered?.Invoke();
         transform.GetChild(0).GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Source;
         GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.Electrified] = StatusEffectAffinity.Insulator;
+    }
+
+    public void SetActive(bool value)
+    {
+
+        if (!value) return;
+        CheckpointInfo.Instance.SetCheckpoint();
+        
     }
 }

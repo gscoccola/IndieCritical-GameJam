@@ -16,7 +16,7 @@ public class Wire : MonoBehaviour, IActivable
 
     [SerializeField] private Sounds _uniqueSounds;
 
-    private void Start()
+    private void Awake()
     {
         _camera = Camera.main;
         _wireOrigin.position = new Vector3(_wireOrigin.position.x, _wireOrigin.position.y, transform.position.z);

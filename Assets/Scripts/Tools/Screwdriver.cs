@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Screwdriver : MonoBehaviour
+public class Screwdriver : MonoBehaviour, IStateLoader
 {
     [SerializeField] private GameObject _toolHead;
 
@@ -11,8 +11,12 @@ public class Screwdriver : MonoBehaviour
 
     public bool IsActive;
 
-    private Animator Animator => GetComponent<Animator>();
+    private Animator Animator;
 
+    private void Awake()
+    {
+        Animator = GetComponent<Animator>();
+    }
 
     public void Ready()
     {
@@ -41,10 +45,8 @@ public class Screwdriver : MonoBehaviour
         _toolHead.transform.localPosition -= 0.39f * Vector3.right;
     }
 
-
-}
-
-public enum ToolType
-{
-    Scredriver,
+    public void LoadState()
+    {
+        SwitchHead();
+    }
 }
