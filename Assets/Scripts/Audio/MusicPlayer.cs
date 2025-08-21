@@ -232,7 +232,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         StartCoroutine(FadeOutAudioSource(musicSource, musicVolume, 0.25f));
         StartCoroutine(FadeOutAudioSource(ambienceSource, ambienceVolume, 1));
 
-        blenderSource = this.AddComponent<AudioSource>();
+        if (blenderSource == null) blenderSource = this.AddComponent<AudioSource>();
         blenderSource.clip = blender;
         blenderSource.loop = true;
         blenderSource.volume = 0;

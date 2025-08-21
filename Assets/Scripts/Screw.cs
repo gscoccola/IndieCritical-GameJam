@@ -29,6 +29,8 @@ public class Screw : MonoBehaviour, IStateLoader
     public UnityEvent OnBecomeFree;
     public UnityEvent OnStartRolling;
 
+    private Sounds _sounds;
+
 
     private void Start()
     {
@@ -39,6 +41,7 @@ public class Screw : MonoBehaviour, IStateLoader
         _draggable = GetComponent<Draggable>();
         //_draggable.IsFixed = true;
         if (_isRolling) StartRoll();
+        _sounds = GetComponent<Sounds>();
     }
 
    private void Update()
@@ -88,6 +91,7 @@ public class Screw : MonoBehaviour, IStateLoader
     public void Vibrate()
     {
         StartCoroutine(IVibrate());
+        _sounds.PlaySoundContainer_VolumeOverride(2, 0.3f);
     }
 
     private IEnumerator IVibrate()

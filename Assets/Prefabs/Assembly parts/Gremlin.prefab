@@ -73,6 +73,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 0
   _interactionTrigger: {fileID: 4253892859820616680}
   _physicsCollider: {fileID: 2988401641210810583}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -410,6 +411,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
+      diagetic: 1
     id: 0
   - name: PickUp
     mute: 0
@@ -423,6 +425,7 @@ MonoBehaviour:
       volumeRange: {x: 0.1, y: 0.3}
       randomizePitch: 1
       pitchRange: {x: 0.9, y: 1.3}
+      diagetic: 1
     id: 0
   - name: PutDown
     mute: 0
@@ -436,4 +439,36 @@ MonoBehaviour:
       volumeRange: {x: 0.1, y: 0.3}
       randomizePitch: 1
       pitchRange: {x: 0.9, y: 1.3}
+      diagetic: 1
+    id: 0
+  - name: CalculatorCalcs
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 92243bd9322281e4fbd65d20b6a85e86, type: 3}
+    - {fileID: 8300000, guid: 15ae103b99305ab46986a8c7078fc85c, type: 3}
+    - {fileID: 8300000, guid: f945e3a314eb29648824ea13e1e0b623, type: 3}
+    - {fileID: 8300000, guid: fbcb2d589c76b3c418ef1408a9955334, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0.5
+      randomizeVolume: 1
+      volumeRange: {x: 0.3, y: 0.5}
+      randomizePitch: 1
+      pitchRange: {x: 0.75, y: 1.2}
+      diagetic: 1
+    id: 0
+  - name: GremlinStunned
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 6151a314c36441040b4c69c4f3d0efde, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 0.2
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.5}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.2}
+      diagetic: 1
     id: 0

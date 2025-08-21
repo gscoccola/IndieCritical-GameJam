@@ -32,6 +32,18 @@ public class Sounds : MonoBehaviour
         soundsOnThisObject[soundID].SetSouldPlay(false);
     }
 
+    public void PlaySoundContainer_VolumeOverride(int soundID, float volumeOverride)
+    {
+
+        if (muteAll) return;
+        if (soundID == -1 || soundsOnThisObject[soundID] == null) return;
+        try { if (transform != null) soundsOnThisObject[soundID].PlayRandomSoundOnTarget(transform, volumeOverride); }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error playing sound with ID " + soundID + ": " + e.Message);
+        }
+    }
+
     public void PlaySoundContainer(int soundID)
     {
         if (muteAll) return;

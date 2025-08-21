@@ -66,6 +66,7 @@ MonoBehaviour:
   ElectricAffinity: 1
   BloodAffinity: 1
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 0
   _interactionTrigger: {fileID: 3731596979359220487}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -105,7 +106,19 @@ MonoBehaviour:
       m_Calls: []
   OnJiggle:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7276591277865112855}
+        m_TargetAssemblyTypeName: RandomSoundPlayer, Assembly-CSharp
+        m_MethodName: Oneshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!212 &1765472797136543991
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -210,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e433e95b0a1cc3d488a572d30d2f7a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  randomTimeRange: {x: 0.8, y: 1.5}
+  randomTimeRange: {x: 0.8, y: 0.8}
   soundContainer:
     name: TypingSounds
     mute: 0
@@ -224,7 +237,7 @@ MonoBehaviour:
       fadeInTime: 0
       fadeOutTime: 0.5
       randomizeVolume: 1
-      volumeRange: {x: 0.3, y: 0.5}
+      volumeRange: {x: 0.15, y: 0.3}
       randomizePitch: 1
       pitchRange: {x: 0.75, y: 1.2}
       diagetic: 1
