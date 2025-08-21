@@ -232,9 +232,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5062856468564479912}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StartVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5062856468564479912}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StopVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnJiggle:
     m_PersistentCalls:
       m_Calls: []
@@ -333,7 +357,7 @@ MonoBehaviour:
       fadeInTime: 0.1
       fadeOutTime: 0.25
       randomizeVolume: 0
-      volumeRange: {x: 0.7, y: 0}
+      volumeRange: {x: 0.8, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
       diagetic: 1
@@ -401,8 +425,6 @@ MonoBehaviour:
   _startContainerID: 1
   _stopContainerID: 2
   _volumeMulti: 20
-  _minVolume: 0
-  _maxVolume: 1
   bufferAmtBase: 0.05
   bufferSmoothUp: 1
   bufferSmoothDown: 1.1

@@ -86,7 +86,7 @@ public class Wire : MonoBehaviour, IActivable
         _lineRenderer.SetPosition(0, new Vector3(_wireOrigin.position.x, _wireOrigin.position.y, transform.position.z));
         Vector3 wirePos = _wireOrigin.position;
         _wireOrigin.position = new Vector3(wirePos.x, wirePos.y, transform.position.z);
-        _uniqueSounds.PlayLoopingContainer("Spark");
+        if (value) _uniqueSounds.PlayLoopingContainer("Spark");
         isSparksOn = true;
 
     }
