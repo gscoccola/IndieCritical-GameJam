@@ -128,15 +128,19 @@ public class Centipede : MonoBehaviour, IStateLoader
         _canOurobouros = false;
         _gpuComponent._isFarming = true;
         _particleSystem.Play();
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         _eatingLastSegment = true;
         _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        _lastBodySegment.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
         foreach (var segment in _segments)
         {
+            //segment.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
             Destroy(GetComponent<VelocityVolumeController>());
         }
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
+        _lastBodySegment.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         while (true)
         {
             _blenderForce -= 80f;
@@ -151,10 +155,8 @@ public class Centipede : MonoBehaviour, IStateLoader
                 MusicPlayer.Instance.StopBlender();
                 _gpuComponent.IsSpinning = false;
                 _gpuComponent._isFarming = false;
-               // _head.transform.GetChild(0).gameObject.SetActive(true);
                 _eatingLastSegment = false;
                 _particleSystem.Stop();
-                //_gpu.transform.GetChild(0).gameObject.SetActive(false);
                 break;
             }
             
