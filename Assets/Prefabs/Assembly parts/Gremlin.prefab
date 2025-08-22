@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1.5
   _acceleration: 3
+  _buttonSeekDistance: 2
   _isUncovered: 0
   _isStunned: 0
   _isSelected: 0

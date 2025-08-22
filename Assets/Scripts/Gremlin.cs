@@ -5,6 +5,7 @@ public class Gremlin : MonoBehaviour
 {
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _acceleration = 5f;
+    [SerializeField] private float _buttonSeekDistance = 5f;
 
     private Rigidbody2D _rb => GetComponent<Rigidbody2D>();
     private Draggable _draggable;
@@ -18,21 +19,25 @@ public class Gremlin : MonoBehaviour
     private GremlinBox _box;
     private Vector3 _lastPos;
     private Animator _animator;
+    private Button _button;
+    private bool _hasPressedButton;
 
     private void Start()
     {
         _isUncovered = false;
         _speedTarget = Random.insideUnitCircle.normalized * _speed;
-        StartCoroutine(IChangeDirection());
         _draggable = GetComponent<Draggable>();
         _box = FindAnyObjectByType<GremlinBox>();
         _draggable.IsFixed = true;
         _animator = GetComponent<Animator>();
+        _button = FindAnyObjectByType<Button>();
     }
 
     private void FixedUpdate()
     {
         _animator.SetBool("IsCalculating", _usingCalculator);
+        if (!_hasPressedButton && (transform.position.Flatten() - _button.transform.position.Flatten()).magnitude < 0.1f)
+            _hasPressedButton = true;
         if (_usingCalculator || _isSelected || _isStunned) _rb.linearVelocity = Vector2.zero;
         else if (_isUncovered)
             _rb.linearVelocity = Vector3.MoveTowards(_rb.linearVelocity, _speedTarget, _acceleration * Time.deltaTime);
@@ -44,10 +49,18 @@ public class Gremlin : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(1f, 3f));
-            _speedTarget = Random.insideUnitCircle.normalized * _speed;
-            _speedTarget = new Vector3(_speedTarget.x, _speedTarget.y * 0.5f, _speedTarget.z);
+            
+            if (!_hasPressedButton && (transform.position.Flatten() - _button.transform.position.Flatten()).magnitude < _buttonSeekDistance)
+            {
+                _speedTarget = (_button.transform.position.Flatten() - transform.position.Flatten()).normalized * _speed;
+            }
+            else
+            {
+                _speedTarget = Random.insideUnitCircle.normalized * _speed;
+                _speedTarget = new Vector3(_speedTarget.x, _speedTarget.y * 0.5f, _speedTarget.z);
+            }
             transform.localScale = new Vector3(Mathf.Sign(-_speedTarget.x), 1f, 1f);
+            yield return new WaitForSeconds(Random.Range(1f, 3f));
         }
     }
 
@@ -63,6 +76,7 @@ public class Gremlin : MonoBehaviour
     public void OnSelect()
     {
         if (_isStunned) transform.position -= 0.2f * Vector3.forward;
+        StopAllCoroutines();
         _isStunned = false;
         _isSelected = true;
         _usingCalculator = false;
@@ -73,6 +87,7 @@ public class Gremlin : MonoBehaviour
     public void OnDeselect()
     {
         _isSelected = false;
+        StartCoroutine(IChangeDirection());
     }
 
     public void OnJiggle()
