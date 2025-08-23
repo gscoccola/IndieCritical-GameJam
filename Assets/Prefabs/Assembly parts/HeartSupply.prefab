@@ -75,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -340423731
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -4698775446972505895, guid: 3fd4a3b095df54548b1de165b4a93b30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -121,7 +121,7 @@ Transform:
   m_GameObject: {fileID: 8023679491637558797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.2}
+  m_LocalPosition: {x: 0, y: 0, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -197,6 +197,7 @@ MonoBehaviour:
   _screwLayer:
     serializedVersion: 2
     m_Bits: 4194304
+  _checkpointDisplacement: {x: 4.79125, y: 0, z: 0}
 --- !u!114 &418927045622557072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 3
+  _isUncoveredOnCheckpoint: 1
   _interactionTrigger: {fileID: 92557850775498664}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -483,6 +485,10 @@ PrefabInstance:
     - target: {fileID: 6294457366569794810, guid: 0072b60cc8734944bb67799266312194, type: 3}
       propertyPath: _heightLayer
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294457366569794810, guid: 0072b60cc8734944bb67799266312194, type: 3}
+      propertyPath: _isUncoveredOnCheckpoint
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

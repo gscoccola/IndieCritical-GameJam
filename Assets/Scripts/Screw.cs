@@ -169,5 +169,6 @@ public class Screw : MonoBehaviour, IStateLoader
         gameObject.layer = LayerMask.NameToLayer("Assemblable");
         GetComponent<SpriteRenderer>().sprite = _sprites[1];
         transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
+        _sideCollider.enabled = true;
     }
 }

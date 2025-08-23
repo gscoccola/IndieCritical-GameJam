@@ -209,6 +209,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 0
+  _isUncoveredOnCheckpoint: 0
   _interactionTrigger: {fileID: 6918679405302723558}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}

@@ -62,7 +62,7 @@ public class Assemblable : MonoBehaviour, IStateLoader
             float ordenInLayer = (transform.position.z - (int)_heightLayer) %1f ;
             _heightLayer = HeightLayer.AboveUpperCover;
             
-            transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer + ordenInLayer);
+            //transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer + ordenInLayer);
            foreach (IActivable activable in GetComponents<IActivable>())
             {
                 activable.SetActive(true);

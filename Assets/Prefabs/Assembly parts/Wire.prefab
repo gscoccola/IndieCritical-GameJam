@@ -97,13 +97,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7544905120526856310}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.47907484, w: 0.87777406}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38123167, w: 0.92447954}
   m_LocalPosition: {x: -0.53, y: -0.56, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2053729450734526608}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 57.25}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 44.82}
 --- !u!114 &7062688873569709802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +137,7 @@ MonoBehaviour:
   ElectricAffinity: 2
   BloodAffinity: 0
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 1
   _interactionTrigger: {fileID: 8906416877115364115}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -413,6 +414,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 0}
       randomizePitch: 1
       pitchRange: {x: 0.9, y: 1.2}
+      diagetic: 1
     id: 0
   - name: PutDown
     mute: 0
@@ -428,6 +430,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 0}
       randomizePitch: 1
       pitchRange: {x: 0.9, y: 1.2}
+      diagetic: 1
     id: 0
   - name: Spark
     mute: 0
@@ -441,6 +444,7 @@ MonoBehaviour:
       volumeRange: {x: 0.19, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1.2, y: 1.2}
+      diagetic: 1
     id: 0
 --- !u!199 &3642096525873796222
 ParticleSystemRenderer:

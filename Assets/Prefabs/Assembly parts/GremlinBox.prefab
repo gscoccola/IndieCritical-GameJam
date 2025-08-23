@@ -221,7 +221,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3177476538157601306}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.799, y: -1.546, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
@@ -256,6 +256,7 @@ MonoBehaviour:
   _autoReturnTime: 1.4
   _maxDisplacement: 0.5
   _returnSpeed: 0.5
+  _boxState: 0
 --- !u!61 &3424422633362293703
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -357,6 +358,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
+      diagetic: 1
     id: 0
   - name: BoxSlide
     mute: 0
@@ -370,6 +372,7 @@ MonoBehaviour:
       volumeRange: {x: 0.7, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
+      diagetic: 1
     id: 0
   - name: BoxSlideStart
     mute: 0
@@ -384,6 +387,7 @@ MonoBehaviour:
       volumeRange: {x: 0.6, y: 0.7}
       randomizePitch: 1
       pitchRange: {x: 1.8, y: 2}
+      diagetic: 1
     id: 0
   - name: BoxSlideStop
     mute: 0
@@ -397,6 +401,7 @@ MonoBehaviour:
       volumeRange: {x: 0.6, y: 0.7}
       randomizePitch: 1
       pitchRange: {x: 1.8, y: 2}
+      diagetic: 1
     id: 0
   - name: Touch
     mute: 0
@@ -413,6 +418,7 @@ MonoBehaviour:
       volumeRange: {x: 0.5, y: 0.6}
       randomizePitch: 1
       pitchRange: {x: 1.4, y: 1.6}
+      diagetic: 1
     id: 0
 --- !u!1 &4011332015596331070
 GameObject:
@@ -429,7 +435,6 @@ GameObject:
   - component: {fileID: 7783080536074763534}
   - component: {fileID: 4050568122831217824}
   - component: {fileID: 5144037941468072175}
-  - component: {fileID: 7565283352350729659}
   m_Layer: 12
   m_Name: Cover
   m_TagString: Untagged
@@ -467,6 +472,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 1
   _interactionTrigger: {fileID: 4050568122831217824}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -681,29 +687,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7565283352350729659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4011332015596331070}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  muteAll: 0
-  soundsOnThisObject:
-  - name: SlideStart
-    mute: 0
-    audioClips: []
-    soundSettings:
-      loop: 0
-      fadeInTime: 0
-      fadeOutTime: 0
-      randomizeVolume: 0
-      volumeRange: {x: 0, y: 0}
-      randomizePitch: 0
-      pitchRange: {x: 0, y: 0}
-    id: 0
