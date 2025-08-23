@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicPlayer : Singleton<MusicPlayer>
 {
@@ -22,6 +23,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         musicSource.volume = musicVolume;
         musicSource.pitch = 1;
         musicSource.spatialBlend = 0;
+        musicSource.outputAudioMixerGroup = AudioSettings.Instance.musicMixerGroup;
 
         ambienceSource = this.AddComponent<AudioSource>();
         ambienceSource.clip = ambience;
@@ -30,6 +32,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         ambienceSource.pitch = 1;
         ambienceSource.spatialBlend = 0;
         ambienceSource.Play();
+        ambienceSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup;
 
 
         operaSource = this.AddComponent<AudioSource>();
@@ -39,6 +42,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         operaSource.pitch = 1;
         operaSource.spatialBlend = 0;
         operaSource.Play();
+        operaSource.outputAudioMixerGroup = AudioSettings.Instance.musicMixerGroup;
 
 
     }
@@ -219,6 +223,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         orobourusAmbienceSource.pitch = 1;
         orobourusAmbienceSource.spatialBlend = 0;
         orobourusAmbienceSource.Play();
+        orobourusAmbienceSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup;
 
         StartCoroutine(FadeInAudioSource(orobourusAmbienceSource, orobourusAmbienceVolume, 1));
     }
@@ -239,6 +244,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
         blenderSource.pitch = 1;
         blenderSource.spatialBlend = 0;
         blenderSource.Play();
+        blenderSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup;
 
         StartCoroutine(FadeInAudioSource(blenderSource, blenderVolume, 0.25f));
     }
