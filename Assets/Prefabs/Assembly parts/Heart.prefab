@@ -56,6 +56,7 @@ MonoBehaviour:
   ElectricAffinity: 1
   BloodAffinity: 0
   _heightLayer: 2
+  _isUncoveredOnCheckpoint: 0
   _interactionTrigger: {fileID: 4312043671354269356}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -99,18 +100,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Sounds, Assembly-CSharp
         m_MethodName: PlayLoopingContainer
         m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3158010761305962350}
-        m_TargetAssemblyTypeName: HeartBeatingSound, Assembly-CSharp
-        m_MethodName: StartBeating
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -331,6 +320,7 @@ MonoBehaviour:
       volumeRange: {x: 0.3, y: 0.4}
       randomizePitch: 1
       pitchRange: {x: 1.2, y: 1.5}
+      diagetic: 1
     id: 0
   - name: PowerOn
     mute: 0
@@ -344,6 +334,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+      diagetic: 1
     id: 0
   - name: Drone
     mute: 0
@@ -357,6 +348,27 @@ MonoBehaviour:
       volumeRange: {x: 0.15, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+      diagetic: 1
+    id: 0
+  - name: HeartBeat
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 1ac2ca9c88e4b9e4c92eb59738767b86, type: 3}
+    - {fileID: 8300000, guid: e213c4264f5b85847a48d05a76d20af2, type: 3}
+    - {fileID: 8300000, guid: 55fe9b5c85b54754ba0ad1c6587bc470, type: 3}
+    - {fileID: 8300000, guid: 66ea98f865be8db419e1e550c81beb0e, type: 3}
+    - {fileID: 8300000, guid: 85779f082893d824e8d909a300342f4e, type: 3}
+    - {fileID: 8300000, guid: f6cba4484b4c0e842ad5069bda37f1a4, type: 3}
+    - {fileID: 8300000, guid: aedc69f21f11b5645bbc67703fe69e38, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 2
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 0.25, y: 1}
+      randomizePitch: 1
+      pitchRange: {x: 0.8, y: 1.1}
+      diagetic: 1
     id: 0
 --- !u!114 &3158010761305962350
 MonoBehaviour:
@@ -389,6 +401,7 @@ MonoBehaviour:
       volumeRange: {x: 0.3, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
+      diagetic: 1
     id: 0
   beatInterval_sec: 1
 --- !u!1 &7205145392519200992
@@ -439,6 +452,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 0
+  _isUncoveredOnCheckpoint: 0
   _interactionTrigger: {fileID: 3339437430879059308}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 0}

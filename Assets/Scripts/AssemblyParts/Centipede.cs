@@ -152,7 +152,7 @@ public class Centipede : MonoBehaviour, IStateLoader
             if (_segments.Count == 2)
             {
                 _target.gameObject.SetActive(true);
-                MusicPlayer.Instance.StopBlender();
+                if (_gpuComponent.IsSpinning) MusicPlayer.Instance.StopBlender();
                 _gpuComponent.IsSpinning = false;
                 _gpuComponent._isFarming = false;
                 _eatingLastSegment = false;
@@ -185,7 +185,6 @@ public class Centipede : MonoBehaviour, IStateLoader
         _particleSystem.Stop();
         _gpuComponent._isFarming = false;
         ObjectivesManager.Instance.SetGPU(true);
-        MusicPlayer.Instance.StopBlender();
     }
 
     public void LoadState()

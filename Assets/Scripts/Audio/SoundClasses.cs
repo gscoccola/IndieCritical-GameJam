@@ -88,6 +88,7 @@ public class RandomSoundContainer
         audioSource.spread = 110;
         audioSource.minDistance = 10;
         audioSource.maxDistance = 30;
+        audioSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup;
 
     }
 

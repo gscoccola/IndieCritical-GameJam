@@ -19,6 +19,7 @@ public class Gremlin : MonoBehaviour
     private GremlinBox _box;
     private Vector3 _lastPos;
     private Animator _animator;
+    private Sounds _sounds;
     private Button _button;
     private bool _hasPressedButton;
 
@@ -30,6 +31,7 @@ public class Gremlin : MonoBehaviour
         _box = FindAnyObjectByType<GremlinBox>();
         _draggable.IsFixed = true;
         _animator = GetComponent<Animator>();
+        _sounds = GetComponent<Sounds>();
         _button = FindAnyObjectByType<Button>();
     }
 
@@ -71,6 +73,7 @@ public class Gremlin : MonoBehaviour
         _isStunned = true;
         _draggable.IsFixed = false;
         _animator.SetBool("IsStunned", true);
+        _sounds.PlayLoopingContainer("GremlinStunned");
     }
 
     public void OnSelect()
@@ -82,6 +85,7 @@ public class Gremlin : MonoBehaviour
         _usingCalculator = false;
         _animator.SetBool("IsStunned", false); 
         _animator.SetBool("IsWalking", false); 
+        _sounds.StopLoopingContainer("GremlinStunned");
     }
 
     public void OnDeselect()

@@ -162,6 +162,20 @@ MonoBehaviour:
       pitchRange: {x: 0.8, y: 1.1}
       diagetic: 1
     id: 0
+  - name: HeadExplode
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: b43001d30583ed94fbc77bbc09fcfcf2, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+      diagetic: 0
+    id: 0
 --- !u!114 &1651137684031514257
 MonoBehaviour:
   m_ObjectHideFlags: 0
