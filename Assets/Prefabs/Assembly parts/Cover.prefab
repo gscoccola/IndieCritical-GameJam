@@ -34,8 +34,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8, y: 0.32, z: 0}
-  m_LocalScale: {x: 13.51, y: 8, z: 8}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -51,6 +51,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2122531d45ff6b6458b2cf7f989b419c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _screwLayer:
+    serializedVersion: 2
+    m_Bits: 8192
+  _checkpointDisplacement: {x: 0, y: -9, z: 0}
 --- !u!114 &4901888849183857263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,6 +70,7 @@ MonoBehaviour:
   ElectricAffinity: 0
   BloodAffinity: 0
   _heightLayer: 1
+  _isUncoveredOnCheckpoint: 0
   _interactionTrigger: {fileID: 6248743531716558905}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
@@ -101,15 +106,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a91116b155e5e7348a114106d785f7c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsSelectable: 1
   IsFixed: 0
   IsScrewed: 0
-  _showIfSelected: 0
   _freezeX: 1
   _freezeY: 0
   _irreversible: 1
   _Xlimit: 0
   _Ylimit: 2
-  _centerOnMouse: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls:
@@ -140,6 +144,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnJiggle:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &3272512817453774065
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -184,8 +191,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.2264151, g: 0.2264151, b: 0.2264151, a: 1}
+  m_Sprite: {fileID: -7608026318298583230, guid: a5d7afeb6c72dd242be5810aa4a45ed1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -260,13 +267,13 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 11.1875, y: 9.875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12.43, y: 10.26}
   m_EdgeRadius: 0
 --- !u!114 &7819231607921823888
 MonoBehaviour:
@@ -285,8 +292,6 @@ MonoBehaviour:
   _startContainerID: 0
   _stopContainerID: 1
   _volumeMulti: 20
-  _minVolume: 0
-  _maxVolume: 0.7
   bufferAmtBase: 0.05
   bufferSmoothUp: 1
   bufferSmoothDown: 1.1
@@ -317,6 +322,7 @@ MonoBehaviour:
       volumeRange: {x: 0.9, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.9, y: 1.1}
+      diagetic: 1
     id: 0
   - name: StopSlide
     mute: 0
@@ -330,6 +336,7 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 1}
       randomizePitch: 1
       pitchRange: {x: 0.8, y: 1.1}
+      diagetic: 1
     id: 0
   - name: SlideLoop
     mute: 0
@@ -343,4 +350,5 @@ MonoBehaviour:
       volumeRange: {x: 1, y: 1}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
+      diagetic: 1
     id: 0

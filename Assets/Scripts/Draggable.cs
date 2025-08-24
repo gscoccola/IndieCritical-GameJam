@@ -40,6 +40,8 @@ public class Draggable : MonoBehaviour
         if (!IsSelected || IsFixed || !IsSelectable) return;
         
         Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+         newPos = new Vector3(Mathf.Clamp(newPos.x, -10f, 10f), Mathf.Clamp(newPos.y, -5.625f, 5.625f), newPos.z);
+
         newPos += _initialRelativePos;
         /*if (!_centerOnMouse) newPos += _initialRelativePos;
         /*else newPos += GetComponent<Collider2D>().offset.x * Vector3.right;*/

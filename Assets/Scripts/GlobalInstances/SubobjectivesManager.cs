@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ObjectivesManager : MonoBehaviour
+public class SubobjectivesManager : MonoBehaviour
 {
-    public static ObjectivesManager Instance;
+    public static SubobjectivesManager  Instance;
     public bool PowerOn;
     public bool CPUOn;
     public bool GPUOn;
@@ -52,6 +52,7 @@ public class ObjectivesManager : MonoBehaviour
         if (CPUOn && GPUOn && PowerOn)
         {
             TriggerEnding(Endings.Fixed);
+            
         }
     }
 
@@ -61,9 +62,11 @@ public class ObjectivesManager : MonoBehaviour
         {
             case Endings.Fixed:
                 TextManager.Instance.SetText("Ending 1/2: 'FIXED' \n Press R to restart");
+                CompletionInfo.Instance.SetFeatCompleted(0);
                 break;
             case Endings.Ourobouros:
                 TextManager.Instance.SetText("Ending 2/2: 'OUROBOUROS' \n Press R to restart");
+                CompletionInfo.Instance.SetFeatCompleted(1);
                 break;
             default:
                 break;

@@ -20,7 +20,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     {
         if (!value || IsPowered|| statusEffect != StatusEffect.Electrified) return;
         Instantiate(_sparks, transform.position - 0.1f * Vector3.forward, Quaternion.identity);
-        ObjectivesManager.Instance.SetPower();
+        SubobjectivesManager.Instance.SetPower();
         IsPowered = true;
         GetComponent<Animator>().SetBool("IsPumping", true);
         OnBecomePowered?.Invoke();
@@ -32,7 +32,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     {
 
         if (!value) return;
-        CheckpointInfo.Instance.SetCheckpoint();
+        CompletionInfo.Instance.SetCheckpoint();
         
     }
 }

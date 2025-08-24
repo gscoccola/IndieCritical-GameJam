@@ -166,10 +166,10 @@ TextureImporter:
       name: props_1
       rect:
         serializedVersion: 2
-        x: 181
-        y: 97
-        width: 86
-        height: 68
+        x: 177
+        y: 151
+        width: 36
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,6 +202,50 @@ TextureImporter:
       bones: []
       spriteID: ee52efb5ad0df234c88a95b393ee498e
       internalID: -494549335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_2
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 150
+        width: 42
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c3d947c2181f314285ff0157c24b6bf
+      internalID: -248271671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: props_4
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 98
+        width: 38
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8cea3f2aa4ac82499bf71d4004d9aa5
+      internalID: -343931279
       vertices: []
       indices: 
       edges: []

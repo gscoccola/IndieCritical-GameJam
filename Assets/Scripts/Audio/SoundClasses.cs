@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -20,7 +21,7 @@ public class RandomSoundContainer
 
         if (!shouldPlay || mute) return;
 
-        int randInt = Random.Range(0, audioClips.Length);
+        int randInt = UnityEngine.Random.Range(0, audioClips.Length);
 
         AudioSource source = target.AddComponent<AudioSource>();
         AudioClip clip = audioClips[randInt];
@@ -29,7 +30,7 @@ public class RandomSoundContainer
         ApplySoundSettings(soundSettings, source);
         source.Play();
 
-        Object.Destroy(source, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
+        UnityEngine.Object.Destroy(source, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
 
     }
 
@@ -37,7 +38,7 @@ public class RandomSoundContainer
     {
         if (!shouldPlay || mute) return;
 
-        int randInt = Random.Range(0, audioClips.Length);
+        int randInt = UnityEngine.Random.Range(0, audioClips.Length);
 
         AudioSource source = target.AddComponent<AudioSource>();
         AudioClip clip = audioClips[randInt];
@@ -47,7 +48,7 @@ public class RandomSoundContainer
         source.volume = volumeOverride;
         source.Play();
 
-        Object.Destroy(source, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
+        UnityEngine.Object.Destroy(source, clip.length * ((Time.timeScale < 0.01f) ? 0.01f : Time.timeScale));
 
     }
 
@@ -88,12 +89,11 @@ public class RandomSoundContainer
         audioSource.spread = 110;
         audioSource.minDistance = 10;
         audioSource.maxDistance = 30;
-        audioSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup;
+        audioSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup; }
 
     }
 
 
-}
 
 
 /// <summary>
@@ -152,12 +152,12 @@ public class SoundSettings
 
     public float GetVolume()
     {
-        return randomizeVolume ? Random.Range(volumeRange.x, volumeRange.y) : volumeRange.x;
+        return randomizeVolume ? UnityEngine.Random.Range(volumeRange.x, volumeRange.y) : volumeRange.x;
     }
 
     public float GetPitch()
     {
-        return randomizePitch ? Random.Range(pitchRange.x, pitchRange.y) : pitchRange.x;
+        return randomizePitch ? UnityEngine.Random.Range(pitchRange.x, pitchRange.y) : pitchRange.x;
     }
 
 }

@@ -86,7 +86,7 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     private void TriggerOurobouros()
     {
-        ObjectivesManager.Instance.TriggerEnding(Endings.Ourobouros);
+        SubobjectivesManager.Instance.TriggerEnding(Endings.Ourobouros);
         _head.GetComponent<Mouth>().enabled = false;
         _ourobourosCenter = AveragePosition(_segments); 
         if (_head.transform.position.y < _ourobourosCenter.y) _rotationSpeed *= -1f;
@@ -184,7 +184,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         _lastBodySegment.GetComponent<SpriteRenderer>().enabled = false;
         _particleSystem.Stop();
         _gpuComponent._isFarming = false;
-        ObjectivesManager.Instance.SetGPU(true);
+        SubobjectivesManager.Instance.SetGPU(true);
     }
 
     public void LoadState()

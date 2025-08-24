@@ -9,9 +9,9 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
-        CheckpointInfo.Instance.IsReloadingScene = false;
+        CompletionInfo.Instance.IsReloadingScene = false;
 
-        if (!CheckpointInfo.Instance.ReachedCheckpoint) return;
+        if (!CompletionInfo.Instance.ReachedCheckpoint) return;
 
         var stateLoaders = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None).OfType<IStateLoader>();
 
@@ -28,7 +28,7 @@ public class GameManager : Singleton<GameManager>
 
     public void Restart()
     {
-        CheckpointInfo.Instance.IsReloadingScene = true;
+        CompletionInfo.Instance.IsReloadingScene = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

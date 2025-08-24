@@ -104,7 +104,7 @@ public class Gremlin : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Calculator"))
         {
             _usingCalculator = true;
-            ObjectivesManager.Instance.SetCPU(true);
+            SubobjectivesManager.Instance.SetCPU(true);
             col.gameObject.GetComponent<Calculator>().SetPowered(true);
             transform.position = new Vector3( col.transform.position.x, col.transform.position.y, transform.position.z);
             StartCoroutine(IBeginCalculating());
@@ -124,7 +124,7 @@ public class Gremlin : MonoBehaviour
         if (col.gameObject.layer == LayerMask.NameToLayer("Calculator"))
         {
             _usingCalculator = false;
-            ObjectivesManager.Instance.SetCPU(false);
+            SubobjectivesManager.Instance.SetCPU(false);
             col.gameObject.GetComponent<Calculator>().SetPowered(false);
         }
     }
