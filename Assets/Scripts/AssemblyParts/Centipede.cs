@@ -99,6 +99,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         MusicPlayer.Instance.SetOrobourus();
         AddSegment();
         _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        _head.GetComponent<SpringJoint2D>().enabled = true;
         _head.GetComponent<SpringJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
     }
 

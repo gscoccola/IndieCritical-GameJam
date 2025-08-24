@@ -22,12 +22,12 @@ public class ForceDraggable : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (!IsSelected || IsFixed || !IsSelectable) return;
 
         Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        _rb.AddForce(_force * Time.deltaTime * new Vector2(
+        _rb.AddForce(_force * Time.fixedDeltaTime * new Vector2(
             mousePos.x,
             mousePos.y
         ),

@@ -3,6 +3,8 @@ using UnityEngine;
 public class SubobjectivesManager : MonoBehaviour
 {
     public static SubobjectivesManager  Instance;
+    [SerializeField] SpriteRenderer _monitorSpriteRenderer;
+    [SerializeField] Sprite _powerOnSprite;
     public bool PowerOn;
     public bool CPUOn;
     public bool GPUOn;
@@ -24,6 +26,7 @@ public class SubobjectivesManager : MonoBehaviour
 
     public void SetPower()
     {
+        _monitorSpriteRenderer.sprite = _powerOnSprite;
         PowerOn = true;
         UpdateText();
     }

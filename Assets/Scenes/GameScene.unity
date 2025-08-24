@@ -774,7 +774,7 @@ GameObject:
   - component: {fileID: 278791581}
   - component: {fileID: 278791582}
   m_Layer: 0
-  m_Name: CompletionInfoTracker
+  m_Name: CompletionInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9161ca8c508b7b4bbe2eee77baf5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReachedCheckpoint: 0
+  ReachedCheckpoint: 1
   FeatsCount: 2
   FeatsCompletion: 
   IsReloadingScene: 0
@@ -865,7 +865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &368416510
 Transform:
   m_ObjectHideFlags: 0
@@ -1882,7 +1882,7 @@ GameObject:
   - component: {fileID: 769543024}
   - component: {fileID: 769543025}
   m_Layer: 0
-  m_Name: ObjectivesManager
+  m_Name: SubobjectivesManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1915,6 +1915,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cff0dfc73c15cb43b76c28daa4c0b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _monitorSpriteRenderer: {fileID: 1646761902}
+  _powerOnSprite: {fileID: 3660677014590786972, guid: 886badd2f7df9a44c86b44f13f4d1be0, type: 3}
   PowerOn: 0
   CPUOn: 0
   GPUOn: 0
@@ -2448,6 +2450,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7121156852533162881, guid: e7c6f9af6141b0e4c849273d7566fb7e, type: 3}
   m_PrefabInstance: {fileID: 9153240388662450700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1646761902 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5730712354502321449, guid: 6c4bb800875b2c64883d73426ee068bd, type: 3}
+  m_PrefabInstance: {fileID: 8316799535523154964}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1681324919 stripped
 Transform:
@@ -3404,6 +3411,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Centipede
       objectReference: {fileID: 0}
+    - target: {fileID: 6054020872643967056, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6054020872643967056, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
+      propertyPath: m_ConnectedRigidBody
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3808,6 +3823,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5730712354502321449, guid: 6c4bb800875b2c64883d73426ee068bd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3660677014590786972, guid: 601ed83834c31434dacfab7919d123ae, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
