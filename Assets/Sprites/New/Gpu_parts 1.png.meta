@@ -197,6 +197,358 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_0
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a84886d12aab1f4e827d4ed2b9c14f1
+      internalID: -397256610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc2f35bf60875744ba63233ff52a23a
+      internalID: 1795060552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0cbcb0a9fdc5974b9213e33b5fa9ee3
+      internalID: 1905572180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a4d80e0cb8b4d142bf40bd032c3c401
+      internalID: 1839307069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fc03b91743cd34fa4a2a17740d07a3
+      internalID: -1870554202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8419b5441e809de45b4915e0a9944c74
+      internalID: -1524151782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc716cf105d1a2447822417c92b18ccd
+      internalID: -1223701258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a42870e57fb4bb41907318fdb9eed76
+      internalID: 1910547605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_8
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 706aaf9a8ac9f4c41a6e104bfef9e069
+      internalID: -992869743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_9
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f000928e1fbc8748a3442355e1f27b8
+      internalID: 794784966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_10
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcbae43a83fc81544b4bf9ed3543867f
+      internalID: -928638820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_11
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7065112ed3e814245bd4953e705e9408
+      internalID: -415327784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_12
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51f95f190eef6204681b4c26a0db6e79
+      internalID: -76379147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_13
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157b83ef613d2c44b85d4daf23c44f0d
+      internalID: -1209319162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_14
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7031c675e9dabc4b83fe6ea013e9bd9
+      internalID: -1354803600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gpu_parts 1_15
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 22
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d5031adc282894097bb3ebaa85edd7
+      internalID: 893192016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -211,6 +563,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Gpu_parts 1_0: -397256610
+      Gpu_parts 1_1: 1795060552
+      Gpu_parts 1_10: -928638820
+      Gpu_parts 1_11: -415327784
+      Gpu_parts 1_12: -76379147
+      Gpu_parts 1_13: -1209319162
+      Gpu_parts 1_14: -1354803600
+      Gpu_parts 1_15: 893192016
+      Gpu_parts 1_2: 1905572180
+      Gpu_parts 1_3: 1839307069
+      Gpu_parts 1_4: -1870554202
+      Gpu_parts 1_5: -1524151782
+      Gpu_parts 1_6: -1223701258
+      Gpu_parts 1_7: 1910547605
+      Gpu_parts 1_8: -992869743
+      Gpu_parts 1_9: 794784966
       Gpu_parts_0: 9004427639327593670
       Gpu_parts_1: 5371707109708004135
       Gpu_parts_2: 3447843654480396953

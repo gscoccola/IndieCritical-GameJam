@@ -60,6 +60,7 @@ MonoBehaviour:
   _interactionTrigger: {fileID: 4312043671354269356}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
+  _electrifiedSprite: {fileID: 0}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
@@ -80,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22aacb5faac298848b97ebf31493689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sparks: {fileID: 2635259085384821458, guid: f0386b5427d6f2347aa4f570af2985b2, type: 3}
+  _sparks: {fileID: 8626023975957301345, guid: dd1af1f357ab87042a0e7e7531f28e80, type: 3}
   OnBecomePowered:
     m_PersistentCalls:
       m_Calls:
@@ -456,6 +457,7 @@ MonoBehaviour:
   _interactionTrigger: {fileID: 3339437430879059308}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 0}
+  _electrifiedSprite: {fileID: 0}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:

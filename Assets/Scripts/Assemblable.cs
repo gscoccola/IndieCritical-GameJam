@@ -13,6 +13,7 @@ public class Assemblable : MonoBehaviour, IStateLoader
     [SerializeField] Collider2D _interactionTrigger;
     [SerializeField] Collider2D _physicsCollider;
     [SerializeField] GameObject _coverCheckerPrefab;
+    [SerializeField] SpriteRenderer _electrifiedSprite;
 
     private GameObject _coverChecker;
 
@@ -44,7 +45,7 @@ public class Assemblable : MonoBehaviour, IStateLoader
     private void InitialHeightLayerSetup()
     {
         float ordenInLayer = transform.position.z - (int)_heightLayer;
-        transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer + ordenInLayer);
+        //transform.position = new Vector3(transform.position.x, transform.position.y, (int)_heightLayer + ordenInLayer);
         if (GetComponent<Cover>() != null) return;
         if (_heightLayer != HeightLayer.AboveUpperCover)
         {
@@ -129,6 +130,13 @@ public class Assemblable : MonoBehaviour, IStateLoader
     {
         if (!_isUncoveredOnCheckpoint) return;
         _heightLayer = HeightLayer.AboveUpperCover;
+        if (_coverChecker != null) Destroy(_coverChecker);
         SetActive(true);
+    }
+
+    public void SetElectrifiedVisual(bool value)
+    {
+        //if (_electrifiedSprite != null) _electrifiedSprite.enabled = value;
+        if (_electrifiedSprite != null) _electrifiedSprite.color = !value ? Color.white : Color.yellow;
     }
 }

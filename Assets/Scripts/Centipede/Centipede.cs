@@ -73,12 +73,15 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     public void AddSegment()
     {
+        float layerOffset = _lastBodySegment == _head ? 2f : -0.005f;
         GameObject newSegment = Instantiate(_centipedeSegmentPrefab,
-            _lastBodySegment.transform.position.Flatten() + _lastBodySegment.transform.right * _segmentDistance - 0.05f * _length * _lastBodySegment.transform.forward
+            _lastBodySegment.transform.position + _lastBodySegment.transform.right * _segmentDistance 
+            + _length * layerOffset * _lastBodySegment.transform.forward
             , _lastBodySegment.transform.rotation, transform);
-        _head.transform.position = new Vector3(_head.transform.position.x, _head.transform.position.y, -0.9f);
+        //_head.transform.position = new Vector3(_head.transform.position.x, _head.transform.position.y, -0.9f);
         newSegment.GetComponent<HingeJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
         newSegment.GetComponent<VelocityVolumeController>().SetSounds(_sounds);
+        newSegment.GetComponent<BodyPart>()._mouth = _head;
         _lastBodySegment = newSegment;
         _segments.Add(newSegment);
         _length++;

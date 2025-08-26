@@ -111,7 +111,8 @@ public class Assembly : MonoBehaviour
             else
             {
                 assemblable.CurrentStatusEffects[statusEffect] = false;
-                
+                if (statusEffect== StatusEffect.Electrified) assemblable.SetElectrifiedVisual(false);
+
             }
         }
         while (queue.Count > 0)
@@ -138,6 +139,10 @@ public class Assembly : MonoBehaviour
                     if (explored.Contains(i)) continue;
                     Assembleables[i].CurrentStatusEffects[statusEffect] = true;
                     Assembleables[i].GetComponent<IPowerable>()?.SetPowered(statusEffect, true);
+                    Assembleables[i].SetElectrifiedVisual(true);
+                    if (UnityEngine.Random.Range(0, 5) == 1) Spark(currentAssemblable.transform.position);
+                    /*if (Assembleables[i].GetComponent<SpriteRenderer>() != null)
+                        Assembleables[i].GetComponent<SpriteRenderer>().color = Color.yellow;*/
                     queue.Add(i);
                 }
             }
@@ -156,19 +161,3 @@ public static class BoolExtensions
 {
     public static int ToInt(this bool value) => value ? 1 : 0;
 }
-
-/*
-public class BoolArray
-{
-    private bool[,] _array;
-    public BoolArray(int rows, int columns)
-    {
-        _array = new bool[rows, columns];
-    }
-    public bool this[int row, int column]
-    {
-        get => _array[row, column];
-        set => _array[row, column] = value;
-    }
-    public int Length => _array.GetLength(0);
-}*/

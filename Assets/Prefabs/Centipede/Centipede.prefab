@@ -328,11 +328,12 @@ GameObject:
   - component: {fileID: 4043787855325856949}
   - component: {fileID: 7874162542044142906}
   - component: {fileID: 6054020872643967056}
-  - component: {fileID: 2308196095444850344}
   - component: {fileID: 6990128330518721574}
   - component: {fileID: 647460385909776427}
   - component: {fileID: 8766309013029051252}
   - component: {fileID: 158199626822363244}
+  - component: {fileID: 7515266060004696176}
+  - component: {fileID: 1800056813143684162}
   m_Layer: 20
   m_Name: Head
   m_TagString: Untagged
@@ -349,7 +350,7 @@ Transform:
   m_GameObject: {fileID: 8055952282550235676}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.9}
+  m_LocalPosition: {x: 0, y: 0, z: -0.87}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -396,7 +397,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 3
+  m_Constraints: 7
 --- !u!231 &6054020872643967056
 SpringJoint2D:
   m_ObjectHideFlags: 0
@@ -404,10 +405,10 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8055952282550235676}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 7874162542044142906}
+  m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_BreakAction: 3
@@ -418,28 +419,6 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.5
   m_Frequency: 30
---- !u!114 &2308196095444850344
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8055952282550235676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a406eb8302d4884191c9db88263f3ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsSelectable: 1
-  IsSelected: 0
-  IsFixed: 0
-  _force: 5
-  OnSelected:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDeSelected:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!61 &6990128330518721574
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -575,13 +554,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElectricAffinity: 1
-  BloodAffinity: 0
+  ElectricAffinity: 0
+  BloodAffinity: 1
   _heightLayer: 2
   _isUncoveredOnCheckpoint: 1
   _interactionTrigger: {fileID: 6990128330518721574}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
+  _electrifiedSprite: {fileID: 0}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
@@ -590,3 +570,93 @@ MonoBehaviour:
   _isElectrified: 0
   _isBloodPowered: 0
   IsUncovered: 0
+--- !u!114 &7515266060004696176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055952282550235676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54a542995930d254c9d2ba26fe5e1979, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds: {fileID: 0}
+  _loopContainerID: 3
+  _startContainerID: 4
+  _stopContainerID: 5
+  _volumeMulti: 20
+  bufferAmtBase: 0.05
+  bufferSmoothUp: 1
+  bufferSmoothDown: 1.1
+--- !u!114 &1800056813143684162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055952282550235676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a406eb8302d4884191c9db88263f3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSelectable: 1
+  IsSelected: 0
+  IsFixed: 0
+  _force: 40
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8055952282550235676}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StartVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4043787855325856949}
+        m_TargetAssemblyTypeName: Mouth, Assembly-CSharp
+        m_MethodName: SetGrabbing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnDeSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8055952282550235676}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StopVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4043787855325856949}
+        m_TargetAssemblyTypeName: Mouth, Assembly-CSharp
+        m_MethodName: SetGrabbing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

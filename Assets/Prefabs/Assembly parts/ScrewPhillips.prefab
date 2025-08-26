@@ -556,6 +556,7 @@ MonoBehaviour:
   _interactionTrigger: {fileID: 6763550321254480631}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 0}
+  _electrifiedSprite: {fileID: 1016785258400998493}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
