@@ -67,6 +67,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         if (col.gameObject.GetComponent<Mouth>() != null)
         {
             TriggerTransform();
+            col.transform.parent.gameObject.GetComponent<Centipede>().TriggerAbsorption();
             return;
         }
     }

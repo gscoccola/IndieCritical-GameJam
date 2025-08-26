@@ -191,6 +191,16 @@ public class Centipede : MonoBehaviour, IStateLoader
         SubobjectivesManager.Instance.SetGPU(true);
     }
 
+    public void TriggerAbsorption()
+    {
+        foreach (var segment in _segments)
+        {
+            //segment.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            segment.GetComponent<ForceDraggable>().IsSelectable = false;
+            Destroy(GetComponent<VelocityVolumeController>());
+        }
+    }
+
     public void LoadState()
     {
         AddSegment();
