@@ -171,7 +171,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     {
         if (_eatingLastSegment) return;
         _blenderForce = 200f;
-        _gpuComponent.IsSpinning = true;
+        _gpuComponent.StartSpinning();
         _gpuComponent._isFarming = true;
         Destroy(_lastBodySegment);
         Destroy(_segments[_segments.Count - 1]);

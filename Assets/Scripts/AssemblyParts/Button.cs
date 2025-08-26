@@ -5,6 +5,7 @@ public class Button : MonoBehaviour
     [SerializeField] RandomSoundContainer _buttonPress;
     Animator _animator;
     private GPU _gpu;
+    private bool _pressed = false;
 
     private void Start()
     {
@@ -14,8 +15,11 @@ public class Button : MonoBehaviour
 
     public void OnActivate()
     {
-        _gpu.IsSpinning = true;
+        if (_pressed) return;
+        _pressed = true;
+        _gpu.StartSpinning();
         _animator.SetTrigger("Pressed");
         _buttonPress.PlayRandomSoundOnTarget(transform);
+
     }
 }

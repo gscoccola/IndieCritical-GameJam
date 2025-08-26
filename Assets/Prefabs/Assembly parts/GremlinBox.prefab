@@ -347,9 +347,9 @@ MonoBehaviour:
   - name: GremlinNo
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: c857c9cd9bee74b4e85ffe5e1352fbd3, type: 3}
-    - {fileID: 8300000, guid: 3109a347d0922d44b98c401804adbed7, type: 3}
-    - {fileID: 8300000, guid: 5b3fc1c6f703d454291dcc9ab794cddc, type: 3}
+    - {fileID: 8300000, guid: d937dad441e7bd943a2b95a01b646653, type: 3}
+    - {fileID: 8300000, guid: e9d6b3a3d8dd78f478aee9e67aaf077b, type: 3}
+    - {fileID: 8300000, guid: 4e0e56750d5f6144bac7dd009bbb6345, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
       fadeInTime: 0
       fadeOutTime: 0
       randomizeVolume: 1
-      volumeRange: {x: 0.5, y: 0.6}
+      volumeRange: {x: 0.2, y: 0.3}
       randomizePitch: 1
       pitchRange: {x: 1.4, y: 1.6}
       diagetic: 1

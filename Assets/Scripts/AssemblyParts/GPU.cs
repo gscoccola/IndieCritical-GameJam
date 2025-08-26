@@ -9,6 +9,9 @@ public class GPU : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     public bool IsSpinning;
     public bool _isFarming;
+    public Sounds gpuSounds;
+
+
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,6 +26,20 @@ public class GPU : MonoBehaviour
             _bloodLevel.position += Time.deltaTime * _bloodSpeed * Vector3.right;
         }
         else transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + Time.deltaTime * 800f);
+    }
+
+    public void StartSpinning()
+    {
+        IsSpinning = true;
+        gpuSounds.PlaySoundContainer(0);
+        gpuSounds.PlayLoopingContainer(1);
+    }
+
+    public void StopSpinning()
+    {
+        IsSpinning = true;
+        gpuSounds.StopLoopingContainer(1);
+
     }
 
 
