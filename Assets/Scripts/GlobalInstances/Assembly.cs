@@ -140,7 +140,7 @@ public class Assembly : MonoBehaviour
                     Assembleables[i].CurrentStatusEffects[statusEffect] = true;
                     Assembleables[i].GetComponent<IPowerable>()?.SetPowered(statusEffect, true);
                     Assembleables[i].SetElectrifiedVisual(true);
-                    if (UnityEngine.Random.Range(0, 5) == 1) Spark(currentAssemblable.transform.position);
+                    //if (UnityEngine.Random.Range(0, 5) == 1) Spark(currentAssemblable.transform.position);
                     /*if (Assembleables[i].GetComponent<SpriteRenderer>() != null)
                         Assembleables[i].GetComponent<SpriteRenderer>().color = Color.yellow;*/
                     queue.Add(i);

@@ -5,6 +5,7 @@ using System.Collections;
 public class Heart : MonoBehaviour, IPowerable, IActivable
 {
     private Assemblable _assemblable;
+    [SerializeField] Assemblable _extensionAssemblable;
     private Animator _animator;
     private bool _isAwake;
     private Rigidbody2D _rb;
@@ -30,8 +31,8 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         IsPowered = true;
         _animator.SetBool("IsPumping", true);
         OnBecomePowered?.Invoke();
-        transform.GetChild(0).GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Source;
-        GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.Electrified] = StatusEffectAffinity.Insulator;
+        _extensionAssemblable.StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Source;
+        _assemblable.StatusEffectAffinities[StatusEffect.Electrified] = StatusEffectAffinity.Insulator;
     }
 
     public void SetActive(bool value)
@@ -56,7 +57,8 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         _animator.SetTrigger("Awake");
         yield return new WaitForSeconds(3.6f);
         _animator.SetTrigger("Walk");
-        _rb.linearVelocity = new Vector2(-1f, -3.5f);
+        _rb.linearVelocity = new Vector2(-0.5f, -1.5f);
+        SubobjectivesManager.Instance.TriggerEnding(Endings.Freed);
     }
 
     private void OnTriggerEnter2D(Collider2D col)

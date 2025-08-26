@@ -81,4 +81,5 @@ public enum Endings
 {
     Fixed,
     Ourobouros,
+    Freed,
 }
