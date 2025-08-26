@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4f8160c09144d94494e517a7173b523
+guid: 997e041aa5c53124eb10c1dbefba7e01
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -126,23 +126,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hammer_92x16 1_0
+      name: Screwdriver_92x16_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 107
-        height: 25
-      alignment: 4
-      pivot: {x: 0, y: 0.5}
+        width: 92
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a282549edd2961b0800000000000000
+      internalID: -5662944622447263065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screwdriver_92x16_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 92
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62366dfe595b1e34cbd73185d4d7e3c4
-      internalID: -216487190
+      spriteID: 0b7c658932480974ea70e4753ceeec0b
+      internalID: -1095280506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Screwdriver_92x16_2
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 0
+        width: 92
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53ecf8a0b849694d9e0f32ae7cd2788
+      internalID: 2120064505
       vertices: []
       indices: 
       edges: []
@@ -161,7 +205,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Hammer_92x16 1_0: -216487190
+      Screwdriver_92x16_0: -5662944622447263065
+      Screwdriver_92x16_1: -1095280506
+      Screwdriver_92x16_2: 2120064505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
