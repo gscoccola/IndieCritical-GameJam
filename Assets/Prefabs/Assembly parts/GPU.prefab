@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1186576201934342771}
   - component: {fileID: 3841156676069548705}
   - component: {fileID: 8062476474164825407}
+  - component: {fileID: 4646457209583777579}
   m_Layer: 23
   m_Name: Grinder
   m_TagString: Untagged
@@ -51,6 +52,7 @@ MonoBehaviour:
   _bloodSpeed: 0.1
   IsSpinning: 0
   _isFarming: 0
+  gpuSounds: {fileID: 4646457209583777579}
 --- !u!58 &3841156676069548705
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -142,6 +144,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4646457209583777579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81169341820422699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5d02ced060c61644a6f4388f8c9f4bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muteAll: 0
+  soundsOnThisObject:
+  - name: GPUStart
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: bd248dd2d5bbb9a4a82de0652b9d58b7, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0
+      fadeOutTime: 0
+      randomizeVolume: 0
+      volumeRange: {x: 0.3, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+      diagetic: 1
+    id: 0
+  - name: GPUFanLoop
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: e01d2ecb104c17c429a243d29d712b52, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 1.5
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 0.3, y: 0}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 0}
+      diagetic: 1
+    id: 0
 --- !u!1 &3295241451296020568
 GameObject:
   m_ObjectHideFlags: 0

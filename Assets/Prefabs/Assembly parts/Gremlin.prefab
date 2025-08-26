@@ -403,13 +403,13 @@ MonoBehaviour:
   - name: PickUp Loop
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 02bfff9a99ef52d49bc775fd610990da, type: 3}
+    - {fileID: 8300000, guid: a162bbd95295fc84ea6f82a67ae1d3f2, type: 3}
     soundSettings:
       loop: 1
       fadeInTime: 0.25
       fadeOutTime: 0.5
       randomizeVolume: 0
-      volumeRange: {x: 1, y: 0}
+      volumeRange: {x: 0.6, y: 0}
       randomizePitch: 0
       pitchRange: {x: 1, y: 0}
       diagetic: 1
@@ -462,13 +462,13 @@ MonoBehaviour:
   - name: GremlinStunned
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 6151a314c36441040b4c69c4f3d0efde, type: 3}
+    - {fileID: 8300000, guid: 731f737064f4f714f9bb18535f424e7f, type: 3}
     soundSettings:
       loop: 1
       fadeInTime: 0.2
       fadeOutTime: 0.5
       randomizeVolume: 0
-      volumeRange: {x: 1, y: 0.5}
+      volumeRange: {x: 0.3, y: 0.5}
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.2}
       diagetic: 1
