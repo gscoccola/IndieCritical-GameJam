@@ -73,7 +73,7 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     public void AddSegment()
     {
-        float layerOffset = _lastBodySegment == _head ? 2f : -0.005f;
+        float layerOffset = _lastBodySegment == _head ? 0.5f : -0.005f;
         GameObject newSegment = Instantiate(_centipedeSegmentPrefab,
             _lastBodySegment.transform.position + _lastBodySegment.transform.right * _segmentDistance 
             + _length * layerOffset * _lastBodySegment.transform.forward
