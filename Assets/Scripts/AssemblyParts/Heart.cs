@@ -10,10 +10,20 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     private bool _isAwake;
     private Rigidbody2D _rb;
     [SerializeField] GameObject _sparks;
+    [SerializeField] bool _triggerAwake;
 
     public bool IsPowered { get; private set; }
 
     public UnityEvent OnBecomePowered;
+
+    private void Update()
+    {
+        if (_triggerAwake)
+        {
+            _triggerAwake = false;
+            TriggerTransform();
+        }
+    }
 
     private void Start()
     {
@@ -56,8 +66,11 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         yield return new WaitForSeconds(0.6f);
         _animator.SetTrigger("Awake");
         yield return new WaitForSeconds(3.6f);
+        _rb.linearVelocity = new Vector2(0.8f, -0.2f);
         _animator.SetTrigger("Walk");
-        _rb.linearVelocity = new Vector2(-0.5f, -1.5f);
+        yield return new WaitForSeconds(1.2f);
+        transform.localScale = new Vector3(-1f, 1f, 1f);
+        _rb.linearVelocity = new Vector2(-1.2f, -1.5f);
         SubobjectivesManager.Instance.TriggerEnding(Endings.Freed);
     }
 

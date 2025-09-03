@@ -17,12 +17,14 @@ public class Draggable : MonoBehaviour
     [SerializeField] private bool _irreversible;
     [SerializeField] private LimitType _Xlimit;
     [SerializeField] private LimitType _Ylimit;
+    [SerializeField] private bool _pickParent;
     //[SerializeField] private bool _centerOnMouse;
 
     private Camera _camera;
     private Vector3 _initialRelativePos;
     private bool _isVibrating;
     private Vector3 _initialPos;
+    private Transform _targetTransform;
 
     public UnityEvent OnSelected;
     public UnityEvent OnDeSelected;
@@ -31,8 +33,9 @@ public class Draggable : MonoBehaviour
     private void Awake()
     {
         _camera = FindAnyObjectByType<Camera>();
-        _initialPos = transform.position;
         IsSelectable = true;
+        _targetTransform = _pickParent ? transform.parent : transform;
+        _initialPos = _targetTransform.position;
     }
 
     private void OnMouseDrag()
@@ -46,7 +49,7 @@ public class Draggable : MonoBehaviour
         /*if (!_centerOnMouse) newPos += _initialRelativePos;
         /*else newPos += GetComponent<Collider2D>().offset.x * Vector3.right;*/
 
-        if (_irreversible) _initialPos = transform.position;
+        if (_irreversible) _initialPos = _targetTransform.position;
 
         float newX = _Xlimit == LimitType.Min ? Mathf.Max(newPos.x, _initialPos.x) :
                      _Xlimit == LimitType.Max ? Mathf.Min(newPos.x, _initialPos.x) :
@@ -56,10 +59,10 @@ public class Draggable : MonoBehaviour
                      _Ylimit == LimitType.Max ? Mathf.Min(newPos.y, _initialPos.y) :
                      newPos.y;
 
-        transform.position = new Vector3(
-            _freezeX ? transform.position.x : newX,
-            _freezeY ? transform.position.y : newY,
-            transform.position.z
+        _targetTransform.position = new Vector3(
+            _freezeX ? _targetTransform.position.x : newX,
+            _freezeY ? _targetTransform.position.y : newY,
+            _targetTransform.position.z
         );
     }
 
@@ -80,7 +83,7 @@ public class Draggable : MonoBehaviour
         }
         OnSelected?.Invoke();
         OnMouseAction(true);
-        _initialRelativePos = transform.position - _camera.ScreenToWorldPoint(Input.mousePosition);
+        _initialRelativePos = _targetTransform.position - _camera.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void OnMouseAction(bool mouseDown)
@@ -92,7 +95,7 @@ public class Draggable : MonoBehaviour
     {
         _isVibrating = true;
         yield return new WaitForSeconds(0.3f);
-        transform.position = _initialPos;
+        _targetTransform.position = _initialPos;
         _isVibrating = false;
     }
 
@@ -106,7 +109,7 @@ public class Draggable : MonoBehaviour
         Vector3 vibration = Vector3.zero;
         if (_freezeX) vibration.y = Mathf.PingPong(Time.time * 3f, 0.05f);
         if (_freezeY) vibration.x = Mathf.PingPong(Time.time * 3f, 0.05f);
-        transform.position = _initialPos + vibration;
+        _targetTransform.position = _initialPos + vibration;
     }
 }
 

@@ -64,17 +64,21 @@ public class SubobjectivesManager : MonoBehaviour
         switch (ending)
         {
             case Endings.Fixed:
-                TextManager.Instance.SetText("Ending 1/3: 'FIXED' \n Press R to restart");
+                TextManager.Instance.SetText("Ending 1/4: 'FIXED' \n Press R to restart");
                 CompletionInfo.Instance.SetFeatCompleted(0);
                 break;
             case Endings.Ourobouros:
-                TextManager.Instance.SetText("Ending 2/3: 'OUROBOUROS' \n Press R to restart");
+                TextManager.Instance.SetText("Ending 2/4: 'OUROBOUROS' \n Press R to restart");
                 CompletionInfo.Instance.SetFeatCompleted(1);
                 break;
 
             case Endings.Freed:
-                TextManager.Instance.SetText("Ending 3/3: 'FREED' \n Press R to restart");
+                TextManager.Instance.SetText("Ending 3/4: 'FREED' \n Press R to restart");
                 CompletionInfo.Instance.SetFeatCompleted(2);
+                break;
+            case Endings.Softlocked:
+                TextManager.Instance.SetText("Ending 4/4: 'SOFTLOCKED' \n Press R to restart");
+                CompletionInfo.Instance.SetFeatCompleted(3);
                 break;
             default:
                 break;
@@ -87,4 +91,5 @@ public enum Endings
     Fixed,
     Ourobouros,
     Freed,
+    Softlocked,
 }

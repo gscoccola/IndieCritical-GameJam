@@ -55,11 +55,12 @@ public class Hammer : MonoBehaviour
         _animator.ResetTrigger("Stop");
         
         OnStartActive?.Invoke();
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1.0f);
         OnHit?.Invoke();
+        _currentTarget.OnHit?.Invoke();
+        yield return new WaitForSeconds(0.5f);
         _animator.SetTrigger("Stop");
         _animator.ResetTrigger("Hit");
-        _currentTarget.OnHit?.Invoke();
         _hitTimer = _hitCooldown;
     }
 }

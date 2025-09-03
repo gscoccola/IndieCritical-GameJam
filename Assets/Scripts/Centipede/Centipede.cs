@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using NUnit.Framework;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class Centipede : MonoBehaviour, IStateLoader
 {
@@ -178,7 +175,6 @@ public class Centipede : MonoBehaviour, IStateLoader
         _lastBodySegment = _head;
         _eatingLastSegment = true;
         _particleSystem.Play();
-        _sounds.PlaySoundContainer("HeadExplode");
         StartCoroutine(ILastBlood());
     }
 
@@ -186,9 +182,16 @@ public class Centipede : MonoBehaviour, IStateLoader
     {
         yield return new WaitForSeconds(1.5f);
         _lastBodySegment.GetComponent<SpriteRenderer>().enabled = false;
+        _sounds.PlaySoundContainer("HeadExplode");
         _particleSystem.Stop();
         _gpuComponent._isFarming = false;
-        SubobjectivesManager.Instance.SetGPU(true);
+        if (_length > 7)
+        {
+            SubobjectivesManager.Instance.SetGPU(true);
+        }
+        else SubobjectivesManager.Instance.TriggerEnding(Endings.Softlocked);
+
+
     }
 
     public void TriggerAbsorption()
