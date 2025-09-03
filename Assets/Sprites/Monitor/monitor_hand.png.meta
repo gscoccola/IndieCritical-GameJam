@@ -1,0 +1,1543 @@
+fileFormatVersion: 2
+guid: 942c19c49c2da23478c912d0d8d66bcc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8832617550707789683
+    second: monitor_hand_0
+  - first:
+      213: 1808130641782033866
+    second: monitor_hand_1
+  - first:
+      213: -378979223225357190
+    second: monitor_hand_2
+  - first:
+      213: 3042839230108707236
+    second: monitor_hand_3
+  - first:
+      213: 7361237294623965380
+    second: monitor_hand_4
+  - first:
+      213: 796383325888644853
+    second: monitor_hand_5
+  - first:
+      213: 7619634139752282771
+    second: monitor_hand_6
+  - first:
+      213: 8026666188917794817
+    second: monitor_hand_7
+  - first:
+      213: -2808324914900413882
+    second: monitor_hand_8
+  - first:
+      213: -1960163235751865355
+    second: monitor_hand_9
+  - first:
+      213: 486773364442882284
+    second: monitor_hand_10
+  - first:
+      213: 5065649575107366872
+    second: monitor_hand_11
+  - first:
+      213: -2635990888634250299
+    second: monitor_hand_12
+  - first:
+      213: 7203469987138900364
+    second: monitor_hand_13
+  - first:
+      213: -3613071441983639916
+    second: monitor_hand_14
+  - first:
+      213: 9200550355166648926
+    second: monitor_hand_15
+  - first:
+      213: 8645863837052215992
+    second: monitor_hand_16
+  - first:
+      213: -1288136860184280307
+    second: monitor_hand_17
+  - first:
+      213: 3076432289665868342
+    second: monitor_hand_18
+  - first:
+      213: -8538957949670193574
+    second: monitor_hand_19
+  - first:
+      213: -2309329597617264459
+    second: monitor_hand_20
+  - first:
+      213: 2077625889122508533
+    second: monitor_hand_21
+  - first:
+      213: -6904600927251100971
+    second: monitor_hand_22
+  - first:
+      213: -5748346726293558313
+    second: monitor_hand_23
+  - first:
+      213: -9036249807078948879
+    second: monitor_hand_24
+  - first:
+      213: -1714477211242741180
+    second: monitor_hand_25
+  - first:
+      213: -4649658732591167662
+    second: monitor_hand_26
+  - first:
+      213: -7728981176630033753
+    second: monitor_hand_27
+  - first:
+      213: -7811610793790614119
+    second: monitor_hand_28
+  - first:
+      213: 5734509848329636994
+    second: monitor_hand_29
+  - first:
+      213: -4367570627384335101
+    second: monitor_hand_30
+  - first:
+      213: 9113391433900076299
+    second: monitor_hand_31
+  - first:
+      213: -3581765898401969296
+    second: monitor_hand_32
+  - first:
+      213: -930695083496052666
+    second: monitor_hand_33
+  - first:
+      213: -1282275257566599749
+    second: monitor_hand_34
+  - first:
+      213: -5511076361782988542
+    second: monitor_hand_35
+  - first:
+      213: -1898329912602508042
+    second: monitor_hand_36
+  - first:
+      213: -4371640298970970786
+    second: monitor_hand_37
+  - first:
+      213: -1903516032386249133
+    second: monitor_hand_38
+  - first:
+      213: 2004371456087921341
+    second: monitor_hand_39
+  - first:
+      213: 8180021301967445184
+    second: monitor_hand_40
+  - first:
+      213: 3461833697244317094
+    second: monitor_hand_41
+  - first:
+      213: 2815520879587318088
+    second: monitor_hand_42
+  - first:
+      213: 3422532341367361547
+    second: monitor_hand_43
+  - first:
+      213: -5744862985108866982
+    second: monitor_hand_44
+  - first:
+      213: 348107224132864925
+    second: monitor_hand_45
+  - first:
+      213: -4566142187590214171
+    second: monitor_hand_46
+  - first:
+      213: -3434539442804720276
+    second: monitor_hand_47
+  - first:
+      213: 4758390426364394166
+    second: monitor_hand_48
+  - first:
+      213: 1201553617433385528
+    second: monitor_hand_49
+  - first:
+      213: -6383029497203496672
+    second: monitor_hand_50
+  - first:
+      213: -6014625721908689645
+    second: monitor_hand_51
+  - first:
+      213: 4929700348428002006
+    second: monitor_hand_52
+  - first:
+      213: -1192560916615423037
+    second: monitor_hand_53
+  - first:
+      213: -3185259896087993140
+    second: monitor_hand_54
+  - first:
+      213: -3206558893837004012
+    second: monitor_hand_55
+  - first:
+      213: -9059859474196443202
+    second: monitor_hand_56
+  - first:
+      213: 5699767554947979569
+    second: monitor_hand_57
+  - first:
+      213: 7628916354616407672
+    second: monitor_hand_58
+  - first:
+      213: 1865467701878659623
+    second: monitor_hand_59
+  - first:
+      213: -7580203389471852830
+    second: monitor_hand_60
+  - first:
+      213: -3174805470755159047
+    second: monitor_hand_61
+  - first:
+      213: 7063551151637423192
+    second: monitor_hand_62
+  - first:
+      213: 4151986014622977934
+    second: monitor_hand_63
+  - first:
+      213: 6118769560317191949
+    second: monitor_hand_64
+  - first:
+      213: -802551563735701158
+    second: monitor_hand_65
+  - first:
+      213: 35114403016529489
+    second: monitor_hand_66
+  - first:
+      213: -4994075127839327900
+    second: monitor_hand_67
+  - first:
+      213: -3356828899370057560
+    second: monitor_hand_68
+  - first:
+      213: -4651751882569445086
+    second: monitor_hand_69
+  - first:
+      213: 3542700822850196045
+    second: monitor_hand_70
+  - first:
+      213: 5483004746364887703
+    second: monitor_hand_71
+  - first:
+      213: 1787936656689476666
+    second: monitor_hand_72
+  - first:
+      213: 1103837849263899282
+    second: monitor_hand_73
+  - first:
+      213: -2734801914939917558
+    second: monitor_hand_74
+  - first:
+      213: 6541337320457779099
+    second: monitor_hand_75
+  - first:
+      213: -7859527874348063534
+    second: monitor_hand_76
+  - first:
+      213: -8450170617148961538
+    second: monitor_hand_77
+  - first:
+      213: 8158516051351578362
+    second: monitor_hand_78
+  - first:
+      213: 3735049943889574267
+    second: monitor_hand_79
+  - first:
+      213: 9096523183802885518
+    second: monitor_hand_80
+  - first:
+      213: 1241154473567563048
+    second: monitor_hand_81
+  - first:
+      213: 6784765246793757657
+    second: monitor_hand_82
+  - first:
+      213: 7096445698085647027
+    second: monitor_hand_83
+  - first:
+      213: -6421797622391213595
+    second: monitor_hand_84
+  - first:
+      213: -2713358325146035228
+    second: monitor_hand_85
+  - first:
+      213: 9217641435759027025
+    second: monitor_hand_86
+  - first:
+      213: -1312219088430718987
+    second: monitor_hand_87
+  - first:
+      213: 2578811127667308558
+    second: monitor_hand_88
+  - first:
+      213: -9050762325816316810
+    second: monitor_hand_89
+  - first:
+      213: -2348203289297877996
+    second: monitor_hand_90
+  - first:
+      213: 2445877659273907368
+    second: monitor_hand_91
+  - first:
+      213: -3142742365022631199
+    second: monitor_hand_92
+  - first:
+      213: -4897231041113951049
+    second: monitor_hand_93
+  - first:
+      213: 7202899434241242181
+    second: monitor_hand_94
+  - first:
+      213: 9047905493636432194
+    second: monitor_hand_95
+  - first:
+      213: 6993276535064292498
+    second: monitor_hand_96
+  - first:
+      213: -3900509211182428026
+    second: monitor_hand_97
+  - first:
+      213: -289440931544172772
+    second: monitor_hand_98
+  - first:
+      213: -6597644323871149018
+    second: monitor_hand_99
+  - first:
+      213: 2094866832482729044
+    second: monitor_hand_100
+  - first:
+      213: 6951141107007602043
+    second: monitor_hand_101
+  - first:
+      213: 3685002257061948176
+    second: monitor_hand_102
+  - first:
+      213: -7250961561093538321
+    second: monitor_hand_103
+  - first:
+      213: -8918041752215504459
+    second: monitor_hand_104
+  - first:
+      213: -1271903639677946232
+    second: monitor_hand_105
+  - first:
+      213: -4867769717285242980
+    second: monitor_hand_106
+  - first:
+      213: -7195118467471369832
+    second: monitor_hand_107
+  - first:
+      213: -2740274375019217532
+    second: monitor_hand_108
+  - first:
+      213: 4048081118556788162
+    second: monitor_hand_109
+  - first:
+      213: 7115639768408910126
+    second: monitor_hand_110
+  - first:
+      213: 1931852876436129098
+    second: monitor_hand_111
+  - first:
+      213: -4466311539683602802
+    second: monitor_hand_112
+  - first:
+      213: 6001760511615252288
+    second: monitor_hand_113
+  - first:
+      213: -6739017635780380639
+    second: monitor_hand_114
+  - first:
+      213: -1103350124795550608
+    second: monitor_hand_115
+  - first:
+      213: -4443341813054618386
+    second: monitor_hand_116
+  - first:
+      213: -5309841396038907733
+    second: monitor_hand_117
+  - first:
+      213: -4349808621237263435
+    second: monitor_hand_118
+  - first:
+      213: -6213401587711500140
+    second: monitor_hand_119
+  - first:
+      213: -6172942928087266931
+    second: monitor_hand_120
+  - first:
+      213: -5594310669351006200
+    second: monitor_hand_121
+  - first:
+      213: 4967054421211646858
+    second: monitor_hand_122
+  - first:
+      213: 4912615427558839027
+    second: monitor_hand_123
+  - first:
+      213: 4545049258803423779
+    second: monitor_hand_124
+  - first:
+      213: 5020038116995358559
+    second: monitor_hand_125
+  - first:
+      213: -2592179609665261542
+    second: monitor_hand_126
+  - first:
+      213: 5647877936327225320
+    second: monitor_hand_127
+  - first:
+      213: 5398583181283603647
+    second: monitor_hand_128
+  - first:
+      213: -461296195667128449
+    second: monitor_hand_129
+  - first:
+      213: 7183325507912621665
+    second: monitor_hand_130
+  - first:
+      213: 6797922293832071598
+    second: monitor_hand_131
+  - first:
+      213: -6160772308040968094
+    second: monitor_hand_132
+  - first:
+      213: -2356256998824490070
+    second: monitor_hand_133
+  - first:
+      213: 5500617638407306314
+    second: monitor_hand_134
+  - first:
+      213: -9128095888078279000
+    second: monitor_hand_135
+  - first:
+      213: 4426616999984559827
+    second: monitor_hand_136
+  - first:
+      213: 6018381452785468786
+    second: monitor_hand_137
+  - first:
+      213: -1947104109919694627
+    second: monitor_hand_138
+  - first:
+      213: -8150492495012399961
+    second: monitor_hand_139
+  - first:
+      213: 4024572490305204558
+    second: monitor_hand_140
+  - first:
+      213: 5865588176369253442
+    second: monitor_hand_141
+  - first:
+      213: 4852768134766396373
+    second: monitor_hand_142
+  - first:
+      213: 6816902761724122356
+    second: monitor_hand_143
+  - first:
+      213: 3861965974662781100
+    second: monitor_hand_144
+  - first:
+      213: 7715188486757321853
+    second: monitor_hand_145
+  - first:
+      213: 6246860423605952281
+    second: monitor_hand_146
+  - first:
+      213: -6186162013079361210
+    second: monitor_hand_147
+  - first:
+      213: -5462279147498969745
+    second: monitor_hand_148
+  - first:
+      213: -6346948545026374804
+    second: monitor_hand_149
+  - first:
+      213: 4648340230892537857
+    second: monitor_hand_150
+  - first:
+      213: -2555040056577500043
+    second: monitor_hand_151
+  - first:
+      213: 3620187294332608560
+    second: monitor_hand_152
+  - first:
+      213: -659320959724537083
+    second: monitor_hand_153
+  - first:
+      213: -4894236465743711898
+    second: monitor_hand_154
+  - first:
+      213: 2930490048259721530
+    second: monitor_hand_155
+  - first:
+      213: 3304322873932233605
+    second: monitor_hand_156
+  - first:
+      213: 4469955869037410148
+    second: monitor_hand_157
+  - first:
+      213: -2959770285073813724
+    second: monitor_hand_158
+  - first:
+      213: -4598016085455377142
+    second: monitor_hand_159
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: monitor_hand_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f81da7dd2c39a70800000000000000
+      internalID: 8832617550707789683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_1
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acdcae22d35c71910800000000000000
+      internalID: 1808130641782033866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_2
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7c266687689dbaf0800000000000000
+      internalID: -378979223225357190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_3
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9a04b78265a3a20800000000000000
+      internalID: 3042839230108707236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_4
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c04b65615e582660800000000000000
+      internalID: 7361237294623965380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_5
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f603ac5a625d0b00800000000000000
+      internalID: 796383325888644853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_6
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39abf5a21e06eb960800000000000000
+      internalID: 7619634139752282771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_7
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10865192f52746f60800000000000000
+      internalID: 8026666188917794817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_8
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6425b797e53d609d0800000000000000
+      internalID: -2808324914900413882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_9
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f3da372ce91cc4e0800000000000000
+      internalID: -1960163235751865355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_10
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce06db1cbcd51c600800000000000000
+      internalID: 486773364442882284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_11
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8df02e8137dcc4640800000000000000
+      internalID: 5065649575107366872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_12
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb0acbb0441b6bd0800000000000000
+      internalID: -2635990888634250299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_13
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c811a95a9cdd7f360800000000000000
+      internalID: 7203469987138900364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_14
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ee4789aaacbddc0800000000000000
+      internalID: -3613071441983639916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_15
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a5dc92dcbeeaf70800000000000000
+      internalID: 9200550355166648926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_16
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b2a4ef1a574cf770800000000000000
+      internalID: 8645863837052215992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_17
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0301aab95e9f1ee0800000000000000
+      internalID: -1288136860184280307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_18
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63263192edea1ba20800000000000000
+      internalID: 3076432289665868342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_19
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5609e17cf68f7980800000000000000
+      internalID: -8538957949670193574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_20
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b82ab067fc93ffd0800000000000000
+      internalID: -2309329597617264459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_21
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fe5d490db535dc10800000000000000
+      internalID: 2077625889122508533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_22
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da8d5fe90eed20a0800000000000000
+      internalID: -6904600927251100971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_23
+      rect:
+        serializedVersion: 2
+        x: 1748
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db2e75cb15c930b0800000000000000
+      internalID: -5748346726293558313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_24
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fffd533daac89280800000000000000
+      internalID: -9036249807078948879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_25
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 442cf506f04f438e0800000000000000
+      internalID: -1714477211242741180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_26
+      rect:
+        serializedVersion: 2
+        x: 1976
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2574c158408197fb0800000000000000
+      internalID: -4649658732591167662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_27
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2494bd1942db490800000000000000
+      internalID: -7728981176630033753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_28
+      rect:
+        serializedVersion: 2
+        x: 2128
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 995d088ee55979390800000000000000
+      internalID: -7811610793790614119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_29
+      rect:
+        serializedVersion: 2
+        x: 2204
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ccaa60352159f40800000000000000
+      internalID: 5734509848329636994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_30
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 305a35f97a54363c0800000000000000
+      internalID: -4367570627384335101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_31
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0da3bc6935497e70800000000000000
+      internalID: 9113391433900076299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_32
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b842574e20b4ec0800000000000000
+      internalID: -3581765898401969296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_33
+      rect:
+        serializedVersion: 2
+        x: 2508
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 648e30aa0c18513f0800000000000000
+      internalID: -930695083496052666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_34
+      rect:
+        serializedVersion: 2
+        x: 2584
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb568707271743ee0800000000000000
+      internalID: -1282275257566599749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_35
+      rect:
+        serializedVersion: 2
+        x: 2660
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2017fd57f39b483b0800000000000000
+      internalID: -5511076361782988542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_36
+      rect:
+        serializedVersion: 2
+        x: 2736
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f444d49007c7a5e0800000000000000
+      internalID: -1898329912602508042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_37
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e558d0e5f40d453c0800000000000000
+      internalID: -4371640298970970786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_38
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e4b59f04a5595e0800000000000000
+      internalID: -1903516032386249133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: monitor_hand_39
+      rect:
+        serializedVersion: 2
+        x: 2964
+        y: 0
+        width: 76
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db29d0e3835f0db10800000000000000
+      internalID: 2004371456087921341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a767e21fd052930459b251e7017980e4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      monitor_hand_0: 8832617550707789683
+      monitor_hand_1: 1808130641782033866
+      monitor_hand_10: 486773364442882284
+      monitor_hand_11: 5065649575107366872
+      monitor_hand_12: -2635990888634250299
+      monitor_hand_13: 7203469987138900364
+      monitor_hand_14: -3613071441983639916
+      monitor_hand_15: 9200550355166648926
+      monitor_hand_16: 8645863837052215992
+      monitor_hand_17: -1288136860184280307
+      monitor_hand_18: 3076432289665868342
+      monitor_hand_19: -8538957949670193574
+      monitor_hand_2: -378979223225357190
+      monitor_hand_20: -2309329597617264459
+      monitor_hand_21: 2077625889122508533
+      monitor_hand_22: -6904600927251100971
+      monitor_hand_23: -5748346726293558313
+      monitor_hand_24: -9036249807078948879
+      monitor_hand_25: -1714477211242741180
+      monitor_hand_26: -4649658732591167662
+      monitor_hand_27: -7728981176630033753
+      monitor_hand_28: -7811610793790614119
+      monitor_hand_29: 5734509848329636994
+      monitor_hand_3: 3042839230108707236
+      monitor_hand_30: -4367570627384335101
+      monitor_hand_31: 9113391433900076299
+      monitor_hand_32: -3581765898401969296
+      monitor_hand_33: -930695083496052666
+      monitor_hand_34: -1282275257566599749
+      monitor_hand_35: -5511076361782988542
+      monitor_hand_36: -1898329912602508042
+      monitor_hand_37: -4371640298970970786
+      monitor_hand_38: -1903516032386249133
+      monitor_hand_39: 2004371456087921341
+      monitor_hand_4: 7361237294623965380
+      monitor_hand_5: 796383325888644853
+      monitor_hand_6: 7619634139752282771
+      monitor_hand_7: 8026666188917794817
+      monitor_hand_8: -2808324914900413882
+      monitor_hand_9: -1960163235751865355
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

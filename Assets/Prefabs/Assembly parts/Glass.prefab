@@ -360,7 +360,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.21, y: 1.21}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &795632574408316786
 MonoBehaviour:
@@ -381,6 +381,7 @@ MonoBehaviour:
   _interactionTrigger: {fileID: 2677826640244820492}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
+  _electrifiedSprite: {fileID: 0}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
@@ -409,6 +410,7 @@ MonoBehaviour:
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
+  _pickParent: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls:

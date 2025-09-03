@@ -49,7 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bloodySprite: {fileID: -7127193123590645955, guid: c641281489430814eb846e151cd6ccfb, type: 3}
   _bloodLevel: {fileID: 338367665735899292}
-  _bloodSpeed: 0.1
+  _bloodSpeed: 0.09
+  _backAnimator: {fileID: 1705805995342434980}
   IsSpinning: 0
   _isFarming: 0
   gpuSounds: {fileID: 4646457209583777579}
@@ -306,6 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7775568614495262210}
   - component: {fileID: 4323857784482075903}
+  - component: {fileID: 1705805995342434980}
   m_Layer: 12
   m_Name: Back
   m_TagString: Untagged
@@ -322,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 3295241451296020568}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.01, y: -0.34, z: 0.3}
+  m_LocalPosition: {x: 1.306875, y: -0.043125004, z: 0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -372,7 +374,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5371707109708004135, guid: bbfd2cb5b7942ad4eb3072ed2edff46f, type: 3}
+  m_Sprite: {fileID: 1238481377, guid: 47d30e966ee327848bf59d7459041910, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -383,6 +385,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1705805995342434980
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3295241451296020568}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ebbaae9b25a02649a776ec04931e956, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3381774062667296974
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,6 +615,7 @@ MonoBehaviour:
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
+  _pickParent: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls: []

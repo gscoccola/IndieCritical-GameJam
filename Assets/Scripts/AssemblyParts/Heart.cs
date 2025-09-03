@@ -10,6 +10,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     private bool _isAwake;
     private Rigidbody2D _rb;
     [SerializeField] GameObject _sparks;
+    [SerializeField] GameObject _bloodSplatter;
     [SerializeField] bool _triggerAwake;
 
     public bool IsPowered { get; private set; }
@@ -68,10 +69,20 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         yield return new WaitForSeconds(3.6f);
         _rb.linearVelocity = new Vector2(0.8f, -0.2f);
         _animator.SetTrigger("Walk");
+        StartCoroutine(BloodSplatters());
         yield return new WaitForSeconds(1.2f);
         transform.localScale = new Vector3(-1f, 1f, 1f);
         _rb.linearVelocity = new Vector2(-1.2f, -1.5f);
         SubobjectivesManager.Instance.TriggerEnding(Endings.Freed);
+    }
+
+    private IEnumerator BloodSplatters()
+    {
+        while (true)
+        {
+            Instantiate(_bloodSplatter, transform.position + new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), -2f), Quaternion.identity);
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D col)

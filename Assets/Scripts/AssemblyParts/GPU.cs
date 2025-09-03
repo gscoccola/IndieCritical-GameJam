@@ -5,7 +5,8 @@ public class GPU : MonoBehaviour
     private bool _hasBegun;
     [SerializeField] private Sprite _bloodySprite;
     [SerializeField] private Transform _bloodLevel;
-    [SerializeField] private float _bloodSpeed = 0.2f;
+    [SerializeField] public float _bloodSpeed = 0.2f;
+    [SerializeField] public Animator _backAnimator;
     private SpriteRenderer _spriteRenderer;
     public bool IsSpinning;
     public bool _isFarming;

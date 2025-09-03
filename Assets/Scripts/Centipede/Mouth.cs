@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections;
 
-public class Mouth : MonoBehaviour
+public class Mouth : MonoBehaviour, IPowerable
 {
     private Centipede _centipede;
     private Sounds _sounds;
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
     [SerializeField] GameObject _particles;
     Rigidbody2D _rb;
     private Vector3 _initialPosition;
@@ -20,9 +20,9 @@ public class Mouth : MonoBehaviour
         _centipede = GetComponentInParent<Centipede>();
         _sounds = GetComponentInParent<Sounds>();
         _rb = GetComponent<Rigidbody2D>();
-        _animator = GetComponent<Animator>();
         _draggable = GetComponent<ForceDraggable>();
         _initialPosition = transform.position;
+        _rb.bodyType = RigidbodyType2D.Static;
     }
 
     private void FixedUpdate()
@@ -55,11 +55,6 @@ public class Mouth : MonoBehaviour
 
             if (col.gameObject.GetComponent<Assemblable>().CurrentStatusEffects[StatusEffect.Electrified])
             {
-                _isStunned = true;
-                _animator.SetBool("Grabbing", false);
-                _animator.SetBool("Stunned", true);
-                _rb.constraints = RigidbodyConstraints2D.None;
-                StartCoroutine(IDestun());
                 return;
             }
 
@@ -76,6 +71,16 @@ public class Mouth : MonoBehaviour
             StartCoroutine(IGrow(2));
         }
 
+    }
+
+    private void Stun()
+    {
+        _isStunned = true;
+        _animator.SetBool("Grabbing", false);
+        _animator.SetBool("Stunned", true);
+        _rb.bodyType = RigidbodyType2D.Dynamic;
+        //_rb.constraints = RigidbodyConstraints2D.None;
+        StartCoroutine(IDestun());
     }
 
     private void TurnHead(Collider2D col)
@@ -111,7 +116,9 @@ public class Mouth : MonoBehaviour
             _wasMoved = true;
             return;
         }
-        _rb.constraints = value ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
+        
+        //_rb.constraints = value ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
+        //_rb.bodyType = value ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
         _animator.SetBool("Grabbing", value);
     }
 
@@ -119,7 +126,9 @@ public class Mouth : MonoBehaviour
     {
         yield return new WaitForSeconds(5f);
         _isStunned = false;
-        _rb.constraints = _isSelected ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
+        //_rb.constraints = _isSelected ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
+        //_rb.bodyType = _isSelected ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
+        _rb.bodyType = RigidbodyType2D.Static;
         _animator.SetBool("Stunned", false);
         _animator.SetBool("Grabbing", _isSelected);
     }
@@ -127,5 +136,11 @@ public class Mouth : MonoBehaviour
     public void NotifyMovement()
     {
         if (_isStunned) ;
+    }
+
+    public void SetPowered(StatusEffect statusEffect, bool value)
+    {
+        if (!value || _isStunned || statusEffect != StatusEffect.Electrified) return;
+        Stun();
     }
 }

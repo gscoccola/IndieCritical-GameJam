@@ -7,6 +7,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     [SerializeField] GameObject _centipedeSegmentPrefab;
     [SerializeField] private GameObject _head;
     [SerializeField] private GameObject _gpu;
+    [SerializeField] private SpriteRenderer _headSprite;
     private GPU _gpuComponent;
     [SerializeField] private float _blenderForce;
     public GameObject _lastBodySegment;
@@ -32,6 +33,10 @@ public class Centipede : MonoBehaviour, IStateLoader
         _segments.Add(_head);
         _sounds = transform.GetComponent<Sounds>();
         _gpuComponent = _gpu.transform.GetChild(0).transform.GetComponent<GPU>();
+        /*for (int i = 0; i < 8; i++)
+        {
+            AddSegment();
+        }*/
     }
 
     private void Update()
@@ -42,7 +47,8 @@ public class Centipede : MonoBehaviour, IStateLoader
             AddSegmentTrigger = false;
         }
 
-        if (_canOurobouros && !_isOurobouros && _length > 10 && _head.GetComponent<Collider2D>().IsTouching(_lastBodySegment.GetComponent<Collider2D>()))
+        if (_canOurobouros && !_isOurobouros && _length > 10 && _head.GetComponent<Collider2D>()
+            .IsTouching(_lastBodySegment.GetComponent<Collider2D>()))
         {
             TriggerOurobouros();
         }
@@ -131,7 +137,8 @@ public class Centipede : MonoBehaviour, IStateLoader
         _particleSystem.Play();
         yield return new WaitForSeconds(0.1f);
         _eatingLastSegment = true;
-        _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        //_head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        _head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         _lastBodySegment.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
         foreach (var segment in _segments)
@@ -170,6 +177,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         _blenderForce = 200f;
         _gpuComponent.StartSpinning();
         _gpuComponent._isFarming = true;
+        _gpuComponent._bloodSpeed *= 2f;
         Destroy(_lastBodySegment);
         Destroy(_segments[_segments.Count - 1]);
         _lastBodySegment = _head;
@@ -181,15 +189,17 @@ public class Centipede : MonoBehaviour, IStateLoader
     private IEnumerator ILastBlood()
     {
         yield return new WaitForSeconds(1.5f);
-        _lastBodySegment.GetComponent<SpriteRenderer>().enabled = false;
+        _headSprite.enabled = false;
         _sounds.PlaySoundContainer("HeadExplode");
         _particleSystem.Stop();
-        _gpuComponent._isFarming = false;
         if (_length > 7)
         {
             SubobjectivesManager.Instance.SetGPU(true);
+            _gpuComponent._backAnimator.SetTrigger("PowerOn");
         }
         else SubobjectivesManager.Instance.TriggerEnding(Endings.Softlocked);
+        yield return new WaitForSeconds(0.8f);
+        _gpuComponent._isFarming = false;
 
 
     }

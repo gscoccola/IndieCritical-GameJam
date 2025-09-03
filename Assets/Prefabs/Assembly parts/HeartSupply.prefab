@@ -270,6 +270,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _extensionAssemblable: {fileID: 3243769891085768910}
   _sparks: {fileID: 8626023975957301345, guid: dd1af1f357ab87042a0e7e7531f28e80, type: 3}
+  _bloodSplatter: {fileID: 6893986223036604707, guid: 27fc7e7210f0771478b17e3c0de68c52, type: 3}
+  _triggerAwake: 0
   OnBecomePowered:
     m_PersistentCalls:
       m_Calls:
@@ -317,6 +319,7 @@ MonoBehaviour:
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
+  _pickParent: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls:
@@ -722,6 +725,7 @@ MonoBehaviour:
   _irreversible: 1
   _Xlimit: 1
   _Ylimit: 0
+  _pickParent: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls:
