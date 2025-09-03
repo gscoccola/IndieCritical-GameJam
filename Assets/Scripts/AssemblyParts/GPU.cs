@@ -46,7 +46,11 @@ public class GPU : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!IsSpinning) return;
+        if (!IsSpinning)
+        {
+
+            if (col.transform.parent.GetComponent<Centipede>() != null) return;
+        }
         if (!_hasBegun)
         {
             _spriteRenderer.sprite = _bloodySprite;

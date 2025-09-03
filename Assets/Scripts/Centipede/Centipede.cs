@@ -9,6 +9,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     [SerializeField] private GameObject _gpu;
     [SerializeField] private SpriteRenderer _headSprite;
     private GPU _gpuComponent;
+    [SerializeField] private ParticleSystem _goreChunks;
     [SerializeField] private float _blenderForce;
     public GameObject _lastBodySegment;
     [SerializeField] private float _speed;
@@ -20,7 +21,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     private Vector3 _ourobourosCenter;
     private bool _eatingLastSegment;
     private bool _canOurobouros = true;
-    [SerializeField] private ParticleSystem _particleSystem;
+    [SerializeField] private ParticleSystem _bloodParticleSystem;
     [SerializeField] private GameObject _target;
 
     private List<GameObject> _segments = new List<GameObject>();
@@ -33,10 +34,10 @@ public class Centipede : MonoBehaviour, IStateLoader
         _segments.Add(_head);
         _sounds = transform.GetComponent<Sounds>();
         _gpuComponent = _gpu.transform.GetChild(0).transform.GetComponent<GPU>();
-        /*for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++)
         {
             AddSegment();
-        }*/
+        }
     }
 
     private void Update()
@@ -134,7 +135,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     {
         _canOurobouros = false;
         _gpuComponent._isFarming = true;
-        _particleSystem.Play();
+        _bloodParticleSystem.Play();
         yield return new WaitForSeconds(0.1f);
         _eatingLastSegment = true;
         //_head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
@@ -164,7 +165,7 @@ public class Centipede : MonoBehaviour, IStateLoader
                 _gpuComponent.IsSpinning = false;
                 _gpuComponent._isFarming = false;
                 _eatingLastSegment = false;
-                _particleSystem.Stop();
+                _bloodParticleSystem.Stop();
                 break;
             }
             
@@ -182,7 +183,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         Destroy(_segments[_segments.Count - 1]);
         _lastBodySegment = _head;
         _eatingLastSegment = true;
-        _particleSystem.Play();
+        _bloodParticleSystem.Play();
         StartCoroutine(ILastBlood());
     }
 
@@ -191,7 +192,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         yield return new WaitForSeconds(1.5f);
         _headSprite.enabled = false;
         _sounds.PlaySoundContainer("HeadExplode");
-        _particleSystem.Stop();
+        _goreChunks.Play();
         if (_length > 7)
         {
             SubobjectivesManager.Instance.SetGPU(true);
@@ -199,6 +200,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         }
         else SubobjectivesManager.Instance.TriggerEnding(Endings.Softlocked);
         yield return new WaitForSeconds(0.8f);
+        _bloodParticleSystem.Stop();
         _gpuComponent._isFarming = false;
 
 
