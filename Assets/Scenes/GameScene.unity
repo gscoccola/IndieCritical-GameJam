@@ -5766,7 +5766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9161ca8c508b7b4bbe2eee77baf5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReachedCheckpoint: 1
+  ReachedCheckpoint: 0
   FeatsCount: 4
   FeatsCompletion: 
   IsReloadingScene: 0
@@ -5821,7 +5821,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &368416510
 Transform:
   m_ObjectHideFlags: 0
@@ -8111,6 +8111,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e3cd5e2319ac994a894efd31fb06aeb, type: 3}
+--- !u!114 &2130129244 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1759225506137475340, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+  m_PrefabInstance: {fileID: 4532633924763823142}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &587791850640206576 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3187825642214930592, guid: fb62c1667cd1fb44ba94c771793400c1, type: 3}
@@ -8422,10 +8433,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1155570319}
     m_Modifications:
-    - target: {fileID: 717579901245771852, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: _gpu
       value: 
@@ -8435,20 +8442,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 196206725}
     - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
-      propertyPath: _particleSystem
+      propertyPath: _absorbeForce
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
+      propertyPath: _heartAssemblable
       value: 
-      objectReference: {fileID: 8539687964019034784}
+      objectReference: {fileID: 2130129244}
     - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: _bloodParticleSystem
       value: 
       objectReference: {fileID: 8539687964019034784}
+    - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
+      propertyPath: _veinConnectionPrefab
+      value: 
+      objectReference: {fileID: 9025847383110412993, guid: 3a23cc57add707c41ae8e167dd68cd17, type: 3}
     - target: {fileID: 2014878503098623720, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.1299996
+      value: 4.7237496
       objectReference: {fileID: 0}
     - target: {fileID: 2014878503098623720, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.63525
+      value: 1.025875
       objectReference: {fileID: 0}
     - target: {fileID: 2014878503098623720, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8485,14 +8500,6 @@ PrefabInstance:
     - target: {fileID: 2638321245070674666, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: m_Name
       value: Centipede
-      objectReference: {fileID: 0}
-    - target: {fileID: 3526093164272389977, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8055952282550235676, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
-      propertyPath: m_Layer
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8564,6 +8571,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1155570319}
     m_Modifications:
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: _splatterSprites.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: '_splatterSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: -5243208779708228138, guid: 09ebcdb8b9b68484fa46a51ea2a5a3b5, type: 3}
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: '_splatterSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: -6310202493631729628, guid: 09ebcdb8b9b68484fa46a51ea2a5a3b5, type: 3}
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: '_splatterSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: -926045631021543499, guid: 09ebcdb8b9b68484fa46a51ea2a5a3b5, type: 3}
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: '_splatterSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: -4445850430456340927, guid: 09ebcdb8b9b68484fa46a51ea2a5a3b5, type: 3}
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: '_splatterSprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: -3464905997237108610, guid: 09ebcdb8b9b68484fa46a51ea2a5a3b5, type: 3}
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: '_splatterSprites.Array.data[5]'
+      value: 
+      objectReference: {fileID: 5013544472301663626, guid: 09ebcdb8b9b68484fa46a51ea2a5a3b5, type: 3}
+    - target: {fileID: 880658902650137030, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
+      propertyPath: '_splatterSprites.Array.data[6]'
+      value: 
+      objectReference: {fileID: 8777193839752129606, guid: 09ebcdb8b9b68484fa46a51ea2a5a3b5, type: 3}
     - target: {fileID: 4178656301493746649, guid: 8113ee0b0b77d854db42f3b3a1dbfe9a, type: 3}
       propertyPath: m_Enabled
       value: 1

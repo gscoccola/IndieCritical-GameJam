@@ -95,7 +95,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.75, y: -0.33}
+  m_Offset: {x: -1.75, y: 0.24}
   m_Size: {x: 6.9, y: 3.17}
   m_Direction: 1
 --- !u!1 &5046593476484029112
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _extensionAssemblable: {fileID: 3243769891085768910}
+  _splatterSprites: []
   _sparks: {fileID: 8626023975957301345, guid: dd1af1f357ab87042a0e7e7531f28e80, type: 3}
   _bloodSplatter: {fileID: 6893986223036604707, guid: 27fc7e7210f0771478b17e3c0de68c52, type: 3}
   _triggerAwake: 0
@@ -618,7 +619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2057601735408454943
 Transform:
   m_ObjectHideFlags: 0

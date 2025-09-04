@@ -141,6 +141,7 @@ MonoBehaviour:
   _interactionTrigger: {fileID: 8906416877115364115}
   _physicsCollider: {fileID: 0}
   _coverCheckerPrefab: {fileID: 780633640560600543, guid: 510d11d5639b3314ea77972dec4f4253, type: 3}
+  _electrifiedSprite: {fileID: 0}
   CurrentCollidingObjects: []
   OnCollisionUpdate:
     m_PersistentCalls:
@@ -251,7 +252,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.21
+  m_Radius: 0.32
 --- !u!50 &7155883753996552422
 Rigidbody2D:
   serializedVersion: 5

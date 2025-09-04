@@ -10,9 +10,11 @@ public class Mouth : MonoBehaviour, IPowerable
     Rigidbody2D _rb;
     private Vector3 _initialPosition;
     private ForceDraggable _draggable;
+    public bool IsAbsorbed;
 
     private bool _isStunned;
     private bool _isSelected;
+    private bool _isAsborbed;
     private bool _wasMoved;
 
     private void Start()
@@ -128,19 +130,29 @@ public class Mouth : MonoBehaviour, IPowerable
         _isStunned = false;
         //_rb.constraints = _isSelected ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
         //_rb.bodyType = _isSelected ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
-        _rb.bodyType = RigidbodyType2D.Static;
+        
         _animator.SetBool("Stunned", false);
-        _animator.SetBool("Grabbing", _isSelected);
-    }
+        if (_isAsborbed)
+        {
+            yield break;
+        }
 
-    public void NotifyMovement()
-    {
-        if (_isStunned) ;
+        _animator.SetBool("Grabbing", _isSelected);
+        _rb.bodyType = RigidbodyType2D.Static;
     }
 
     public void SetPowered(StatusEffect statusEffect, bool value)
     {
-        if (!value || _isStunned || statusEffect != StatusEffect.Electrified) return;
-        Stun();
+        if (value && !_isStunned && statusEffect == StatusEffect.Electrified)
+        {
+            Stun();
+        }
+
+        else if (value && !_isAsborbed && statusEffect == StatusEffect.BloodPowered)
+        {
+            _isAsborbed = true;
+            _wasMoved = false;
+            _centipede.StartCoroutine(_centipede.IAbsorbed());
+        }
     }
 }

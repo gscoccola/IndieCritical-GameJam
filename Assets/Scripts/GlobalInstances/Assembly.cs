@@ -34,11 +34,11 @@ public class Assembly : MonoBehaviour
         for (int i = 0; i < Connections.GetLength(0); i++) Connections.SetValue(true, i, i);
     }
 
-    void OnPrintConnections(InputValue value)
+    /*void OnPrintConnections(InputValue value)
     {
         //PrintBoolArray(Connections);
         PrintRefArray(VeinConnections);
-    }
+    }*/
 
     public void UpdateConnections(bool value, Assemblable assemblable1, Assemblable assemblable2)
     {
@@ -64,7 +64,7 @@ public class Assembly : MonoBehaviour
         }
     }
 
-    private void PrintBoolArray(bool[,] array)
+    /*private void PrintBoolArray(bool[,] array)
     {
         for (int i = 0; i < array.GetLength(0); i++)
         {
@@ -88,7 +88,7 @@ public class Assembly : MonoBehaviour
             }
             Debug.Log(row);
         }
-    }
+    }*/
 
     private void Spark(Vector3 position)
     {
@@ -122,7 +122,7 @@ public class Assembly : MonoBehaviour
             if (explored.Contains(currentIndex)) continue;
             explored.Add(currentIndex);
             Assemblable currentAssemblable = Assembleables[currentIndex];
-            int connections = currentAssemblable.StatusEffectAffinities[statusEffect] == StatusEffectAffinity.Source ? 1 : 0;
+            //int connections = currentAssemblable.StatusEffectAffinities[statusEffect] == StatusEffectAffinity.Source ? 1 : 0;
             for (int i = 0; i < Connections.GetLength(1); i++)
             {
                 if (Connections[currentIndex, i] &&
@@ -130,12 +130,10 @@ public class Assembly : MonoBehaviour
                 {
                     if (statusEffect == StatusEffect.BloodPowered && VeinConnections[currentIndex, i] == null)
                     {
-                        VeinConnections[currentIndex, i] = Instantiate(_veinConnectionPrefab, Vector3.zero, Quaternion.identity, transform)
-                        .GetComponent<VeinConnection>();
-                        VeinConnections[currentIndex, i].Setup(currentAssemblable, Assembleables[i]);
+                        ConnectWithVein(currentIndex, i);   
                     }
 
-                    connections++;
+                    //connections++;
                     if (explored.Contains(i)) continue;
                     Assembleables[i].CurrentStatusEffects[statusEffect] = true;
                     Assembleables[i].GetComponent<IPowerable>()?.SetPowered(statusEffect, true);
@@ -143,7 +141,7 @@ public class Assembly : MonoBehaviour
                     //if (UnityEngine.Random.Range(0, 5) == 1) Spark(currentAssemblable.transform.position);
                     /*if (Assembleables[i].GetComponent<SpriteRenderer>() != null)
                         Assembleables[i].GetComponent<SpriteRenderer>().color = Color.yellow;*/
-                    queue.Add(i);
+                    if (statusEffect != StatusEffect.BloodPowered) queue.Add(i);
                 }
             }
             //if (connections == 1) Spark(currentAssemblable.transform.position);
@@ -152,6 +150,21 @@ public class Assembly : MonoBehaviour
         for (int i = 0; i < Assembleables.Length; i++)
         {
             Assembleables[i].GetComponent<IPowerable>()?.SetPowered(statusEffect, Assembleables[i].CurrentStatusEffects[statusEffect]);
+        }
+    }
+
+    private void ConnectWithVein(int index1, int index2, bool randomize = false)
+    {
+        VeinConnections[index1, index2] = Instantiate(_veinConnectionPrefab, Vector3.zero, Quaternion.identity, transform)
+                        .GetComponent<VeinConnection>();
+        VeinConnections[index1, index2].Setup(Assembleables[index1], Assembleables[index2], randomize);
+    }
+
+    public void DeleteAllVeins()
+    {
+        foreach (VeinConnection vein in VeinConnections)
+        {
+            if (vein != null) Destroy(vein.gameObject);
         }
     }
 }

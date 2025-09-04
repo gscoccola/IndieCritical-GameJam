@@ -8,24 +8,31 @@ public class Centipede : MonoBehaviour, IStateLoader
     [SerializeField] private GameObject _head;
     [SerializeField] private GameObject _gpu;
     [SerializeField] private SpriteRenderer _headSprite;
+    [SerializeField] private Assemblable _heartAssemblable;
+    [SerializeField] GameObject _veinConnectionPrefab;
     private GPU _gpuComponent;
     [SerializeField] private ParticleSystem _goreChunks;
     [SerializeField] private float _blenderForce;
     public GameObject _lastBodySegment;
     [SerializeField] private float _speed;
+    [SerializeField] private float _absorbeForce;
     private float _rotationSpeed;
     private float _segmentDistance = 0.33f;
     public bool AddSegmentTrigger = false;
     private int _length = 1;
-    private bool _isOurobouros = false;
+    private bool _isOurobouros;
+    private bool _isAsborbed;
     private Vector3 _ourobourosCenter;
     private bool _eatingLastSegment;
     private bool _canOurobouros = true;
     [SerializeField] private ParticleSystem _bloodParticleSystem;
     [SerializeField] private GameObject _target;
+    private Vector3 _heartDir;
+    List<VeinConnection> veinConnections = new List<VeinConnection>();
 
     private List<GameObject> _segments = new List<GameObject>();
     private Sounds _sounds;
+    public bool _absorbTrigger;
 
     private void Awake()
     {
@@ -34,18 +41,47 @@ public class Centipede : MonoBehaviour, IStateLoader
         _segments.Add(_head);
         _sounds = transform.GetComponent<Sounds>();
         _gpuComponent = _gpu.transform.GetChild(0).transform.GetComponent<GPU>();
-        for (int i = 0; i < 8; i++)
+        /*for (int i = 0; i < 8; i++)
         {
             AddSegment();
-        }
+        }*/
     }
 
     private void Update()
     {
+        if (_absorbTrigger)
+        {
+            _absorbTrigger = false;
+            StartCoroutine(IAbsorbed());
+        }
+
         if (AddSegmentTrigger)
         {
             AddSegment();
             AddSegmentTrigger = false;
+        }
+
+        if (_isAsborbed)
+        {
+            _head.GetComponent<Rigidbody2D>().AddForce(Time.deltaTime * _absorbeForce *
+                _heartDir);
+            if (Vector3.Distance(_head.transform.position.Flatten(), _heartAssemblable.transform.position.Flatten()) < 0.5f)
+            {
+                _head.transform.GetChild(1).gameObject.SetActive(false);
+                DestroyAllVeins();
+            }
+            for (int i = 1; i < _segments.Count; i++)
+            {
+                if (Vector3.Distance(_segments[i].transform.position.Flatten(), _heartAssemblable.transform.position.Flatten()) < 0.85f)
+                {
+                    _segments[i].GetComponent<SpriteRenderer>().enabled = false;
+                    if (i == _segments.Count - 1)
+                    {
+                        _isAsborbed = false;
+                        _heartAssemblable.GetComponent<Heart>().TriggerTransform();
+                    }
+                }
+            }
         }
 
         if (_canOurobouros && !_isOurobouros && _length > 10 && _head.GetComponent<Collider2D>()
@@ -105,7 +141,8 @@ public class Centipede : MonoBehaviour, IStateLoader
         _sounds.PlayLoopingContainer("Orobourus_Movement");
         MusicPlayer.Instance.SetOrobourus();
         AddSegment();
-        _head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        //_head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        _head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         _head.GetComponent<SpringJoint2D>().enabled = true;
         _head.GetComponent<SpringJoint2D>().connectedBody = _lastBodySegment.GetComponent<Rigidbody2D>();
     }
@@ -206,20 +243,52 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     }
 
-    public void TriggerAbsorption()
-    {
-        foreach (var segment in _segments)
-        {
-            //segment.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-            segment.GetComponent<ForceDraggable>().IsSelectable = false;
-            Destroy(GetComponent<VelocityVolumeController>());
-        }
-    }
-
     public void LoadState()
     {
         AddSegment();
         AddSegment();
+    }
+
+
+    public IEnumerator IAbsorbed()
+    {
+        _head.GetComponent<Mouth>().IsAbsorbed = true;
+        _heartDir = (_heartAssemblable.transform.position - _head.transform.position).normalized;
+        _heartAssemblable.transform.position -= 4f * Vector3.forward;
+        //_head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        foreach (var segment in _segments)
+        {
+            segment.GetComponent<ForceDraggable>().IsSelectable = false;
+            Destroy(GetComponent<VelocityVolumeController>());
+            _absorbeForce += 50f;
+        }
+        yield return new WaitForSeconds(1.3f);
+        int i = 0;
+        while (i < 5)
+        {
+            yield return new WaitForSeconds(0.4f);
+            veinConnections.Add(ConnectWithVein(_heartAssemblable.transform, _head.transform, true));
+            i++;
+        }
+        yield return new WaitForSeconds(1.4f);
+        Debug.Log("Absorbed");
+        _head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        _isAsborbed = true;
+    }
+
+    public VeinConnection ConnectWithVein(Transform t1, Transform t2, bool randomize)
+    {
+        var connection = Instantiate(_veinConnectionPrefab, Vector3.zero, Quaternion.identity, transform).GetComponent<VeinConnection>();
+        connection.Setup(t1, t2, true);
+        return connection;
+    }
+
+    public void DestroyAllVeins()
+    {
+        foreach (var vein in veinConnections)
+        {
+            if (vein != null) Destroy(vein.gameObject);
+        }
     }
 }
 

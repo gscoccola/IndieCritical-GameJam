@@ -1,6 +1,7 @@
 using UnityEngine.Events;
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Heart : MonoBehaviour, IPowerable, IActivable
 {
@@ -9,6 +10,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     private Animator _animator;
     private bool _isAwake;
     private Rigidbody2D _rb;
+    [SerializeField] Sprite[] _splatterSprites;
     [SerializeField] GameObject _sparks;
     [SerializeField] GameObject _bloodSplatter;
     [SerializeField] bool _triggerAwake;
@@ -62,17 +64,16 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     private IEnumerator ITriggerAwake()
     {
         _isAwake = true;
-        transform.position -= 4f * Vector3.forward;
         _animator.SetBool("IsPumping", false);
         yield return new WaitForSeconds(0.6f);
         _animator.SetTrigger("Awake");
         yield return new WaitForSeconds(3.6f);
-        _rb.linearVelocity = new Vector2(0.8f, -0.2f);
+        _rb.linearVelocity = new Vector2(1.6f, -0.4f);
         _animator.SetTrigger("Walk");
         StartCoroutine(BloodSplatters());
         yield return new WaitForSeconds(1.2f);
         transform.localScale = new Vector3(-1f, 1f, 1f);
-        _rb.linearVelocity = new Vector2(-1.2f, -1.5f);
+        _rb.linearVelocity = new Vector2(-1.8f, -0.7f);
         SubobjectivesManager.Instance.TriggerEnding(Endings.Freed);
     }
 
@@ -80,12 +81,14 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     {
         while (true)
         {
-            Instantiate(_bloodSplatter, transform.position + new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), -2f), Quaternion.identity);
+            Instantiate(_bloodSplatter, transform.position +
+                new Vector3(Random.Range(-0.3f, 0.3f), Random.Range(-0.3f, 0.3f), -2f), Quaternion.identity)
+                .GetComponent<SpriteRenderer>().sprite = _splatterSprites[Random.Range(0, _splatterSprites.Length)];
             yield return new WaitForSeconds(0.5f);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col)
+    /*private void OnTriggerEnter2D(Collider2D col)
     {
         if (_isAwake || !IsPowered) return;
         if (col.gameObject.GetComponent<Mouth>() != null)
@@ -94,5 +97,5 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
             col.transform.parent.gameObject.GetComponent<Centipede>().TriggerAbsorption();
             return;
         }
-    }
+    }*/
 }
