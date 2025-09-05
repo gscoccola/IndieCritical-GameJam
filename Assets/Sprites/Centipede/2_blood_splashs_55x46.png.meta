@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: d988b025c29fc16498030faca5b51716
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6306523974065456986
+    second: 2_blood_splashs_55x46_0
+  - first:
+      213: 1982789604574755772
+    second: 2_blood_splashs_55x46_1
+  - first:
+      213: -3888710547899879930
+    second: 2_blood_splashs_55x46_2
+  - first:
+      213: -390120133616184543
+    second: 2_blood_splashs_55x46_3
+  - first:
+      213: 958653786251387478
+    second: 2_blood_splashs_55x46_4
+  - first:
+      213: -1449062077624538594
+    second: 2_blood_splashs_55x46_5
+  - first:
+      213: 4652677282210352501
+    second: 2_blood_splashs_55x46_6
+  - first:
+      213: -7368650011324291598
+    second: 2_blood_splashs_55x46_7
+  - first:
+      213: -881984513169189244
+    second: 2_blood_splashs_55x46_8
+  - first:
+      213: -6470069980049833998
+    second: 2_blood_splashs_55x46_9
+  - first:
+      213: 2278525553399316635
+    second: 2_blood_splashs_55x46_10
+  - first:
+      213: 7917420778108894402
+    second: 2_blood_splashs_55x46_11
+  - first:
+      213: 2784967872974314056
+    second: 2_blood_splashs_55x46_12
+  - first:
+      213: -2011423243654206102
+    second: 2_blood_splashs_55x46_13
+  - first:
+      213: 5076925785971704678
+    second: 2_blood_splashs_55x46_14
+  - first:
+      213: -2078234869867594518
+    second: 2_blood_splashs_55x46_15
+  - first:
+      213: 2850486436381158525
+    second: 2_blood_splashs_55x46_16
+  - first:
+      213: -5599095474089159196
+    second: 2_blood_splashs_55x46_17
+  - first:
+      213: 1080424333631261782
+    second: 2_blood_splashs_55x46_18
+  - first:
+      213: 7405468511584666118
+    second: 2_blood_splashs_55x46_19
+  - first:
+      213: -913483207441660268
+    second: 2_blood_splashs_55x46_20
+  - first:
+      213: -2673282039538116830
+    second: 2_blood_splashs_55x46_21
+  - first:
+      213: -8722428620855483021
+    second: 2_blood_splashs_55x46_22
+  - first:
+      213: 4641863630393717435
+    second: 2_blood_splashs_55x46_23
+  - first:
+      213: -6307370977495135467
+    second: 2_blood_splashs_55x46_24
+  - first:
+      213: 2396620966862586423
+    second: 2_blood_splashs_55x46_25
+  - first:
+      213: -8909919082250050787
+    second: 2_blood_splashs_55x46_26
+  - first:
+      213: -8661796764613529021
+    second: 2_blood_splashs_55x46_27
+  - first:
+      213: -1244123272831030001
+    second: 2_blood_splashs_55x46_28
+  - first:
+      213: 8079035738667202936
+    second: 2_blood_splashs_55x46_29
+  - first:
+      213: 7654273261629803093
+    second: 2_blood_splashs_55x46_30
+  - first:
+      213: 6776168020985377103
+    second: 2_blood_splashs_55x46_31
+  - first:
+      213: -8104510179269736364
+    second: 2_blood_splashs_55x46_32
+  - first:
+      213: -346904244470451684
+    second: 2_blood_splashs_55x46_33
+  - first:
+      213: -340776117126763227
+    second: 2_blood_splashs_55x46_34
+  - first:
+      213: 5792235713625008411
+    second: 2_blood_splashs_55x46_35
+  - first:
+      213: 8278950421215768000
+    second: 2_blood_splashs_55x46_36
+  - first:
+      213: 487930653460851420
+    second: 2_blood_splashs_55x46_37
+  - first:
+      213: 5545461736725934334
+    second: 2_blood_splashs_55x46_38
+  - first:
+      213: -6684754091276162993
+    second: 2_blood_splashs_55x46_39
+  - first:
+      213: 3038406255511660196
+    second: 2_blood_splashs_55x46_40
+  - first:
+      213: -7734518981067810337
+    second: 2_blood_splashs_55x46_41
+  - first:
+      213: -6168810841163404247
+    second: 2_blood_splashs_55x46_42
+  - first:
+      213: 3014817182485656423
+    second: 2_blood_splashs_55x46_43
+  - first:
+      213: -1849952504405107611
+    second: 2_blood_splashs_55x46_44
+  - first:
+      213: 8561678023299043343
+    second: 2_blood_splashs_55x46_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a8f756ebd9ba78a0800000000000000
+      internalID: -6306523974065456986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbbf30dd3a8448b10800000000000000
+      internalID: 1982789604574755772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60eec162c56880ac0800000000000000
+      internalID: -3888710547899879930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_3
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12354103ec3069af0800000000000000
+      internalID: -390120133616184543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_4
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652e8181a82dd4d00800000000000000
+      internalID: 958653786251387478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_5
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a23b5c7b5e3ebe0800000000000000
+      internalID: -1449062077624538594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_6
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57d8da45651a19040800000000000000
+      internalID: 4652677282210352501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_7
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f566d00bdb4db990800000000000000
+      internalID: -7368650011324291598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_8
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 486972b12cf82c3f0800000000000000
+      internalID: -881984513169189244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_9
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fff53f02a1b536a0800000000000000
+      internalID: -6470069980049833998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_10
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 46
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.63}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b90440e2be2fe9f10800000000000000
+      internalID: 2278525553399316635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cc3a78df3450ed60800000000000000
+      internalID: 7917420778108894402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_12
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a528b668136a620800000000000000
+      internalID: 2784967872974314056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_13
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6de605873df514e0800000000000000
+      internalID: -2011423243654206102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_14
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6634dd78a1dd47640800000000000000
+      internalID: 5076925785971704678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_15
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec36b59560a823e0800000000000000
+      internalID: -2078234869867594518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_16
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c6195bf46fe8720800000000000000
+      internalID: 2850486436381158525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_17
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e51b63e4540c42b0800000000000000
+      internalID: -5599095474089159196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_18
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.68}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65c87c405307efe00800000000000000
+      internalID: 1080424333631261782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2_blood_splashs_55x46_19
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 55
+        height: 46
+      alignment: 9
+      pivot: {x: 0.59, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 602485c106285c660800000000000000
+      internalID: 7405468511584666118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1f38fd5b96038544ca0c33542ee4f01a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      2_blood_splashs_55x46_0: -6306523974065456986
+      2_blood_splashs_55x46_1: 1982789604574755772
+      2_blood_splashs_55x46_10: 2278525553399316635
+      2_blood_splashs_55x46_11: 7917420778108894402
+      2_blood_splashs_55x46_12: 2784967872974314056
+      2_blood_splashs_55x46_13: -2011423243654206102
+      2_blood_splashs_55x46_14: 5076925785971704678
+      2_blood_splashs_55x46_15: -2078234869867594518
+      2_blood_splashs_55x46_16: 2850486436381158525
+      2_blood_splashs_55x46_17: -5599095474089159196
+      2_blood_splashs_55x46_18: 1080424333631261782
+      2_blood_splashs_55x46_19: 7405468511584666118
+      2_blood_splashs_55x46_2: -3888710547899879930
+      2_blood_splashs_55x46_3: -390120133616184543
+      2_blood_splashs_55x46_4: 958653786251387478
+      2_blood_splashs_55x46_5: -1449062077624538594
+      2_blood_splashs_55x46_6: 4652677282210352501
+      2_blood_splashs_55x46_7: -7368650011324291598
+      2_blood_splashs_55x46_8: -881984513169189244
+      2_blood_splashs_55x46_9: -6470069980049833998
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

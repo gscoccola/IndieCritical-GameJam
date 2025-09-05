@@ -161,13 +161,20 @@ MonoBehaviour:
   _head: {fileID: 8055952282550235676}
   _gpu: {fileID: 0}
   _headSprite: {fileID: 3407168654870843483}
+  _heartAssemblable: {fileID: 0}
+  _veinConnectionPrefab: {fileID: 0}
+  _splatterPrefabs:
+  - {fileID: 2372408988582233256, guid: 763ffcba741c39046a1efe2e79b073a0, type: 3}
+  - {fileID: 1529146872270476398, guid: 51b7906a3bbf47d4c8c6c44d3883e340, type: 3}
   _goreChunks: {fileID: 0}
   _blenderForce: 2000
   _lastBodySegment: {fileID: 0}
   _speed: 700
+  _absorbeForce: 0
   AddSegmentTrigger: 0
   _bloodParticleSystem: {fileID: 0}
   _target: {fileID: 3526093164272389977}
+  _absorbTrigger: 0
 --- !u!114 &507616752637745790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 2805512586671517113}
   _particles: {fileID: 2635259085384821458, guid: 23f33e43d52e85a48b5c68575c6cc28f, type: 3}
+  IsAbsorbed: 0
 --- !u!50 &7874162542044142906
 Rigidbody2D:
   serializedVersion: 5

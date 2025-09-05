@@ -7,9 +7,11 @@ public class Centipede : MonoBehaviour, IStateLoader
     [SerializeField] GameObject _centipedeSegmentPrefab;
     [SerializeField] private GameObject _head;
     [SerializeField] private GameObject _gpu;
+    [SerializeField] private Transform _gpuFanTransform;
     [SerializeField] private SpriteRenderer _headSprite;
     [SerializeField] private Assemblable _heartAssemblable;
     [SerializeField] GameObject _veinConnectionPrefab;
+    [SerializeField] GameObject[] _splatterPrefabs;
     private GPU _gpuComponent;
     [SerializeField] private ParticleSystem _goreChunks;
     [SerializeField] private float _blenderForce;
@@ -79,6 +81,7 @@ public class Centipede : MonoBehaviour, IStateLoader
                     {
                         _isAsborbed = false;
                         _heartAssemblable.GetComponent<Heart>().TriggerTransform();
+                        MusicPlayer.Instance.SetOrobourus();
                     }
                 }
             }
@@ -192,7 +195,8 @@ public class Centipede : MonoBehaviour, IStateLoader
             _blenderForce -= 80f;
             yield return new WaitForSeconds(1.5f);
             Destroy(_lastBodySegment);
-            
+            Instantiate(_splatterPrefabs[Random.Range(0, 2)], _gpuFanTransform.transform.position, Quaternion.identity);
+
             _segments.RemoveAt(_segments.Count - 1);
             _lastBodySegment = _segments[_segments.Count - 1];
             if (_segments.Count == 2)
@@ -217,6 +221,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         _gpuComponent._isFarming = true;
         _gpuComponent._bloodSpeed *= 2f;
         Destroy(_lastBodySegment);
+        Instantiate(_splatterPrefabs[Random.Range(0, 2)], _gpuFanTransform.transform.position, Quaternion.identity);
         Destroy(_segments[_segments.Count - 1]);
         _lastBodySegment = _head;
         _eatingLastSegment = true;
@@ -229,6 +234,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         yield return new WaitForSeconds(1.5f);
         _headSprite.enabled = false;
         _sounds.PlaySoundContainer("HeadExplode");
+        Instantiate(_splatterPrefabs[Random.Range(0, 2)], _gpuFanTransform.transform.position, Quaternion.identity);
         _goreChunks.Play();
         if (_length > 7)
         {

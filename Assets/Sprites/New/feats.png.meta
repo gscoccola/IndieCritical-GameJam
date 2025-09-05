@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 018a9d04bfbe77641b80cba9c1a1ed77
+guid: 5393e157798ae4749b4b1e668aad6a67
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5662944622447263065
-    second: Screwdriver_92x16_0
+      213: -5075659244790935192
+    second: feats_0
+  - first:
+      213: 8615934287314887817
+    second: feats_1
+  - first:
+      213: -3276024051366484879
+    second: feats_2
+  - first:
+      213: -383759062611154033
+    second: feats_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,67 +135,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tips_0
+      name: feats_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 13
-        width: 141
-        height: 81
+        x: 0
+        y: 34
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e0f3f8b4f0e22d14abb643e0efd2e4a5
-      internalID: -400514131
+      spriteID: 8611f411fc2af89b0800000000000000
+      internalID: -5075659244790935192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tips_1
+      name: feats_1
       rect:
         serializedVersion: 2
-        x: 155
-        y: 14
-        width: 124
-        height: 79
+        x: 34
+        y: 34
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b977fa19ad70ec44a9eeba2b2a6b4ea0
-      internalID: -1965096643
+      spriteID: 984238bc592f19770800000000000000
+      internalID: 8615934287314887817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Tips_2
+      name: feats_2
       rect:
         serializedVersion: 2
-        x: 290
-        y: 19
-        width: 177
-        height: 77
+        x: 0
+        y: 0
+        width: 34
+        height: 34
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e16eb14b94984aa4da2f7f34f51bf2a0
-      internalID: 1619582089
+      spriteID: 1742aae7b793982d0800000000000000
+      internalID: -3276024051366484879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: feats_3
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8ba9b17a2d9caaf0800000000000000
+      internalID: -383759062611154033
       vertices: []
       indices: 
       edges: []
@@ -195,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6c7af1f8ff7464d4b90b7f79d7b67ca0
+    spriteID: 0e241ba712eb8a0409ed791829a1f0b1
     internalID: 0
     vertices: []
     indices: 
@@ -205,9 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tips_0: -400514131
-      Tips_1: -1965096643
-      Tips_2: 1619582089
+      feats_0: -5075659244790935192
+      feats_1: 8615934287314887817
+      feats_2: -3276024051366484879
+      feats_3: -383759062611154033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

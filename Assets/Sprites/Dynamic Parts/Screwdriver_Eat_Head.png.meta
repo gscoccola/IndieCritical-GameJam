@@ -132,7 +132,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Screwdriver_Eat_92x16_0
+      name: Screwdriver_Eat_Head_0
       rect:
         serializedVersion: 2
         x: 0
@@ -145,16 +145,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 93ab22cdef8ec6a00800000000000000
-      internalID: 751231419176630841
+      spriteID: 0d6ce600b7763d84cbb03477ca8e28df
+      internalID: 1931361179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Screwdriver_Eat_92x16_1
+      name: Screwdriver_Eat_Head_1
       rect:
         serializedVersion: 2
         x: 92
@@ -167,16 +167,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a1e510f7b111adc20800000000000000
-      internalID: 3231914492384337434
+      spriteID: 1cf41bd2b1b47154589bc2c9315608f1
+      internalID: -254606452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Screwdriver_Eat_92x16_2
+      name: Screwdriver_Eat_Head_2
       rect:
         serializedVersion: 2
         x: 184
@@ -189,10 +189,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a94d9088faf29eab0800000000000000
-      internalID: -4978395482133244774
+      spriteID: feeafc4866c0d3f4b86048dd5251dfbd
+      internalID: -733166681
       vertices: []
       indices: 
       edges: []
@@ -211,9 +211,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Screwdriver_Eat_92x16_0: 751231419176630841
-      Screwdriver_Eat_92x16_1: 3231914492384337434
-      Screwdriver_Eat_92x16_2: -4978395482133244774
+      Screwdriver_Eat_Head_0: 1931361179
+      Screwdriver_Eat_Head_1: -254606452
+      Screwdriver_Eat_Head_2: -733166681
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
