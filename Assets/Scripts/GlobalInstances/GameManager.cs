@@ -26,9 +26,29 @@ public class GameManager : Singleton<GameManager>
         Restart();
     }
 
+    void OnHardRestart(InputValue value)
+    {
+        HardRestart();
+    }
+
     public void Restart()
     {
         CompletionInfo.Instance.IsReloadingScene = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void HardRestart()
+    {
+        Debug.Log("Hard Restart");
+        CompletionInfo.Instance.IsReloadingScene = true;
+
+        CompletionInfo.Instance.ReachedCheckpoint = false;
+
+        for (int i = 0; i < CompletionInfo.Instance.FeatsCompletion.Length; i++)
+        {
+            CompletionInfo.Instance.FeatsCompletion[i] = false;
+        }
+        PlayerPrefs.DeleteAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

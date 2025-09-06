@@ -73,7 +73,8 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         StartCoroutine(BloodSplatters());
         yield return new WaitForSeconds(1.2f);
         transform.localScale = new Vector3(-1f, 1f, 1f);
-        _rb.linearVelocity = new Vector2(-1.8f, -0.7f);
+        //_rb.linearVelocity = new Vector2(-1.8f, -0.7f);
+        _rb.linearVelocity = new Vector2(-1.8f, -0.5f);
         SubobjectivesManager.Instance.TriggerEnding(Endings.Freed);
     }
 

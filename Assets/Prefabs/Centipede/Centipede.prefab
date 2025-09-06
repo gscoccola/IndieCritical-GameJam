@@ -160,6 +160,7 @@ MonoBehaviour:
   _centipedeSegmentPrefab: {fileID: 5263133755577031132, guid: d7eb420488828174b8844e6a47c1b2e9, type: 3}
   _head: {fileID: 8055952282550235676}
   _gpu: {fileID: 0}
+  _gpuFanTransform: {fileID: 0}
   _headSprite: {fileID: 3407168654870843483}
   _heartAssemblable: {fileID: 0}
   _veinConnectionPrefab: {fileID: 0}
@@ -703,6 +704,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7515266060004696176}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StartVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnDeSelected:
     m_PersistentCalls:
       m_Calls:
@@ -722,6 +735,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Mouth, Assembly-CSharp
         m_MethodName: SetGrabbing
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7515266060004696176}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StopVelocityControlledSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

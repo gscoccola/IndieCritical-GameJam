@@ -210,7 +210,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Screwdriver_Eat_v2_80x16_0: 2754596300121697011
+      Screwdriver_Eat_v2_80x16_1: 152630579209465348
+      Screwdriver_Eat_v2_80x16_2: -3930768193823404294
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
