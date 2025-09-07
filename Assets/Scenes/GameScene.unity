@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9161ca8c508b7b4bbe2eee77baf5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReachedCheckpoint: 1
+  ReachedCheckpoint: 0
   FeatsCount: 4
   FeatsCompletion: 
   IsReloadingScene: 0
