@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class CompletionInfo : MonoBehaviour, IStateLoader
+public class CompletionInfo : MonoBehaviour
 {
     public bool ReachedCheckpoint;
     public int FeatsCount = 2;
@@ -58,8 +58,4 @@ public class CompletionInfo : MonoBehaviour, IStateLoader
         
     }
 
-    public void LoadState()
-    {
-        LoadFeatsCompletion();
-    }
 }

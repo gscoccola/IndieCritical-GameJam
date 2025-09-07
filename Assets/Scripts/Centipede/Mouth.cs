@@ -6,7 +6,8 @@ public class Mouth : MonoBehaviour, IPowerable
     private Centipede _centipede;
     private Sounds _sounds;
     [SerializeField] private Animator _animator;
-    [SerializeField] GameObject _particles;
+    [SerializeField] GameObject _eatingParticles;
+    [SerializeField] GameObject _electricitySprite;
     Rigidbody2D _rb;
     private Vector3 _initialPosition;
     private ForceDraggable _draggable;
@@ -24,7 +25,7 @@ public class Mouth : MonoBehaviour, IPowerable
         _rb = GetComponent<Rigidbody2D>();
         _draggable = GetComponent<ForceDraggable>();
         _initialPosition = transform.position;
-        _rb.bodyType = RigidbodyType2D.Static;
+        _rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     private void FixedUpdate()
@@ -37,12 +38,13 @@ public class Mouth : MonoBehaviour, IPowerable
         {
             _rb.AddTorque(60f * Time.fixedDeltaTime);
         }
-        if (_wasMoved && !_isSelected && !_isStunned &&  _draggable.IsSelectable)
+        if (_wasMoved && !_isSelected && !_isStunned && _draggable.IsSelectable)
         {
-            _rb.MovePosition(Vector3.MoveTowards(transform.position, _initialPosition, 2f * Time.fixedDeltaTime));
+            _rb.linearVelocity = (Vector3.MoveTowards(_rb.linearVelocity, _initialPosition - transform.position, 2f * Time.fixedDeltaTime));
             if (Vector3.Distance(transform.position, _initialPosition) < 0.1f)
             {
                 _wasMoved = false;
+                _rb.linearVelocity = Vector2.zero;
             }
         }
     }
@@ -77,12 +79,14 @@ public class Mouth : MonoBehaviour, IPowerable
 
     private void Stun()
     {
+        Instantiate(_electricitySprite, transform.position, Quaternion.identity);
         _isStunned = true;
         _animator.SetBool("Grabbing", false);
         _animator.SetBool("Stunned", true);
         _rb.bodyType = RigidbodyType2D.Dynamic;
         //_rb.constraints = RigidbodyConstraints2D.None;
         StartCoroutine(IDestun());
+        _sounds.PlaySoundContainer("Shock");
     }
 
     private void TurnHead(Collider2D col)
@@ -101,7 +105,7 @@ public class Mouth : MonoBehaviour, IPowerable
     {
         _sounds.PlaySoundContainer("Eat");
 
-        Instantiate(_particles, transform.position - 0.1f * Vector3.forward, Quaternion.identity);
+        Instantiate(_eatingParticles, transform.position - 0.1f * Vector3.forward, Quaternion.identity);
         for (int i = 0; i < number; i++)
         {
             yield return new WaitForSeconds(0.4f);
@@ -138,7 +142,7 @@ public class Mouth : MonoBehaviour, IPowerable
         }
 
         _animator.SetBool("Grabbing", _isSelected);
-        _rb.bodyType = RigidbodyType2D.Static;
+        _rb.bodyType = RigidbodyType2D.Kinematic;
     }
 
     public void SetPowered(StatusEffect statusEffect, bool value)
@@ -146,6 +150,7 @@ public class Mouth : MonoBehaviour, IPowerable
         if (value && !_isStunned && statusEffect == StatusEffect.Electrified)
         {
             Stun();
+
         }
 
         else if (value && !_isAsborbed && statusEffect == StatusEffect.BloodPowered)

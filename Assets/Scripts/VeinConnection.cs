@@ -3,10 +3,15 @@ using UnityEngine;
 
 public class VeinConnection : MonoBehaviour
 {
-    private LineRenderer _lineRenderer => GetComponent<LineRenderer>();
+    private LineRenderer _lineRenderer;
     private Transform _origin;
     private Transform _destination;
     private Vector3 _offset;
+
+    private void Awake()
+    {
+        _lineRenderer = GetComponent<LineRenderer>();
+    }
 
     public void Setup(Assemblable origin, Assemblable destination, bool randomize)
     {

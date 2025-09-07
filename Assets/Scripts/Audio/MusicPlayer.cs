@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class MusicPlayer : PersistentSingleton<MusicPlayer>
+public class MusicPlayer : Singleton<MusicPlayer>
 {
     public AudioClip music, ambience, opera, orobourusAmbience, blender;
     public float musicVolume, ambienceVolume, operaVolume, orobourusAmbienceVolume, blenderVolume;

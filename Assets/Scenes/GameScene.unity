@@ -4003,10 +4003,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 196206725}
     - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
-      propertyPath: _absorbeForce
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: _gpuFanTransform
       value: 
       objectReference: {fileID: 2059544320}
@@ -4018,10 +4014,6 @@ PrefabInstance:
       propertyPath: _bloodParticleSystem
       value: 
       objectReference: {fileID: 8539687964019034784}
-    - target: {fileID: 1083680012283478187, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
-      propertyPath: _veinConnectionPrefab
-      value: 
-      objectReference: {fileID: 9025847383110412993, guid: 3a23cc57add707c41ae8e167dd68cd17, type: 3}
     - target: {fileID: 2014878503098623720, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.7237496

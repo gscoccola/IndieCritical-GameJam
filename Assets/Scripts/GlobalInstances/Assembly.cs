@@ -11,12 +11,13 @@ public class Assembly : MonoBehaviour
     public Cover[] Covers;
     public bool[,] Connections;
     public VeinConnection[,] VeinConnections;
+    //public List<VeinConnection> VeinConnectionsFlat;
 
     //private bool _propagateStatusEffects = true;
 
     [SerializeField] GameObject _sparkPrefab;
     [SerializeField] GameObject _veinConnectionPrefab;
-
+    private bool _makeNewVeins = true;
 
     private void Start()
     {
@@ -155,18 +156,28 @@ public class Assembly : MonoBehaviour
 
     private void ConnectWithVein(int index1, int index2, bool randomize = false)
     {
+        if (!_makeNewVeins) return;
+        Debug.Log(Assembleables[index1] + " " + Assembleables[index2]);
         VeinConnections[index1, index2] = Instantiate(_veinConnectionPrefab, Vector3.zero, Quaternion.identity, transform)
                         .GetComponent<VeinConnection>();
         VeinConnections[index1, index2].Setup(Assembleables[index1], Assembleables[index2], randomize);
+        //VeinConnectionsFlat.Add(VeinConnections[index1, index2]);
     }
 
     public void DeleteAllVeins()
     {
+        _makeNewVeins = false;
         foreach (VeinConnection vein in VeinConnections)
         {
-            if (vein != null) Destroy(vein.gameObject);
+            if (vein != null)
+            {
+                //Debug.Log(vein);
+                Destroy(vein.gameObject);
+            }
+                
         }
     }
+
 }
 
 

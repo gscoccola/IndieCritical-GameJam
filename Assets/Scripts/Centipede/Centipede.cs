@@ -32,9 +32,12 @@ public class Centipede : MonoBehaviour, IStateLoader
     private Vector3 _heartDir;
     List<VeinConnection> veinConnections = new List<VeinConnection>();
 
-    private List<GameObject> _segments = new List<GameObject>();
+    public List<GameObject> _segments = new List<GameObject>();
     private Sounds _sounds;
     public bool _absorbTrigger;
+
+    bool _destroyedHead;
+    int currentIndex;
 
     private void Awake()
     {
@@ -67,22 +70,30 @@ public class Centipede : MonoBehaviour, IStateLoader
         {
             _head.GetComponent<Rigidbody2D>().AddForce(Time.deltaTime * _absorbeForce *
                 _heartDir);
-            if (Vector3.Distance(_head.transform.position.Flatten(), _heartAssemblable.transform.position.Flatten()) < 0.5f)
+            if (!_destroyedHead && CompareDotProduct(_heartDir, _head.transform.position, _heartAssemblable.transform.position))
             {
                 _head.transform.GetChild(1).gameObject.SetActive(false);
+                _destroyedHead = true;
+                _sounds.PlaySoundContainer("Absorb");
+                _sounds.StopLoopingContainer("Orobourus_Movement");
+                _heartAssemblable.StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Insulator;
                 DestroyAllVeins();
             }
-            for (int i = 1; i < _segments.Count; i++)
+            if (currentIndex < _length)
             {
-                if (Vector3.Distance(_segments[i].transform.position.Flatten(), _heartAssemblable.transform.position.Flatten()) < 0.85f)
+                if (CompareDotProduct(_heartDir, _segments[currentIndex].transform.position, _heartAssemblable.transform.position))
                 {
-                    _segments[i].GetComponent<SpriteRenderer>().enabled = false;
-                    if (i == _segments.Count - 1)
+                    _segments[currentIndex].GetComponent<SpriteRenderer>().enabled = false;
+                    _sounds.PlaySoundContainer("Absorb");
+                    if (currentIndex == _length - 1)
                     {
                         _isAsborbed = false;
                         _heartAssemblable.GetComponent<Heart>().TriggerTransform();
                         MusicPlayer.Instance.SetOrobourus();
+                        _sounds.PlaySoundContainer("Deshell");
+                        StartCoroutine(IWalkBug());
                     }
+                    currentIndex++;
                 }
             }
         }
@@ -132,6 +143,7 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     private void TriggerOurobouros()
     {
+        _head.GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Insulator;
         SubobjectivesManager.Instance.TriggerEnding(Endings.Ourobouros);
         _head.GetComponent<Mouth>().enabled = false;
         _ourobourosCenter = AveragePosition(_segments); 
@@ -216,6 +228,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     public void LastHit()
     {
         if (_eatingLastSegment) return;
+        MusicPlayer.Instance.SetBlender();
         _blenderForce = 200f;
         _gpuComponent.StartSpinning();
         _gpuComponent._isFarming = true;
@@ -243,6 +256,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         }
         else SubobjectivesManager.Instance.TriggerEnding(Endings.Softlocked);
         yield return new WaitForSeconds(0.8f);
+        MusicPlayer.Instance.StopBlender();
         _bloodParticleSystem.Stop();
         _gpuComponent._isFarming = false;
 
@@ -258,6 +272,7 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     public IEnumerator IAbsorbed()
     {
+        currentIndex = 1;
         _head.GetComponent<Mouth>().IsAbsorbed = true;
         _heartDir = (_heartAssemblable.transform.position - _head.transform.position).normalized;
         _heartAssemblable.transform.position -= 4f * Vector3.forward;
@@ -266,7 +281,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         {
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
             Destroy(GetComponent<VelocityVolumeController>());
-            _absorbeForce += 50f;
+            _absorbeForce += 250f;
         }
         yield return new WaitForSeconds(1.3f);
         int i = 0;
@@ -274,12 +289,22 @@ public class Centipede : MonoBehaviour, IStateLoader
         {
             yield return new WaitForSeconds(0.4f);
             veinConnections.Add(ConnectWithVein(_heartAssemblable.transform, _head.transform, true));
+            _sounds.PlaySoundContainer("PutDown");
             i++;
         }
         yield return new WaitForSeconds(1.4f);
         Debug.Log("Absorbed");
         _head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         _isAsborbed = true;
+        _sounds.PlayLoopingContainer("Orobourus_Movement");
+    }
+
+    private IEnumerator IWalkBug()
+    {
+        yield return new WaitForSeconds(4.6f);
+        _sounds.PlayLoopingContainer("Bug_Walk");
+        yield return new WaitForSeconds(12.6f);
+        _sounds.StopLoopingContainer("Bug_Walk");
     }
 
     public VeinConnection ConnectWithVein(Transform t1, Transform t2, bool randomize)
@@ -295,6 +320,13 @@ public class Centipede : MonoBehaviour, IStateLoader
         {
             if (vein != null) Destroy(vein.gameObject);
         }
+        Assembly.Instance.DeleteAllVeins();
+        //Destroy(Assembly.Instance.VeinConnections[_heartAssemblable.AssemblyIndex, _head.GetComponent<Assemblable>().AssemblyIndex].gameObject);
+    }
+
+    private bool CompareDotProduct(Vector3 heartDir, Vector3 v1, Vector3 v2)
+    {
+        return v1.x * heartDir.x + v1.y * heartDir.y > v2.x * heartDir.x + v2.y * heartDir.y;
     }
 }
 

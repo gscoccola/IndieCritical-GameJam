@@ -163,7 +163,7 @@ MonoBehaviour:
   _gpuFanTransform: {fileID: 0}
   _headSprite: {fileID: 3407168654870843483}
   _heartAssemblable: {fileID: 0}
-  _veinConnectionPrefab: {fileID: 0}
+  _veinConnectionPrefab: {fileID: 9025847383110412993, guid: 3a23cc57add707c41ae8e167dd68cd17, type: 3}
   _splatterPrefabs:
   - {fileID: 2372408988582233256, guid: 763ffcba741c39046a1efe2e79b073a0, type: 3}
   - {fileID: 1529146872270476398, guid: 51b7906a3bbf47d4c8c6c44d3883e340, type: 3}
@@ -171,10 +171,11 @@ MonoBehaviour:
   _blenderForce: 2000
   _lastBodySegment: {fileID: 0}
   _speed: 700
-  _absorbeForce: 0
+  _absorbeForce: 400
   AddSegmentTrigger: 0
   _bloodParticleSystem: {fileID: 0}
   _target: {fileID: 3526093164272389977}
+  _segments: []
   _absorbTrigger: 0
 --- !u!114 &507616752637745790
 MonoBehaviour:
@@ -295,6 +296,63 @@ MonoBehaviour:
       randomizePitch: 0
       pitchRange: {x: 1, y: 1.1}
       diagetic: 0
+    id: 0
+  - name: Absorb
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 6e105f935ac482344bd883132c306a81, type: 3}
+    - {fileID: 8300000, guid: 023050adf88214f40b87b60b72d57d7a, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+      diagetic: 0
+    id: 0
+  - name: Deshell
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 7abf76b5fc0fb79408fd4faec953cc53, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+      diagetic: 0
+    id: 0
+  - name: Shock
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 76ee94b014542274990bde1c77675338, type: 3}
+    soundSettings:
+      loop: 0
+      fadeInTime: 0.25
+      fadeOutTime: 0.5
+      randomizeVolume: 0
+      volumeRange: {x: 0.6, y: 0.7}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+      diagetic: 0
+    id: 0
+  - name: Bug_Walk
+    mute: 0
+    audioClips:
+    - {fileID: 8300000, guid: 95179e25fd9218f4da85b69f42e47f29, type: 3}
+    soundSettings:
+      loop: 1
+      fadeInTime: 0.5
+      fadeOutTime: 1
+      randomizeVolume: 0
+      volumeRange: {x: 1, y: 0.6}
+      randomizePitch: 0
+      pitchRange: {x: 1, y: 1.1}
+      diagetic: 1
     id: 0
 --- !u!114 &1651137684031514257
 MonoBehaviour:
@@ -474,12 +532,12 @@ GameObject:
   m_Component:
   - component: {fileID: 8051212288745123823}
   - component: {fileID: 4043787855325856949}
+  - component: {fileID: 1800056813143684162}
   - component: {fileID: 7874162542044142906}
   - component: {fileID: 6054020872643967056}
   - component: {fileID: 6990128330518721574}
   - component: {fileID: 158199626822363244}
   - component: {fileID: 7515266060004696176}
-  - component: {fileID: 1800056813143684162}
   m_Layer: 12
   m_Name: Head
   m_TagString: Untagged
@@ -517,8 +575,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 2805512586671517113}
-  _particles: {fileID: 2635259085384821458, guid: 23f33e43d52e85a48b5c68575c6cc28f, type: 3}
+  _eatingParticles: {fileID: 2635259085384821458, guid: 23f33e43d52e85a48b5c68575c6cc28f, type: 3}
+  _electricitySprite: {fileID: 8626023975957301345, guid: dd1af1f357ab87042a0e7e7531f28e80, type: 3}
   IsAbsorbed: 0
+--- !u!114 &1800056813143684162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8055952282550235676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a406eb8302d4884191c9db88263f3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSelectable: 1
+  IsSelected: 0
+  IsFixed: 0
+  _force: 40
+  OnSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4043787855325856949}
+        m_TargetAssemblyTypeName: Mouth, Assembly-CSharp
+        m_MethodName: SetGrabbing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7515266060004696176}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StartVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  OnDeSelected:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4043787855325856949}
+        m_TargetAssemblyTypeName: Mouth, Assembly-CSharp
+        m_MethodName: SetGrabbing
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7515266060004696176}
+        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
+        m_MethodName: StopVelocityControlledSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!50 &7874162542044142906
 Rigidbody2D:
   serializedVersion: 5
@@ -653,7 +782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54a542995930d254c9d2ba26fe5e1979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sounds: {fileID: 0}
+  _sounds: {fileID: 507616752637745790}
   _loopContainerID: 3
   _startContainerID: 4
   _stopContainerID: 5
@@ -661,97 +790,3 @@ MonoBehaviour:
   bufferAmtBase: 0.05
   bufferSmoothUp: 1
   bufferSmoothDown: 1.1
---- !u!114 &1800056813143684162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8055952282550235676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a406eb8302d4884191c9db88263f3ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsSelectable: 1
-  IsSelected: 0
-  IsFixed: 0
-  _force: 40
-  OnSelected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8055952282550235676}
-        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
-        m_MethodName: StartVelocityControlledSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4043787855325856949}
-        m_TargetAssemblyTypeName: Mouth, Assembly-CSharp
-        m_MethodName: SetGrabbing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 7515266060004696176}
-        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
-        m_MethodName: StartVelocityControlledSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  OnDeSelected:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8055952282550235676}
-        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
-        m_MethodName: StopVelocityControlledSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4043787855325856949}
-        m_TargetAssemblyTypeName: Mouth, Assembly-CSharp
-        m_MethodName: SetGrabbing
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7515266060004696176}
-        m_TargetAssemblyTypeName: VelocityVolumeController, Assembly-CSharp
-        m_MethodName: StopVelocityControlledSound
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
