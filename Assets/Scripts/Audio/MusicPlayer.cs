@@ -11,7 +11,7 @@ public class MusicPlayer : Singleton<MusicPlayer>
     private AudioSource musicSource, ambienceSource, operaSource, orobourusAmbienceSource, blenderSource;
     private bool shouldPlayOpera = false /*, triggeredBlender = false*/;
 
-    public RandomSoundContainer significantAction;
+    public RandomSoundContainer significantAction, electrifiedSFX;
 
 
     private void Start()

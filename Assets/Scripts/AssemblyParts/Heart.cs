@@ -67,6 +67,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         _animator.SetBool("IsPumping", false);
         yield return new WaitForSeconds(0.6f);
         _animator.SetTrigger("Awake");
+
         yield return new WaitForSeconds(3.6f);
         _rb.linearVelocity = new Vector2(1.6f, -0.4f);
         _animator.SetTrigger("Walk");

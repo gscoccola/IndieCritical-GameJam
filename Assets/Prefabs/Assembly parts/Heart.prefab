@@ -81,7 +81,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22aacb5faac298848b97ebf31493689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _extensionAssemblable: {fileID: 0}
+  _splatterSprites: []
   _sparks: {fileID: 8626023975957301345, guid: dd1af1f357ab87042a0e7e7531f28e80, type: 3}
+  _bloodSplatter: {fileID: 0}
+  _triggerAwake: 0
   OnBecomePowered:
     m_PersistentCalls:
       m_Calls:
@@ -129,6 +133,7 @@ MonoBehaviour:
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
+  _pickParent: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls:
@@ -326,7 +331,7 @@ MonoBehaviour:
   - name: PowerOn
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 986d9a997b7729d4b892053386289f68, type: 3}
+    - {fileID: 8300000, guid: 226488ac43e0be94c89ca10b315e42cc, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0
