@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class Centipede : MonoBehaviour, IStateLoader
@@ -21,7 +22,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     private float _rotationSpeed;
     private float _segmentDistance = 0.33f;
     public bool AddSegmentTrigger = false;
-    private int _length = 1;
+    [SerializeField] private int _length = 1;
     private bool _isOurobouros;
     private bool _isAsborbed;
     private Vector3 _ourobourosCenter;
@@ -33,7 +34,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     List<VeinConnection> veinConnections = new List<VeinConnection>();
 
     public List<GameObject> _segments = new List<GameObject>();
-    private Sounds _sounds;
+    public Sounds _sounds;
     public bool _absorbTrigger;
 
     bool _destroyedHead;
@@ -143,6 +144,7 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     private void TriggerOurobouros()
     {
+        _head.GetComponent<Mouth>().SetBlended();
         _head.GetComponent<Assemblable>().StatusEffectAffinities[StatusEffect.BloodPowered] = StatusEffectAffinity.Insulator;
         SubobjectivesManager.Instance.TriggerEnding(Endings.Ourobouros);
         _head.GetComponent<Mouth>().enabled = false;
@@ -185,13 +187,13 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     private IEnumerator ITriggerBlender()
     {
+        _head.GetComponent<Mouth>().SetBlended();
         _canOurobouros = false;
         _gpuComponent._isFarming = true;
         _bloodParticleSystem.Play();
         yield return new WaitForSeconds(0.1f);
         _eatingLastSegment = true;
         //_head.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-        _head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         _lastBodySegment.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
         foreach (var segment in _segments)
@@ -200,6 +202,7 @@ public class Centipede : MonoBehaviour, IStateLoader
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
             Destroy(GetComponent<VelocityVolumeController>());
         }
+        _head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         yield return new WaitForSeconds(2f);
         _lastBodySegment.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         while (true)
@@ -249,7 +252,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         _sounds.PlaySoundContainer("HeadExplode");
         Instantiate(_splatterPrefabs[Random.Range(0, 2)], _gpuFanTransform.transform.position, Quaternion.identity);
         _goreChunks.Play();
-        if (_length > 7)
+        if (_length > 9)
         {
             SubobjectivesManager.Instance.SetGPU(true);
             _gpuComponent._backAnimator.SetTrigger("PowerOn");
@@ -280,6 +283,7 @@ public class Centipede : MonoBehaviour, IStateLoader
         foreach (var segment in _segments)
         {
             segment.GetComponent<ForceDraggable>().IsSelectable = false;
+            segment.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             Destroy(GetComponent<VelocityVolumeController>());
             _absorbeForce += 250f;
         }

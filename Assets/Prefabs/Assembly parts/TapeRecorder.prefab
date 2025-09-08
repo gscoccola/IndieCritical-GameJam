@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8621aee804962a45aa4feb0cc46d56b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ElectricAffinity: 1
+  ElectricAffinity: 0
   BloodAffinity: 1
   _heightLayer: 2
   _isUncoveredOnCheckpoint: 1

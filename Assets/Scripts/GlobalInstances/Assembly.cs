@@ -1,8 +1,9 @@
-using UnityEngine;
-using System.Collections.Generic;
 using System;
-using UnityEngine.InputSystem;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Assembly : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Assembly : MonoBehaviour
     [SerializeField] GameObject _sparkPrefab;
     [SerializeField] GameObject _veinConnectionPrefab;
     private bool _makeNewVeins = true;
+    private Dictionary<Tuple<int,StatusEffect>, bool> _poweredStatus = new();
 
     private void Start()
     {
@@ -137,7 +139,7 @@ public class Assembly : MonoBehaviour
                     //connections++;
                     if (explored.Contains(i)) continue;
                     Assembleables[i].CurrentStatusEffects[statusEffect] = true;
-                    Assembleables[i].GetComponent<IPowerable>()?.SetPowered(statusEffect, true);
+                    SetPowered(i, true, statusEffect);
                     Assembleables[i].SetElectrifiedVisual(true);
                     //if (UnityEngine.Random.Range(0, 5) == 1) Spark(currentAssemblable.transform.position);
                     /*if (Assembleables[i].GetComponent<SpriteRenderer>() != null)
@@ -150,7 +152,7 @@ public class Assembly : MonoBehaviour
         }
         for (int i = 0; i < Assembleables.Length; i++)
         {
-            Assembleables[i].GetComponent<IPowerable>()?.SetPowered(statusEffect, Assembleables[i].CurrentStatusEffects[statusEffect]);
+            SetPowered(i, Assembleables[i].CurrentStatusEffects[statusEffect], statusEffect);
         }
     }
 
@@ -178,6 +180,14 @@ public class Assembly : MonoBehaviour
         }
     }
 
+    private void SetPowered(int index, bool value, StatusEffect statusEffect)
+    {
+        if (_poweredStatus.ContainsKey(new Tuple<int, StatusEffect>(index, statusEffect)) &&
+            _poweredStatus[new Tuple<int, StatusEffect>(index, statusEffect)] == value) return;
+        _poweredStatus[new Tuple<int, StatusEffect>(index, statusEffect)] = value;
+        Assembleables[index].GetComponent<IPowerable>()?
+            .SetPowered(statusEffect, Assembleables[index].CurrentStatusEffects[statusEffect]);
+    }
 }
 
 

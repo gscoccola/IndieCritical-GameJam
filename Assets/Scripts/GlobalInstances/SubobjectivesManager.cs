@@ -8,6 +8,7 @@ public class SubobjectivesManager : MonoBehaviour
     public bool PowerOn;
     public bool CPUOn;
     public bool GPUOn;
+    private bool _wasEndingTriggered;
 
     private void Awake()
     {
@@ -21,6 +22,7 @@ public class SubobjectivesManager : MonoBehaviour
 
     private void UpdateText()
     {
+        if (_wasEndingTriggered) return;
         TextManager.Instance.SetText("POWER ON \n CPU " + BoolToString(CPUOn) + "\n GPU " + BoolToString(GPUOn));
     }
 
@@ -61,6 +63,8 @@ public class SubobjectivesManager : MonoBehaviour
 
     public void TriggerEnding(Endings ending)
     {
+        if (_wasEndingTriggered) return;
+        _wasEndingTriggered = true;
         switch (ending)
         {
             case Endings.Fixed:
