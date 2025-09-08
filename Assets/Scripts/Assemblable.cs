@@ -28,6 +28,8 @@ public class Assemblable : MonoBehaviour, IStateLoader
     public bool _isBloodPowered;
     public bool IsUncovered;
 
+    private bool hasBeenElectrified = false;
+
     private void Update()
     {
         _isElectrified = CurrentStatusEffects[StatusEffect.Electrified];
@@ -137,6 +139,9 @@ public class Assemblable : MonoBehaviour, IStateLoader
     public void SetElectrifiedVisual(bool value)
     {
         //if (_electrifiedSprite != null) _electrifiedSprite.enabled = value;
-        if (_electrifiedSprite != null) _electrifiedSprite.color = !value ? Color.white : Color.yellow;
+        if (_electrifiedSprite != null)
+        {
+            _electrifiedSprite.color = !value ? Color.white : Color.yellow;
+        }
     }
 }

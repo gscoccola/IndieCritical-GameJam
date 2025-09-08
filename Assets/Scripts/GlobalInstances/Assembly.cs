@@ -100,6 +100,7 @@ public class Assembly : MonoBehaviour
         List<int> queue = new List<int>();
         List<int> explored = new List<int>();
 
+
         foreach (Assemblable assemblable in Assembleables)
         {
             if (assemblable.StatusEffectAffinities[statusEffect] == StatusEffectAffinity.Source)
