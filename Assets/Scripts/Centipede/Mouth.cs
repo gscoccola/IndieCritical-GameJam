@@ -11,12 +11,16 @@ public class Mouth : MonoBehaviour, IPowerable
     Rigidbody2D _rb;
     private Vector3 _initialPosition;
     private ForceDraggable _draggable;
+    [SerializeField] private Eye _eye;
+    [SerializeField] private Transform _spriteTransform;
+    [SerializeField] private float _eatDisplacement = 0.5f;
     public bool IsAbsorbed;
 
     private bool _isStunned;
     private bool _isSelected;
     private bool _isAsborbed;
     private bool _wasMoved;
+    private bool _spriteReturning;
 
     private void Start()
     {
@@ -30,23 +34,26 @@ public class Mouth : MonoBehaviour, IPowerable
 
     private void FixedUpdate()
     {
-        if (_rb.rotation > 190f)
-        {
-            _rb.AddTorque(-60f * Time.fixedDeltaTime);
-        }
-        else if (_rb.rotation < 170f)
-        {
-            _rb.AddTorque(60f * Time.fixedDeltaTime);
-        }
+        
         if (_wasMoved && !_isSelected && !_isStunned && _draggable.IsSelectable)
         {
             _rb.linearVelocity = (Vector3.MoveTowards(_rb.linearVelocity, _initialPosition - transform.position, 2f * Time.fixedDeltaTime));
-            if (Vector3.Distance(transform.position, _initialPosition) < 0.1f)
+            if (Vector3.Distance(transform.position, _initialPosition) < 0.1f && Mathf.Abs(_rb.rotation - 180f) < 5f)
             {
                 _wasMoved = false;
                 _rb.linearVelocity = Vector2.zero;
+                _rb.angularVelocity = 0f;
             }
+
+            _rb.angularVelocity = -_rb.rotation + 180f;
         }
+    }
+
+    private void Update()
+    {
+        if (!_spriteReturning) return;
+        _spriteTransform.localPosition = Vector3.MoveTowards(_spriteTransform.localPosition, Vector3.zero, 0.5f * Time.deltaTime);
+        if (_spriteTransform.localPosition.magnitude < 0.01f) _spriteReturning = false;
     }
 
     private void OnTriggerEnter2D(Collider2D col)
@@ -80,6 +87,7 @@ public class Mouth : MonoBehaviour, IPowerable
     private void Stun()
     {
         Instantiate(_electricitySprite, transform.position, Quaternion.identity);
+        _eye.IsStunned = true;
         _isStunned = true;
         _animator.SetBool("Grabbing", false);
         _animator.SetBool("Stunned", true);
@@ -91,14 +99,8 @@ public class Mouth : MonoBehaviour, IPowerable
 
     private void TurnHead(Collider2D col)
     {
-        if (col.transform.position.y > transform.position.y)
-        {
-            _rb.AddTorque(300f);
-        }
-        else
-        {
-            _rb.AddTorque(-300f);
-        }
+        _spriteTransform.localPosition += -(col.transform.position - transform.position).Flatten().normalized * _eatDisplacement;
+        _spriteReturning = true;
     }
 
     private IEnumerator IGrow(int number = 1)
@@ -132,9 +134,10 @@ public class Mouth : MonoBehaviour, IPowerable
     {
         yield return new WaitForSeconds(5f);
         _isStunned = false;
+        _eye.IsStunned = false;
         //_rb.constraints = _isSelected ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
         //_rb.bodyType = _isSelected ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
-        
+
         _animator.SetBool("Stunned", false);
         if (_isAsborbed)
         {

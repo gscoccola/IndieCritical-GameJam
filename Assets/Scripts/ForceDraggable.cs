@@ -26,7 +26,10 @@ public class ForceDraggable : MonoBehaviour
     {
         if (!IsSelected || IsFixed || !IsSelectable) return;
 
-        Vector3 mousePos = _camera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        Vector3 newPos = _camera.ScreenToWorldPoint(Input.mousePosition);
+        newPos = new Vector3(Mathf.Clamp(newPos.x, -10f, 10f), Mathf.Clamp(newPos.y, -5.625f, 5.625f), newPos.z);
+
+        Vector3 mousePos = newPos - transform.position;
         _rb.AddForce(_force * Time.fixedDeltaTime * new Vector2(
             mousePos.x,
             mousePos.y

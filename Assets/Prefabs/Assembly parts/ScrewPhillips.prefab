@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 814073403397744817}
   - component: {fileID: 3137460520046182376}
   - component: {fileID: 5524174673103755593}
+  - component: {fileID: 2198510573155412955}
   m_Layer: 13
   m_Name: ScrewPhillips
   m_TagString: Untagged
@@ -52,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c443561bb50802642bf01c4a3cd09511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
+  rotationSpeed: 200
   _timeToUnscrew: 2
   _sprites:
   - {fileID: -1694676794071970614, guid: ff11a752befb6ca4eae261d6bc8daa9f, type: 3}
@@ -60,8 +61,9 @@ MonoBehaviour:
   _requiredToolLayer:
     serializedVersion: 2
     m_Bits: 128
-  _sideCollider: {fileID: 814073403397744817}
-  _checkpointStartPos: {x: 0, y: 0, z: 0}
+  _sideCollider1: {fileID: 814073403397744817}
+  _sideCollider2: {fileID: 2198510573155412955}
+  _checkpointStartPos: {x: -4, y: -1.4, z: -0.85}
   IsFree: 0
   IsLoose: 0
   _isRolling: 0
@@ -181,6 +183,7 @@ MonoBehaviour:
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
+  _pickParent: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls:
@@ -513,7 +516,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.0024812222}
+  m_Offset: {x: 0.01, y: 0.0024812222}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -523,7 +526,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.75, y: 0.41564083}
+  m_Size: {x: 0.79, y: 0.23}
   m_EdgeRadius: 0
 --- !u!114 &3137460520046182376
 MonoBehaviour:
@@ -565,3 +568,40 @@ MonoBehaviour:
   _isElectrified: 0
   _isBloodPowered: 0
   IsUncovered: 0
+--- !u!70 &2198510573155412955
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.21, y: 0}
+  m_Size: {x: 0.31, y: 0.55}
+  m_Direction: 0

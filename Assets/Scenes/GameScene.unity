@@ -529,6 +529,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1616386171}
     m_Modifications:
+    - target: {fileID: 814073403397744817, guid: ea463881dc429264a993449c51aec7db, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1782794313969295999, guid: ea463881dc429264a993449c51aec7db, type: 3}
       propertyPath: rotationSpeed
       value: 200
@@ -939,7 +943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9161ca8c508b7b4bbe2eee77baf5fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ReachedCheckpoint: 0
+  ReachedCheckpoint: 1
   FeatsCount: 4
   FeatsCompletion: 
   IsReloadingScene: 0
@@ -994,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &368416510
 Transform:
   m_ObjectHideFlags: 0
@@ -1111,29 +1115,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 237144865}
     m_Modifications:
-    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
-      propertyPath: rotationSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
-      propertyPath: _checkpointStartPos.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
-      propertyPath: _checkpointStartPos.y
-      value: -1.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1782794313969295999, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
-      propertyPath: _checkpointStartPos.z
-      value: -0.85
-      objectReference: {fileID: 0}
     - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_Name
       value: ScrewPhillips
-      objectReference: {fileID: 0}
-    - target: {fileID: 2447328978677670704, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8365391530870580117, guid: a8d3083674211a34292bd882a3fe088c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4020,7 +4004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2014878503098623720, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.025875
+      value: 0.994625
       objectReference: {fileID: 0}
     - target: {fileID: 2014878503098623720, guid: 0cf281d6b2aaaf24e86d97952b1fb34e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4071,6 +4055,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1155570319}
     m_Modifications:
+    - target: {fileID: 6937736779251299910, guid: bea8dd4f356b49e42bf5b69c0db979ef, type: 3}
+      propertyPath: BloodAffinity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937736779251299910, guid: bea8dd4f356b49e42bf5b69c0db979ef, type: 3}
+      propertyPath: ElectricAffinity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8041106136509945470, guid: bea8dd4f356b49e42bf5b69c0db979ef, type: 3}
       propertyPath: m_Name
       value: Calculator
@@ -4278,6 +4270,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8266801195827232590, guid: e7c6f9af6141b0e4c849273d7566fb7e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 751231419176630841, guid: 830dcbed437bd5047a393664fa2676b3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

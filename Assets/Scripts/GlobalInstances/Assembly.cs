@@ -59,7 +59,6 @@ public class Assembly : MonoBehaviour
         while (true)
         {
             PropagateStatusEffect(StatusEffect.Electrified);
-            yield return new WaitForEndOfFrame();
             PropagateStatusEffect(StatusEffect.BloodPowered);
             yield return new WaitForEndOfFrame();
         }

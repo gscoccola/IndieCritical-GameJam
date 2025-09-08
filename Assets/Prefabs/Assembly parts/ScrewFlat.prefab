@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2147621451470332080}
   - component: {fileID: 814073403397744817}
   - component: {fileID: 6500400045574373979}
+  - component: {fileID: 5501360492323547353}
   m_Layer: 22
   m_Name: ScrewFlat
   m_TagString: Untagged
@@ -59,7 +60,8 @@ MonoBehaviour:
   _requiredToolLayer:
     serializedVersion: 2
     m_Bits: 512
-  _sideCollider: {fileID: 814073403397744817}
+  _sideCollider1: {fileID: 814073403397744817}
+  _sideCollider2: {fileID: 5501360492323547353}
   _checkpointStartPos: {x: 0, y: 0, z: 0}
   IsFree: 0
   IsLoose: 0
@@ -168,6 +170,7 @@ MonoBehaviour:
   _irreversible: 0
   _Xlimit: 0
   _Ylimit: 0
+  _pickParent: 0
   OnSelected:
     m_PersistentCalls:
       m_Calls:
@@ -500,7 +503,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.0024812222}
+  m_Offset: {x: 0.01, y: 0.0024812222}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -510,7 +513,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.75, y: 0.41564083}
+  m_Size: {x: 0.79, y: 0.23}
   m_EdgeRadius: 0
 --- !u!114 &6500400045574373979
 MonoBehaviour:
@@ -540,3 +543,40 @@ MonoBehaviour:
   _isElectrified: 0
   _isBloodPowered: 0
   IsUncovered: 0
+--- !u!70 &5501360492323547353
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2447328978677670704}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.21, y: 0}
+  m_Size: {x: 0.31, y: 0.55}
+  m_Direction: 0

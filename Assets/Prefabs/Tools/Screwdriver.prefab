@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toolHead: {fileID: 60069810732717393}
+  _conductorCollider: {fileID: 6126319865384307675}
   OnStartActive:
     m_PersistentCalls:
       m_Calls:
@@ -609,7 +610,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.83, y: 0.53}
+  m_Size: {x: 1.83, y: 0.29}
   m_EdgeRadius: 0
 --- !u!114 &3947482751380082901
 MonoBehaviour:
