@@ -15,9 +15,8 @@ GameObject:
   - component: {fileID: 6763550321254480631}
   - component: {fileID: 4822473163528905542}
   - component: {fileID: 2147621451470332080}
-  - component: {fileID: 814073403397744817}
   - component: {fileID: 6500400045574373979}
-  - component: {fileID: 5501360492323547353}
+  - component: {fileID: 4831473912827374638}
   m_Layer: 22
   m_Name: ScrewFlat
   m_TagString: Untagged
@@ -60,8 +59,6 @@ MonoBehaviour:
   _requiredToolLayer:
     serializedVersion: 2
     m_Bits: 512
-  _sideCollider1: {fileID: 814073403397744817}
-  _sideCollider2: {fileID: 5501360492323547353}
   _checkpointStartPos: {x: 0, y: 0, z: 0}
   IsFree: 0
   IsLoose: 0
@@ -469,52 +466,6 @@ MonoBehaviour:
       pitchRange: {x: 2, y: 2.2}
       diagetic: 1
     id: 0
---- !u!61 &814073403397744817
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2447328978677670704}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0.01, y: 0.0024812222}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4375, y: 0.4375}
-    newSize: {x: 0.4375, y: 0.4375}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.79, y: 0.23}
-  m_EdgeRadius: 0
 --- !u!114 &6500400045574373979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,8 +494,8 @@ MonoBehaviour:
   _isElectrified: 0
   _isBloodPowered: 0
   IsUncovered: 0
---- !u!70 &5501360492323547353
-CapsuleCollider2D:
+--- !u!60 &4831473912827374638
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -577,6 +528,27 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.21, y: 0}
-  m_Size: {x: 0.31, y: 0.55}
-  m_Direction: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.4375, y: 0.4375}
+    newSize: {x: 0.4375, y: 0.4375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.28125, y: 0.25}
+      - {x: -0.34375, y: 0.1875}
+      - {x: -0.38249135, y: 0.1332128}
+      - {x: -0.37784445, y: -0.13068342}
+      - {x: -0.29329872, y: -0.2666211}
+      - {x: -0.1875, y: -0.265625}
+      - {x: -0.078125, y: -0.125}
+      - {x: 0.390625, y: -0.125}
+      - {x: 0.390625, y: 0.140625}
+      - {x: -0.09375, y: 0.140625}
+      - {x: -0.1875, y: 0.25}
+  m_UseDelaunayMesh: 0

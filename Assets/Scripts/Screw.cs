@@ -8,8 +8,7 @@ public class Screw : MonoBehaviour, IStateLoader
     [SerializeField] float _timeToUnscrew = 1.5f;
     [SerializeField] Sprite[] _sprites;
     [SerializeField] LayerMask _requiredToolLayer;
-    [SerializeField] BoxCollider2D _sideCollider1;
-    [SerializeField] CapsuleCollider2D _sideCollider2;
+    private PolygonCollider2D _sideCollider;
     CircleCollider2D _circleCollider;
     [SerializeField] Vector3 _checkpointStartPos;
     private Draggable _draggable;
@@ -36,7 +35,7 @@ public class Screw : MonoBehaviour, IStateLoader
     private void Awake()
     {
         _circleCollider = GetComponent<CircleCollider2D>();
-        
+        _sideCollider = GetComponent<PolygonCollider2D>();
     }
 
     private void Start()
@@ -120,8 +119,7 @@ public class Screw : MonoBehaviour, IStateLoader
         _spriteRenderer.sprite = _sprites[1];
         transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
         //GetComponent<CircleCollider2D>().offset = new Vector2(-0.71f, 0f);
-        _sideCollider1.enabled = true;
-        _sideCollider2.enabled = true;
+        _sideCollider.enabled = true;
         _circleCollider.enabled = false;
         yield return new WaitForSeconds(2.3f);
         _isRolling = false;
@@ -134,8 +132,7 @@ public class Screw : MonoBehaviour, IStateLoader
         IsLoose = true;
         gameObject.layer = LayerMask.NameToLayer("Assemblable");
         GetComponent<CircleCollider2D>().offset = Vector2.zero;
-        _sideCollider1.enabled = false;
-        _sideCollider2.enabled = false;
+        _sideCollider.enabled = false;
         _circleCollider.enabled = true;
     }
 
@@ -180,8 +177,7 @@ public class Screw : MonoBehaviour, IStateLoader
         gameObject.layer = LayerMask.NameToLayer("Assemblable");
         GetComponent<SpriteRenderer>().sprite = _sprites[1];
         transform.rotation = Quaternion.Euler(0f, 0f, Random.Range(0f, 360f));
-        _sideCollider1.enabled = true;
-        _sideCollider2.enabled = true;
+        _sideCollider.enabled = true;
         _circleCollider.enabled = false;
     }
 
