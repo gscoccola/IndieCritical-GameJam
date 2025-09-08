@@ -129,11 +129,14 @@ public class Mouth : MonoBehaviour, IPowerable
             _wasMoved = true;
             return;
         }
-        
+
+        if (value) _centipede._sounds.PlaySoundContainer_TransformOverride("Grab", transform); 
+
         //_rb.constraints = value ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
         _rb.bodyType = value ? RigidbodyType2D.Static : RigidbodyType2D.Kinematic;
         _animator.SetBool("Grabbing", value);
         if (!_wasMoved) return;
+
         if (value) _centipede._sounds.StopLoopingContainer("Orobourus_Movement");
         else _centipede._sounds.PlayLoopingContainer("Orobourus_Movement");
     }

@@ -61,6 +61,20 @@ public class Sounds : MonoBehaviour
         PlaySoundContainer(GetSoundContainerByName(containerName));
     }
 
+    public void PlaySoundContainer_TransformOverride(string containerName, Transform transformOverride)
+    {
+        if (muteAll) return;
+        int soundID = GetSoundContainerByName(containerName);
+        if (soundID == -1 || soundsOnThisObject[soundID] == null) return; 
+        try { 
+            if (transform != null) soundsOnThisObject[soundID].PlayRandomSoundOnTarget(transformOverride); 
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error playing sound with ID " + soundID + ": " + e.Message);
+        }
+    }
+
     public void PlayLoopingContainer(string containerName)
     {
         PlayLoopingContainer(GetSoundContainerByName(containerName));

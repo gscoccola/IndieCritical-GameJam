@@ -12,10 +12,11 @@ public class MusicPlayer : Singleton<MusicPlayer>
     private bool shouldPlayOpera = false /*, triggeredBlender = false*/;
 
     public RandomSoundContainer significantAction, electrifiedSFX;
-
-
+    
     private void Start()
     {
+
+        AudioSettings.Instance.sfxMixerGroup.audioMixer.SetFloat("SFXVolume", -80);
 
         musicSource = this.AddComponent<AudioSource>();
         musicSource.clip = music;
@@ -44,6 +45,26 @@ public class MusicPlayer : Singleton<MusicPlayer>
         operaSource.Play();
         operaSource.outputAudioMixerGroup = AudioSettings.Instance.musicMixerGroup;
 
+        StartCoroutine(FadeInSFXVolume(0.75f));
+
+
+    }
+
+    private IEnumerator FadeInSFXVolume(float fadeInDuration)
+    {
+        float timeElapsed = 0;
+
+        while (timeElapsed < fadeInDuration)
+        {
+
+            float fadeInVolume = Mathf.Lerp(-80, 0, timeElapsed / fadeInDuration);
+            AudioSettings.Instance.sfxMixerGroup.audioMixer.SetFloat("SFXVolume", fadeInVolume);
+
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        AudioSettings.Instance.sfxMixerGroup.audioMixer.SetFloat("SFXVolume", 0);
 
     }
 
@@ -153,6 +174,8 @@ public class MusicPlayer : Singleton<MusicPlayer>
             yield return null;
         }
 
+        sourceToFadeOut.volume = 0;
+
     }
 
     private IEnumerator FadeInAudioSource(AudioSource sourceToFadeIn, float targetFadeInVolume, float duration)
@@ -176,6 +199,9 @@ public class MusicPlayer : Singleton<MusicPlayer>
             timeElapsed += Time.deltaTime;
             yield return null;
         }
+
+        sourceToFadeIn.volume = targetFadeInVolume;
+
     }
 
     private IEnumerator CrossfadeAudioSources(AudioSource sourceToFadeIn, float targetFadeInVolume, AudioSource sourceToFadeOut, float targetFadeOutVolume, float duration)
@@ -247,6 +273,27 @@ public class MusicPlayer : Singleton<MusicPlayer>
         blenderSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup;
 
         StartCoroutine(FadeInAudioSource(blenderSource, blenderVolume, 0.25f));
+    }
+
+    public void SetHeartAwake()
+    {
+
+        significantAction.PlayRandomSoundOnTarget(transform);
+
+        StartCoroutine(FadeOutAudioSource(musicSource, musicVolume, 1));
+        StartCoroutine(FadeOutAudioSource(ambienceSource, ambienceVolume, 1));
+
+        orobourusAmbienceSource = this.AddComponent<AudioSource>();
+        orobourusAmbienceSource.clip = orobourusAmbience;
+        orobourusAmbienceSource.loop = true;
+        orobourusAmbienceSource.volume = 0;
+        orobourusAmbienceSource.pitch = 1;
+        orobourusAmbienceSource.spatialBlend = 0;
+        orobourusAmbienceSource.outputAudioMixerGroup = AudioSettings.Instance.sfxMixerGroup;
+        orobourusAmbienceSource.Play();
+
+        StartCoroutine(FadeInAudioSource(orobourusAmbienceSource, orobourusAmbienceVolume, 1));
+
     }
 
 }
