@@ -90,7 +90,6 @@ public class Centipede : MonoBehaviour, IStateLoader
                     {
                         _isAsborbed = false;
                         _heartAssemblable.GetComponent<Heart>().TriggerTransform();
-                        MusicPlayer.Instance.SetOrobourus();
                         _sounds.PlaySoundContainer("Deshell");
                         StartCoroutine(IWalkBug());
                     }
@@ -275,6 +274,8 @@ public class Centipede : MonoBehaviour, IStateLoader
 
     public IEnumerator IAbsorbed()
     {
+        MusicPlayer.Instance.SetHeartAwake();
+
         currentIndex = 1;
         _head.GetComponent<Mouth>().IsAbsorbed = true;
         _heartDir = (_heartAssemblable.transform.position - _head.transform.position).normalized;
@@ -293,11 +294,11 @@ public class Centipede : MonoBehaviour, IStateLoader
         {
             yield return new WaitForSeconds(0.4f);
             veinConnections.Add(ConnectWithVein(_heartAssemblable.transform, _head.transform, true));
-            _sounds.PlaySoundContainer("PutDown");
+            _sounds.PlaySoundContainer("Absorb");
             i++;
         }
         yield return new WaitForSeconds(1.4f);
-        Debug.Log("Absorbed");
+        //Debug.Log("Absorbed");
         _head.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
         _isAsborbed = true;
         _sounds.PlayLoopingContainer("Orobourus_Movement");

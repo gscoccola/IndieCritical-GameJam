@@ -15,6 +15,8 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
     [SerializeField] GameObject _bloodSplatter;
     [SerializeField] bool _triggerAwake;
 
+    private Sounds _sounds;
+
     public bool IsPowered { get; private set; }
 
     public UnityEvent OnBecomePowered;
@@ -33,6 +35,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         _assemblable = GetComponent<Assemblable>();
         _animator = GetComponent<Animator>();
         _rb = GetComponent<Rigidbody2D>();
+        _sounds = GetComponent<Sounds>();
     }
 
 
@@ -67,7 +70,7 @@ public class Heart : MonoBehaviour, IPowerable, IActivable
         _animator.SetBool("IsPumping", false);
         yield return new WaitForSeconds(0.6f);
         _animator.SetTrigger("Awake");
-
+        _sounds.PlaySoundContainer("Awake");
         yield return new WaitForSeconds(3.6f);
         _rb.linearVelocity = new Vector2(1.6f, -0.4f);
         _animator.SetTrigger("Walk");

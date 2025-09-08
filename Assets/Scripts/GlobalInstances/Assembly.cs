@@ -159,7 +159,7 @@ public class Assembly : MonoBehaviour
     private void ConnectWithVein(int index1, int index2, bool randomize = false)
     {
         if (!_makeNewVeins) return;
-        Debug.Log(Assembleables[index1] + " " + Assembleables[index2]);
+        //Debug.Log(Assembleables[index1] + " " + Assembleables[index2]);
         VeinConnections[index1, index2] = Instantiate(_veinConnectionPrefab, Vector3.zero, Quaternion.identity, transform)
                         .GetComponent<VeinConnection>();
         VeinConnections[index1, index2].Setup(Assembleables[index1], Assembleables[index2], randomize);
@@ -187,6 +187,7 @@ public class Assembly : MonoBehaviour
         _poweredStatus[new Tuple<int, StatusEffect>(index, statusEffect)] = value;
         Assembleables[index].GetComponent<IPowerable>()?
             .SetPowered(statusEffect, Assembleables[index].CurrentStatusEffects[statusEffect]);
+        if (value) MusicPlayer.Instance.electrifiedSFX.PlayRandomSoundOnTarget(transform);
     }
 }
 

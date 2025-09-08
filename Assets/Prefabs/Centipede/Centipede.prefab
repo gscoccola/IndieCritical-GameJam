@@ -206,9 +206,11 @@ MonoBehaviour:
   _speed: 700
   _absorbeForce: 400
   AddSegmentTrigger: 0
+  _length: 1
   _bloodParticleSystem: {fileID: 0}
   _target: {fileID: 3526093164272389977}
   _segments: []
+  _sounds: {fileID: 0}
   _absorbTrigger: 0
 --- !u!114 &507616752637745790
 MonoBehaviour:
@@ -362,7 +364,7 @@ MonoBehaviour:
   - name: Shock
     mute: 0
     audioClips:
-    - {fileID: 8300000, guid: 76ee94b014542274990bde1c77675338, type: 3}
+    - {fileID: 8300000, guid: a712e92d48528b54db5dba5aad69f56a, type: 3}
     soundSettings:
       loop: 0
       fadeInTime: 0.25
@@ -710,6 +712,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 439d882bf8f5e16448417b0be37c6875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sounds: {fileID: 0}
   _animator: {fileID: 2805512586671517113}
   _eatingParticles: {fileID: 2635259085384821458, guid: 23f33e43d52e85a48b5c68575c6cc28f, type: 3}
   _electricitySprite: {fileID: 8626023975957301345, guid: dd1af1f357ab87042a0e7e7531f28e80, type: 3}
