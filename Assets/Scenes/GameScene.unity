@@ -4521,6 +4521,10 @@ PrefabInstance:
       propertyPath: IsSpinning
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1186576201934342771, guid: 026b06633e14b1340b979d4dddb87a6c, type: 3}
+      propertyPath: _bloodSpeed
+      value: 0.089
+      objectReference: {fileID: 0}
     - target: {fileID: 7244203621750225030, guid: 026b06633e14b1340b979d4dddb87a6c, type: 3}
       propertyPath: m_Name
       value: GPU

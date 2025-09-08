@@ -4,7 +4,7 @@ using System.Collections;
 public class Mouth : MonoBehaviour, IPowerable
 {
     private Centipede _centipede;
-    private Sounds _sounds;
+    public Sounds _sounds;
     [SerializeField] private Animator _animator;
     [SerializeField] GameObject _eatingParticles;
     [SerializeField] GameObject _electricitySprite;
@@ -21,6 +21,7 @@ public class Mouth : MonoBehaviour, IPowerable
     private bool _isAsborbed;
     private bool _wasMoved;
     private bool _spriteReturning;
+    private bool _isBlended;
 
     private void Start()
     {
@@ -41,6 +42,7 @@ public class Mouth : MonoBehaviour, IPowerable
             if (Vector3.Distance(transform.position, _initialPosition) < 0.1f && Mathf.Abs(_rb.rotation - 180f) < 5f)
             {
                 _wasMoved = false;
+                _centipede._sounds.StopLoopingContainer("Orobourus_Movement");
                 _rb.linearVelocity = Vector2.zero;
                 _rb.angularVelocity = 0f;
             }
@@ -86,6 +88,8 @@ public class Mouth : MonoBehaviour, IPowerable
 
     private void Stun()
     {
+        if (_isBlended) return;
+        _centipede._sounds.StopLoopingContainer("Orobourus_Movement");
         Instantiate(_electricitySprite, transform.position, Quaternion.identity);
         _eye.IsStunned = true;
         _isStunned = true;
@@ -118,6 +122,7 @@ public class Mouth : MonoBehaviour, IPowerable
 
     public void SetGrabbing(bool value)
     {
+        if (_isBlended) return;
         _isSelected = value;
         if (_isStunned)
         {
@@ -126,13 +131,30 @@ public class Mouth : MonoBehaviour, IPowerable
         }
         
         //_rb.constraints = value ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
-        //_rb.bodyType = value ? RigidbodyType2D.Static : RigidbodyType2D.Dynamic;
+        _rb.bodyType = value ? RigidbodyType2D.Static : RigidbodyType2D.Kinematic;
         _animator.SetBool("Grabbing", value);
+        if (!_wasMoved) return;
+        if (value) _centipede._sounds.StopLoopingContainer("Orobourus_Movement");
+        else _centipede._sounds.PlayLoopingContainer("Orobourus_Movement");
+    }
+
+    public void SetBlended()
+    {
+        if (_isStunned) DeStun();
+        _isBlended = true;
+        _centipede._sounds.StopLoopingContainer("Orobourus_Movement");
+        _animator.SetBool("Grabbing", false);
     }
 
     private IEnumerator IDestun()
     {
         yield return new WaitForSeconds(5f);
+        DeStun();
+    }
+
+    private void DeStun()
+    {
+        StopAllCoroutines();
         _isStunned = false;
         _eye.IsStunned = false;
         //_rb.constraints = _isSelected ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.None;
@@ -141,11 +163,12 @@ public class Mouth : MonoBehaviour, IPowerable
         _animator.SetBool("Stunned", false);
         if (_isAsborbed)
         {
-            yield break;
+            return;
         }
-
+        if (!_isSelected) _centipede._sounds.PlayLoopingContainer("Orobourus_Movement");
         _animator.SetBool("Grabbing", _isSelected);
         _rb.bodyType = RigidbodyType2D.Kinematic;
+        _rb.linearVelocity = Vector2.zero;
     }
 
     public void SetPowered(StatusEffect statusEffect, bool value)
