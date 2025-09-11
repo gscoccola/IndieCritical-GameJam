@@ -10,6 +10,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     [SerializeField] private GameObject _gpu;
     [SerializeField] private Transform _gpuFanTransform;
     [SerializeField] private SpriteRenderer _headSprite;
+    [SerializeField] private SpriteRenderer _eyeSprite;
     [SerializeField] private Assemblable _heartAssemblable;
     [SerializeField] GameObject _veinConnectionPrefab;
     [SerializeField] GameObject[] _splatterPrefabs;
@@ -248,6 +249,7 @@ public class Centipede : MonoBehaviour, IStateLoader
     {
         yield return new WaitForSeconds(1.5f);
         _headSprite.enabled = false;
+        _eyeSprite.enabled = false;
         _sounds.PlaySoundContainer("HeadExplode");
         Instantiate(_splatterPrefabs[Random.Range(0, 2)], _gpuFanTransform.transform.position, Quaternion.identity);
         _goreChunks.Play();

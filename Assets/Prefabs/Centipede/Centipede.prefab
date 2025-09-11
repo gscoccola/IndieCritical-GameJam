@@ -195,6 +195,7 @@ MonoBehaviour:
   _gpu: {fileID: 0}
   _gpuFanTransform: {fileID: 0}
   _headSprite: {fileID: 3407168654870843483}
+  _eyeSprite: {fileID: 1415208348011466770}
   _heartAssemblable: {fileID: 0}
   _veinConnectionPrefab: {fileID: 9025847383110412993, guid: 3a23cc57add707c41ae8e167dd68cd17, type: 3}
   _splatterPrefabs:
